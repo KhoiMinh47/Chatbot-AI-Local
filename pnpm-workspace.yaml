@@ -1,0 +1,15 @@
+packages:
+  - "apps/*"
+  - "packages/*"
+
+minimumReleaseAge: 1440
+
+onlyBuiltDependencies:
+  - "@tailwindcss/oxide"
+  - "esbuild"
+  - "sharp"
+
+# The prebuilt resolver path passed ESLint on the ARM64 target; compiling its
+# optional native helper is unnecessary and remains disabled deliberately.
+ignoredBuiltDependencies:
+  - "unrs-resolver"

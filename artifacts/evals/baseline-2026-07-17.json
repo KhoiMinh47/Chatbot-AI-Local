@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "captured_at": "2026-07-17T09:30:00+07:00",
+  "scope": "read-only live snapshot before plan.md optimization",
+  "model": {
+    "id": "nvidia/nemotron-nano-9b-v2",
+    "runtime": "NVIDIA NIM",
+    "runtime_version": "1.0.0",
+    "application_context_window_tokens": 32768,
+    "runtime_capability_tokens": 131072
+  },
+  "tests": {
+    "pytest_passed": 355,
+    "pytest_skipped": 6,
+    "pytest_warnings": 3
+  },
+  "rag_traces": {
+    "total": 25,
+    "answered": 13,
+    "insufficient_evidence": 5,
+    "invalid_generation": 5,
+    "error": 2,
+    "answered_core_latency_p50_ms": 2522.597683069762,
+    "answered_core_latency_p95_ms": 9099.755884055046,
+    "answered_average_generate_ms": 3157.7,
+    "answered_average_retrieve_ms": 466.2
+  },
+  "ingestion": {
+    "successful_jobs": 9,
+    "failed_jobs": 7,
+    "success_average_seconds": 67.62,
+    "success_max_seconds": 551.23
+  },
+  "conversation": {
+    "conversations": 23,
+    "messages": 0,
+    "memory_live": false
+  },
+  "qdrant": {
+    "alias": "ntc_chunks_active",
+    "physical_collection": "ntc_chunks_embed300m_v2_uploads_v1",
+    "points": 820,
+    "indexed_vectors": 0,
+    "status": "green"
+  },
+  "health": {
+    "rabbitmq": "unhealthy",
+    "rabbitmq_error": "Failed to create dirty io scheduler thread 4, error = 11"
+  },
+  "limitations": [
+    "Traffic traces are not a fixed evaluation dataset.",
+    "Latency excludes browser and gateway time and is not true TTFT.",
+    "No private message or document content was inspected.",
+    "GPU unified-memory counters were unavailable through nvidia-smi on this platform."
+  ]
+}
+

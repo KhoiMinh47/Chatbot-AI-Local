@@ -1,0 +1,19 @@
+{
+  "candidate": "embedding-300m",
+  "active_runtime_profile": {
+    "value": "e28f17c9c13a99055d065f88d725bf93c23b3aab14acd68f16323de1353fc528",
+    "evidence_source": "exact-profile-id-observed-in-live-startup-log",
+    "live_runtime_verified": true
+  },
+  "precision": {
+    "value": "ONNX-FP16",
+    "evidence_source": "precision-mapped-from-reviewed-exact-profile-id"
+  },
+  "max_model_length": {
+    "value": 8192,
+    "evidence_source": "embed-1.13-support-matrix-profile-capability",
+    "distinction": "declared/profile capability; live request evidence is separate"
+  },
+  "reviewed_llama_compatible_profiles": [],
+  "compatible_profile_is_not_automatically_an_active_profile": true
+}

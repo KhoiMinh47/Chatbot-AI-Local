@@ -1,0 +1,101 @@
+[project]
+name = "ntc-local-rag-workspace"
+version = "0.1.0"
+description = "Local RAG chatbot monorepo for NVIDIA DGX Spark"
+requires-python = ">=3.14,<3.15"
+dependencies = [
+  "ntc-api",
+  "ntc-contracts",
+  "ntc-rag-eval",
+  "ntc-shared-python",
+  "ntc-worker",
+]
+
+[dependency-groups]
+dev = [
+  "alembic>=1.18,<2",
+  "asyncpg>=0.30,<1",
+  "httpx2>=2,<3",
+  "minio>=7.2,<8",
+  "mypy==1.19.1",
+  "pytest>=9.0,<10",
+  "ruff>=0.14,<0.15",
+  "types-openpyxl>=3.1,<4",
+]
+
+[tool.uv]
+package = false
+
+[tool.uv.sources]
+# The official universal wheel keeps this dev-only checker portable across
+# ARM64 and x86_64; uv.lock records the PyPI artifact hash.
+mypy = { url = "https://files.pythonhosted.org/packages/8d/f4/4ce9a05ce5ded1de3ec1c1d96cf9f9504a04e54ce0ed55cfa38619a32b8d/mypy-1.19.1-py3-none-any.whl" }
+ntc-api = { workspace = true }
+ntc-contracts = { workspace = true }
+ntc-rag-eval = { workspace = true }
+ntc-shared-python = { workspace = true }
+ntc-worker = { workspace = true }
+
+[tool.uv.workspace]
+members = [
+  "apps/api",
+  "apps/worker",
+  "packages/contracts",
+  "packages/rag-eval",
+  "packages/shared-python",
+]
+
+[tool.pytest.ini_options]
+addopts = [
+  "--import-mode=importlib",
+  "--strict-config",
+  "--strict-markers",
+]
+testpaths = [
+  "tests",
+  "apps/api/tests",
+  "apps/worker/tests",
+  "packages/contracts/tests",
+  "packages/shared-python/tests",
+]
+markers = [
+  "anyio: mark test as async test using anyio",
+  "integration: mark test as integration test",
+]
+
+[tool.ruff]
+target-version = "py314"
+line-length = 100
+extend-exclude = [
+  "artifacts",
+  "compatibility",
+]
+
+[tool.ruff.lint]
+select = ["B", "E", "F", "I", "RUF", "SIM", "UP"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "lf"
+
+[tool.mypy]
+python_version = "3.14"
+plugins = ["pydantic.mypy"]
+mypy_path = [
+  "apps/api",
+  "apps/worker",
+  "packages/contracts/src",
+  "packages/rag-eval/src",
+  "packages/shared-python/src",
+]
+strict = true
+explicit_package_bases = true
+warn_unreachable = true
+show_error_codes = true
+pretty = true
+
+[[tool.mypy.overrides]]
+module = ["celery", "celery.*", "kombu", "kombu.*", "langdetect"]
+disable_error_code = ["import-untyped"]
+ignore_missing_imports = true

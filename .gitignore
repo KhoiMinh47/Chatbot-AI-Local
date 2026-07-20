@@ -1,0 +1,52 @@
+# Local environment and credentials. Keep the documented template tracked.
+.env
+.env.*
+!.env.example
+.secrets/
+*.pem
+*.key
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+dist/
+build/
+*.egg-info/
+
+# Node.js / Next.js
+node_modules/
+.pnpm-store/
+.next/
+out/
+*.tsbuildinfo
+coverage/
+
+# Logs and runtime state
+*.log
+!artifacts/**/*.log
+*.pid
+tmp/
+.cache/
+
+# Editors and operating systems
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Local AI assets must never enter source control.
+models/
+model-cache/
+*.safetensors
+*.gguf
+*.onnx
+*.engine

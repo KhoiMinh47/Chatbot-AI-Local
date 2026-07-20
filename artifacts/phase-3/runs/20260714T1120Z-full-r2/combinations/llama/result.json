@@ -1,0 +1,46 @@
+{
+  "status": "pass",
+  "scope": {
+    "llm_candidate": "llama",
+    "candidates": [
+      "llama",
+      "embedding-300m",
+      "reranking-500m"
+    ],
+    "concurrent_smoke": true,
+    "concurrent_bounded_load": true,
+    "llm_load_requirement": "core matrix includes rag-8k-c4 at concurrency 4",
+    "measured_requests_per_scenario": 4,
+    "warmup_requests_per_scenario": 1
+  },
+  "checks": {
+    "no_oom": {
+      "status": "pass"
+    },
+    "load": {
+      "status": "pass"
+    },
+    "restart": {
+      "status": "pass"
+    },
+    "health": {
+      "status": "pass"
+    },
+    "telemetry": {
+      "status": "pass"
+    },
+    "logs": {
+      "status": "pass"
+    },
+    "cleanup": {
+      "status": "pass"
+    }
+  },
+  "details": {
+    "container_states": "container-states.jsonl",
+    "telemetry_validation": "telemetry-validation.json",
+    "concurrent_smoke": "concurrent-smoke.json",
+    "concurrent_load": "concurrent-load.json",
+    "sensitive_log_matches_persisted": false
+  }
+}

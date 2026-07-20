@@ -1,0 +1,4 @@
+Using Python 3.14.5 environment at: /tmp/ntc-rag-python314
+Checked 180 packages in 1ms
+Found 1 incompatibility
+The package `nvidia-cusparselt-cu13` was built for a different platform

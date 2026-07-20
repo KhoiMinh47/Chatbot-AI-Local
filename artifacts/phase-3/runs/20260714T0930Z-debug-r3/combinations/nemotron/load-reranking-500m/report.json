@@ -1,0 +1,214 @@
+{
+  "candidate": {
+    "candidate_id": "reranking-500m",
+    "image_digest": {
+      "evidence_source": "operator_cli_not_independently_verified_by_runner",
+      "value": "sha256:3e39d44bdb3dd683d6a2ac8d7689b484aee6c18dc7e00c2064f19501742720f3"
+    },
+    "image_ref": {
+      "evidence_source": "operator_cli_not_independently_verified_by_runner",
+      "value": "nvcr.io/nim/nvidia/llama-nemotron-rerank-500m-v2:1.1@sha256:3e39d44bdb3dd683d6a2ac8d7689b484aee6c18dc7e00c2064f19501742720f3"
+    },
+    "license_id": {
+      "evidence_source": "operator_cli_not_independently_verified_by_runner",
+      "value": "nvidia-community-model-license"
+    },
+    "requested_model_id": "nvidia/llama-nemotron-rerank-500m-v2"
+  },
+  "completed_at_utc": "2026-07-14T09:51:43.792540+00:00",
+  "contract_check": {
+    "http_statuses": {
+      "health_live": 200,
+      "health_ready": 200,
+      "models": 200
+    },
+    "metrics": {
+      "http_status": 200,
+      "non_empty": true,
+      "probe_error_code": null,
+      "required": false,
+      "status": "available"
+    },
+    "requested_model_present": true,
+    "served_model_id_observed": "nvidia/llama-nemotron-rerank-500m-v2",
+    "status": "pass"
+  },
+  "fixture": {
+    "classification": "synthetic_non_sensitive",
+    "schema_version": 1,
+    "sha256": "bab653bfa83cbd603b72178aa0046bc96fd27573eb47cbfb7819c9562d2435ec"
+  },
+  "kind": "reranking",
+  "metadata_completeness": {
+    "status": "complete",
+    "unverified_or_missing_fields": []
+  },
+  "metric_definitions": {
+    "decode_duration_seconds": "first non-empty streamed generated-token delta to last non-empty generated-token delta; content and reasoning_content are timed but never persisted",
+    "decode_tokens_per_second": "response-reported completion_tokens divided by decode_duration_seconds",
+    "input_token_target_check": "every response-reported prompt-token count must stay within 80-120% for short/RAG scenarios; for long-context capability scenarios every observed prompt_tokens plus max_output_tokens must be between target_context_tokens minus 512 and target_context_tokens inclusive",
+    "long_context_targets": "32K/64K/128K are total-context capability targets; synthetic input reserves max output plus 256 tokens for chat-template safety",
+    "output_token_target_check": "synthetic LLM benchmark requests use the fixed non-configurable ignore_eos=true control, and every warmup and measured response-reported completion_tokens count must exactly equal the scenario max_output_tokens; this control is not used by smoke or quality requests",
+    "scope": "client-observed engine HTTP latency, measured immediately before request dispatch; not server/backend receive time and not auth/retrieval/rerank/end-to-end application latency",
+    "token_counts": "actual response usage only; missing usage is a failed LLM measurement",
+    "total_latency_seconds": "request start to HTTP stream completion",
+    "ttft_seconds": "client timestamp immediately before HTTP request dispatch to first non-empty streamed generated-token delta (content or reasoning_content)"
+  },
+  "run_config": {
+    "base_url_persisted": false,
+    "credentials_persisted": false,
+    "long_context_opt_in": false,
+    "measured_requests_per_scenario": 4,
+    "measured_runtime_state": "warm_after_runner_warmup",
+    "metrics_required": false,
+    "reasoning_control_mode": null,
+    "seed": 17,
+    "system_prompt_persisted": false,
+    "timeout_seconds": 600.0,
+    "warmup_requests_per_scenario": 1
+  },
+  "run_duration_seconds": 0.7095169180101948,
+  "runtime": {
+    "max_model_length": {
+      "evidence_source": "operator_cli_not_independently_verified_by_runner",
+      "value": 4096
+    },
+    "metadata_warning": "CLI-declared runtime fields are retained as declarations; the runner does not infer profile, precision, NIM version, or max length from model/image names.",
+    "nim_version": {
+      "evidence_source": "operator_cli_not_independently_verified_by_runner",
+      "value": "1.10.0"
+    },
+    "precision": {
+      "evidence_source": "operator_cli_not_independently_verified_by_runner",
+      "value": "ONNX-FP16"
+    },
+    "profile": {
+      "evidence_source": "operator_cli_not_independently_verified_by_runner",
+      "value": "f7391ddbcb95b2406853526b8e489fedf20083a2420563ca3e65358ff417b10f"
+    },
+    "served_model_id": {
+      "evidence_source": "observed_get_v1_models",
+      "value": "nvidia/llama-nemotron-rerank-500m-v2"
+    }
+  },
+  "scenarios": [
+    {
+      "name": "reranking-passages-2",
+      "summary": {
+        "aggregate_completion_tokens_per_second": null,
+        "completion_tokens_actual": {
+          "observed_count": 0,
+          "p50": null,
+          "p95": null
+        },
+        "concurrency": 1,
+        "decode_duration_seconds": {
+          "observed_count": 0,
+          "p50": null,
+          "p95": null
+        },
+        "decode_tokens_per_second": {
+          "observed_count": 0,
+          "p50": null,
+          "p95": null
+        },
+        "error_counts": {},
+        "failure_count": 0,
+        "passage_count": 2,
+        "percentile_method": "linear_interpolation_rank_(n_minus_1)_times_q",
+        "prompt_tokens_actual": {
+          "observed_count": 4,
+          "p50": 58.0,
+          "p95": 58.0
+        },
+        "request_count": 4,
+        "requests_per_second": 50.34758271799785,
+        "status": "pass",
+        "success_count": 4,
+        "total_latency_seconds": {
+          "observed_count": 4,
+          "p50": 0.019279207990621217,
+          "p95": 0.021806619298877193
+        },
+        "total_tokens_actual": {
+          "observed_count": 4,
+          "p50": 58.0,
+          "p95": 58.0
+        },
+        "ttft_seconds": {
+          "observed_count": 0,
+          "p50": null,
+          "p95": null
+        },
+        "wall_seconds": 0.07944770700123627,
+        "warmup_failure_count": 0,
+        "warmup_required_count": 1
+      }
+    },
+    {
+      "name": "reranking-passages-16",
+      "summary": {
+        "aggregate_completion_tokens_per_second": null,
+        "completion_tokens_actual": {
+          "observed_count": 0,
+          "p50": null,
+          "p95": null
+        },
+        "concurrency": 1,
+        "decode_duration_seconds": {
+          "observed_count": 0,
+          "p50": null,
+          "p95": null
+        },
+        "decode_tokens_per_second": {
+          "observed_count": 0,
+          "p50": null,
+          "p95": null
+        },
+        "error_counts": {},
+        "failure_count": 0,
+        "passage_count": 16,
+        "percentile_method": "linear_interpolation_rank_(n_minus_1)_times_q",
+        "prompt_tokens_actual": {
+          "observed_count": 4,
+          "p50": 464.0,
+          "p95": 464.0
+        },
+        "request_count": 4,
+        "requests_per_second": 8.791403805855749,
+        "status": "pass",
+        "success_count": 4,
+        "total_latency_seconds": {
+          "observed_count": 4,
+          "p50": 0.10086433100514114,
+          "p95": 0.17905845244313237
+        },
+        "total_tokens_actual": {
+          "observed_count": 4,
+          "p50": 464.0,
+          "p95": 464.0
+        },
+        "ttft_seconds": {
+          "observed_count": 0,
+          "p50": null,
+          "p95": null
+        },
+        "wall_seconds": 0.45498990699707065,
+        "warmup_failure_count": 0,
+        "warmup_required_count": 1
+      }
+    }
+  ],
+  "schema_version": 2,
+  "semantic_check": {
+    "fixture_id": "vi-capital-positive-vs-negative",
+    "ordered_indices": [
+      0,
+      1
+    ],
+    "quality_scope": "basic_semantic_sanity_only_not_phase5_retrieval_eval",
+    "status": "pass"
+  },
+  "started_at_utc": "2026-07-14T09:51:43.083041+00:00",
+  "status": "pass"
+}

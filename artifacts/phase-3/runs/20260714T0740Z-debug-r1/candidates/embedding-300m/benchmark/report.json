@@ -1,0 +1,35 @@
+{
+  "candidate": {
+    "candidate_id": "embedding-300m",
+    "image_digest": {
+      "evidence_source": "operator_cli_not_independently_verified_by_runner",
+      "value": "sha256:1f0a7fc168919d7b84bb4edfb4a4da0c5828d11ee284f9fb8113242b3b35cbb4"
+    },
+    "image_ref": {
+      "evidence_source": "operator_cli_not_independently_verified_by_runner",
+      "value": "nvcr.io/nim/nvidia/llama-nemotron-embed-300m-v2:1.13.0@sha256:1f0a7fc168919d7b84bb4edfb4a4da0c5828d11ee284f9fb8113242b3b35cbb4"
+    },
+    "license_id": {
+      "evidence_source": "operator_cli_not_independently_verified_by_runner",
+      "value": "nvidia-open-model-license"
+    },
+    "requested_model_id": "nvidia/llama-nemotron-embed-300m-v2"
+  },
+  "completed_at_utc": "2026-07-14T07:50:07.098219+00:00",
+  "failure": {
+    "detail_persisted": false,
+    "error_code": "invalid_usage_token_counts"
+  },
+  "fixture": {
+    "classification": "synthetic_non_sensitive",
+    "schema_version": 1,
+    "sha256": "8cc16c6e7283c4435ffd6fc98a27ca6b9cf4108eb72efc98eeb536466466e5dd"
+  },
+  "kind": "embedding",
+  "run_config": {
+    "base_url_persisted": false,
+    "credentials_persisted": false
+  },
+  "schema_version": 1,
+  "status": "fail"
+}

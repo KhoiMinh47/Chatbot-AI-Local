@@ -1,0 +1,14 @@
+[project]
+name = "ntc-shared-python"
+version = "0.1.0"
+description = "Dependency-light Python primitives shared by NTC services"
+requires-python = ">=3.14,<3.15"
+dependencies = []
+
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/ntc_shared"]
+

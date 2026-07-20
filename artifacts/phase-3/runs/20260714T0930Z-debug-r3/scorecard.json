@@ -1,0 +1,627 @@
+{
+  "decision": {
+    "embedding_winner": "not_selected",
+    "llm_winner": "not_selected",
+    "phase3_winner_claimed": false,
+    "reranker_selection": "not_selected"
+  },
+  "generated_at_utc": "2026-07-14T09:57:30.421974+00:00",
+  "llm_scorecard": {
+    "candidates": {
+      "llama": {
+        "components": {
+          "correctness_vi_en": {
+            "evidence": {
+              "en_score": 0.8,
+              "vi_score": 1.0
+            },
+            "reason": "deterministic_quality_rules_human_review_required",
+            "score": 0.9,
+            "status": "automatic_provisional",
+            "weight": 0.25,
+            "weighted_points": 0.225
+          },
+          "faithfulness_and_citation": {
+            "reason": "deterministic_quality_rules_human_review_required",
+            "score": 0.75,
+            "status": "automatic_provisional",
+            "weight": 0.25,
+            "weighted_points": 0.1875
+          },
+          "memory_and_concurrency": {
+            "reason": "memory_or_combination_evidence_pending",
+            "score": null,
+            "status": "pending",
+            "weight": 0.1,
+            "weighted_points": null
+          },
+          "operations_license_nim_compatibility": {
+            "reason": "exact_runtime_contract_and_reviewed_license_evidence",
+            "score": 1.0,
+            "status": "automatic_provisional",
+            "weight": 0.1,
+            "weighted_points": 0.1
+          },
+          "rag_instruction_following": {
+            "reason": "deterministic_quality_rules_human_review_required",
+            "score": 1.0,
+            "status": "automatic_provisional",
+            "weight": 0.1,
+            "weighted_points": 0.1
+          },
+          "ttft_and_decode_throughput": {
+            "reason": "canonical_benchmark_metadata_or_workload_invalid",
+            "score": null,
+            "status": "pending",
+            "weight": 0.2,
+            "weighted_points": null
+          }
+        },
+        "memory_and_concurrency": {
+          "checks": {
+            "combination_cleanup": "pass",
+            "combination_health": "pass",
+            "combination_load": "pass",
+            "combination_logs": "pass",
+            "combination_no_oom": "pass",
+            "combination_restart": "pass",
+            "combination_telemetry": "pass",
+            "rag_8k_c4_input_output_concurrency_gate": "pending"
+          },
+          "combination_evidence_status": "present"
+        },
+        "operations_license_nim_compatibility": {
+          "checks": {
+            "benchmark_contract": "pass",
+            "exact_image_digest_pin": "pass",
+            "license_evidence_matches": "pass",
+            "live_exact_runtime_profile": "pass",
+            "metadata_complete": "pass",
+            "runtime_fields_complete": "pass"
+          },
+          "identity_binding": {
+            "reason": "quality_benchmark_runtime_identity_cross_bound",
+            "source_status": {
+              "benchmark": "present",
+              "quality": "present",
+              "runtime_verification": "present"
+            },
+            "status": "pass"
+          },
+          "legal_approval": {
+            "automatic_evidence_is_legal_approval": false,
+            "status": "pending"
+          },
+          "runtime_verification_status": "pass",
+          "source_status": {
+            "benchmark": "present",
+            "legacy_license_declaration_not_scored": "present",
+            "legacy_runtime_declaration_not_scored": "present",
+            "runtime_verification": "present"
+          }
+        },
+        "performance": {
+          "comparison_status": "pending",
+          "core_scenarios": {},
+          "eligibility_status": "pending",
+          "full_six_scenario_readiness_gate": "pending",
+          "reason": "canonical_benchmark_metadata_or_workload_invalid"
+        },
+        "provisional_weighted_total": {
+          "automatic_only": true,
+          "decision_blockers": [
+            "one_or_more_weighted_components_pending",
+            "human_review_pending",
+            "legal_approval_pending"
+          ],
+          "eligible_for_winner": false,
+          "partial_weighted_points": 0.6125,
+          "score": null,
+          "status": "pending_incomplete",
+          "weight_coverage": 0.7
+        },
+        "quality": {
+          "automatic_hard_gate": "passed",
+          "components": {
+            "correctness_vi_en": {
+              "evidence": {
+                "en_score": 0.8,
+                "vi_score": 1.0
+              },
+              "reason": "deterministic_quality_rules_human_review_required",
+              "score": 0.9,
+              "status": "automatic_provisional",
+              "weight": 0.25,
+              "weighted_points": 0.225
+            },
+            "faithfulness_and_citation": {
+              "reason": "deterministic_quality_rules_human_review_required",
+              "score": 0.75,
+              "status": "automatic_provisional",
+              "weight": 0.25,
+              "weighted_points": 0.1875
+            },
+            "rag_instruction_following": {
+              "reason": "deterministic_quality_rules_human_review_required",
+              "score": 1.0,
+              "status": "automatic_provisional",
+              "weight": 0.1,
+              "weighted_points": 0.1
+            }
+          },
+          "human_review": {
+            "decision_eligible": false,
+            "required": true,
+            "status": "pending"
+          },
+          "identity_binding": {
+            "reason": "quality_benchmark_runtime_identity_cross_bound",
+            "source_status": {
+              "benchmark": "present",
+              "quality": "present",
+              "runtime_verification": "present"
+            },
+            "status": "pass"
+          },
+          "report_status": "completed",
+          "source_status": "present"
+        }
+      },
+      "nemotron": {
+        "components": {
+          "correctness_vi_en": {
+            "evidence": {
+              "en_score": 0.9,
+              "vi_score": 1.0
+            },
+            "reason": "deterministic_quality_rules_human_review_required",
+            "score": 0.95,
+            "status": "automatic_provisional",
+            "weight": 0.25,
+            "weighted_points": 0.2375
+          },
+          "faithfulness_and_citation": {
+            "reason": "deterministic_quality_rules_human_review_required",
+            "score": 0.95,
+            "status": "automatic_provisional",
+            "weight": 0.25,
+            "weighted_points": 0.2375
+          },
+          "memory_and_concurrency": {
+            "reason": "memory_or_combination_evidence_pending",
+            "score": null,
+            "status": "pending",
+            "weight": 0.1,
+            "weighted_points": null
+          },
+          "operations_license_nim_compatibility": {
+            "reason": "exact_runtime_contract_and_reviewed_license_evidence",
+            "score": 1.0,
+            "status": "automatic_provisional",
+            "weight": 0.1,
+            "weighted_points": 0.1
+          },
+          "rag_instruction_following": {
+            "reason": "deterministic_quality_rules_human_review_required",
+            "score": 1.0,
+            "status": "automatic_provisional",
+            "weight": 0.1,
+            "weighted_points": 0.1
+          },
+          "ttft_and_decode_throughput": {
+            "reason": "canonical_benchmark_metadata_or_workload_invalid",
+            "score": null,
+            "status": "pending",
+            "weight": 0.2,
+            "weighted_points": null
+          }
+        },
+        "memory_and_concurrency": {
+          "checks": {
+            "combination_cleanup": "pass",
+            "combination_health": "pass",
+            "combination_load": "pass",
+            "combination_logs": "pass",
+            "combination_no_oom": "pass",
+            "combination_restart": "pass",
+            "combination_telemetry": "pass",
+            "rag_8k_c4_input_output_concurrency_gate": "pending"
+          },
+          "combination_evidence_status": "present"
+        },
+        "operations_license_nim_compatibility": {
+          "checks": {
+            "benchmark_contract": "pass",
+            "exact_image_digest_pin": "pass",
+            "license_evidence_matches": "pass",
+            "live_exact_runtime_profile": "pass",
+            "metadata_complete": "pass",
+            "runtime_fields_complete": "pass"
+          },
+          "identity_binding": {
+            "reason": "quality_benchmark_runtime_identity_cross_bound",
+            "source_status": {
+              "benchmark": "present",
+              "quality": "present",
+              "runtime_verification": "present"
+            },
+            "status": "pass"
+          },
+          "legal_approval": {
+            "automatic_evidence_is_legal_approval": false,
+            "status": "pending"
+          },
+          "runtime_verification_status": "pass",
+          "source_status": {
+            "benchmark": "present",
+            "legacy_license_declaration_not_scored": "present",
+            "legacy_runtime_declaration_not_scored": "present",
+            "runtime_verification": "present"
+          }
+        },
+        "performance": {
+          "comparison_status": "pending",
+          "core_scenarios": {},
+          "eligibility_status": "pending",
+          "full_six_scenario_readiness_gate": "pending",
+          "reason": "canonical_benchmark_metadata_or_workload_invalid"
+        },
+        "provisional_weighted_total": {
+          "automatic_only": true,
+          "decision_blockers": [
+            "one_or_more_weighted_components_pending",
+            "human_review_pending",
+            "legal_approval_pending"
+          ],
+          "eligible_for_winner": false,
+          "partial_weighted_points": 0.675,
+          "score": null,
+          "status": "pending_incomplete",
+          "weight_coverage": 0.7
+        },
+        "quality": {
+          "automatic_hard_gate": "passed",
+          "components": {
+            "correctness_vi_en": {
+              "evidence": {
+                "en_score": 0.9,
+                "vi_score": 1.0
+              },
+              "reason": "deterministic_quality_rules_human_review_required",
+              "score": 0.95,
+              "status": "automatic_provisional",
+              "weight": 0.25,
+              "weighted_points": 0.2375
+            },
+            "faithfulness_and_citation": {
+              "reason": "deterministic_quality_rules_human_review_required",
+              "score": 0.95,
+              "status": "automatic_provisional",
+              "weight": 0.25,
+              "weighted_points": 0.2375
+            },
+            "rag_instruction_following": {
+              "reason": "deterministic_quality_rules_human_review_required",
+              "score": 1.0,
+              "status": "automatic_provisional",
+              "weight": 0.1,
+              "weighted_points": 0.1
+            }
+          },
+          "human_review": {
+            "decision_eligible": false,
+            "required": true,
+            "status": "pending"
+          },
+          "identity_binding": {
+            "reason": "quality_benchmark_runtime_identity_cross_bound",
+            "source_status": {
+              "benchmark": "present",
+              "quality": "present",
+              "runtime_verification": "present"
+            },
+            "status": "pass"
+          },
+          "report_status": "completed",
+          "source_status": "present"
+        }
+      }
+    },
+    "performance_normalization": {
+      "range": [
+        0.0,
+        1.0
+      ],
+      "relative_best_only": true,
+      "requires_all_core_input_and_output_token_gates": true,
+      "requires_at_least_two_comparable_candidates": true
+    },
+    "selection": {
+      "automatic_winner_selection": false,
+      "reason": "human_review_pending_and_automatic_selection_forbidden",
+      "status": "not_selected",
+      "winner_candidate_id": null
+    },
+    "status": "automatic_provisional_human_decision_pending"
+  },
+  "metric_scope": {
+    "decode_throughput": "response-reported completion tokens divided by client-observed time from first to last non-empty generated-token delta",
+    "total_latency": "direct NIM HTTP request-dispatch to stream completion; not application end-to-end RAG latency",
+    "ttft": "client-observed request-dispatch to first non-empty generated-token delta; an upper-bound proxy, not backend-receive TTFT"
+  },
+  "phase": 3,
+  "retrieval_scorecard": {
+    "embedding_comparison": {
+      "candidates": {
+        "bge-m3": {
+          "components": {
+            "latency_and_throughput": {
+              "score": null,
+              "status": "pending_phase5_retrieval_evaluation",
+              "weight": 0.1,
+              "weighted_points": null
+            },
+            "memory_and_operations": {
+              "score": null,
+              "status": "pending_phase5_retrieval_evaluation",
+              "weight": 0.1,
+              "weighted_points": null
+            },
+            "mrr_at_10": {
+              "score": null,
+              "status": "pending_phase5_retrieval_evaluation",
+              "weight": 0.2,
+              "weighted_points": null
+            },
+            "ndcg_at_10": {
+              "score": null,
+              "status": "pending_phase5_retrieval_evaluation",
+              "weight": 0.15,
+              "weighted_points": null
+            },
+            "recall_at_10": {
+              "score": null,
+              "status": "pending_phase5_retrieval_evaluation",
+              "weight": 0.3,
+              "weighted_points": null
+            },
+            "vietnamese_and_tables": {
+              "score": null,
+              "status": "pending_phase5_retrieval_evaluation",
+              "weight": 0.15,
+              "weighted_points": null
+            }
+          },
+          "evidence": {
+            "access": {
+              "access_status": "blocked",
+              "exact_pinned_runtime_available": false,
+              "http_status": 402,
+              "source_status": "present"
+            }
+          },
+          "provisional_weighted_total": {
+            "eligible_for_winner": false,
+            "score": null,
+            "status": "pending_phase5_retrieval_evaluation",
+            "weight_coverage": 0.0
+          },
+          "role": "embedding_challenger"
+        },
+        "embedding-300m": {
+          "components": {
+            "latency_and_throughput": {
+              "score": null,
+              "status": "pending_phase5_retrieval_evaluation",
+              "weight": 0.1,
+              "weighted_points": null
+            },
+            "memory_and_operations": {
+              "score": null,
+              "status": "pending_phase5_retrieval_evaluation",
+              "weight": 0.1,
+              "weighted_points": null
+            },
+            "mrr_at_10": {
+              "score": null,
+              "status": "pending_phase5_retrieval_evaluation",
+              "weight": 0.2,
+              "weighted_points": null
+            },
+            "ndcg_at_10": {
+              "score": null,
+              "status": "pending_phase5_retrieval_evaluation",
+              "weight": 0.15,
+              "weighted_points": null
+            },
+            "recall_at_10": {
+              "score": null,
+              "status": "pending_phase5_retrieval_evaluation",
+              "weight": 0.3,
+              "weighted_points": null
+            },
+            "vietnamese_and_tables": {
+              "score": null,
+              "status": "pending_phase5_retrieval_evaluation",
+              "weight": 0.15,
+              "weighted_points": null
+            }
+          },
+          "evidence": {
+            "engine": {
+              "benchmark_status": "pass",
+              "contract_status": "pass",
+              "identity_binding": {
+                "reason": "benchmark_runtime_identity_cross_bound",
+                "source_status": {
+                  "benchmark": "present",
+                  "runtime_verification": "present"
+                },
+                "status": "pass"
+              },
+              "latency_observations": [
+                {
+                  "name": "embedding-batch-1",
+                  "p50_seconds": 0.010227356993709691,
+                  "p95_seconds": 0.010227356993709691
+                },
+                {
+                  "name": "embedding-batch-16",
+                  "p50_seconds": 0.04549227299867198,
+                  "p95_seconds": 0.04549227299867198
+                }
+              ],
+              "legal_approval_status": "pending",
+              "live_runtime_identity_verified": true,
+              "metadata_status": "complete",
+              "phase5_retrieval_quality_claimed": false,
+              "reviewed_license_evidence_verified": true,
+              "runtime_verification_status": "pass",
+              "semantic_sanity_status": "pass",
+              "source_status": {
+                "benchmark": "present",
+                "legacy_license_declaration_not_scored": "present",
+                "legacy_runtime_declaration_not_scored": "present",
+                "runtime_verification": "present"
+              }
+            }
+          },
+          "provisional_weighted_total": {
+            "eligible_for_winner": false,
+            "score": null,
+            "status": "pending_phase5_retrieval_evaluation",
+            "weight_coverage": 0.0
+          },
+          "role": "embedding_baseline"
+        }
+      },
+      "selection": {
+        "reason": "phase5_metrics_missing_and_bge_exact_runtime_may_be_blocked",
+        "status": "not_selected",
+        "winner_candidate_id": null
+      }
+    },
+    "phase3_design_gate": {
+      "reason": "the master plan requires an under-1B embedding winner in Phase 3, but BGE-M3 exact runtime access is blocked and the current retrieval quality metric workflow is scheduled for Phase 5",
+      "status": "blocked",
+      "winner_selection_possible_from_current_phase3_evidence": false
+    },
+    "reranking_evaluation": {
+      "candidates": {
+        "reranking-500m": {
+          "components": {
+            "latency_and_throughput": {
+              "score": null,
+              "status": "pending_phase5_retrieval_evaluation",
+              "weight": 0.1,
+              "weighted_points": null
+            },
+            "memory_and_operations": {
+              "score": null,
+              "status": "pending_phase5_retrieval_evaluation",
+              "weight": 0.1,
+              "weighted_points": null
+            },
+            "mrr_at_10": {
+              "score": null,
+              "status": "pending_phase5_retrieval_evaluation",
+              "weight": 0.2,
+              "weighted_points": null
+            },
+            "ndcg_at_10": {
+              "score": null,
+              "status": "pending_phase5_retrieval_evaluation",
+              "weight": 0.15,
+              "weighted_points": null
+            },
+            "recall_at_10": {
+              "score": null,
+              "status": "pending_phase5_retrieval_evaluation",
+              "weight": 0.3,
+              "weighted_points": null
+            },
+            "vietnamese_and_tables": {
+              "score": null,
+              "status": "pending_phase5_retrieval_evaluation",
+              "weight": 0.15,
+              "weighted_points": null
+            }
+          },
+          "evidence": {
+            "engine": {
+              "benchmark_status": "pass",
+              "contract_status": "pass",
+              "identity_binding": {
+                "reason": "benchmark_runtime_identity_cross_bound",
+                "source_status": {
+                  "benchmark": "present",
+                  "runtime_verification": "present"
+                },
+                "status": "pass"
+              },
+              "latency_observations": [
+                {
+                  "name": "reranking-passages-2",
+                  "p50_seconds": 0.014140697996481322,
+                  "p95_seconds": 0.014140697996481322
+                },
+                {
+                  "name": "reranking-passages-16",
+                  "p50_seconds": 0.049977011993178166,
+                  "p95_seconds": 0.049977011993178166
+                }
+              ],
+              "legal_approval_status": "pending",
+              "live_runtime_identity_verified": true,
+              "metadata_status": "complete",
+              "phase5_retrieval_quality_claimed": false,
+              "reviewed_license_evidence_verified": true,
+              "runtime_verification_status": "pass",
+              "semantic_sanity_status": "pass",
+              "source_status": {
+                "benchmark": "present",
+                "legacy_license_declaration_not_scored": "present",
+                "legacy_runtime_declaration_not_scored": "present",
+                "runtime_verification": "present"
+              }
+            }
+          },
+          "provisional_weighted_total": {
+            "eligible_for_winner": false,
+            "score": null,
+            "status": "pending_phase5_retrieval_evaluation",
+            "weight_coverage": 0.0
+          },
+          "role": "reranker_baseline"
+        }
+      },
+      "selection": {
+        "reason": "phase5_reranking_metrics_and_challenger_comparison_missing",
+        "status": "not_selected",
+        "winner_candidate_id": null
+      }
+    },
+    "status": "pending_phase5_metrics_and_bge_runtime"
+  },
+  "schema_version": 2,
+  "scope": "Phase 3 supplied-context quality, direct NIM engine performance, runtime, and license evidence; no Phase 4 ingestion or Phase 5 retrieval-quality claim",
+  "sensitive_content_persisted": false,
+  "weights": {
+    "llm": {
+      "correctness_vi_en": 0.25,
+      "faithfulness_and_citation": 0.25,
+      "memory_and_concurrency": 0.1,
+      "operations_license_nim_compatibility": 0.1,
+      "rag_instruction_following": 0.1,
+      "ttft_and_decode_throughput": 0.2
+    },
+    "retrieval": {
+      "latency_and_throughput": 0.1,
+      "memory_and_operations": 0.1,
+      "mrr_at_10": 0.2,
+      "ndcg_at_10": 0.15,
+      "recall_at_10": 0.3,
+      "vietnamese_and_tables": 0.15
+    }
+  }
+}

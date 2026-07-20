@@ -1,0 +1,102 @@
+name: Backend Release
+
+on:
+  push:
+    tags:
+      - "backend-v*"
+  workflow_dispatch:
+
+concurrency:
+  group: backend-release-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  verify-backend:
+    name: Verify backend before release
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: |
+            backend/requirements.txt
+            parse-data/requirements.txt
+            embedding/requirements.txt
+            prometheus-collector/requirements.txt
+
+      - name: Install dependencies and scanners
+        run: |
+          set -euo pipefail
+          python -m pip install --upgrade pip setuptools wheel
+          python -m pip install -r backend/requirements.txt
+          python -m pip install -r parse-data/requirements.txt
+          python -m pip install -r embedding/requirements.txt
+          python -m pip install -r prometheus-collector/requirements.txt
+          python -m pip install bandit pip-audit
+
+      - name: Python compile check
+        run: python -m compileall backend parse-data embedding prometheus-collector
+
+      - name: Dependency check
+        run: python -m pip check
+
+      - name: Bandit scan
+        run: bandit -r backend -lll -iii
+
+      - name: Python dependency audit
+        run: pip-audit -r backend/requirements.txt
+
+  build-and-push-backend-images:
+    name: Build and push backend images
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    needs: verify-backend
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set image metadata
+        run: |
+          echo "IMAGE_BASE=ghcr.io/${{ github.repository_owner }}/rag-chat-backend" >> $GITHUB_ENV
+          echo "IMAGE_TAG=${GITHUB_REF_NAME}" >> $GITHUB_ENV
+
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@v3
+
+      - name: Setup Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Login to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and push AMD64 image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: docker/rag_chatbot_server_backend_amd.Dockerfile
+          push: true
+          platforms: linux/amd64
+          tags: ${{ env.IMAGE_BASE }}:${{ env.IMAGE_TAG }}-amd64
+
+      - name: Build and push ARM64 image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: docker/rag_chatbot_server_backend_arm.Dockerfile
+          push: true
+          platforms: linux/arm64
+          tags: ${{ env.IMAGE_BASE }}:${{ env.IMAGE_TAG }}-arm64

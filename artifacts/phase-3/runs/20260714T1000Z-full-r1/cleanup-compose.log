@@ -1,0 +1,6 @@
+ Container ntc-rag-phase3-nim-llm-nemotron-1  Stopping
+ Container ntc-rag-phase3-nim-llm-nemotron-1  Stopped
+ Container ntc-rag-phase3-nim-llm-nemotron-1  Removing
+ Container ntc-rag-phase3-nim-llm-nemotron-1  Removed
+ Network ntc-rag-phase3_runtime  Removing
+ Network ntc-rag-phase3_runtime  Removed

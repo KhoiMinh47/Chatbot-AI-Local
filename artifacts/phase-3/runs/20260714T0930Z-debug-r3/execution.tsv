@@ -1,0 +1,11 @@
+preexisting-container-gate	pass	docker project label query
+compose-static-gate	pass	compose-check.log
+secret-gate	pass	secret-check.log
+image-gate	pass	image-check.log
+bge-m3-access-gate	blocked	bge-m3-access.json
+cache-staging	skipped	existing staged-cache markers required by runtime wrapper
+target-service-combination-llama	pass	combinations/llama/result.json
+target-service-combination-nemotron	pass	combinations/nemotron/result.json
+scorecard	pass	scorecard.json
+final-cleanup	pass	cleanup.json
+exact-secret-artifact-scan	pass	secret-artifact-scan.json

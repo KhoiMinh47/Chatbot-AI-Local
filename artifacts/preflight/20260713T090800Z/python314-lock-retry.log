@@ -1,0 +1,4 @@
+Using CPython 3.14.5
+WARN Fixing invalid version specifier by removing stray quotes (before: `>= '2.7'`; after: `>= 2.7`)
+WARN Fixing invalid version specifier by removing stray quotes (before: `>= '2.7'`; after: `>= 2.7`)
+Resolved 183 packages in 6m 42s

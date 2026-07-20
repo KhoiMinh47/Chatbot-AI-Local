@@ -1,0 +1,9 @@
+kind,scenario,request_index,concurrency,status,error_code,target_context_tokens,target_input_tokens,max_output_tokens,prompt_tokens_actual,completion_tokens_actual,total_tokens_actual,ttft_seconds,decode_duration_seconds,decode_tokens_per_second,total_latency_seconds,batch_size,passage_count,vector_dimension_observed,response_model_observed
+embedding,embedding-batch-1,0,1,ok,,,,,17,,17,,,,0.029292622028151527,1,,2048,nvidia/llama-nemotron-embed-300m-v2
+embedding,embedding-batch-1,1,1,ok,,,,,17,,17,,,,0.025218966999091208,1,,2048,nvidia/llama-nemotron-embed-300m-v2
+embedding,embedding-batch-1,2,1,ok,,,,,17,,17,,,,0.020563666010275483,1,,2048,nvidia/llama-nemotron-embed-300m-v2
+embedding,embedding-batch-1,3,1,ok,,,,,17,,17,,,,0.027935457008425146,1,,2048,nvidia/llama-nemotron-embed-300m-v2
+embedding,embedding-batch-16,0,1,ok,,,,,272,,272,,,,0.1378873700159602,16,,2048,nvidia/llama-nemotron-embed-300m-v2
+embedding,embedding-batch-16,1,1,ok,,,,,272,,272,,,,0.13716250800644048,16,,2048,nvidia/llama-nemotron-embed-300m-v2
+embedding,embedding-batch-16,2,1,ok,,,,,272,,272,,,,0.14104785901145078,16,,2048,nvidia/llama-nemotron-embed-300m-v2
+embedding,embedding-batch-16,3,1,ok,,,,,272,,272,,,,0.1378090989892371,16,,2048,nvidia/llama-nemotron-embed-300m-v2

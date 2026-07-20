@@ -1,0 +1,6 @@
+AC-01	blocked	four available candidates have health/sample/report; BGE-M3 live HTTP 402 has no exact reviewed runtime
+AC-02	fail	required 32K/64K/128K long-context evidence was not run in reduced debug; context acceptance and LLM winner are not evaluated
+AC-03	fail	debug workload does not meet master-plan minimum
+AC-04	blocked	Embed 300M is under 1B, but DG-03 BGE-M3 comparison is incomplete (live HTTP 402)
+AC-05	pass	both Llama and Nemotron provisional combinations completed concurrent smoke and bounded concurrent load with Embed 300M + Rerank 500M; all containers stayed healthy with RestartCount=0, OOMKilled=false, clean logs, and valid telemetry
+AC-06	blocked	available candidates have pinned image/license evidence, but BGE-M3 exact image/runtime/license evidence is unavailable

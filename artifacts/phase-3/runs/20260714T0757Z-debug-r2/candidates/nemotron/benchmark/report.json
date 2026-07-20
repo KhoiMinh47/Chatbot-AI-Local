@@ -1,0 +1,289 @@
+{
+  "candidate": {
+    "candidate_id": "nemotron",
+    "image_digest": {
+      "evidence_source": "operator_cli_not_independently_verified_by_runner",
+      "value": "sha256:82028e38ab950edd32f5053ca2030ee14d965e8fd4fe1c6e06468eb0be07a9a4"
+    },
+    "image_ref": {
+      "evidence_source": "operator_cli_not_independently_verified_by_runner",
+      "value": "nvcr.io/nim/nvidia/nvidia-nemotron-nano-9b-v2-dgx-spark:1.0.0-variant@sha256:82028e38ab950edd32f5053ca2030ee14d965e8fd4fe1c6e06468eb0be07a9a4"
+    },
+    "license_id": {
+      "evidence_source": "operator_cli_not_independently_verified_by_runner",
+      "value": "nvidia-open-model-license"
+    },
+    "requested_model_id": "nvidia/nemotron-nano-9b-v2"
+  },
+  "completed_at_utc": "2026-07-14T08:06:20.082908+00:00",
+  "contract_check": {
+    "http_statuses": {
+      "health_live": 200,
+      "health_ready": 200,
+      "models": 200
+    },
+    "metrics": {
+      "http_status": 200,
+      "non_empty": true,
+      "probe_error_code": null,
+      "required": true,
+      "status": "available"
+    },
+    "requested_model_present": true,
+    "served_model_id_observed": "nvidia/nemotron-nano-9b-v2",
+    "status": "pass"
+  },
+  "fixture": {
+    "classification": "synthetic_non_sensitive",
+    "schema_version": 1,
+    "sha256": "f3e0573dc51623578c97ead5e197c0fde2db163f4f6728b142b5f35f4b36b409"
+  },
+  "kind": "llm",
+  "metadata_completeness": {
+    "status": "complete",
+    "unverified_or_missing_fields": []
+  },
+  "metric_definitions": {
+    "decode_duration_seconds": "first non-empty streamed generated-token delta to last non-empty generated-token delta; content and reasoning_content are timed but never persisted",
+    "decode_tokens_per_second": "response-reported completion_tokens divided by decode_duration_seconds",
+    "input_token_target_check": "every response-reported prompt-token count must stay within 80-120% for short/RAG scenarios and 95-105% for long-context capability scenarios",
+    "long_context_targets": "32K/64K/128K are total-context capability targets; synthetic input reserves max output plus 256 tokens for chat-template safety",
+    "scope": "client-observed engine HTTP latency, measured immediately before request dispatch; not server/backend receive time and not auth/retrieval/rerank/end-to-end application latency",
+    "token_counts": "actual response usage only; missing usage is a failed LLM measurement",
+    "total_latency_seconds": "request start to HTTP stream completion",
+    "ttft_seconds": "client timestamp immediately before HTTP request dispatch to first non-empty streamed generated-token delta (content or reasoning_content)"
+  },
+  "run_config": {
+    "base_url_persisted": false,
+    "credentials_persisted": false,
+    "long_context_opt_in": false,
+    "measured_requests_per_scenario": 1,
+    "measured_runtime_state": "warm_after_runner_warmup",
+    "metrics_required": true,
+    "seed": 17,
+    "timeout_seconds": 600.0,
+    "warmup_requests_per_scenario": 1
+  },
+  "run_duration_seconds": 88.47451356699457,
+  "runtime": {
+    "max_model_length": {
+      "evidence_source": "operator_cli_not_independently_verified_by_runner",
+      "value": 131072
+    },
+    "metadata_warning": "CLI-declared runtime fields are retained as declarations; the runner does not infer profile, precision, NIM version, or max length from model/image names.",
+    "nim_version": {
+      "evidence_source": "operator_cli_not_independently_verified_by_runner",
+      "value": "1.0.0"
+    },
+    "precision": {
+      "evidence_source": "operator_cli_not_independently_verified_by_runner",
+      "value": "NVFP4"
+    },
+    "profile": {
+      "evidence_source": "operator_cli_not_independently_verified_by_runner",
+      "value": "f9db61d5a467d46be7733e90a26705798764b93d480c842143d525c1932b01e2"
+    },
+    "served_model_id": {
+      "evidence_source": "observed_get_v1_models",
+      "value": "nvidia/nemotron-nano-9b-v2"
+    }
+  },
+  "scenarios": [
+    {
+      "name": "engine-short-c1",
+      "summary": {
+        "aggregate_completion_tokens_per_second": 26.99258618549455,
+        "completion_tokens_actual": {
+          "observed_count": 1,
+          "p50": 256.0,
+          "p95": 256.0
+        },
+        "concurrency": 1,
+        "decode_duration_seconds": {
+          "observed_count": 1,
+          "p50": 9.363649701990653,
+          "p95": 9.363649701990653
+        },
+        "decode_tokens_per_second": {
+          "observed_count": 1,
+          "p50": 27.33976688017024,
+          "p95": 27.33976688017024
+        },
+        "error_counts": {},
+        "failure_count": 0,
+        "input_token_target_check": {
+          "maximum_ratio": 1.2,
+          "minimum_ratio": 0.8,
+          "observed_prompt_tokens_max": 449.0,
+          "observed_prompt_tokens_min": 449.0,
+          "status": "pass",
+          "target_input_tokens": 512
+        },
+        "max_output_tokens": 256,
+        "percentile_method": "linear_interpolation_rank_(n_minus_1)_times_q",
+        "prompt_tokens_actual": {
+          "observed_count": 1,
+          "p50": 449.0,
+          "p95": 449.0
+        },
+        "request_count": 1,
+        "requests_per_second": 0.10543978978708808,
+        "status": "pass",
+        "success_count": 1,
+        "target_context_tokens": null,
+        "target_input_tokens": 512,
+        "target_vs_actual_p50_ratio": 0.876953125,
+        "total_latency_seconds": {
+          "observed_count": 1,
+          "p50": 9.48308476099919,
+          "p95": 9.48308476099919
+        },
+        "total_tokens_actual": {
+          "observed_count": 1,
+          "p50": 705.0,
+          "p95": 705.0
+        },
+        "ttft_seconds": {
+          "observed_count": 1,
+          "p50": 0.11929366699769162,
+          "p95": 0.11929366699769162
+        },
+        "wall_seconds": 9.484085675998358,
+        "warmup_failure_count": 0
+      }
+    },
+    {
+      "name": "rag-8k-c1",
+      "summary": {
+        "aggregate_completion_tokens_per_second": 22.823765101612715,
+        "completion_tokens_actual": {
+          "observed_count": 1,
+          "p50": 291.0,
+          "p95": 291.0
+        },
+        "concurrency": 1,
+        "decode_duration_seconds": {
+          "observed_count": 1,
+          "p50": 10.801715736000915,
+          "p95": 10.801715736000915
+        },
+        "decode_tokens_per_second": {
+          "observed_count": 1,
+          "p50": 26.940164610158128,
+          "p95": 26.940164610158128
+        },
+        "error_counts": {},
+        "failure_count": 0,
+        "input_token_target_check": {
+          "maximum_ratio": 1.2,
+          "minimum_ratio": 0.8,
+          "observed_prompt_tokens_max": 8140.0,
+          "observed_prompt_tokens_min": 8140.0,
+          "status": "pass",
+          "target_input_tokens": 8192
+        },
+        "max_output_tokens": 512,
+        "percentile_method": "linear_interpolation_rank_(n_minus_1)_times_q",
+        "prompt_tokens_actual": {
+          "observed_count": 1,
+          "p50": 8140.0,
+          "p95": 8140.0
+        },
+        "request_count": 1,
+        "requests_per_second": 0.07843218247976877,
+        "status": "pass",
+        "success_count": 1,
+        "target_context_tokens": null,
+        "target_input_tokens": 8192,
+        "target_vs_actual_p50_ratio": 0.99365234375,
+        "total_latency_seconds": {
+          "observed_count": 1,
+          "p50": 12.749233918992104,
+          "p95": 12.749233918992104
+        },
+        "total_tokens_actual": {
+          "observed_count": 1,
+          "p50": 8431.0,
+          "p95": 8431.0
+        },
+        "ttft_seconds": {
+          "observed_count": 1,
+          "p50": 1.9104419909999706,
+          "p95": 1.9104419909999706
+        },
+        "wall_seconds": 12.749868336992222,
+        "warmup_failure_count": 0
+      }
+    },
+    {
+      "name": "rag-8k-c4",
+      "summary": {
+        "aggregate_completion_tokens_per_second": 22.773546296695496,
+        "completion_tokens_actual": {
+          "observed_count": 1,
+          "p50": 291.0,
+          "p95": 291.0
+        },
+        "concurrency": 4,
+        "decode_duration_seconds": {
+          "observed_count": 1,
+          "p50": 10.826342347005266,
+          "p95": 10.826342347005266
+        },
+        "decode_tokens_per_second": {
+          "observed_count": 1,
+          "p50": 26.87888399173846,
+          "p95": 26.87888399173846
+        },
+        "error_counts": {},
+        "failure_count": 0,
+        "input_token_target_check": {
+          "maximum_ratio": 1.2,
+          "minimum_ratio": 0.8,
+          "observed_prompt_tokens_max": 8140.0,
+          "observed_prompt_tokens_min": 8140.0,
+          "status": "pass",
+          "target_input_tokens": 8192
+        },
+        "max_output_tokens": 512,
+        "percentile_method": "linear_interpolation_rank_(n_minus_1)_times_q",
+        "prompt_tokens_actual": {
+          "observed_count": 1,
+          "p50": 8140.0,
+          "p95": 8140.0
+        },
+        "request_count": 1,
+        "requests_per_second": 0.07825960926699482,
+        "status": "pass",
+        "success_count": 1,
+        "target_context_tokens": null,
+        "target_input_tokens": 8192,
+        "target_vs_actual_p50_ratio": 0.99365234375,
+        "total_latency_seconds": {
+          "observed_count": 1,
+          "p50": 12.777148430002853,
+          "p95": 12.777148430002853
+        },
+        "total_tokens_actual": {
+          "observed_count": 1,
+          "p50": 8431.0,
+          "p95": 8431.0
+        },
+        "ttft_seconds": {
+          "observed_count": 1,
+          "p50": 1.913441379001597,
+          "p95": 1.913441379001597
+        },
+        "wall_seconds": 12.777983552005026,
+        "warmup_failure_count": 0
+      }
+    }
+  ],
+  "schema_version": 1,
+  "semantic_check": {
+    "scope": "LLM benchmark uses deterministic synthetic context; no retrieval quality claim",
+    "status": "not_applicable"
+  },
+  "started_at_utc": "2026-07-14T08:04:51.608427+00:00",
+  "status": "pass"
+}

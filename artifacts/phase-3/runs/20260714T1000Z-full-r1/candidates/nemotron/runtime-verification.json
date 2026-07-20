@@ -1,0 +1,76 @@
+{
+  "candidate": "nemotron",
+  "checks": {
+    "arm64_image_container_identity": true,
+    "expectations_allowlisted": true,
+    "live_license_sha_content_consistent": true,
+    "nim_version_exact": true,
+    "operator_license_declaration_allowlisted": true,
+    "precision_from_closed_allowlist": true,
+    "required_http_statuses": true,
+    "selected_profile_exact": true,
+    "served_model_exact": true
+  },
+  "expected_identity": {
+    "image_digest": "sha256:82028e38ab950edd32f5053ca2030ee14d965e8fd4fe1c6e06468eb0be07a9a4",
+    "model": "nvidia/nemotron-nano-9b-v2",
+    "nim_version": "1.0.0",
+    "precision": "NVFP4",
+    "profile_id": "f9db61d5a467d46be7733e90a26705798764b93d480c842143d525c1932b01e2"
+  },
+  "failure_codes": [],
+  "live_nim_license": {
+    "content_persisted_in_output": false,
+    "content_sha": "ce18d617728fb107eb3730c44a875fe22311560a",
+    "content_sha_algorithm": "sha1",
+    "document_name": "LICENSE",
+    "metadata_and_license_endpoint_consistent": true,
+    "term_names": [
+      "NVIDIA Software License Agreement",
+      "Product-Specific Terms for AI Products",
+      "NVIDIA Open Model License Agreement"
+    ],
+    "term_urls": [
+      "https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-software-license-agreement",
+      "https://www.nvidia.com/en-us/agreements/enterprise-software/product-specific-terms-for-ai-products",
+      "https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-open-model-license"
+    ]
+  },
+  "max_model_length": {
+    "claim_scope": "declared-profile-capability-only",
+    "evidence_kind": "closed-candidate-profile-capability-declaration",
+    "live_long_request_executed_by_this_validator": false,
+    "live_long_request_result": null,
+    "value": 131072
+  },
+  "operator_reviewed_model_terms": {
+    "additional_term_names": [],
+    "declaration_name": "nvidia-open-model-license",
+    "evidence_kind": "operator-reviewed-declaration",
+    "legal_approval": "pending",
+    "model_license_names": [
+      "NVIDIA Open Model License Agreement"
+    ],
+    "separate_from_live_nim_license": true
+  },
+  "phase": 3,
+  "runtime_identity": {
+    "architecture": "arm64",
+    "image_digest": "sha256:82028e38ab950edd32f5053ca2030ee14d965e8fd4fe1c6e06468eb0be07a9a4",
+    "image_repository": "nvcr.io/nim/nvidia/nvidia-nemotron-nano-9b-v2-dgx-spark",
+    "nim_version": "1.0.0",
+    "operating_system": "linux",
+    "precision": "NVFP4",
+    "required_endpoint_http_statuses": {
+      "/v1/license": 200,
+      "/v1/metadata": 200,
+      "/v1/models": 200,
+      "/v1/version": 200
+    },
+    "selected_profile_field": "selectedModelProfileId",
+    "selected_profile_id": "f9db61d5a467d46be7733e90a26705798764b93d480c842143d525c1932b01e2",
+    "served_model": "nvidia/nemotron-nano-9b-v2"
+  },
+  "schema_version": 1,
+  "status": "pass"
+}

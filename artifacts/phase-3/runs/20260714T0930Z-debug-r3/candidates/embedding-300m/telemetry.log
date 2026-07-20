@@ -1,0 +1,11 @@
+sample_at_utc=2026-07-14T09:41:40Z
+gpu_observation_status=pass
+NVIDIA GB10, 580.142, [N/A], [N/A], 0, 50, 10.22
+host_memory_status=pass
+               total        used        free      shared  buff/cache   available
+Mem:     130663628800 14518087680 85366026240   374484992 32326471680 116145541120
+Swap:    17179865088        8192 17179856896
+container_stats_status=pass
+{"BlockIO":"200MB / 4.1kB","CPUPerc":"0.80%","Container":"9dad2e6b50050d33b348fb7c649ba9763c3a8a54af7c381668370de27a809e83","ID":"9dad2e6b5005","MemPerc":"21.73%","MemUsage":"3.477GiB / 16GiB","Name":"ntc-rag-phase3-nim-embedding-300m-1","NetIO":"8.68kB / 38.2kB","PIDs":"714"}
+sample_complete=1
+

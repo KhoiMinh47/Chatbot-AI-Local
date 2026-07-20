@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "phase": 3,
+  "run_id": "20260714T0740Z-debug-r1",
+  "result": "failed",
+  "exit_code": 1,
+  "reason": "one or more live Phase 3 gates failed; see candidate and execution evidence",
+  "current_step": "acceptance-mapping",
+  "current_service_at_finalize": "",
+  "current_container_id_at_finalize": "",
+  "completed_at_utc": "2026-07-14T07:50:46Z",
+  "workload": {
+    "measured_requests_per_scenario": 1,
+    "warmup_requests_per_scenario": 1,
+    "includes_32k_64k_128k": false,
+    "conforms_to_master_plan_minimum": false
+  },
+  "metric_scope": {
+    "ttft_seconds": "client-observed request start to first non-empty streamed generated-token delta (content or reasoning_content)",
+    "master_backend_receive_ttft_measured": false,
+    "decode_tokens_per_second": "server-reported completion tokens divided by first-to-last client-observed content-delta duration",
+    "total_latency_seconds": "client-observed direct NIM HTTP request duration; not application end-to-end"
+  },
+  "target_combination": {
+    "llm": "llama",
+    "selection_status": "provisional_operator_choice_not_final_winner",
+    "no_oom_live_proven": false
+  },
+  "decision_gates": {
+    "llm_winner": "not_selected_human_review_pending",
+    "embedding_winner": "blocked_exact_bge_m3_runtime_missing",
+    "any_llm_automatic_quality_gate_failed": false,
+    "phase3_complete": false
+  },
+  "execution": [
+    {
+      "item": "preexisting-container-gate",
+      "status": "pass",
+      "evidence": "docker project label query"
+    },
+    {
+      "item": "compose-static-gate",
+      "status": "pass",
+      "evidence": "compose-check.log"
+    },
+    {
+      "item": "secret-gate",
+      "status": "pass",
+      "evidence": "secret-check.log"
+    },
+    {
+      "item": "image-gate",
+      "status": "pass",
+      "evidence": "image-check.log"
+    },
+    {
+      "item": "bge-m3-access-gate",
+      "status": "blocked",
+      "evidence": "bge-m3-access.json"
+    },
+    {
+      "item": "cache-staging",
+      "status": "skipped",
+      "evidence": "existing staged-cache markers required by runtime wrapper"
+    },
+    {
+      "item": "scorecard",
+      "status": "skipped",
+      "evidence": "candidate failure"
+    },
+    {
+      "item": "target-service-combination",
+      "status": "skipped",
+      "evidence": "candidate failure"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate": "llama",
+      "status": "pass",
+      "evidence": "candidates/llama"
+    },
+    {
+      "candidate": "nemotron",
+      "status": "fail",
+      "evidence": "candidates/nemotron"
+    },
+    {
+      "candidate": "embedding-300m",
+      "status": "fail",
+      "evidence": "candidates/embedding-300m"
+    },
+    {
+      "candidate": "reranking-500m",
+      "status": "fail",
+      "evidence": "candidates/reranking-500m"
+    }
+  ],
+  "acceptance": [
+    {
+      "criterion": "AC-01",
+      "status": "fail",
+      "evidence": "one or more available candidates failed live acceptance"
+    },
+    {
+      "criterion": "AC-02",
+      "status": "fail",
+      "evidence": "complete LLM context evidence/scorecard unavailable"
+    },
+    {
+      "criterion": "AC-03",
+      "status": "fail",
+      "evidence": "complete conforming benchmark evidence unavailable"
+    },
+    {
+      "criterion": "AC-04",
+      "status": "blocked",
+      "evidence": "BGE-M3 exact image/runtime missing; live scope status 402"
+    },
+    {
+      "criterion": "AC-05",
+      "status": "fail",
+      "evidence": "target service combination was not proven healthy/no-OOM"
+    },
+    {
+      "criterion": "AC-06",
+      "status": "fail",
+      "evidence": "complete model/license runtime evidence unavailable"
+    }
+  ],
+  "secrets_persisted": false,
+  "cache_volumes_preserved": true,
+  "phase4_started": false
+}

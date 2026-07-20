@@ -1,0 +1,209 @@
+
+==========
+== CUDA ==
+==========
+
+NVIDIA Release 
+CUDA Version 13.0.1.012
+Model: nvidia/llama-nemotron-rerank-500m-v2
+
+Container image Copyright (c) 2016-2026, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+Various files include modifications (c) NVIDIA CORPORATION & AFFILIATES.  All rights reserved.
+
+GOVERNING TERMS: The software and materials are governed by the NVIDIA Software License Agreement
+(found at https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-software-license-agreement/)
+and the Product-Specific Terms for NVIDIA AI Products
+(found at https://www.nvidia.com/en-us/agreements/enterprise-software/product-specific-terms-for-ai-products/).
+Third Party Software Attributions and Licenses can be found under /opt/nim/acknowledgements.txt.
+
+Overriding NIM_LOG_LEVEL: replacing NIM_LOG_LEVEL=unset with NIM_LOG_LEVEL=INFO
+HF_HOME is set to /opt/nim/.cache/huggingface
+INFO 2026-07-14 08:09:05.854 __init__.py:1205] Appending: /opt/nim to PYTHONPATH: ['/opt/nim/start_server.d', '/usr/lib/python312.zip', '/usr/lib/python3.12', '/usr/lib/python3.12/lib-dynload', '/opt/venv/lib/python3.12/site-packages', '/usr/local/lib/python3.12/dist-packages', '/usr/lib/python3/dist-packages']
+NIM_MODEL_PROFILE is set to f7391ddbcb95b2406853526b8e489fedf20083a2420563ca3e65358ff417b10f
+OTEL Logging handler requested, but Python logging auto-instrumentation not set up. Set OTEL_PYTHON_LOGGING_AUTO_INSTRUMENTATION_ENABLED=true to enable logging auto-instrumentation.
+OTEL Logging handler requested, but Python logging auto-instrumentation not set up. Set OTEL_PYTHON_LOGGING_AUTO_INSTRUMENTATION_ENABLED=true to enable logging auto-instrumentation.
+INFO 2026-07-14 08:09:07.268 __init__.py:1205] Appending: /opt/nim to PYTHONPATH: ['/opt/venv/bin', '/usr/lib/python312.zip', '/usr/lib/python3.12', '/usr/lib/python3.12/lib-dynload', '/opt/venv/lib/python3.12/site-packages', '/usr/local/lib/python3.12/dist-packages', '/usr/lib/python3/dist-packages']
+INFO 2026-07-14 08:09:08.207 profiles.py:188] Matched profile_id in manifest from env NIM_MODEL_PROFILE to: f7391ddbcb95b2406853526b8e489fedf20083a2420563ca3e65358ff417b10f
+INFO 2026-07-14 08:09:08.207 nim_sdk.py:358] Using the profile specified by the user: f7391ddbcb95b2406853526b8e489fedf20083a2420563ca3e65358ff417b10f
+INFO 2026-07-14 08:09:08.207 nim_sdk.py:376] Downloading manifest profile: f7391ddbcb95b2406853526b8e489fedf20083a2420563ca3e65358ff417b10f
+INFO 2026-07-14 08:09:08.233 lib.rs:203] File: checksums.blake3 found in cache: "/opt/nim/.cache/ngc/hub/models--nim--nvidia--llama-nemotron-rerank-500m-v2/snapshots/a100x1-onnx-fp16-rbq25n1t2a/checksums.blake3"
+INFO 2026-07-14 08:09:08.233 public.rs:52] Skipping download, using cached copy of file: checksums.blake3 at path: "/opt/nim/.cache/ngc/hub/models--nim--nvidia--llama-nemotron-rerank-500m-v2/snapshots/a100x1-onnx-fp16-rbq25n1t2a/checksums.blake3"
+INFO 2026-07-14 08:09:08.245 lib.rs:203] File: tokenizer.json found in cache: "/opt/nim/.cache/ngc/hub/models--nim--nvidia--llama-nemotron-rerank-500m-v2/snapshots/tokenizer_4096/tokenizer.json"
+INFO 2026-07-14 08:09:08.245 public.rs:52] Skipping download, using cached copy of file: tokenizer.json at path: "/opt/nim/.cache/ngc/hub/models--nim--nvidia--llama-nemotron-rerank-500m-v2/snapshots/tokenizer_4096/tokenizer.json"
+INFO 2026-07-14 08:09:08.257 lib.rs:203] File: metadata.json found in cache: "/opt/nim/.cache/ngc/hub/models--nim--nvidia--llama-nemotron-rerank-500m-v2/snapshots/a100x1-onnx-fp16-rbq25n1t2a/metadata.json"
+INFO 2026-07-14 08:09:08.257 public.rs:52] Skipping download, using cached copy of file: metadata.json at path: "/opt/nim/.cache/ngc/hub/models--nim--nvidia--llama-nemotron-rerank-500m-v2/snapshots/a100x1-onnx-fp16-rbq25n1t2a/metadata.json"
+INFO 2026-07-14 08:09:08.270 lib.rs:203] File: triton.yaml found in cache: "/opt/nim/.cache/ngc/hub/models--nim--nvidia--llama-nemotron-rerank-500m-v2/snapshots/extra-1/triton.yaml"
+INFO 2026-07-14 08:09:08.270 public.rs:52] Skipping download, using cached copy of file: triton.yaml at path: "/opt/nim/.cache/ngc/hub/models--nim--nvidia--llama-nemotron-rerank-500m-v2/snapshots/extra-1/triton.yaml"
+INFO 2026-07-14 08:09:08.282 lib.rs:203] File: special_tokens_map.json found in cache: "/opt/nim/.cache/ngc/hub/models--nim--nvidia--llama-nemotron-rerank-500m-v2/snapshots/tokenizer_4096/special_tokens_map.json"
+INFO 2026-07-14 08:09:08.282 public.rs:52] Skipping download, using cached copy of file: special_tokens_map.json at path: "/opt/nim/.cache/ngc/hub/models--nim--nvidia--llama-nemotron-rerank-500m-v2/snapshots/tokenizer_4096/special_tokens_map.json"
+INFO 2026-07-14 08:09:08.293 lib.rs:203] File: model.onnx found in cache: "/opt/nim/.cache/ngc/hub/models--nim--nvidia--llama-nemotron-rerank-500m-v2/snapshots/a100x1-onnx-fp16-rbq25n1t2a/model.onnx"
+INFO 2026-07-14 08:09:08.293 public.rs:52] Skipping download, using cached copy of file: model.onnx at path: "/opt/nim/.cache/ngc/hub/models--nim--nvidia--llama-nemotron-rerank-500m-v2/snapshots/a100x1-onnx-fp16-rbq25n1t2a/model.onnx"
+INFO 2026-07-14 08:09:08.299 lib.rs:203] File: VERSION found in cache: "/opt/nim/.cache/ngc/hub/models--nim--nvidia--llama-nemotron-rerank-500m-v2/snapshots/extra-1/VERSION"
+INFO 2026-07-14 08:09:08.299 public.rs:52] Skipping download, using cached copy of file: VERSION at path: "/opt/nim/.cache/ngc/hub/models--nim--nvidia--llama-nemotron-rerank-500m-v2/snapshots/extra-1/VERSION"
+INFO 2026-07-14 08:09:08.305 lib.rs:203] File: tokenizer_config.json found in cache: "/opt/nim/.cache/ngc/hub/models--nim--nvidia--llama-nemotron-rerank-500m-v2/snapshots/tokenizer_4096/tokenizer_config.json"
+INFO 2026-07-14 08:09:08.305 public.rs:52] Skipping download, using cached copy of file: tokenizer_config.json at path: "/opt/nim/.cache/ngc/hub/models--nim--nvidia--llama-nemotron-rerank-500m-v2/snapshots/tokenizer_4096/tokenizer_config.json"
+INFO 2026-07-14 08:09:08.307 nim_sdk.py:394] Using the workspace specified during init: /opt/nim/workspace
+INFO 2026-07-14 08:09:08.307 nim_sdk.py:407] Materializing workspace to: /opt/nim/workspace
+Copying triton.yaml from /opt/nim/workspace/extra/triton.yaml to /opt/nim/etc/
+OTEL Logging handler requested, but Python logging auto-instrumentation not set up. Set OTEL_PYTHON_LOGGING_AUTO_INSTRUMENTATION_ENABLED=true to enable logging auto-instrumentation.
+INFO 2026-07-14 08:09:09.256 __init__.py:1205] Appending: /opt/nim to PYTHONPATH: ['/opt/venv/bin', '/usr/lib/python312.zip', '/usr/lib/python3.12', '/usr/lib/python3.12/lib-dynload', '/opt/venv/lib/python3.12/site-packages', '/usr/local/lib/python3.12/dist-packages', '/usr/lib/python3/dist-packages']
+2026-07-14T08:09:10Z INFO: nemo_retriever_reranking.triton.bls_models.dependencies - Loading triton config from /opt/nim/etc/triton.yaml
+INFO 2026-07-14 08:09:10.030 profiles.py:188] Matched profile_id in manifest from env NIM_MODEL_PROFILE to: f7391ddbcb95b2406853526b8e489fedf20083a2420563ca3e65358ff417b10f
+OTEL Logging handler requested, but Python logging auto-instrumentation not set up. Set OTEL_PYTHON_LOGGING_AUTO_INSTRUMENTATION_ENABLED=true to enable logging auto-instrumentation.
+I0714 08:09:21.366694 304 pinned_memory_manager.cc:277] "Pinned memory pool is created at '0x32ee00000' with size 268435456"
+I0714 08:09:21.366745 304 cuda_memory_manager.cc:107] "CUDA memory pool is created on device 0 with size 67108864"
+I0714 08:09:21.370222 304 model_lifecycle.cc:473] "loading: nvidia_llama_nemotron_rerank_500m_v2:1"
+I0714 08:09:21.370248 304 model_lifecycle.cc:473] "loading: _nvidia_llama_nemotron_rerank_500m_v2_model:1"
+I0714 08:09:21.373165 304 onnxruntime.cc:2914] "TRITONBACKEND_Initialize: onnxruntime"
+I0714 08:09:21.373176 304 onnxruntime.cc:2924] "Triton TRITONBACKEND API version: 1.19"
+I0714 08:09:21.373178 304 onnxruntime.cc:2930] "'onnxruntime' TRITONBACKEND API version: 1.19"
+I0714 08:09:21.373180 304 onnxruntime.cc:2960] "backend configuration:\n{\"cmdline\":{\"auto-complete-config\":\"false\",\"backend-directory\":\"/opt/tritonserver/backends\",\"min-compute-capability\":\"6.000000\",\"default-max-batch-size\":\"4\"}}"
+[0;93m2026-07-14 08:09:21.380712778 [W:onnxruntime:log, device_discovery.cc:164 DiscoverDevicesForPlatform] GPU device discovery failed: device_discovery.cc:89 ReadFileContents Failed to open file: "/sys/class/drm/card0/device/vendor"[m
+I0714 08:09:21.380947 304 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: _nvidia_llama_nemotron_rerank_500m_v2_model (version 1)"
+I0714 08:09:21.382302 304 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: _nvidia_llama_nemotron_rerank_500m_v2_model_0_0 (GPU device 0)"
+I0714 08:09:21.389791 304 python_be.cc:2289] "TRITONBACKEND_ModelInstanceInitialize: nvidia_llama_nemotron_rerank_500m_v2_0_0 (CPU device 0)"
+I0714 08:09:21.389987 304 python_be.cc:2289] "TRITONBACKEND_ModelInstanceInitialize: nvidia_llama_nemotron_rerank_500m_v2_0_3 (CPU device 0)"
+I0714 08:09:21.389984 304 python_be.cc:2289] "TRITONBACKEND_ModelInstanceInitialize: nvidia_llama_nemotron_rerank_500m_v2_0_1 (CPU device 0)"
+I0714 08:09:21.390057 304 python_be.cc:2289] "TRITONBACKEND_ModelInstanceInitialize: nvidia_llama_nemotron_rerank_500m_v2_0_2 (CPU device 0)"
+I0714 08:09:21.390096 304 python_be.cc:2289] "TRITONBACKEND_ModelInstanceInitialize: nvidia_llama_nemotron_rerank_500m_v2_0_4 (CPU device 0)"
+I0714 08:09:21.390121 304 python_be.cc:2289] "TRITONBACKEND_ModelInstanceInitialize: nvidia_llama_nemotron_rerank_500m_v2_0_6 (CPU device 0)"
+I0714 08:09:21.390165 304 python_be.cc:2289] "TRITONBACKEND_ModelInstanceInitialize: nvidia_llama_nemotron_rerank_500m_v2_0_5 (CPU device 0)"
+I0714 08:09:21.391963 304 python_be.cc:2289] "TRITONBACKEND_ModelInstanceInitialize: nvidia_llama_nemotron_rerank_500m_v2_0_7 (CPU device 0)"
+I0714 08:09:21.392077 304 python_be.cc:2289] "TRITONBACKEND_ModelInstanceInitialize: nvidia_llama_nemotron_rerank_500m_v2_0_8 (CPU device 0)"
+I0714 08:09:21.392078 304 python_be.cc:2289] "TRITONBACKEND_ModelInstanceInitialize: nvidia_llama_nemotron_rerank_500m_v2_0_9 (CPU device 0)"
+INFO 2026-07-14 08:09:21.513 __init__.py:1205] Appending: /opt/nim to PYTHONPATH: ['/opt/venv/bin', '/usr/lib/python312.zip', '/usr/lib/python3.12', '/usr/lib/python3.12/lib-dynload', '/opt/venv/lib/python3.12/site-packages', '/usr/local/lib/python3.12/dist-packages', '/usr/lib/python3/dist-packages']
+OTEL Logging handler requested, but Python logging auto-instrumentation not set up. Set OTEL_PYTHON_LOGGING_AUTO_INSTRUMENTATION_ENABLED=true to enable logging auto-instrumentation.
+OTEL Logging handler requested, but Python logging auto-instrumentation not set up. Set OTEL_PYTHON_LOGGING_AUTO_INSTRUMENTATION_ENABLED=true to enable logging auto-instrumentation.
+OTEL Logging handler requested, but Python logging auto-instrumentation not set up. Set OTEL_PYTHON_LOGGING_AUTO_INSTRUMENTATION_ENABLED=true to enable logging auto-instrumentation.
+OTEL Logging handler requested, but Python logging auto-instrumentation not set up. Set OTEL_PYTHON_LOGGING_AUTO_INSTRUMENTATION_ENABLED=true to enable logging auto-instrumentation.
+OTEL Logging handler requested, but Python logging auto-instrumentation not set up. Set OTEL_PYTHON_LOGGING_AUTO_INSTRUMENTATION_ENABLED=true to enable logging auto-instrumentation.
+OTEL Logging handler requested, but Python logging auto-instrumentation not set up. Set OTEL_PYTHON_LOGGING_AUTO_INSTRUMENTATION_ENABLED=true to enable logging auto-instrumentation.
+OTEL Logging handler requested, but Python logging auto-instrumentation not set up. Set OTEL_PYTHON_LOGGING_AUTO_INSTRUMENTATION_ENABLED=true to enable logging auto-instrumentation.
+OTEL Logging handler requested, but Python logging auto-instrumentation not set up. Set OTEL_PYTHON_LOGGING_AUTO_INSTRUMENTATION_ENABLED=true to enable logging auto-instrumentation.
+OTEL Logging handler requested, but Python logging auto-instrumentation not set up. Set OTEL_PYTHON_LOGGING_AUTO_INSTRUMENTATION_ENABLED=true to enable logging auto-instrumentation.
+OTEL Logging handler requested, but Python logging auto-instrumentation not set up. Set OTEL_PYTHON_LOGGING_AUTO_INSTRUMENTATION_ENABLED=true to enable logging auto-instrumentation.
+2026-07-14T08:09:25Z INFO: nemo_retriever_reranking.triton.bls_models.dependencies - Loading tokenizer from /opt/nim/workspace/tokenizer
+2026-07-14T08:09:25Z INFO: nemo_retriever_reranking.triton.bls_models.dependencies - Loading tokenizer from /opt/nim/workspace/tokenizer
+2026-07-14T08:09:25Z INFO: nemo_retriever_reranking.triton.bls_models.dependencies - Loading tokenizer from /opt/nim/workspace/tokenizer
+2026-07-14T08:09:25Z INFO: nemo_retriever_reranking.triton.bls_models.dependencies - Loading tokenizer from /opt/nim/workspace/tokenizer
+2026-07-14T08:09:25Z INFO: nemo_retriever_reranking.triton.bls_models.dependencies - Loading tokenizer from /opt/nim/workspace/tokenizer
+2026-07-14T08:09:25Z INFO: nemo_retriever_reranking.triton.bls_models.dependencies - Loading tokenizer from /opt/nim/workspace/tokenizer
+2026-07-14T08:09:25Z INFO: nemo_retriever_reranking.triton.bls_models.dependencies - Loading tokenizer from /opt/nim/workspace/tokenizer
+2026-07-14T08:09:25Z INFO: nemo_retriever_reranking.triton.bls_models.dependencies - Loading tokenizer from /opt/nim/workspace/tokenizer
+[0;93m2026-07-14 08:09:26.831708181 [W:onnxruntime:, session_state.cc:1307 VerifyEachNodeIsAssignedToAnEp] Some nodes were not assigned to the preferred execution providers which may or may not have an negative impact on performance. e.g. ORT explicitly assigns shape related ops to CPU to improve perf.[m
+[0;93m2026-07-14 08:09:26.831743141 [W:onnxruntime:, session_state.cc:1309 VerifyEachNodeIsAssignedToAnEp] Rerunning with verbose output on a non-minimal build will show node assignments.[m
+2026-07-14T08:09:26Z INFO: nemo_retriever_reranking.triton.bls_models.dependencies - Loading tokenizer from /opt/nim/workspace/tokenizer
+INFO 2026-07-14 08:09:27.918 nimutils.py:118] Creating new model manifest (first time)
+INFO 2026-07-14 08:09:27.934 profiles.py:103] No custom profile selectors found.
+INFO 2026-07-14 08:09:27.934 profiles.py:188] Matched profile_id in manifest from env NIM_MODEL_PROFILE to: f7391ddbcb95b2406853526b8e489fedf20083a2420563ca3e65358ff417b10f
+INFO 2026-07-14 08:09:27.935 nimutils.py:135] Model manifest cached successfully
+I0714 08:09:27.935629 304 model_lifecycle.cc:849] "successfully loaded '_nvidia_llama_nemotron_rerank_500m_v2_model'"
+WARN 2026-07-14 08:09:28.016 system.rs:190] Not supported error accessing attributes of Device with index: 0 error: the requested operation is not available on the target device
+INFO 2026-07-14 08:09:28.020 telemetry_handler.py:77] Telemetry mode TelemetryMode.OFF
+INFO 2026-07-14 08:09:28.034 http_api.py:341] Starting HTTP Inference server, port: 8000, workers_count: 10, host: 0.0.0.0, log_level: info, SSL: disabled
+2026-07-14T08:09:28Z INFO: uvicorn.error - Started server process [305]
+2026-07-14T08:09:28Z INFO: uvicorn.error - Waiting for application startup.
+2026-07-14T08:09:28Z INFO: root - Loading service config from /opt/nim/tmp/run/triton-model-repository/service_config.yaml
+INFO 2026-07-14 08:09:28.117 profiles.py:103] No custom profile selectors found.
+INFO 2026-07-14 08:09:28.117 profiles.py:188] Matched profile_id in manifest from env NIM_MODEL_PROFILE to: f7391ddbcb95b2406853526b8e489fedf20083a2420563ca3e65358ff417b10f
+2026-07-14T08:09:28Z INFO: root - Loading service config from /opt/nim/tmp/run/triton-model-repository/service_config.yaml
+INFO 2026-07-14 08:09:28.125 profiles.py:103] No custom profile selectors found.
+INFO 2026-07-14 08:09:28.126 profiles.py:188] Matched profile_id in manifest from env NIM_MODEL_PROFILE to: f7391ddbcb95b2406853526b8e489fedf20083a2420563ca3e65358ff417b10f
+2026-07-14T08:09:28Z INFO: uvicorn.error - Application startup complete.
+2026-07-14T08:09:28Z INFO: uvicorn.error - Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2026-07-14T08:09:28Z INFO: nemo_retriever_reranking.triton.bls_models.dependencies - Tokenizer is fast: True
+2026-07-14T08:09:28Z INFO: nemo_retriever_reranking.triton.bls_models.dependencies - tokenizer.model_max_length: 4096
+2026-07-14T08:09:28Z INFO: nemo_retriever_reranking.triton.bls_models.dependencies - Loading triton config from /opt/nim/etc/triton.yaml
+2026-07-14T08:09:28Z INFO: nemo_retriever_reranking.triton.bls_models.dependencies - Using tokenizer_template from triton.yaml: 'question:{query} \n \n passage:{passage}'
+2026-07-14T08:09:28Z INFO: nemo_retriever_reranking.triton.bls_models.dependencies - Tokenizer is fast: True
+2026-07-14T08:09:28Z INFO: nemo_retriever_reranking.triton.bls_models.dependencies - tokenizer.model_max_length: 4096
+2026-07-14T08:09:28Z INFO: nemo_retriever_reranking.triton.bls_models.dependencies - Loading triton config from /opt/nim/etc/triton.yaml
+2026-07-14T08:09:28Z INFO: nemo_retriever_reranking.triton.bls_models.dependencies - Using tokenizer_template from triton.yaml: 'question:{query} \n \n passage:{passage}'
+2026-07-14T08:09:28Z INFO: nemo_retriever_reranking.triton.bls_models.dependencies - Tokenizer is fast: True
+2026-07-14T08:09:28Z INFO: nemo_retriever_reranking.triton.bls_models.dependencies - tokenizer.model_max_length: 4096
+2026-07-14T08:09:28Z INFO: nemo_retriever_reranking.triton.bls_models.dependencies - Loading triton config from /opt/nim/etc/triton.yaml
+2026-07-14T08:09:28Z INFO: nemo_retriever_reranking.triton.bls_models.dependencies - Using tokenizer_template from triton.yaml: 'question:{query} \n \n passage:{passage}'
+2026-07-14T08:09:28Z INFO: nemo_retriever_reranking.triton.bls_models.dependencies - Tokenizer is fast: True
+2026-07-14T08:09:28Z INFO: nemo_retriever_reranking.triton.bls_models.dependencies - tokenizer.model_max_length: 4096
+2026-07-14T08:09:28Z INFO: nemo_retriever_reranking.triton.bls_models.dependencies - Loading triton config from /opt/nim/etc/triton.yaml
+2026-07-14T08:09:28Z INFO: nemo_retriever_reranking.triton.bls_models.dependencies - Using tokenizer_template from triton.yaml: 'question:{query} \n \n passage:{passage}'
+2026-07-14T08:09:28Z INFO: nemo_retriever_reranking.triton.bls_models.dependencies - Tokenizer is fast: True
+2026-07-14T08:09:28Z INFO: nemo_retriever_reranking.triton.bls_models.dependencies - tokenizer.model_max_length: 4096
+2026-07-14T08:09:28Z INFO: nemo_retriever_reranking.triton.bls_models.dependencies - Loading triton config from /opt/nim/etc/triton.yaml
+2026-07-14T08:09:28Z INFO: nemo_retriever_reranking.triton.bls_models.dependencies - Using tokenizer_template from triton.yaml: 'question:{query} \n \n passage:{passage}'
+2026-07-14T08:09:28Z INFO: nemo_retriever_reranking.triton.bls_models.dependencies - Loading tokenizer from /opt/nim/workspace/tokenizer
+2026-07-14T08:09:28Z INFO: nemo_retriever_reranking.triton.bls_models.dependencies - Tokenizer is fast: True
+2026-07-14T08:09:28Z INFO: nemo_retriever_reranking.triton.bls_models.dependencies - tokenizer.model_max_length: 4096
+2026-07-14T08:09:28Z INFO: nemo_retriever_reranking.triton.bls_models.dependencies - Loading triton config from /opt/nim/etc/triton.yaml
+2026-07-14T08:09:28Z INFO: nemo_retriever_reranking.triton.bls_models.dependencies - Using tokenizer_template from triton.yaml: 'question:{query} \n \n passage:{passage}'
+2026-07-14T08:09:28Z INFO: nemo_retriever_reranking.triton.bls_models.dependencies - Tokenizer is fast: True
+2026-07-14T08:09:28Z INFO: nemo_retriever_reranking.triton.bls_models.dependencies - tokenizer.model_max_length: 4096
+2026-07-14T08:09:28Z INFO: nemo_retriever_reranking.triton.bls_models.dependencies - Loading triton config from /opt/nim/etc/triton.yaml
+2026-07-14T08:09:28Z INFO: nemo_retriever_reranking.triton.bls_models.dependencies - Using tokenizer_template from triton.yaml: 'question:{query} \n \n passage:{passage}'
+2026-07-14T08:09:28Z INFO: nemo_retriever_reranking.triton.bls_models.dependencies - Tokenizer is fast: True
+2026-07-14T08:09:28Z INFO: nemo_retriever_reranking.triton.bls_models.dependencies - tokenizer.model_max_length: 4096
+2026-07-14T08:09:28Z INFO: nemo_retriever_reranking.triton.bls_models.dependencies - Loading triton config from /opt/nim/etc/triton.yaml
+2026-07-14T08:09:28Z INFO: nemo_retriever_reranking.triton.bls_models.dependencies - Using tokenizer_template from triton.yaml: 'question:{query} \n \n passage:{passage}'
+2026-07-14T08:09:28Z INFO: nemo_retriever_reranking.triton.bls_models.dependencies - Tokenizer is fast: True
+2026-07-14T08:09:28Z INFO: nemo_retriever_reranking.triton.bls_models.dependencies - tokenizer.model_max_length: 4096
+2026-07-14T08:09:28Z INFO: nemo_retriever_reranking.triton.bls_models.dependencies - Loading triton config from /opt/nim/etc/triton.yaml
+2026-07-14T08:09:28Z INFO: nemo_retriever_reranking.triton.bls_models.dependencies - Using tokenizer_template from triton.yaml: 'question:{query} \n \n passage:{passage}'
+2026-07-14T08:09:29Z INFO: nemo_retriever_reranking.triton.bls_models.dependencies - Tokenizer is fast: True
+2026-07-14T08:09:29Z INFO: nemo_retriever_reranking.triton.bls_models.dependencies - tokenizer.model_max_length: 4096
+2026-07-14T08:09:29Z INFO: nemo_retriever_reranking.triton.bls_models.dependencies - Loading triton config from /opt/nim/etc/triton.yaml
+2026-07-14T08:09:29Z INFO: nemo_retriever_reranking.triton.bls_models.dependencies - Using tokenizer_template from triton.yaml: 'question:{query} \n \n passage:{passage}'
+I0714 08:09:29.355677 304 model_lifecycle.cc:849] "successfully loaded 'nvidia_llama_nemotron_rerank_500m_v2'"
+I0714 08:09:29.355922 304 server.cc:611] 
++------------------+------+
+| Repository Agent | Path |
++------------------+------+
++------------------+------+
+
+I0714 08:09:29.355978 304 server.cc:638] 
++-------------+-----------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Backend     | Path                                                            | Config                                                                                                                                                         |
++-------------+-----------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| onnxruntime | /opt/tritonserver/backends/onnxruntime/libtriton_onnxruntime.so | {"cmdline":{"auto-complete-config":"false","backend-directory":"/opt/tritonserver/backends","min-compute-capability":"6.000000","default-max-batch-size":"4"}} |
+| python      | /opt/tritonserver/backends/python/libtriton_python.so           | {"cmdline":{"auto-complete-config":"false","backend-directory":"/opt/tritonserver/backends","min-compute-capability":"6.000000","default-max-batch-size":"4"}} |
++-------------+-----------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+I0714 08:09:29.356021 304 server.cc:681] 
++---------------------------------------------+---------+--------+
+| Model                                       | Version | Status |
++---------------------------------------------+---------+--------+
+| _nvidia_llama_nemotron_rerank_500m_v2_model | 1       | READY  |
+| nvidia_llama_nemotron_rerank_500m_v2        | 1       | READY  |
++---------------------------------------------+---------+--------+
+
+I0714 08:09:29.384956 304 metrics.cc:889] "Collecting metrics for GPU 0: NVIDIA GB10"
+I0714 08:09:29.389617 304 metrics.cc:782] "Collecting CPU metrics"
+I0714 08:09:29.389674 304 tritonserver.cc:2598] 
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Option                           | Value                                                                                                                                                                                                           |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| server_id                        | triton                                                                                                                                                                                                          |
+| server_version                   | 2.61.0                                                                                                                                                                                                          |
+| server_extensions                | classification sequence model_repository model_repository(unload_dependents) schedule_policy model_configuration system_shared_memory cuda_shared_memory binary_tensor_data parameters statistics trace logging |
+| model_repository_path[0]         | /opt/nim/tmp/run/triton-model-repository                                                                                                                                                                        |
+| model_control_mode               | MODE_NONE                                                                                                                                                                                                       |
+| strict_model_config              | 1                                                                                                                                                                                                               |
+| model_config_name                |                                                                                                                                                                                                                 |
+| rate_limit                       | OFF                                                                                                                                                                                                             |
+| pinned_memory_pool_byte_size     | 268435456                                                                                                                                                                                                       |
+| cuda_memory_pool_byte_size{0}    | 67108864                                                                                                                                                                                                        |
+| min_supported_compute_capability | 6.0                                                                                                                                                                                                             |
+| strict_readiness                 | 1                                                                                                                                                                                                               |
+| exit_timeout                     | 30                                                                                                                                                                                                              |
+| cache_enabled                    | 0                                                                                                                                                                                                               |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+I0714 08:09:29.391075 304 grpc_server.cc:2562] "Started GRPCInferenceService at 0.0.0.0:8001"
+I0714 08:09:29.391186 304 http_server.cc:4789] "Started HTTPService at 0.0.0.0:8080"
+I0714 08:09:29.431925 304 http_server.cc:358] "Started Metrics Service at 0.0.0.0:8002"
+W0714 08:09:30.392111 304 metrics.cc:643] "Unable to get power limit for GPU 0. Status:Success, value:0.000000"
+W0714 08:09:30.392150 304 metrics.cc:724] "Unable to get memory usage for GPU 0. Memory usage status:Success, value:0. Memory total status:Success, value:0"
+W0714 08:09:31.398859 304 metrics.cc:643] "Unable to get power limit for GPU 0. Status:Success, value:0.000000"
+W0714 08:09:31.398898 304 metrics.cc:724] "Unable to get memory usage for GPU 0. Memory usage status:Success, value:0. Memory total status:Success, value:0"
+W0714 08:09:32.400400 304 metrics.cc:643] "Unable to get power limit for GPU 0. Status:Success, value:0.000000"
+W0714 08:09:32.400433 304 metrics.cc:724] "Unable to get memory usage for GPU 0. Memory usage status:Success, value:0. Memory total status:Success, value:0"

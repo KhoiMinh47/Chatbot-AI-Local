@@ -1,0 +1,55 @@
+# HELP python_gc_objects_collected_total Objects collected during gc
+# TYPE python_gc_objects_collected_total counter
+python_gc_objects_collected_total{generation="0"} 1786.0
+python_gc_objects_collected_total{generation="1"} 367.0
+python_gc_objects_collected_total{generation="2"} 72.0
+# HELP python_gc_objects_uncollectable_total Uncollectable objects found during GC
+# TYPE python_gc_objects_uncollectable_total counter
+python_gc_objects_uncollectable_total{generation="0"} 0.0
+python_gc_objects_uncollectable_total{generation="1"} 0.0
+python_gc_objects_uncollectable_total{generation="2"} 0.0
+# HELP python_gc_collections_total Number of times this generation was collected
+# TYPE python_gc_collections_total counter
+python_gc_collections_total{generation="0"} 262.0
+python_gc_collections_total{generation="1"} 23.0
+python_gc_collections_total{generation="2"} 2.0
+# HELP python_info Python platform information
+# TYPE python_info gauge
+python_info{implementation="CPython",major="3",minor="12",patchlevel="3",version="3.12.3"} 1.0
+# HELP process_virtual_memory_bytes Virtual memory size in bytes.
+# TYPE process_virtual_memory_bytes gauge
+process_virtual_memory_bytes 5.654749184e+09
+# HELP process_resident_memory_bytes Resident memory size in bytes.
+# TYPE process_resident_memory_bytes gauge
+process_resident_memory_bytes 1.4163968e+08
+# HELP process_start_time_seconds Start time of the process since unix epoch in seconds.
+# TYPE process_start_time_seconds gauge
+process_start_time_seconds 1.78401538952e+09
+# HELP process_cpu_seconds_total Total user and system CPU time spent in seconds.
+# TYPE process_cpu_seconds_total counter
+process_cpu_seconds_total 2.69
+# HELP process_open_fds Number of open file descriptors.
+# TYPE process_open_fds gauge
+process_open_fds 41.0
+# HELP process_max_fds Maximum number of open file descriptors.
+# TYPE process_max_fds gauge
+process_max_fds 1024.0
+# HELP request_count_total App Request Count
+# TYPE request_count_total counter
+# HELP request_latency_seconds Request latency
+# TYPE request_latency_seconds histogram
+# HELP gpu_power_usage_watts GPU instantaneous power, in watts
+# TYPE gpu_power_usage_watts gauge
+gpu_power_usage_watts{device_id="0"} 9882.0
+# HELP gpu_power_limit_watts Maximum GPU power limit, in watts
+# TYPE gpu_power_limit_watts gauge
+# HELP gpu_total_energy_consumption_joules GPU total energy consumption, in joules
+# TYPE gpu_total_energy_consumption_joules gauge
+gpu_total_energy_consumption_joules{device_id="0"} 392781.308
+# HELP gpu_utilization GPU utilization rate (0.0 - 1.0)
+# TYPE gpu_utilization gauge
+gpu_utilization{device_id="0"} 0.0
+# HELP gpu_memory_total_bytes Total GPU memory, in bytes
+# TYPE gpu_memory_total_bytes gauge
+# HELP gpu_memory_used_bytes Used GPU memory, in bytes
+# TYPE gpu_memory_used_bytes gauge

@@ -1,0 +1,86 @@
+[
+  {
+    "Id": "10cd3654dbd18bd4baefd1bfa0460ba5ee110a3b486bd3dbc9c2aefeb49db025",
+    "Image": "sha256:1f0a7fc168919d7b84bb4edfb4a4da0c5828d11ee284f9fb8113242b3b35cbb4",
+    "Name": "/ntc-rag-phase3-nim-embedding-300m-1",
+    "Config": {
+      "NIM_MODEL_PROFILE": null
+    },
+    "State": {
+      "Status": "running",
+      "Running": true,
+      "OOMKilled": false,
+      "Health": {
+        "Status": "healthy",
+        "FailingStreak": 0,
+        "Log": [
+          {
+            "Start": "2026-07-14T20:10:46.073535281+07:00",
+            "End": "2026-07-14T20:10:46.144929597+07:00",
+            "ExitCode": 1,
+            "Output": "/usr/local/bin/ntc-nim-healthcheck: connect: Connection refused\n/usr/local/bin/ntc-nim-healthcheck: line 17: /dev/tcp/127.0.0.1/8000: Connection refused\n"
+          },
+          {
+            "Start": "2026-07-14T20:10:51.146203647+07:00",
+            "End": "2026-07-14T20:10:51.214613209+07:00",
+            "ExitCode": 1,
+            "Output": "/usr/local/bin/ntc-nim-healthcheck: connect: Connection refused\n/usr/local/bin/ntc-nim-healthcheck: line 17: /dev/tcp/127.0.0.1/8000: Connection refused\n"
+          },
+          {
+            "Start": "2026-07-14T20:10:56.215904396+07:00",
+            "End": "2026-07-14T20:10:56.419614506+07:00",
+            "ExitCode": 1,
+            "Output": "/usr/local/bin/ntc-nim-healthcheck: connect: Connection refused\n/usr/local/bin/ntc-nim-healthcheck: line 17: /dev/tcp/127.0.0.1/8000: Connection refused\n"
+          },
+          {
+            "Start": "2026-07-14T20:11:01.420687599+07:00",
+            "End": "2026-07-14T20:11:01.500107254+07:00",
+            "ExitCode": 1,
+            "Output": ""
+          },
+          {
+            "Start": "2026-07-14T20:11:06.501058987+07:00",
+            "End": "2026-07-14T20:11:06.577555424+07:00",
+            "ExitCode": 0,
+            "Output": ""
+          }
+        ]
+      }
+    },
+    "HostConfig": {
+      "NetworkMode": "ntc-rag-phase3_runtime",
+      "PortBindings": {}
+    },
+    "NetworkSettings": {
+      "Ports": {
+        "8000/tcp": null
+      },
+      "Networks": {
+        "ntc-rag-phase3_runtime": {
+          "IPAMConfig": null,
+          "Links": null,
+          "Aliases": [
+            "ntc-rag-phase3-nim-embedding-300m-1",
+            "nim-embedding-300m"
+          ],
+          "DriverOpts": null,
+          "GwPriority": 0,
+          "NetworkID": "5b59f2922f006b2a5ba9a35a7eab5a874aacada640f1b01849a26129bb1bc980",
+          "EndpointID": "a5f99e0d273c203c3210394e042db4b96fd8c212578eb2862ebfbfb7f9770880",
+          "Gateway": "",
+          "IPAddress": "172.24.0.2",
+          "MacAddress": "2e:6e:4b:81:5e:37",
+          "IPPrefixLen": 16,
+          "IPv6Gateway": "",
+          "GlobalIPv6Address": "",
+          "GlobalIPv6PrefixLen": 0,
+          "DNSNames": [
+            "ntc-rag-phase3-nim-embedding-300m-1",
+            "nim-embedding-300m",
+            "10cd3654dbd1"
+          ]
+        }
+      }
+    }
+  }
+]

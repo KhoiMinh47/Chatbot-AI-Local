@@ -1,0 +1,11 @@
+{
+  "concurrent": true,
+  "llm_candidate": "llama",
+  "bounded_request_count": 3,
+  "launched_request_count": 3,
+  "one_request_per_loaded_service": true,
+  "system_prompt_persisted": false,
+  "started_at_utc": "2026-07-14T09:44:58Z",
+  "finished_at_utc": "2026-07-14T09:45:16Z",
+  "status": "pass"
+}

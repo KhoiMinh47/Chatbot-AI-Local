@@ -1,0 +1,19 @@
+{
+  "candidate": "nemotron",
+  "active_runtime_profile": {
+    "value": "f9db61d5a467d46be7733e90a26705798764b93d480c842143d525c1932b01e2",
+    "evidence_source": "exact-profile-id-observed-in-live-startup-log",
+    "live_runtime_verified": true
+  },
+  "precision": {
+    "value": "NVFP4",
+    "evidence_source": "precision-mapped-from-reviewed-exact-profile-id"
+  },
+  "max_model_length": {
+    "value": 131072,
+    "evidence_source": "model-capability-and-live-capability-test",
+    "distinction": "declared/profile capability; live request evidence is separate"
+  },
+  "reviewed_llama_compatible_profiles": [],
+  "compatible_profile_is_not_automatically_an_active_profile": true
+}

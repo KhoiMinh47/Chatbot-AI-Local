@@ -1,0 +1,7 @@
+sample_at_utc=2026-07-14T07:50:05Z
+NVIDIA GB10, 580.142, [N/A], [N/A], 0, 47, 9.95
+               total        used        free      shared  buff/cache   available
+Mem:     130663628800 14160138240 84604309504   374476800 33446146048 116503490560
+Swap:    17179865088        8192 17179856896
+{"BlockIO":"1.4GB / 4.1kB","CPUPerc":"83.33%","Container":"1e1b7c7be50dd4af593509cb764e2a8f4fc15dc517ea972f301cd597c1ce7103","ID":"1e1b7c7be50d","MemPerc":"36.12%","MemUsage":"5.779GiB / 16GiB","Name":"ntc-rag-phase3-nim-embedding-300m-1","NetIO":"10.7kB / 39.6kB","PIDs":"720"}
+

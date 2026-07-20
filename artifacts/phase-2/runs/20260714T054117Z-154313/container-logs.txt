@@ -1,0 +1,557 @@
+web-1  | ▲ Next.js 16.2.10
+web-1  | - Local:         http://localhost:3000
+web-1  | - Network:       http://0.0.0.0:3000
+web-1  | ✓ Ready in 0ms
+mailpit-1  | time="2026/07/14 05:41:48" level=info msg="[smtpd] starting on [::]:1025 (no encryption)"
+mailpit-1  | time="2026/07/14 05:41:48" level=info msg="[cors] allowed API origins: "
+mailpit-1  | time="2026/07/14 05:41:48" level=info msg="[http] starting on [::]:8025"
+mailpit-1  | time="2026/07/14 05:41:48" level=info msg="[http] accessible via http://localhost:8025/mailpit/"
+minio-1    | MinIO Object Storage Server
+minio-1    | Copyright: 2015-2026 MinIO, Inc.
+minio-1    | License: GNU AGPLv3 - https://www.gnu.org/licenses/agpl-3.0.html
+minio-1    | Version: RELEASE.2024-05-10T01-41-38Z (go1.22.3 linux/arm64)
+minio-1    | 
+minio-1    | API: http://172.24.0.9:9000  http://127.0.0.1:9000 
+minio-1    | WebUI: http://172.24.0.9:9001 http://127.0.0.1:9001  
+minio-1    | 
+minio-1    | Docs: https://min.io/docs/minio/linux/index.html
+minio-1    | Status:         1 Online, 0 Offline. 
+minio-1    | STARTUP WARNINGS:
+minio-1    | - The standard parity is set to 0. This can lead to data loss.
+api-1      | INFO:     Started server process [1]
+api-1      | INFO:     Waiting for application startup.
+api-1      | INFO:     Application startup complete.
+api-1      | INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+api-1      | INFO:     127.0.0.1:51884 - "GET /health/live HTTP/1.1" 200 OK
+api-1      | INFO:     127.0.0.1:48212 - "GET /health/live HTTP/1.1" 200 OK
+api-1      | INFO:     127.0.0.1:48216 - "GET /health/live HTTP/1.1" 200 OK
+api-1      | INFO:     172.24.0.14:56124 - "GET /health/live HTTP/1.1" 200 OK
+api-1            | INFO:     172.24.0.14:56134 - "GET /health/dependencies HTTP/1.1" 200 OK
+reverse-proxy-1  | /docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
+postgres-1       | 
+reverse-proxy-1  | /docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
+reverse-proxy-1  | /docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
+reverse-proxy-1  | 10-listen-on-ipv6-by-default.sh: info: can not modify /etc/nginx/conf.d/default.conf (read-only file system?)
+reverse-proxy-1  | /docker-entrypoint.sh: Sourcing /docker-entrypoint.d/15-local-resolvers.envsh
+reverse-proxy-1  | /docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
+reverse-proxy-1  | /docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
+reverse-proxy-1  | /docker-entrypoint.sh: Configuration complete; ready for start up
+reverse-proxy-1  | 172.25.0.1 - - [14/Jul/2026:05:42:12 +0000] "GET /health/live HTTP/1.1" 200 53 "-" "curl/8.5.0"
+postgres-1       | PostgreSQL Database directory appears to contain a database; Skipping initialization
+postgres-1       | 
+reverse-proxy-1  | 172.25.0.1 - - [14/Jul/2026:05:42:12 +0000] "GET /health/dependencies HTTP/1.1" 200 444 "-" "curl/8.5.0"
+postgres-1       | 2026-07-14 05:41:48.689 UTC [1] LOG:  starting PostgreSQL 16.14 (Debian 16.14-1.pgdg13+1) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit
+postgres-1       | 2026-07-14 05:41:48.689 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+postgres-1       | 2026-07-14 05:41:48.689 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+postgres-1       | 2026-07-14 05:41:48.695 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+postgres-1       | 2026-07-14 05:41:48.702 UTC [29] LOG:  database system was shut down at 2026-07-14 05:38:52 UTC
+postgres-1       | 2026-07-14 05:41:48.709 UTC [1] LOG:  database system is ready to accept connections
+redis-1          | 1:C 14 Jul 2026 05:41:48.565 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+redis-1          | 1:C 14 Jul 2026 05:41:48.565 * Redis version=7.4.9, bits=64, commit=00000000, modified=0, pid=1, just started
+worker-1         |  
+worker-1         |  -------------- ntc-worker@b91b3b5ecf24 v5.6.3 (recovery)
+worker-1         | --- ***** ----- 
+worker-1         | -- ******* ---- Linux-6.17.0-1014-nvidia-aarch64-with-glibc2.36 2026-07-14 05:41:54
+worker-1         | - *** --- * --- 
+worker-1         | - ** ---------- [config]
+worker-1         | - ** ---------- .> app:         ntc-worker:0xe8c97f776510
+worker-1         | - ** ---------- .> transport:   amqp://ntc_worker:**@rabbitmq:5672//
+worker-1         | - ** ---------- .> results:     disabled://
+worker-1         | - *** --- * --- .> concurrency: 2 (prefork)
+worker-1         | -- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+worker-1         | --- ***** ----- 
+worker-1         |  -------------- [queues]
+worker-1         |                 .> celery           exchange=celery(direct) key=celery
+worker-1         |                 
+worker-1         | 
+grafana-1        | logger=resource-migrator t=2026-07-14T05:42:03.733032731Z level=info msg="Migration successfully executed" id="Change key_path collation of resource_history in postgres" duration=6.032µs
+grafana-1        | logger=resource-migrator t=2026-07-14T05:42:03.742584304Z level=info msg="Executing migration" id="Change key_path collation of resource_events in postgres"
+grafana-1        | logger=resource-migrator t=2026-07-14T05:42:03.74258864Z level=info msg="Migration successfully executed" id="Change key_path collation of resource_events in postgres" duration=4.304µs
+grafana-1        | logger=resource-migrator t=2026-07-14T05:42:03.751509568Z level=info msg="Executing migration" id="resource_history key_path backfill"
+grafana-1        | logger=resource-migrator t=2026-07-14T05:42:03.75168053Z level=info msg="Migration successfully executed" id="resource_history key_path backfill" duration=171.922µs
+grafana-1        | logger=resource-migrator t=2026-07-14T05:42:03.763436379Z level=info msg="Executing migration" id="Add index to resource_history for garbage collection"
+grafana-1        | logger=resource-migrator t=2026-07-14T05:42:03.763918575Z level=info msg="Migration successfully executed" id="Add index to resource_history for garbage collection" duration=482.852µs
+grafana-1        | logger=resource-migrator t=2026-07-14T05:42:03.773198994Z level=info msg="Executing migration" id="Fix small resource versions"
+grafana-1        | logger=resource-migrator t=2026-07-14T05:42:03.773373188Z level=info msg="Migration successfully executed" id="Fix small resource versions" duration=174.594µs
+grafana-1        | logger=resource-migrator t=2026-07-14T05:42:03.782135234Z level=info msg="Executing migration" id="create table pending_tenant_deletions"
+grafana-1        | logger=resource-migrator t=2026-07-14T05:42:03.782519638Z level=info msg="Migration successfully executed" id="create table pending_tenant_deletions" duration=384.916µs
+worker-1         | [tasks]
+redis-1          | 1:C 14 Jul 2026 05:41:48.565 * Configuration loaded
+worker-1         | 
+redis-1          | 1:M 14 Jul 2026 05:41:48.565 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+redis-1          | 1:M 14 Jul 2026 05:41:48.565 * monotonic clock: POSIX clock_gettime
+redis-1          | 1:M 14 Jul 2026 05:41:48.566 * Running mode=standalone, port=6379.
+redis-1          | 1:M 14 Jul 2026 05:41:48.566 * Server initialized
+redis-1          | 1:M 14 Jul 2026 05:41:48.566 * Reading RDB base file on AOF loading...
+redis-1          | 1:M 14 Jul 2026 05:41:48.566 * Loading RDB produced by version 7.4.9
+redis-1          | 1:M 14 Jul 2026 05:41:48.566 * RDB age 594 seconds
+redis-1          | 1:M 14 Jul 2026 05:41:48.566 * RDB memory usage when created 0.94 Mb
+redis-1          | 1:M 14 Jul 2026 05:41:48.566 * RDB is base AOF
+redis-1          | 1:M 14 Jul 2026 05:41:48.566 * Done loading RDB, keys loaded: 0, keys expired: 0.
+worker-1         | 
+grafana-1        | logger=resource-migrator t=2026-07-14T05:42:03.791652775Z level=info msg="Executing migration" id="Change key_path collation of pending_tenant_deletions in postgres"
+worker-1         | [2026-07-14 05:41:54,701: INFO/MainProcess] Connected to amqp://ntc_worker:**@rabbitmq:5672//
+grafana-1        | logger=resource-migrator t=2026-07-14T05:42:03.791665079Z level=info msg="Migration successfully executed" id="Change key_path collation of pending_tenant_deletions in postgres" duration=12.848µs
+grafana-1        | logger=resource-migrator t=2026-07-14T05:42:03.800459814Z level=info msg="migrations completed" performed=43 skipped=0 duration=477.665603ms
+grafana-1        | logger=resource-migrator t=2026-07-14T05:42:03.80064948Z level=info msg="Unlocking database"
+grafana-1        | t=2026-07-14T05:42:03.802286695Z level=info caller=logger.go:214 time=2026-07-14T05:42:03.802271318Z msg="Using channel notifier" logger=sql-resource-server
+grafana-1        | logger=resource-search t=2026-07-14T05:42:03.802863516Z level=info msg="search index initialized" duration_secs=0 total_docs=0
+grafana-1        | logger=unifiedstorage-migrator t=2026-07-14T05:42:03.806400331Z level=info msg="Locking database"
+grafana-1        | logger=unifiedstorage-migrator t=2026-07-14T05:42:03.806412363Z level=info msg="Starting DB migrations"
+grafana-1        | logger=unifiedstorage-migrator t=2026-07-14T05:42:03.808032842Z level=info msg="Executing migration" id="create unifiedstorage_migration_log table"
+grafana-1        | logger=unifiedstorage-migrator t=2026-07-14T05:42:03.808254092Z level=info msg="Migration successfully executed" id="create unifiedstorage_migration_log table" duration=220.994µs
+grafana-1        | logger=unifiedstorage-migrator t=2026-07-14T05:42:03.818652505Z level=info msg="migrations completed" performed=1 skipped=0 duration=10.642591ms
+grafana-1        | logger=unifiedstorage-migrator t=2026-07-14T05:42:03.818808282Z level=info msg="Unlocking database"
+grafana-1        | logger=storage.unified.migrations t=2026-07-14T05:42:03.818833307Z level=info msg="Running migrations for unified storage"
+grafana-1        | logger=storage.unified.migrations t=2026-07-14T05:42:03.818870731Z level=info msg="Migration is disabled in config, skipping" migration=shorturls
+grafana-1        | logger=storage.unified.migrations t=2026-07-14T05:42:03.818896763Z level=info msg="Migration is disabled in config, skipping" migration=datasource
+grafana-1        | logger=storage.unified.migrations t=2026-07-14T05:42:03.818902779Z level=info msg="Migration is disabled in config, skipping" migration=stars
+grafana-1        | logger=unifiedstorage-migrator t=2026-07-14T05:42:03.818921771Z level=info msg="Locking database"
+grafana-1        | logger=unifiedstorage-migrator t=2026-07-14T05:42:03.818925611Z level=info msg="Starting DB migrations"
+grafana-1        | logger=unifiedstorage-migrator t=2026-07-14T05:42:03.819096653Z level=info msg="Executing migration" id="folders and dashboards migration"
+grafana-1        | logger=storage.unified.migration_runner.folders-dashboards t=2026-07-14T05:42:03.81917379Z level=info msg="Starting migration for all organizations" org_count=1 resources="[folders.folder.grafana.app dashboards.dashboard.grafana.app]"
+grafana-1        | logger=storage.unified.migration_runner.folders-dashboards t=2026-07-14T05:42:03.819270687Z level=info msg="Stored migrator transaction in context for bulk operations (SQLite compatibility)"
+grafana-1        | logger=storage.unified.migration_runner.folders-dashboards t=2026-07-14T05:42:03.819280703Z level=info msg="Migrating organization" org_id=1 namespace=default
+grafana-1        | logger=storage.unified.migrator t=2026-07-14T05:42:03.819376559Z level=info msg="start migrating legacy resources" namespace=default orgId=1 stackId=0
+grafana-1        | logger=storage.unified.migration_runner.folders-dashboards t=2026-07-14T05:42:03.81938464Z level=info msg="Migration progress" org_id=1 count=-1 message="migrating folders..."
+grafana-1        | t=2026-07-14T05:42:03.819685074Z level=info caller=logger.go:214 time=2026-07-14T05:42:03.819676338Z msg="Using SQLite transaction from client context" logger=sql-resource-server
+grafana-1        | logger=storage.unified.migration_runner.folders-dashboards t=2026-07-14T05:42:03.821240064Z level=info msg="Migration progress" org_id=1 count=-2 message="finished folders... (0)"
+grafana-1        | logger=storage.unified.migration_runner.folders-dashboards t=2026-07-14T05:42:03.821257248Z level=info msg="Migration progress" org_id=1 count=-1 message="migrating dashboards..."
+grafana-1        | logger=storage.unified.migration_runner.folders-dashboards t=2026-07-14T05:42:03.821492786Z level=info msg="Migration progress" org_id=1 count=-2 message="finished dashboards... (0)"
+grafana-1        | logger=storage.unified.migrator t=2026-07-14T05:42:03.821506771Z level=info msg="finished migrating legacy resources" namespace=default orgId=1 stackId=0
+grafana-1        | t=2026-07-14T05:42:03.821537235Z level=info caller=logger.go:214 time=2026-07-14T05:42:03.821528611Z msg="synchronize collection" key=default/folder.grafana.app/folders
+grafana-1        | t=2026-07-14T05:42:03.82213804Z level=info caller=logger.go:214 time=2026-07-14T05:42:03.822132392Z msg="get stats (still in transaction)" key=default/folder.grafana.app/folders
+grafana-1        | t=2026-07-14T05:42:03.822842303Z level=info caller=logger.go:214 time=2026-07-14T05:42:03.822834959Z msg="successfully locked RV" logger=sql-resource-server nextRV=1784007723822011 key=default/folder.grafana.app/folders
+grafana-1        | t=2026-07-14T05:42:03.822950224Z level=info caller=logger.go:214 time=2026-07-14T05:42:03.822945632Z msg="successfully saved RV" logger=sql-resource-server rv=1784007723822011 key=default/folder.grafana.app/folders
+grafana-1        | t=2026-07-14T05:42:03.823118625Z level=info caller=logger.go:214 time=2026-07-14T05:42:03.823114129Z msg="synchronize collection" key=default/dashboard.grafana.app/dashboards
+grafana-1        | t=2026-07-14T05:42:03.823614357Z level=info caller=logger.go:214 time=2026-07-14T05:42:03.823608645Z msg="get stats (still in transaction)" key=default/dashboard.grafana.app/dashboards
+grafana-1        | t=2026-07-14T05:42:03.824094906Z level=info caller=logger.go:214 time=2026-07-14T05:42:03.82409001Z msg="successfully locked RV" logger=sql-resource-server nextRV=1784007723823017 key=default/dashboard.grafana.app/dashboards
+grafana-1        | t=2026-07-14T05:42:03.824185515Z level=info caller=logger.go:214 time=2026-07-14T05:42:03.824180811Z msg="successfully saved RV" logger=sql-resource-server rv=1784007723823017 key=default/dashboard.grafana.app/dashboards
+grafana-1        | logger=storage.unified.migrator t=2026-07-14T05:42:03.824497853Z level=info msg="start rebuilding index for resources" namespace=default orgId=1 resources="[folders.folder.grafana.app dashboards.dashboard.grafana.app]"
+grafana-1        | logger=storage.unified.migrator t=2026-07-14T05:42:03.82482512Z level=info msg="finished rebuilding index for resources" namespace=default orgId=1 resources="[folders.folder.grafana.app dashboards.dashboard.grafana.app]"
+grafana-1        | logger=storage.unified.migration_runner.folders-dashboards t=2026-07-14T05:42:03.824932337Z level=info msg="Count validation" resource=folders.folder.grafana.app namespace=default legacy_count=0 unified_count=0 migration_summary_count=0 rejected=0 history=0
+grafana-1        | logger=storage.unified.migration_runner.folders-dashboards t=2026-07-14T05:42:03.82499965Z level=info msg="Count validation" resource=dashboards.dashboard.grafana.app namespace=default legacy_count=0 unified_count=0 migration_summary_count=0 rejected=0 history=0
+grafana-1        | logger=storage.unified.migration_runner.folders-dashboards t=2026-07-14T05:42:03.825092723Z level=info msg="Folder tree structure validation passed" folder_count=0 namespace=default
+grafana-1        | logger=storage.unified.migration_runner.folders-dashboards t=2026-07-14T05:42:03.825100723Z level=info msg="Migration completed for organization" org_id=1 duration=5.81202ms processed=0 summaries=2 rejected=0
+worker-1         | [2026-07-14 05:41:54,728: INFO/MainProcess] ntc-worker@b91b3b5ecf24 ready.
+grafana-1        | logger=storage.unified.migration_runner.folders-dashboards t=2026-07-14T05:42:03.825106051Z level=info msg="Migration completed successfully for all organizations" org_count=1
+grafana-1        | logger=unifiedstorage-migrator t=2026-07-14T05:42:03.825109667Z level=info msg="Migration successfully executed" id="folders and dashboards migration" duration=6.01311ms
+grafana-1        | logger=unifiedstorage-migrator t=2026-07-14T05:42:03.834864218Z level=info msg="Executing migration" id="playlists migration"
+grafana-1        | logger=storage.unified.migration_runner.playlists t=2026-07-14T05:42:03.834943563Z level=info msg="Starting migration for all organizations" org_count=1 resources=[playlists.playlist.grafana.app]
+grafana-1        | logger=storage.unified.migration_runner.playlists t=2026-07-14T05:42:03.834959995Z level=info msg="Stored migrator transaction in context for bulk operations (SQLite compatibility)"
+grafana-1        | logger=storage.unified.migration_runner.playlists t=2026-07-14T05:42:03.835028764Z level=info msg="Migration is not required, the legacy SQL table does not exist" table=playlist
+grafana-1        | logger=unifiedstorage-migrator t=2026-07-14T05:42:03.835035628Z level=info msg="Migration successfully executed" id="playlists migration" duration=171.746µs
+grafana-1        | logger=unifiedstorage-migrator t=2026-07-14T05:42:03.845355224Z level=info msg="migrations completed" performed=2 skipped=1 duration=26.274123ms
+grafana-1        | logger=unifiedstorage-migrator t=2026-07-14T05:42:03.845525962Z level=info msg="Unlocking database"
+dcgm-exporter-1  | time=2026-07-14T05:41:48.835Z level=INFO msg="Starting dcgm-exporter" Version=4.4.2-4.7.0
+dcgm-exporter-1  | time=2026-07-14T05:41:48.839Z level=INFO msg="Attempting to initialize DCGM."
+dcgm-exporter-1  | time=2026-07-14T05:41:48.925Z level=INFO msg="Initialized DCGM Fields module."
+dcgm-exporter-1  | time=2026-07-14T05:41:48.925Z level=INFO msg="Attempting to initialize NVML library."
+dcgm-exporter-1  | time=2026-07-14T05:41:48.925Z level=INFO msg="DCGM successfully initialized!"
+qdrant-1         |            _                 _    
+qdrant-1         |   __ _  __| |_ __ __ _ _ __ | |_  
+grafana-1        | logger=storage.unified.migrations t=2026-07-14T05:42:03.845655387Z level=info msg="Unified storage migrations completed successfully"
+prometheus-1     | ts=2026-07-14T05:41:48.871Z caller=main.go:671 level=info msg="Starting Prometheus Server" mode=server version="(version=2.55.1, branch=HEAD, revision=6d7569113f1ca814f1e149f74176656540043b8d)"
+prometheus-1     | ts=2026-07-14T05:41:48.871Z caller=main.go:676 level=info build_context="(go=go1.23.2, platform=linux/arm64, user=root@194e0f5dd5e8, date=20241106-10:11:03, tags=netgo,builtinassets,stringlabels)"
+prometheus-1     | ts=2026-07-14T05:41:48.871Z caller=main.go:677 level=info host_details="(Linux 6.17.0-1014-nvidia #14-Ubuntu SMP PREEMPT_DYNAMIC Tue Mar 17 19:01:40 UTC 2026 aarch64 12d1944eef98 (none))"
+prometheus-1     | ts=2026-07-14T05:41:48.871Z caller=main.go:678 level=info fd_limits="(soft=524288, hard=524288)"
+prometheus-1     | ts=2026-07-14T05:41:48.871Z caller=main.go:679 level=info vm_limits="(soft=unlimited, hard=unlimited)"
+prometheus-1     | ts=2026-07-14T05:41:48.876Z caller=web.go:585 level=info component=web msg="Start listening for connections" address=0.0.0.0:9090
+dcgm-exporter-1  | time=2026-07-14T05:41:48.925Z level=INFO msg="NVML provider successfully initialized!"
+dcgm-exporter-1  | time=2026-07-14T05:41:49.149Z level=INFO msg="Not collecting DCP metrics: This request is serviced by a module of DCGM that is not currently loaded"
+dcgm-exporter-1  | time=2026-07-14T05:41:49.149Z level=INFO msg="Falling back to metric file '/etc/dcgm-exporter/default-counters.csv'"
+rabbitmq-1       | 2026-07-14 05:41:50.916502+00:00 [info] <0.254.0>  node           : rabbit@ee712bffa873[0m
+dcgm-exporter-1  | time=2026-07-14T05:41:49.149Z level=WARN msg="Skipping line 21 ('DCGM_FI_PROF_GR_ENGINE_ACTIVE'): metric not enabled"
+prometheus-1     | ts=2026-07-14T05:41:48.876Z caller=main.go:1197 level=info msg="Starting TSDB ..."
+dcgm-exporter-1  | time=2026-07-14T05:41:49.149Z level=WARN msg="Skipping line 22 ('DCGM_FI_PROF_PIPE_TENSOR_ACTIVE'): metric not enabled"
+grafana-1        | logger=annotations t=2026-07-14T05:42:03.84626312Z level=info msg="Starting annotation dashboard_uid migration in background"
+grafana-1        | logger=annotations t=2026-07-14T05:42:03.846291776Z level=info msg="Starting batched dashboard_uid migration for annotations (newest first)" batchSize=5000
+grafana-1        | logger=annotations t=2026-07-14T05:42:03.846585091Z level=info msg="Completed dashboard_uid migration for annotations" totalUpdated=0
+grafana-1        | logger=annotations t=2026-07-14T05:42:03.846595907Z level=info msg="Annotation dashboard_uid migration completed successfully"
+grafana-1        | logger=storage.unified.migrations t=2026-07-14T05:42:03.848116449Z level=info msg="Resolved storage mode from migration log" resource=folders.folder.grafana.app mode=unified
+grafana-1        | logger=live.push_http t=2026-07-14T05:42:03.851258381Z level=info msg="Live Push Gateway initialization"
+grafana-1        | logger=ngalert.notifier t=2026-07-14T05:42:03.852351351Z level=info component=alertmanager orgID=1 msg="template definitions loaded" mimir=0 grafana=0 total=0 maxTemplateOutput=10485760
+grafana-1        | logger=ngalert.notifier component=alertmanager orgID=1 t=2026-07-14T05:42:03.853901701Z level=info msg="Applying new configuration to Alertmanager" configHash="{16778549912962373901 16454292769479786371 11334157631281353376 13684829433332818750 9889444224312429563 10278876130067529486 13274274624283075277 5144611013662998819}"
+grafana-1        | logger=ngalert.notifier t=2026-07-14T05:42:03.853919589Z level=info component=alertmanager orgID=1 msg="template definitions loaded" mimir=0 grafana=0 total=0 maxTemplateOutput=10485760
+grafana-1        | logger=ngalert.writer t=2026-07-14T05:42:03.878547729Z level=info msg="Setting up remote write using data sources" timeout=30s default_datasource_uid=
+grafana-1        | logger=ngalert t=2026-07-14T05:42:03.878648002Z level=info msg="Using protobuf-based alert instance store"
+grafana-1        | logger=ngalert.state.manager.persist t=2026-07-14T05:42:03.878656626Z level=info msg="Using sync rule state persister (compressed)"
+grafana-1        | logger=query_data t=2026-07-14T05:42:03.87958769Z level=info msg="Query Service initialization"
+grafana-1        | logger=annotation.app t=2026-07-14T05:42:03.907897816Z level=info msg="Starting annotation cleanup loop" interval=24h0m0s retention=2160h0m0s
+grafana-1        | logger=infra.usagestats.collector t=2026-07-14T05:42:03.909586807Z level=info msg="registering usage stat providers" usageStatsProvidersLen=2
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:42:05.123463898Z level=info msg=starting module=tracing
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:42:05.12351129Z level=info msg=starting module=grafana-apiserver
+grafana-1        | logger=grafana-apiserver t=2026-07-14T05:42:05.270206164Z level=info msg="Adding GroupVersion features.grafana.app v0alpha1 to ResourceManager"
+grafana-1        | logger=grafana-apiserver t=2026-07-14T05:42:05.270534567Z level=info msg="Adding GroupVersion userstorage.grafana.app v0alpha1 to ResourceManager"
+grafana-1        | logger=grafana-apiserver t=2026-07-14T05:42:05.270766073Z level=info msg="Adding GroupVersion preferences.grafana.app v1alpha1 to ResourceManager"
+grafana-1        | logger=grafana-apiserver t=2026-07-14T05:42:05.273229151Z level=info msg="Adding GroupVersion dashboard.grafana.app v2 to ResourceManager"
+grafana-1        | logger=grafana-apiserver t=2026-07-14T05:42:05.273372976Z level=info msg="Adding GroupVersion dashboard.grafana.app v2beta1 to ResourceManager"
+grafana-1        | logger=grafana-apiserver t=2026-07-14T05:42:05.273497585Z level=info msg="Adding GroupVersion dashboard.grafana.app v2alpha1 to ResourceManager"
+grafana-1        | logger=grafana-apiserver t=2026-07-14T05:42:05.273726803Z level=info msg="Adding GroupVersion dashboard.grafana.app v0alpha1 to ResourceManager"
+grafana-1        | logger=grafana-apiserver t=2026-07-14T05:42:05.273855845Z level=info msg="Adding GroupVersion dashboard.grafana.app v1 to ResourceManager"
+grafana-1        | logger=grafana-apiserver t=2026-07-14T05:42:05.27397463Z level=info msg="Adding GroupVersion dashboard.grafana.app v1beta1 to ResourceManager"
+grafana-1        | t=2026-07-14T05:42:05.274013446Z level=info caller=logger.go:214 time=2026-07-14T05:42:05.274008662Z msg="Zanzana is not enabled; skipping folder propagation hooks"
+grafana-1        | t=2026-07-14T05:42:05.274024262Z level=info caller=logger.go:214 time=2026-07-14T05:42:05.274022918Z msg="Zanzana is not enabled; skipping folder propagation hooks"
+grafana-1        | logger=grafana-apiserver t=2026-07-14T05:42:05.274347673Z level=info msg="Adding GroupVersion folder.grafana.app v1 to ResourceManager"
+grafana-1        | logger=grafana-apiserver t=2026-07-14T05:42:05.274529723Z level=info msg="Adding GroupVersion folder.grafana.app v1beta1 to ResourceManager"
+grafana-1        | logger=grafana-apiserver t=2026-07-14T05:42:05.274921614Z level=info msg="Adding GroupVersion collections.grafana.app v1alpha1 to ResourceManager"
+grafana-1        | logger=grafana-apiserver t=2026-07-14T05:42:05.277606758Z level=info msg="Adding GroupVersion provisioning.grafana.app v0alpha1 to ResourceManager"
+grafana-1        | logger=grafana-apiserver t=2026-07-14T05:42:05.278388621Z level=info msg="Adding GroupVersion provisioning.grafana.app v1beta1 to ResourceManager"
+dcgm-exporter-1  | time=2026-07-14T05:41:49.149Z level=WARN msg="Skipping line 23 ('DCGM_FI_PROF_DRAM_ACTIVE'): metric not enabled"
+redis-1          | 1:M 14 Jul 2026 05:41:48.566 * DB loaded from base file appendonly.aof.1.base.rdb: 0.000 seconds
+redis-1          | 1:M 14 Jul 2026 05:41:48.566 * DB loaded from incr file appendonly.aof.1.incr.aof: 0.000 seconds
+redis-1          | 1:M 14 Jul 2026 05:41:48.566 * DB loaded from append only file: 0.000 seconds
+grafana-1        | logger=grafana-apiserver t=2026-07-14T05:42:05.278715168Z level=info msg="Adding GroupVersion playlist.grafana.app v1 to ResourceManager"
+redis-1          | 1:M 14 Jul 2026 05:41:48.566 * Opening AOF incr file appendonly.aof.1.incr.aof on server start
+redis-1          | 1:M 14 Jul 2026 05:41:48.566 * Ready to accept connections tcp
+grafana-1        | logger=grafana-apiserver t=2026-07-14T05:42:05.278922242Z level=info msg="Adding GroupVersion playlist.grafana.app v0alpha1 to ResourceManager"
+dcgm-exporter-1  | time=2026-07-14T05:41:49.149Z level=WARN msg="Skipping line 24 ('DCGM_FI_PROF_PCIE_TX_BYTES'): metric not enabled"
+dcgm-exporter-1  | time=2026-07-14T05:41:49.149Z level=WARN msg="Skipping line 25 ('DCGM_FI_PROF_PCIE_RX_BYTES'): metric not enabled"
+prometheus-1     | ts=2026-07-14T05:41:48.880Z caller=tls_config.go:348 level=info component=web msg="Listening on" address=[::]:9090
+prometheus-1     | ts=2026-07-14T05:41:48.880Z caller=tls_config.go:351 level=info component=web msg="TLS is disabled." http2=false address=[::]:9090
+prometheus-1     | ts=2026-07-14T05:41:48.882Z caller=head.go:627 level=info component=tsdb msg="Replaying on-disk memory mappable chunks if any"
+prometheus-1     | ts=2026-07-14T05:41:48.882Z caller=head.go:714 level=info component=tsdb msg="On-disk memory mappable chunks replay completed" duration=1.456µs
+prometheus-1     | ts=2026-07-14T05:41:48.882Z caller=head.go:722 level=info component=tsdb msg="Replaying WAL, this may take a while"
+prometheus-1     | ts=2026-07-14T05:41:48.884Z caller=head.go:794 level=info component=tsdb msg="WAL segment loaded" segment=0 maxSegment=0
+prometheus-1     | ts=2026-07-14T05:41:48.884Z caller=head.go:831 level=info component=tsdb msg="WAL replay completed" checkpoint_replay_duration=53.121µs wal_replay_duration=1.266523ms wbl_replay_duration=128ns chunk_snapshot_load_duration=0s mmap_chunk_replay_duration=1.456µs total_replay_duration=1.335404ms
+prometheus-1     | ts=2026-07-14T05:41:48.885Z caller=main.go:1218 level=info fs_type=EXT4_SUPER_MAGIC
+prometheus-1     | ts=2026-07-14T05:41:48.885Z caller=main.go:1221 level=info msg="TSDB started"
+prometheus-1     | ts=2026-07-14T05:41:48.885Z caller=main.go:1404 level=info msg="Loading configuration file" filename=/etc/prometheus/prometheus.yml
+rabbitmq-1       | 2026-07-14 05:41:50.916502+00:00 [info] <0.254.0>  home dir       : /var/lib/rabbitmq[0m
+dcgm-exporter-1  | time=2026-07-14T05:41:49.149Z level=INFO msg="Initializing system entities of type 'GPU'"
+rabbitmq-1       | 2026-07-14 05:41:50.916502+00:00 [info] <0.254.0>  config file(s) : /run/ntc-rabbitmq/rabbitmq.conf[0m
+prometheus-1     | ts=2026-07-14T05:41:48.887Z caller=main.go:1441 level=info msg="updated GOGC" old=100 new=75
+dcgm-exporter-1  | time=2026-07-14T05:41:49.236Z level=INFO msg="Initializing system entities of type 'NvSwitch'"
+dcgm-exporter-1  | time=2026-07-14T05:41:49.236Z level=INFO msg="Not collecting NvSwitch metrics; no switches to monitor"
+dcgm-exporter-1  | time=2026-07-14T05:41:49.236Z level=INFO msg="Initializing system entities of type 'NvLink'"
+qdrant-1         |  / _` |/ _` | '__/ _` | '_ \| __| 
+qdrant-1         | | (_| | (_| | | | (_| | | | | |_  
+qdrant-1         |  \__, |\__,_|_|  \__,_|_| |_|\__| 
+qdrant-1         |     |_|                           
+grafana-1        | t=2026-07-14T05:42:05.278943954Z level=info caller=logger.go:214 time=2026-07-14T05:42:05.278939618Z msg="Installed APIs for app" app=playlist
+prometheus-1     | ts=2026-07-14T05:41:48.887Z caller=main.go:1452 level=info msg="Completed loading of configuration file" filename=/etc/prometheus/prometheus.yml totalDuration=1.606335ms db_storage=736ns remote_storage=1.12µs web_handler=176ns query_engine=592ns scrape=893.8µs scrape_sd=25.056µs notify=512ns notify_sd=384ns rules=784ns tracing=2.352µs
+dcgm-exporter-1  | time=2026-07-14T05:41:49.236Z level=WARN msg="Failed to initialize NvSwitch/NvLink info" error="no switches to monitor"
+dcgm-exporter-1  | time=2026-07-14T05:41:49.241Z level=INFO msg="Initializing system entities of type 'CPU'"
+dcgm-exporter-1  | time=2026-07-14T05:41:49.412Z level=INFO msg="Not collecting CPU metrics; error retrieving DCGM CPU hierarchy: This request is serviced by a module of DCGM that is not currently loaded"
+dcgm-exporter-1  | time=2026-07-14T05:41:49.413Z level=INFO msg="Initializing system entities of type 'CPU Core'"
+dcgm-exporter-1  | time=2026-07-14T05:41:49.413Z level=INFO msg="Not collecting CPU Core metrics; error retrieving DCGM CPU hierarchy: This request is serviced by a module of DCGM that is not currently loaded"
+dcgm-exporter-1  | time=2026-07-14T05:41:49.423Z level=INFO msg="Starting webserver"
+dcgm-exporter-1  | time=2026-07-14T05:41:49.423Z level=INFO msg="Watching for changes in file" file=/etc/dcgm-exporter/default-counters.csv
+dcgm-exporter-1  | time=2026-07-14T05:41:49.423Z level=INFO msg="Listening on" address=[::]:9400
+dcgm-exporter-1  | time=2026-07-14T05:41:49.423Z level=INFO msg="TLS is disabled." http2=false address=[::]:9400
+qdrant-1         | 
+grafana-1        | logger=grafana-apiserver t=2026-07-14T05:42:05.279479975Z level=info msg="Adding GroupVersion plugins.grafana.app v0alpha1 to ResourceManager"
+prometheus-1     | ts=2026-07-14T05:41:48.887Z caller=main.go:1182 level=info msg="Server is ready to receive web requests."
+grafana-1        | t=2026-07-14T05:42:05.279499671Z level=info caller=logger.go:214 time=2026-07-14T05:42:05.279497015Z msg="Installed APIs for app" app=plugins
+qdrant-1         | Version: 1.18.1, build: e01c207f
+grafana-1        | logger=grafana-apiserver t=2026-07-14T05:42:05.27989017Z level=info msg="Adding GroupVersion example.grafana.app v1alpha1 to ResourceManager"
+grafana-1        | logger=grafana-apiserver t=2026-07-14T05:42:05.280065948Z level=info msg="Adding GroupVersion example.grafana.app v0alpha1 to ResourceManager"
+qdrant-1         | Access web UI at http://localhost:6333/dashboard
+grafana-1        | t=2026-07-14T05:42:05.28010142Z level=info caller=logger.go:214 time=2026-07-14T05:42:05.280099612Z msg="Installed APIs for app" app=example
+prometheus-1     | ts=2026-07-14T05:41:48.887Z caller=manager.go:164 level=info component="rule manager" msg="Starting rule manager..."
+grafana-1        | t=2026-07-14T05:42:05.280132956Z level=warn caller=logger.go:224 time=2026-07-14T05:42:05.280131052Z msg="skipped registering status sub-resource that does not support dual writing" resource=recordingrules.rules.alerting.grafana.app version=v0alpha1 storagePath=recordingrules/status
+grafana-1        | t=2026-07-14T05:42:05.280139805Z level=warn caller=logger.go:224 time=2026-07-14T05:42:05.280137389Z msg="skipped registering status sub-resource that does not support dual writing" resource=alertrules.rules.alerting.grafana.app version=v0alpha1 storagePath=alertrules/status
+grafana-1        | logger=grafana-apiserver t=2026-07-14T05:42:05.280588305Z level=info msg="Adding GroupVersion rules.alerting.grafana.app v0alpha1 to ResourceManager"
+grafana-1        | t=2026-07-14T05:42:05.280608609Z level=info caller=logger.go:214 time=2026-07-14T05:42:05.280607041Z msg="Installed APIs for app" app=alerting
+grafana-1        | logger=grafana-apiserver t=2026-07-14T05:42:05.281437256Z level=info msg="Adding GroupVersion notifications.alerting.grafana.app v1beta1 to ResourceManager"
+grafana-1        | logger=grafana-apiserver t=2026-07-14T05:42:05.281937933Z level=info msg="Adding GroupVersion notifications.alerting.grafana.app v0alpha1 to ResourceManager"
+grafana-1        | t=2026-07-14T05:42:05.281987405Z level=info caller=logger.go:214 time=2026-07-14T05:42:05.281985469Z msg="Installed APIs for app" app=alerting-notifications
+grafana-1        | logger=grafana-apiserver t=2026-07-14T05:42:05.283054647Z level=info msg="Adding GroupVersion advisor.grafana.app v0alpha1 to ResourceManager"
+grafana-1        | t=2026-07-14T05:42:05.283167544Z level=info caller=logger.go:214 time=2026-07-14T05:42:05.283158503Z msg="Installed APIs for app" app=advisor
+grafana-1        | t=2026-07-14T05:42:05.717079406Z level=info caller=logger.go:214 time=2026-07-14T05:42:05.717071534Z msg="App initialized" app=example
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:42:05.717170303Z level=info msg=starting module=plugins.store
+qdrant-1         | Agentic Skills: https://skills.qdrant.tech/
+rabbitmq-1       | 2026-07-14 05:41:50.916502+00:00 [info] <0.254.0>                 : /etc/rabbitmq/conf.d/10-defaults.conf[0m
+qdrant-1         | 
+rabbitmq-1       | 2026-07-14 05:41:50.916502+00:00 [info] <0.254.0>  cookie hash    : 8q5HXysOfEas/8GpH5tWLw==[0m
+qdrant-1         | 2026-07-14T05:41:48.543617Z  INFO storage::content_manager::consensus::persistent: Loading raft state from ./storage/raft_state.json
+rabbitmq-1       | 2026-07-14 05:41:50.916502+00:00 [info] <0.254.0>  log(s)         : <stdout>[0m
+qdrant-1         | 2026-07-14T05:41:48.546858Z  INFO qdrant: Distributed mode disabled
+qdrant-1         | 2026-07-14T05:41:48.546881Z  INFO qdrant: Telemetry reporting enabled, id: b689a2fe-932a-4b0f-880b-4fba1a45636c
+qdrant-1         | 2026-07-14T05:41:48.554235Z  INFO qdrant::actix: REST transport settings: keep_alive=5s, client_request_timeout=5s, client_disconnect_timeout=5s
+qdrant-1         | 2026-07-14T05:41:48.554251Z  INFO qdrant::actix: TLS disabled for REST API
+qdrant-1         | 2026-07-14T05:41:48.554284Z  INFO qdrant::actix: Qdrant HTTP listening on 6333
+qdrant-1         | 2026-07-14T05:41:48.554288Z  INFO actix_server::builder: starting 3 workers
+qdrant-1         | 2026-07-14T05:41:48.554295Z  INFO actix_server::server: Actix runtime found; starting in Actix runtime
+qdrant-1         | 2026-07-14T05:41:48.554298Z  INFO actix_server::server: starting service: "actix-web-service-0.0.0.0:6333", workers: 3, listening on: 0.0.0.0:6333
+qdrant-1         | 2026-07-14T05:41:48.555775Z  INFO qdrant::tonic: Qdrant gRPC listening on 6334
+qdrant-1         | 2026-07-14T05:41:48.555785Z  INFO qdrant::tonic: TLS disabled for gRPC API
+qdrant-1         | 2026-07-14T05:41:48.559523Z ERROR qdrant::common::telemetry_reporting: Failed to report telemetry Service internal error: Http request error: error sending request for url (https://telemetry.qdrant.io/)
+rabbitmq-1       | 2026-07-14 05:41:50.916502+00:00 [info] <0.254.0>  data dir       : /var/lib/rabbitmq/mnesia/rabbit@ee712bffa873[0m
+rabbitmq-1       | 2026-07-14 05:41:51.228538+00:00 [info] <0.254.0> Running boot step pre_boot defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:41:51.228593+00:00 [info] <0.254.0> Running boot step rabbit_global_counters defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:41:51.228764+00:00 [info] <0.254.0> Running boot step rabbit_osiris_metrics defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:41:51.228837+00:00 [info] <0.254.0> Running boot step rabbit_core_metrics defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:41:51.229548+00:00 [info] <0.254.0> Running boot step rabbit_alarm defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:41:51.236692+00:00 [info] <0.329.0> Memory high watermark set to 49844 MiB (52265451520 bytes) of 124610 MiB (130663628800 bytes) total[0m
+rabbitmq-1       | 2026-07-14 05:41:51.239698+00:00 [info] <0.331.0> Enabling free disk space monitoring (disk free space: 2717409738752, total memory: 130663628800)[0m
+rabbitmq-1       | 2026-07-14 05:41:51.239736+00:00 [info] <0.331.0> Disk free limit set to 50MB[0m
+rabbitmq-1       | 2026-07-14 05:41:51.240666+00:00 [info] <0.254.0> Running boot step code_server_cache defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:41:51.240719+00:00 [info] <0.254.0> Running boot step file_handle_cache defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:41:51.244518+00:00 [info] <0.334.0> Limiting to approx 927 file handles (832 sockets)[0m
+rabbitmq-1       | 2026-07-14 05:41:51.244605+00:00 [info] <0.335.0> FHC read buffering: OFF[0m
+rabbitmq-1       | 2026-07-14 05:41:51.244637+00:00 [info] <0.335.0> FHC write buffering: ON[0m
+rabbitmq-1       | 2026-07-14 05:41:51.244826+00:00 [info] <0.254.0> Running boot step worker_pool defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:41:51.244868+00:00 [info] <0.315.0> Will use 20 processes for default worker pool[0m
+rabbitmq-1       | 2026-07-14 05:41:51.244916+00:00 [info] <0.315.0> Starting worker pool 'worker_pool' with 20 processes in it[0m
+rabbitmq-1       | 2026-07-14 05:41:51.245438+00:00 [info] <0.254.0> Running boot step database defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:41:51.245644+00:00 [info] <0.254.0> Peer discovery: configured backend: rabbit_peer_discovery_classic_config[0m
+rabbitmq-1       | [38;5;87m2026-07-14 05:41:51.246463+00:00 [notice] <0.316.0> Feature flags: attempt to enable `detailed_queues_endpoint`...[0m
+rabbitmq-1       | [38;5;87m2026-07-14 05:41:51.318172+00:00 [notice] <0.316.0> Feature flags: `detailed_queues_endpoint` enabled[0m
+rabbitmq-1       | [38;5;87m2026-07-14 05:41:51.318243+00:00 [notice] <0.316.0> Feature flags: attempt to enable `quorum_queue_non_voters`...[0m
+rabbitmq-1       | [38;5;87m2026-07-14 05:41:51.391285+00:00 [notice] <0.316.0> Feature flags: `quorum_queue_non_voters` enabled[0m
+rabbitmq-1       | [38;5;87m2026-07-14 05:41:51.391365+00:00 [notice] <0.316.0> Feature flags: attempt to enable `stream_update_config_command`...[0m
+rabbitmq-1       | [38;5;87m2026-07-14 05:41:51.464180+00:00 [notice] <0.316.0> Feature flags: `stream_update_config_command` enabled[0m
+rabbitmq-1       | [38;5;87m2026-07-14 05:41:51.464260+00:00 [notice] <0.316.0> Feature flags: attempt to enable `stream_filtering`...[0m
+rabbitmq-1       | [38;5;87m2026-07-14 05:41:51.535183+00:00 [notice] <0.316.0> Feature flags: `stream_filtering` enabled[0m
+rabbitmq-1       | [38;5;87m2026-07-14 05:41:51.535256+00:00 [notice] <0.316.0> Feature flags: attempt to enable `stream_sac_coordinator_unblock_group`...[0m
+rabbitmq-1       | [38;5;87m2026-07-14 05:41:51.606693+00:00 [notice] <0.316.0> Feature flags: `stream_sac_coordinator_unblock_group` enabled[0m
+rabbitmq-1       | [38;5;87m2026-07-14 05:41:51.606772+00:00 [notice] <0.316.0> Feature flags: attempt to enable `restart_streams`...[0m
+rabbitmq-1       | [38;5;87m2026-07-14 05:41:51.679505+00:00 [notice] <0.316.0> Feature flags: `restart_streams` enabled[0m
+rabbitmq-1       | [38;5;87m2026-07-14 05:41:51.679583+00:00 [notice] <0.316.0> Feature flags: attempt to enable `message_containers`...[0m
+rabbitmq-1       | [38;5;87m2026-07-14 05:41:51.752097+00:00 [notice] <0.316.0> Feature flags: `message_containers` enabled[0m
+rabbitmq-1       | [38;5;87m2026-07-14 05:41:51.752290+00:00 [notice] <0.316.0> Feature flags: attempt to enable `message_containers_deaths_v2`...[0m
+rabbitmq-1       | [38;5;87m2026-07-14 05:41:51.823202+00:00 [notice] <0.316.0> Feature flags: `message_containers_deaths_v2` enabled[0m
+rabbitmq-1       | 2026-07-14 05:41:51.823328+00:00 [info] <0.254.0> DB: virgin node -> run peer discovery[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:41:51.823365+00:00 [warning] <0.254.0> Classic peer discovery backend: list of nodes does not contain the local node [][0m
+rabbitmq-1       | [38;5;87m2026-07-14 05:41:51.833941+00:00 [notice] <0.44.0> Application mnesia exited with reason: stopped[0m
+rabbitmq-1       | 2026-07-14 05:41:51.988574+00:00 [info] <0.254.0> Waiting for Mnesia tables for 30000 ms, 9 retries left[0m
+rabbitmq-1       | 2026-07-14 05:41:51.988649+00:00 [info] <0.254.0> Successfully synced tables from a peer[0m
+rabbitmq-1       | 2026-07-14 05:41:51.988729+00:00 [info] <0.254.0> Waiting for Mnesia tables for 30000 ms, 9 retries left[0m
+rabbitmq-1       | 2026-07-14 05:41:51.988773+00:00 [info] <0.254.0> Successfully synced tables from a peer[0m
+rabbitmq-1       | 2026-07-14 05:41:52.003325+00:00 [info] <0.254.0> Waiting for Mnesia tables for 30000 ms, 9 retries left[0m
+rabbitmq-1       | 2026-07-14 05:41:52.003406+00:00 [info] <0.254.0> Successfully synced tables from a peer[0m
+rabbitmq-1       | 2026-07-14 05:41:52.003498+00:00 [info] <0.254.0> Running boot step tracking_metadata_store defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:41:52.003544+00:00 [info] <0.574.0> Setting up a table for connection tracking on this node: tracked_connection[0m
+rabbitmq-1       | 2026-07-14 05:41:52.003589+00:00 [info] <0.574.0> Setting up a table for per-vhost connection counting on this node: tracked_connection_per_vhost[0m
+rabbitmq-1       | 2026-07-14 05:41:52.003619+00:00 [info] <0.574.0> Setting up a table for per-user connection counting on this node: tracked_connection_per_user[0m
+rabbitmq-1       | 2026-07-14 05:41:52.003654+00:00 [info] <0.574.0> Setting up a table for channel tracking on this node: tracked_channel[0m
+rabbitmq-1       | 2026-07-14 05:41:52.003716+00:00 [info] <0.574.0> Setting up a table for channel tracking on this node: tracked_channel_per_user[0m
+rabbitmq-1       | 2026-07-14 05:41:52.003777+00:00 [info] <0.254.0> Running boot step networking_metadata_store defined by app rabbit[0m
+grafana-1        | t=2026-07-14T05:42:05.717168335Z level=info caller=logger.go:214 time=2026-07-14T05:42:05.717147743Z msg="App initialized" app=alerting
+rabbitmq-1       | 2026-07-14 05:41:52.003824+00:00 [info] <0.254.0> Running boot step feature_flags defined by app rabbit[0m
+grafana-1        | t=2026-07-14T05:42:05.717215199Z level=info caller=logger.go:214 time=2026-07-14T05:42:05.717212031Z msg="App initialized" app=alerting-notifications
+grafana-1        | t=2026-07-14T05:42:05.717225887Z level=info caller=logger.go:214 time=2026-07-14T05:42:05.717223807Z msg="App initialized" app=advisor
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:42:05.717195791Z level=info msg=starting module=plugin.backgroundinstaller
+grafana-1        | logger=plugin.backgroundinstaller t=2026-07-14T05:42:05.7173188Z level=info msg="Plugins installed" plugins=[]
+grafana-1        | logger=plugin.backgroundinstaller t=2026-07-14T05:42:05.717338705Z level=info msg="Installing plugins" plugins="[{ID:grafana-lokiexplore-app Version: URL:} {ID:grafana-pyroscope-app Version: URL:} {ID:grafana-exploretraces-app Version: URL:} {ID:grafana-metricsdrilldown-app Version: URL:} {ID:elasticsearch Version: URL:}]"
+rabbitmq-1       | 2026-07-14 05:41:52.003919+00:00 [info] <0.254.0> Running boot step codec_correctness_check defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:41:52.003938+00:00 [info] <0.254.0> Running boot step external_infrastructure defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:41:52.003964+00:00 [info] <0.254.0> Running boot step rabbit_event defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:41:52.004031+00:00 [info] <0.254.0> Running boot step rabbit_registry defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:41:52.004073+00:00 [info] <0.254.0> Running boot step rabbit_auth_mechanism_amqplain defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:41:52.004114+00:00 [info] <0.254.0> Running boot step rabbit_auth_mechanism_cr_demo defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:41:52.004155+00:00 [info] <0.254.0> Running boot step rabbit_auth_mechanism_plain defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:41:52.004302+00:00 [info] <0.254.0> Running boot step rabbit_exchange_type_direct defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:41:52.004350+00:00 [info] <0.254.0> Running boot step rabbit_exchange_type_fanout defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:41:52.004382+00:00 [info] <0.254.0> Running boot step rabbit_exchange_type_headers defined by app rabbit[0m
+grafana-1        | logger=plugin.backgroundinstaller t=2026-07-14T05:42:05.717373953Z level=info msg="Installing plugin" pluginId=grafana-lokiexplore-app version=
+grafana-1        | t=2026-07-14T05:42:05.719731814Z level=info caller=logger.go:214 time=2026-07-14T05:42:05.719728854Z msg="App initialized" app=playlist
+grafana-1        | t=2026-07-14T05:42:05.719756726Z level=info caller=logger.go:214 time=2026-07-14T05:42:05.719755158Z msg="App initialized" app=plugins
+grafana-1        | t=2026-07-14T05:42:05.720762319Z level=info caller=logger.go:214 time=2026-07-14T05:42:05.720756415Z msg="start concurrent job driver" logger=concurrent-job-driver num_drivers=3 num_drivers=3
+grafana-1        | t=2026-07-14T05:42:05.720786239Z level=info caller=logger.go:214 time=2026-07-14T05:42:05.720781967Z msg="starting job cleanup controller" logger=job-cleanup-controller cleanup_interval=1m30s expiry=30s
+grafana-1        | t=2026-07-14T05:42:05.721221315Z level=info caller=logger.go:214 time=2026-07-14T05:42:05.721217347Z msg="Starting RepositoryController" logger=provisioning-repository-controller
+grafana-1        | t=2026-07-14T05:42:05.722521759Z level=info caller=logger.go:214 time=2026-07-14T05:42:05.722516127Z msg="start job driver" logger=concurrent-job-driver num_drivers=3 driver_id=0
+grafana-1        | t=2026-07-14T05:42:05.722904738Z level=info caller=logger.go:214 time=2026-07-14T05:42:05.722900402Z msg="start job driver" logger=concurrent-job-driver num_drivers=3 driver_id=1
+grafana-1        | t=2026-07-14T05:42:05.723212517Z level=info caller=logger.go:214 time=2026-07-14T05:42:05.723208453Z msg="start job driver" logger=concurrent-job-driver num_drivers=3 driver_id=2
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:42:05.728561444Z level=info msg=starting module=provisioning
+grafana-1        | logger=plugin.backgroundinstaller t=2026-07-14T05:42:05.744136655Z level=error msg="Failed to install plugin" pluginId=grafana-lokiexplore-app version= error="Get \"https://grafana.com/api/plugins/grafana-lokiexplore-app/versions\": dial tcp: lookup grafana.com on 127.0.0.11:53: server misbehaving"
+grafana-1        | logger=plugin.backgroundinstaller t=2026-07-14T05:42:05.744155999Z level=info msg="Installing plugin" pluginId=grafana-pyroscope-app version=
+grafana-1        | logger=plugin.backgroundinstaller t=2026-07-14T05:42:05.744578371Z level=error msg="Failed to install plugin" pluginId=grafana-pyroscope-app version= error="Get \"https://grafana.com/api/plugins/grafana-pyroscope-app/versions\": dial tcp: lookup grafana.com on 127.0.0.11:53: server misbehaving"
+grafana-1        | logger=plugin.backgroundinstaller t=2026-07-14T05:42:05.744604467Z level=info msg="Installing plugin" pluginId=grafana-exploretraces-app version=
+grafana-1        | logger=plugin.backgroundinstaller t=2026-07-14T05:42:05.745098136Z level=error msg="Failed to install plugin" pluginId=grafana-exploretraces-app version= error="Get \"https://grafana.com/api/plugins/grafana-exploretraces-app/versions\": dial tcp: lookup grafana.com on 127.0.0.11:53: server misbehaving"
+grafana-1        | logger=plugin.backgroundinstaller t=2026-07-14T05:42:05.745105896Z level=info msg="Installing plugin" pluginId=grafana-metricsdrilldown-app version=
+grafana-1        | logger=plugin.backgroundinstaller t=2026-07-14T05:42:05.745601132Z level=error msg="Failed to install plugin" pluginId=grafana-metricsdrilldown-app version= error="Get \"https://grafana.com/api/plugins/grafana-metricsdrilldown-app/versions\": dial tcp: lookup grafana.com on 127.0.0.11:53: server misbehaving"
+grafana-1        | logger=plugin.backgroundinstaller t=2026-07-14T05:42:05.746203073Z level=error msg="Failed to get plugin info" pluginId=elasticsearch error="Get \"https://grafana.com/api/plugins/elasticsearch/versions\": dial tcp: lookup grafana.com on 127.0.0.11:53: server misbehaving"
+grafana-1        | logger=provisioning.datasources t=2026-07-14T05:42:05.809313907Z level=info msg="inserting datasource from configuration" name=Prometheus uid=prometheus
+grafana-1        | t=2026-07-14T05:42:05.821227837Z level=info caller=logger.go:214 time=2026-07-14T05:42:05.821214077Z msg="Starting ConnectionController" logger=provisioning-connection-controller
+grafana-1        | t=2026-07-14T05:42:05.821256574Z level=info caller=logger.go:214 time=2026-07-14T05:42:05.821251022Z msg="Starting workers" logger=provisioning-connection-controller count=1
+grafana-1        | t=2026-07-14T05:42:05.821266862Z level=info caller=logger.go:214 time=2026-07-14T05:42:05.821263374Z msg="Started workers" logger=provisioning-connection-controller
+grafana-1        | logger=provisioning.plugins t=2026-07-14T05:42:05.823233791Z level=error msg="Failed to read plugin provisioning files from directory" path=/etc/grafana/provisioning/plugins error="open /etc/grafana/provisioning/plugins: no such file or directory"
+grafana-1        | logger=provisioning.alerting t=2026-07-14T05:42:05.823257503Z level=error msg="can't read alerting provisioning files from directory" path=/etc/grafana/provisioning/alerting error="open /etc/grafana/provisioning/alerting: no such file or directory"
+grafana-1        | logger=provisioning.alerting t=2026-07-14T05:42:05.823259535Z level=info msg="starting to provision alerting"
+grafana-1        | logger=provisioning.alerting t=2026-07-14T05:42:05.823262591Z level=info msg="finished to provision alerting"
+grafana-1        | t=2026-07-14T05:42:05.823350192Z level=info caller=logger.go:214 time=2026-07-14T05:42:05.823335328Z msg="Starting workers" logger=provisioning-repository-controller count=1
+grafana-1        | t=2026-07-14T05:42:05.823357136Z level=info caller=logger.go:214 time=2026-07-14T05:42:05.823355664Z msg="Started workers" logger=provisioning-repository-controller
+grafana-1        | logger=bleve-backend namespace=default group=dashboard.grafana.app resource=dashboards size=0 reason=search t=2026-07-14T05:42:05.845059474Z level=info msg="Building index using memory"
+grafana-1        | logger=bleve-backend namespace=default group=dashboard.grafana.app resource=dashboards size=0 reason=search t=2026-07-14T05:42:05.845264995Z level=info msg="Finished building index" elapsed=194.689µs listRV=1784007723823017
+grafana-1        | logger=bleve-backend namespace=default group=dashboard.grafana.app resource=dashboards size=0 reason=search t=2026-07-14T05:42:05.845274947Z level=info msg="Storing index in cache" key="{Namespace:default Group:dashboard.grafana.app Resource:dashboards}" expiration=2026-07-14T05:52:05.845274467Z
+grafana-1        | logger=provisioning.dashboard t=2026-07-14T05:42:05.855256844Z level=info msg="starting to provision dashboards"
+grafana-1        | logger=provisioning.dashboard t=2026-07-14T05:42:05.898464429Z level=info msg="finished to provision dashboards"
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:42:05.91224132Z level=info msg=starting module=*dynamic.KeyRetriever
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:42:05.912646539Z level=info msg=starting module=*live.GrafanaLive
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:42:05.912698892Z level=info msg=starting module=*manager.ServiceAccountsService
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:42:05.918414303Z level=info msg=starting module=*ngalert.AlertNG
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:42:05.918471119Z level=info msg=starting module=*authimpl.UserAuthTokenService
+grafana-1        | logger=ngalert t=2026-07-14T05:42:05.918468623Z level=info msg="Primary node, alert rule evaluation enabled"
+grafana-1        | logger=ngalert.state.manager t=2026-07-14T05:42:05.918485311Z level=info msg="Warming state cache for startup"
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:42:05.918838626Z level=info msg=starting module=*api.HTTPServer
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:42:05.918978884Z level=info msg=starting module=*angulardetectorsprovider.Dynamic
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:42:05.919455352Z level=info msg=starting module=*appregistry.Service
+grafana-1        | logger=app-registry t=2026-07-14T05:42:05.919486424Z level=info msg="app registry initialized"
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:42:05.919493496Z level=info msg=starting module=*anonimpl.AnonDeviceService
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:42:05.91951108Z level=info msg=starting module=*cleanup.CleanUpService
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:42:05.919596537Z level=info msg=starting module=*store.standardStorageService
+grafana-1        | logger=grafanaStorageLogger t=2026-07-14T05:42:05.919602009Z level=info msg="Storage starting"
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:42:05.919613273Z level=info msg=starting module=*pushhttp.Gateway
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:42:05.919619817Z level=info msg=starting module=*authz.EmbeddedZanzanaService
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:42:05.919627113Z level=info msg=starting module=*dualwrite.ZanzanaReconciler
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:42:05.919635033Z level=info msg=starting module=*rendering.RenderingService
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:42:05.919651978Z level=info msg=starting module=*manager.SecretsService
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:42:05.91967913Z level=info msg=starting module=*pluginexternal.Service
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:42:05.919688426Z level=info msg=starting module=*metric.Service
+grafana-1        | logger=http.server t=2026-07-14T05:42:05.919823227Z level=info msg="HTTP Server Listen" address=[::]:3000 protocol=http subUrl=/grafana socket=
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:42:05.9199051Z level=info msg=starting module=*notifications.NotificationService
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:42:05.919917612Z level=info msg=starting module=*service.UsageStats
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:42:05.919942204Z level=info msg=starting module=*store.dummyEntityEventsService
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:42:05.919952044Z level=info msg=starting module=*remotecache.RemoteCache
+rabbitmq-1       | 2026-07-14 05:41:52.004409+00:00 [info] <0.254.0> Running boot step rabbit_exchange_type_topic defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:41:52.004429+00:00 [info] <0.254.0> Running boot step rabbit_mirror_queue_mode_all defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:41:52.004454+00:00 [info] <0.254.0> Running boot step rabbit_mirror_queue_mode_exactly defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:41:52.004479+00:00 [info] <0.254.0> Running boot step rabbit_mirror_queue_mode_nodes defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:41:52.004500+00:00 [info] <0.254.0> Running boot step rabbit_priority_queue defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:41:52.004513+00:00 [info] <0.254.0> Priority queues enabled, real BQ is rabbit_variable_queue[0m
+rabbitmq-1       | 2026-07-14 05:41:52.004538+00:00 [info] <0.254.0> Running boot step rabbit_queue_location_client_local defined by app rabbit[0m
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:42:05.91997038Z level=info msg=starting module=*updatemanager.PluginsService
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:42:05.920179694Z level=info msg=starting module=*ssosettingsimpl.Service
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:42:05.92018659Z level=info msg=starting module=*statscollector.Service
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:42:05.920198911Z level=info msg=starting module=*migrations.SecretMigrationProviderImpl
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:42:05.920195919Z level=info msg=starting module=*service.DashboardServiceImpl
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:42:05.920383552Z level=info msg=starting module=*metrics.InternalMetricsService
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:42:05.920391008Z level=info msg=starting module=*garbagecollectionworker.Worker
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:42:05.920401072Z level=info msg=starting module=*supportbundlesimpl.Service
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:42:05.920752771Z level=info msg=starting module=*service.DashboardUpdater
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:42:05.921077814Z level=info msg=starting module=*loginattemptimpl.Service
+grafana-1        | logger=ngalert.multiorg.alertmanager t=2026-07-14T05:42:05.921410105Z level=info msg="Starting MultiOrg Alertmanager"
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:42:05.921559051Z level=info msg="All modules healthy"
+grafana-1        | logger=plugins.update.checker t=2026-07-14T05:42:05.922011983Z level=info msg="flag evaluation succeeded" flag="{Value:false EvaluationDetails:{FlagKey:pluginsAutoUpdate FlagType:bool ResolutionDetail:{Variant:default Reason:STATIC ErrorCode: ErrorMessage: FlagMetadata:map[]}}}" details="{Value:false EvaluationDetails:{FlagKey:pluginsAutoUpdate FlagType:bool ResolutionDetail:{Variant:default Reason:STATIC ErrorCode: ErrorMessage: FlagMetadata:map[]}}}"
+rabbitmq-1       | 2026-07-14 05:41:52.004559+00:00 [info] <0.254.0> Running boot step rabbit_queue_location_min_masters defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:41:52.004578+00:00 [info] <0.254.0> Running boot step rabbit_queue_location_random defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:41:52.004595+00:00 [info] <0.254.0> Running boot step kernel_ready defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:41:52.004605+00:00 [info] <0.254.0> Running boot step rabbit_sysmon_minder defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:41:52.004706+00:00 [info] <0.254.0> Running boot step rabbit_epmd_monitor defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:41:52.005974+00:00 [info] <0.582.0> epmd monitor knows us, inter-node communication (distribution) port: 25672[0m
+rabbitmq-1       | 2026-07-14 05:41:52.006062+00:00 [info] <0.254.0> Running boot step guid_generator defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:41:52.010681+00:00 [info] <0.254.0> Running boot step rabbit_node_monitor defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:41:52.010827+00:00 [info] <0.586.0> Starting rabbit_node_monitor (in ignore mode)[0m
+rabbitmq-1       | 2026-07-14 05:41:52.010900+00:00 [info] <0.254.0> Running boot step delegate_sup defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:41:52.011244+00:00 [info] <0.254.0> Running boot step rabbit_memory_monitor defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:41:52.011362+00:00 [info] <0.254.0> Running boot step rabbit_fifo_dlx_sup defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:41:52.011404+00:00 [info] <0.254.0> Running boot step core_initialized defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:41:52.011418+00:00 [info] <0.254.0> Running boot step rabbit_channel_tracking_handler defined by app rabbit[0m
+grafana-1        | logger=plugin.angulardetectorsprovider.dynamic t=2026-07-14T05:42:05.972797891Z level=error msg="Error while updating detectors" error="fetch: http do: Get \"https://grafana.com/api/plugins/angular_patterns\": dial tcp: lookup grafana.com on 127.0.0.11:53: server misbehaving"
+grafana-1        | logger=plugin.angulardetectorsprovider.dynamic t=2026-07-14T05:42:05.972816243Z level=info msg="Patterns update finished" duration=656.054µs
+grafana-1        | logger=ngalert.state.manager t=2026-07-14T05:42:05.983707828Z level=info msg="State cache has been initialized" states=0 duration=65.220837ms
+grafana-1        | logger=ngalert.scheduler t=2026-07-14T05:42:05.983739332Z level=info msg="Starting scheduler" tickInterval=10s maxAttempts=3
+grafana-1        | logger=ngalert.scheduler t=2026-07-14T05:42:05.983756228Z level=info msg=starting component=ticker first_tick=2026-07-14T05:42:10Z
+rabbitmq-1       | 2026-07-14 05:41:52.011437+00:00 [info] <0.254.0> Running boot step rabbit_connection_tracking_handler defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:41:52.011453+00:00 [info] <0.254.0> Running boot step rabbit_definitions_hashing defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:41:52.011478+00:00 [info] <0.254.0> Running boot step rabbit_exchange_parameters defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:41:52.032263+00:00 [info] <0.254.0> Running boot step rabbit_mirror_queue_misc defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:41:52.032542+00:00 [info] <0.254.0> Running boot step rabbit_policies defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:41:52.032717+00:00 [info] <0.254.0> Running boot step rabbit_policy defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:41:52.032748+00:00 [info] <0.254.0> Running boot step rabbit_queue_location_validator defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:41:52.032770+00:00 [info] <0.254.0> Running boot step rabbit_quorum_memory_manager defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:41:52.032793+00:00 [info] <0.254.0> Running boot step rabbit_quorum_queue defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:41:52.032849+00:00 [info] <0.254.0> Running boot step rabbit_stream_coordinator defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:41:52.032946+00:00 [info] <0.254.0> Running boot step rabbit_vhost_limit defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:41:52.033000+00:00 [info] <0.254.0> Running boot step rabbit_federation_parameters defined by app rabbitmq_federation[0m
+rabbitmq-1       | 2026-07-14 05:41:52.033055+00:00 [info] <0.254.0> Running boot step rabbit_federation_supervisor defined by app rabbitmq_federation[0m
+rabbitmq-1       | 2026-07-14 05:41:52.038459+00:00 [info] <0.254.0> Running boot step rabbit_federation_queue defined by app rabbitmq_federation[0m
+rabbitmq-1       | 2026-07-14 05:41:52.038575+00:00 [info] <0.254.0> Running boot step rabbit_federation_upstream_exchange defined by app rabbitmq_federation[0m
+rabbitmq-1       | 2026-07-14 05:41:52.038620+00:00 [info] <0.254.0> Running boot step rabbit_mgmt_reset_handler defined by app rabbitmq_management[0m
+rabbitmq-1       | 2026-07-14 05:41:52.038645+00:00 [info] <0.254.0> Running boot step rabbit_mgmt_db_handler defined by app rabbitmq_management_agent[0m
+rabbitmq-1       | 2026-07-14 05:41:52.038662+00:00 [info] <0.254.0> Management plugin: using rates mode 'basic'[0m
+rabbitmq-1       | 2026-07-14 05:41:52.038779+00:00 [info] <0.254.0> Running boot step recovery defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:41:52.047755+00:00 [info] <0.254.0> Running boot step empty_db_check defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:41:52.047799+00:00 [info] <0.254.0> Will seed default virtual host and user...[0m
+rabbitmq-1       | 2026-07-14 05:41:52.047906+00:00 [info] <0.254.0> Adding vhost '/' (description: 'Default virtual host', tags: [])[0m
+rabbitmq-1       | 2026-07-14 05:41:52.089933+00:00 [info] <0.646.0> Making sure data directory '/var/lib/rabbitmq/mnesia/rabbit@ee712bffa873/msg_stores/vhosts/628WB79CIFDYO9LJI6DKMI09L' for vhost '/' exists[0m
+rabbitmq-1       | 2026-07-14 05:41:52.093910+00:00 [info] <0.646.0> Setting segment_entry_count for vhost '/' with 0 queues to '2048'[0m
+rabbitmq-1       | 2026-07-14 05:41:52.103927+00:00 [info] <0.646.0> Starting message stores for vhost '/'[0m
+rabbitmq-1       | 2026-07-14 05:41:52.104118+00:00 [info] <0.655.0> Message store "628WB79CIFDYO9LJI6DKMI09L/msg_store_transient": using rabbit_msg_store_ets_index to provide index[0m
+rabbitmq-1       | 2026-07-14 05:41:52.105311+00:00 [info] <0.646.0> Started message store of type transient for vhost '/'[0m
+rabbitmq-1       | 2026-07-14 05:41:52.105435+00:00 [info] <0.659.0> Message store "628WB79CIFDYO9LJI6DKMI09L/msg_store_persistent": using rabbit_msg_store_ets_index to provide index[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:41:52.105672+00:00 [warning] <0.659.0> Message store "628WB79CIFDYO9LJI6DKMI09L/msg_store_persistent": rebuilding indices from scratch[0m
+rabbitmq-1       | 2026-07-14 05:41:52.108557+00:00 [info] <0.646.0> Started message store of type persistent for vhost '/'[0m
+rabbitmq-1       | 2026-07-14 05:41:52.108659+00:00 [info] <0.646.0> Recovering 0 queues of type rabbit_classic_queue took 14ms[0m
+rabbitmq-1       | 2026-07-14 05:41:52.108698+00:00 [info] <0.646.0> Recovering 0 queues of type rabbit_quorum_queue took 0ms[0m
+rabbitmq-1       | 2026-07-14 05:41:52.108728+00:00 [info] <0.646.0> Recovering 0 queues of type rabbit_stream_queue took 0ms[0m
+rabbitmq-1       | 2026-07-14 05:41:52.115051+00:00 [info] <0.254.0> Created user 'ntc_worker'[0m
+rabbitmq-1       | 2026-07-14 05:41:52.119795+00:00 [info] <0.254.0> Successfully set user tags for user 'ntc_worker' to [administrator][0m
+rabbitmq-1       | 2026-07-14 05:41:52.123718+00:00 [info] <0.254.0> Successfully set permissions for user 'ntc_worker' in virtual host '/' to '.*', '.*', '.*'[0m
+rabbitmq-1       | 2026-07-14 05:41:52.123757+00:00 [info] <0.254.0> Running boot step rabbit_observer_cli defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:41:52.123799+00:00 [info] <0.254.0> Running boot step rabbit_looking_glass defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:41:52.123816+00:00 [info] <0.254.0> Running boot step rabbit_core_metrics_gc defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:41:52.123896+00:00 [info] <0.254.0> Running boot step background_gc defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:41:52.123979+00:00 [info] <0.254.0> Running boot step routing_ready defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:41:52.123996+00:00 [info] <0.254.0> Running boot step pre_flight defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:41:52.124036+00:00 [info] <0.254.0> Running boot step notify_cluster defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:41:52.124059+00:00 [info] <0.254.0> Running boot step networking defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:41:52.124073+00:00 [info] <0.254.0> Running boot step rabbit_quorum_queue_periodic_membership_reconciliation defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:41:52.124140+00:00 [info] <0.254.0> Running boot step definition_import_worker_pool defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:41:52.124169+00:00 [info] <0.315.0> Starting worker pool 'definition_import_pool' with 20 processes in it[0m
+rabbitmq-1       | 2026-07-14 05:41:52.124613+00:00 [info] <0.254.0> Running boot step cluster_name defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:41:52.124654+00:00 [info] <0.254.0> Initialising internal cluster ID to 'rabbitmq-cluster-id-i_yXYjXFrv5lgAU2VjJICw'[0m
+rabbitmq-1       | 2026-07-14 05:41:52.128964+00:00 [info] <0.254.0> Running boot step virtual_host_reconciliation defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:41:52.129170+00:00 [info] <0.254.0> Running boot step direct_client defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:41:52.129261+00:00 [info] <0.254.0> Running boot step rabbit_federation_exchange defined by app rabbitmq_federation[0m
+rabbitmq-1       | 2026-07-14 05:41:52.129528+00:00 [info] <0.254.0> Running boot step rabbit_management_load_definitions defined by app rabbitmq_management[0m
+rabbitmq-1       | 2026-07-14 05:41:52.129755+00:00 [info] <0.712.0> Resetting node maintenance status[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:41:52.247367+00:00 [warning] <0.741.0> Deprecated features: `management_metrics_collection`: Feature `management_metrics_collection` is deprecated.[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:41:52.247367+00:00 [warning] <0.741.0> By default, this feature can still be used for now.[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:41:52.247367+00:00 [warning] <0.741.0> Its use will not be permitted by default in a future minor RabbitMQ version and the feature will be removed from a future major RabbitMQ version; actual versions to be determined.[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:41:52.247367+00:00 [warning] <0.741.0> To continue using this feature when it is not permitted by default, set the following parameter in your configuration:[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:41:52.247367+00:00 [warning] <0.741.0>     "deprecated_features.permit.management_metrics_collection = true"[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:41:52.247367+00:00 [warning] <0.741.0> To test RabbitMQ as if the feature was removed, set this in your configuration:[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:41:52.247367+00:00 [warning] <0.741.0>     "deprecated_features.permit.management_metrics_collection = false"[0m
+rabbitmq-1       | 2026-07-14 05:41:54.121940+00:00 [info] <0.778.0> Management plugin: HTTP (non-TLS) listener started on port 15672[0m
+rabbitmq-1       | 2026-07-14 05:41:54.122077+00:00 [info] <0.810.0> Statistics database started.[0m
+rabbitmq-1       | 2026-07-14 05:41:54.122128+00:00 [info] <0.809.0> Starting worker pool 'management_worker_pool' with 3 processes in it[0m
+rabbitmq-1       | 2026-07-14 05:41:54.129328+00:00 [info] <0.828.0> Prometheus metrics: HTTP (non-TLS) listener started on port 15692[0m
+rabbitmq-1       | 2026-07-14 05:41:54.129445+00:00 [info] <0.712.0> Ready to start client connection listeners[0m
+rabbitmq-1       | 2026-07-14 05:41:54.131362+00:00 [info] <0.872.0> started TCP listener on [::]:5672[0m
+rabbitmq-1       | 2026-07-14 05:41:54.174219+00:00 [info] <0.712.0> Server startup complete; 5 plugins started.[0m
+rabbitmq-1       | 2026-07-14 05:41:54.174219+00:00 [info] <0.712.0>  * rabbitmq_prometheus[0m
+rabbitmq-1       | 2026-07-14 05:41:54.174219+00:00 [info] <0.712.0>  * rabbitmq_federation[0m
+rabbitmq-1       | 2026-07-14 05:41:54.174219+00:00 [info] <0.712.0>  * rabbitmq_management[0m
+rabbitmq-1       | 2026-07-14 05:41:54.174219+00:00 [info] <0.712.0>  * rabbitmq_management_agent[0m
+rabbitmq-1       | 2026-07-14 05:41:54.174219+00:00 [info] <0.712.0>  * rabbitmq_web_dispatch[0m
+rabbitmq-1       |  completed with 5 plugins.
+rabbitmq-1       | 2026-07-14 05:41:54.341854+00:00 [info] <0.9.0> Time to start RabbitMQ: 5513 ms[0m
+rabbitmq-1       | 2026-07-14 05:41:54.699708+00:00 [info] <0.876.0> accepting AMQP connection <0.876.0> (172.24.0.11:49556 -> 172.24.0.5:5672)[0m
+rabbitmq-1       | 2026-07-14 05:41:54.701356+00:00 [info] <0.876.0> connection <0.876.0> (172.24.0.11:49556 -> 172.24.0.5:5672): user 'ntc_worker' authenticated and granted access to vhost '/'[0m
+rabbitmq-1       | 2026-07-14 05:41:54.702680+00:00 [info] <0.885.0> accepting AMQP connection <0.885.0> (172.24.0.11:49568 -> 172.24.0.5:5672)[0m
+rabbitmq-1       | 2026-07-14 05:41:54.703690+00:00 [info] <0.885.0> connection <0.885.0> (172.24.0.11:49568 -> 172.24.0.5:5672): user 'ntc_worker' authenticated and granted access to vhost '/'[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:41:54.709952+00:00 [warning] <0.898.0> Deprecated features: `global_qos`: Feature `global_qos` is deprecated.[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:41:54.709952+00:00 [warning] <0.898.0> By default, this feature can still be used for now.[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:41:54.709952+00:00 [warning] <0.898.0> Its use will not be permitted by default in a future minor RabbitMQ version and the feature will be removed from a future major RabbitMQ version; actual versions to be determined.[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:41:54.709952+00:00 [warning] <0.898.0> To continue using this feature when it is not permitted by default, set the following parameter in your configuration:[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:41:54.709952+00:00 [warning] <0.898.0>     "deprecated_features.permit.global_qos = true"[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:41:54.709952+00:00 [warning] <0.898.0> To test RabbitMQ as if the feature was removed, set this in your configuration:[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:41:54.709952+00:00 [warning] <0.898.0>     "deprecated_features.permit.global_qos = false"[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:41:54.725985+00:00 [warning] <0.910.0> Deprecated features: `transient_nonexcl_queues`: Feature `transient_nonexcl_queues` is deprecated.[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:41:54.725985+00:00 [warning] <0.910.0> By default, this feature can still be used for now.[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:41:54.725985+00:00 [warning] <0.910.0> Its use will not be permitted by default in a future minor RabbitMQ version and the feature will be removed from a future major RabbitMQ version; actual versions to be determined.[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:41:54.725985+00:00 [warning] <0.910.0> To continue using this feature when it is not permitted by default, set the following parameter in your configuration:[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:41:54.725985+00:00 [warning] <0.910.0>     "deprecated_features.permit.transient_nonexcl_queues = true"[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:41:54.725985+00:00 [warning] <0.910.0> To test RabbitMQ as if the feature was removed, set this in your configuration:[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:41:54.725985+00:00 [warning] <0.910.0>     "deprecated_features.permit.transient_nonexcl_queues = false"[0m
+rabbitmq-1       | 2026-07-14 05:41:59.689524+00:00 [info] <0.926.0> accepting AMQP connection <0.926.0> (172.24.0.11:49584 -> 172.24.0.5:5672)[0m
+rabbitmq-1       | 2026-07-14 05:41:59.691216+00:00 [info] <0.926.0> connection <0.926.0> (172.24.0.11:49584 -> 172.24.0.5:5672): user 'ntc_worker' authenticated and granted access to vhost '/'[0m
+rabbitmq-1       | 2026-07-14 05:41:59.696701+00:00 [info] <0.944.0> accepting AMQP connection <0.944.0> (172.24.0.11:49586 -> 172.24.0.5:5672)[0m
+rabbitmq-1       | 2026-07-14 05:41:59.698039+00:00 [info] <0.944.0> connection <0.944.0> (172.24.0.11:49586 -> 172.24.0.5:5672): user 'ntc_worker' authenticated and granted access to vhost '/'[0m
+rabbitmq-1       | 2026-07-14 05:41:59.700775+00:00 [info] <0.956.0> accepting AMQP connection <0.956.0> (172.24.0.11:49592 -> 172.24.0.5:5672)[0m
+rabbitmq-1       | 2026-07-14 05:41:59.701791+00:00 [info] <0.956.0> connection <0.956.0> (172.24.0.11:49592 -> 172.24.0.5:5672): user 'ntc_worker' authenticated and granted access to vhost '/'[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:41:59.736351+00:00 [warning] <0.926.0> closing AMQP connection <0.926.0> (172.24.0.11:49584 -> 172.24.0.5:5672, vhost: '/', user: 'ntc_worker'):[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:41:59.736351+00:00 [warning] <0.926.0> client unexpectedly closed TCP connection[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:41:59.736545+00:00 [warning] <0.944.0> closing AMQP connection <0.944.0> (172.24.0.11:49586 -> 172.24.0.5:5672, vhost: '/', user: 'ntc_worker'):[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:41:59.736545+00:00 [warning] <0.944.0> client unexpectedly closed TCP connection[0m
+rabbitmq-1       | 2026-07-14 05:42:10.210087+00:00 [info] <0.982.0> accepting AMQP connection <0.982.0> (172.24.0.11:32800 -> 172.24.0.5:5672)[0m
+rabbitmq-1       | 2026-07-14 05:42:10.211406+00:00 [info] <0.982.0> connection <0.982.0> (172.24.0.11:32800 -> 172.24.0.5:5672): user 'ntc_worker' authenticated and granted access to vhost '/'[0m
+rabbitmq-1       | 2026-07-14 05:42:10.215899+00:00 [info] <0.999.0> accepting AMQP connection <0.999.0> (172.24.0.11:32812 -> 172.24.0.5:5672)[0m
+rabbitmq-1       | 2026-07-14 05:42:10.217008+00:00 [info] <0.999.0> connection <0.999.0> (172.24.0.11:32812 -> 172.24.0.5:5672): user 'ntc_worker' authenticated and granted access to vhost '/'[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:42:10.262929+00:00 [warning] <0.982.0> closing AMQP connection <0.982.0> (172.24.0.11:32800 -> 172.24.0.5:5672, vhost: '/', user: 'ntc_worker'):[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:42:10.262929+00:00 [warning] <0.982.0> client unexpectedly closed TCP connection[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:42:10.263184+00:00 [warning] <0.999.0> closing AMQP connection <0.999.0> (172.24.0.11:32812 -> 172.24.0.5:5672, vhost: '/', user: 'ntc_worker'):[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:42:10.263184+00:00 [warning] <0.999.0> client unexpectedly closed TCP connection[0m

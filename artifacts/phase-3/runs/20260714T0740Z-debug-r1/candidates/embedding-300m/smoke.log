@@ -1,0 +1,4 @@
+Checking documented NIM health endpoints at http://172.25.0.2:8000/v1
+true
+true
+embedding smoke passed for model nvidia/llama-nemotron-embed-300m-v2

@@ -1,0 +1,89 @@
+[
+  {
+    "image": "nvcr.io/nim/nvidia/nvidia-nemotron-nano-9b-v2-dgx-spark:1.0.0-variant",
+    "media_type": "application/vnd.docker.distribution.manifest.v2+json",
+    "registry_digest": "sha256:82028e38ab950edd32f5053ca2030ee14d965e8fd4fe1c6e06468eb0be07a9a4",
+    "platforms": [
+      {
+        "architecture": "arm64",
+        "os": "linux"
+      }
+    ]
+  },
+  {
+    "image": "nvcr.io/nim/nvidia/llama-nemotron-embed-300m-v2:1.13.0",
+    "media_type": "application/vnd.oci.image.index.v1+json",
+    "platforms": [
+      {
+        "digest": "sha256:759ada4407aa9750380a78a99223ee8be94867fe98d677ee018f51476fd818d3",
+        "mediaType": "application/vnd.oci.image.manifest.v1+json",
+        "platform": {
+          "architecture": "amd64",
+          "os": "linux"
+        }
+      },
+      {
+        "digest": "sha256:e91fb162d62162a600dfec02919bcf73f78fbb8f85e4ebb8bbedbc2877aab321",
+        "mediaType": "application/vnd.oci.image.manifest.v1+json",
+        "platform": {
+          "architecture": "unknown",
+          "os": "unknown"
+        }
+      },
+      {
+        "digest": "sha256:5f8274faf21418cd894eb073d2c520923cce61a750c173b3745aedd1bb7efa49",
+        "mediaType": "application/vnd.oci.image.manifest.v1+json",
+        "platform": {
+          "architecture": "arm64",
+          "os": "linux"
+        }
+      },
+      {
+        "digest": "sha256:8fe5536ee325b0d28da26dc8d3c0df6df150ea657e0c0e387eff5a60bb103dea",
+        "mediaType": "application/vnd.oci.image.manifest.v1+json",
+        "platform": {
+          "architecture": "unknown",
+          "os": "unknown"
+        }
+      }
+    ]
+  },
+  {
+    "image": "nvcr.io/nim/nvidia/llama-nemotron-rerank-500m-v2:1.1",
+    "media_type": "application/vnd.oci.image.index.v1+json",
+    "platforms": [
+      {
+        "digest": "sha256:6a598c5e6e7620c542f2101e24e34f3461e650a5b751200df56d52bf9f9444a9",
+        "mediaType": "application/vnd.oci.image.manifest.v1+json",
+        "platform": {
+          "architecture": "arm64",
+          "os": "linux"
+        }
+      },
+      {
+        "digest": "sha256:d3bd6fad183997c555c17b795462d3c90be70be61e0b5554abee2a9c8d651fe5",
+        "mediaType": "application/vnd.oci.image.manifest.v1+json",
+        "platform": {
+          "architecture": "unknown",
+          "os": "unknown"
+        }
+      },
+      {
+        "digest": "sha256:2d2d3198c10b3ac0dc10cd1ee12eaf11a6a7e3b266dfa45931e80de617530286",
+        "mediaType": "application/vnd.oci.image.manifest.v1+json",
+        "platform": {
+          "architecture": "amd64",
+          "os": "linux"
+        }
+      },
+      {
+        "digest": "sha256:ec54e658bb52587036a4afca79c55e8c7a61100f382c0e9ad84d6b55da5571e4",
+        "mediaType": "application/vnd.oci.image.manifest.v1+json",
+        "platform": {
+          "architecture": "unknown",
+          "os": "unknown"
+        }
+      }
+    ]
+  }
+]

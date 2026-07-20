@@ -1,0 +1,1 @@
+{"status":"success","data":{"resultType":"vector","result":[{"metric":{"DCGM_FI_DRIVER_VERSION":"580.142","Hostname":"a3d6b9b9ce29","UUID":"GPU-554b7893-2785-a350-01b4-466e47272436","device":"nvidia0","gpu":"0","instance":"dcgm-exporter:9400","job":"dcgm-exporter","modelName":"NVIDIA GB10","pci_bus_id":"0000000F:01:00.0"},"value":[1784009209.175,"3.359999895095825"]}]}}

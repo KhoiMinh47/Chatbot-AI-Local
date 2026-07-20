@@ -1,0 +1,88 @@
+
+=================================================
+== NVIDIA Inference Microservice LLM / VLM NIM ==
+=================================================
+
+NVIDIA Inference Microservice LLM / VLM NIM Version 2.0.6
+
+Container image Copyright (c) 2016-2026, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+The NIM container is governed by the NVIDIA Software and Model Evaluation License
+(https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-software-and-model-evaluation-license/)
+A copy of this license can be found under /opt/nim/LICENSE.
+
+NVIDIA Open Model License (https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-open-model-license/). ADDITIONAL INFORMATION: Llama 3.1 Community License Agreement (https://www.llama.com/llama3\_1/license/), Built with Llama.
+
+WARNING 2026-07-14 07:57:09.096 classification.py:736] UMA device detected: clamping gpu_memory_utilization 0.92 -> 0.50
+Starting vLLM v0.21.0
+  Model:     meta/llama-3.1-8b-instruct
+  Precision: fp8
+  TP/PP:     1/1
+  CPU:       3 cores
+  Port:      8000
+  OpenAPI:   http://localhost:8000/docs (interactive)
+
+(APIServer pid=35) WARNING 07-14 07:57:12 [envs.py:1866] Unknown vLLM environment variable detected: VLLM_BUILD_URL
+(APIServer pid=35) WARNING 07-14 07:57:12 [envs.py:1866] Unknown vLLM environment variable detected: VLLM_IMAGE_TAG
+(APIServer pid=35) WARNING 07-14 07:57:12 [envs.py:1866] Unknown vLLM environment variable detected: VLLM_BUILD_PIPELINE
+(APIServer pid=35) WARNING 07-14 07:57:12 [envs.py:1866] Unknown vLLM environment variable detected: VLLM_BUILD_COMMIT
+(APIServer pid=35) WARNING 07-14 07:57:12 [modelopt.py:382] Detected ModelOpt fp8 checkpoint (quant_algo=FP8). Please note that the format is experimental and could change.
+(EngineCore pid=95) /usr/local/lib/python3.12/dist-packages/vllm/v1/executor/uniproc_executor.py:70: UserWarning: Failed to get the IP address, using 0.0.0.0 by default. The value can be set by the environment variable VLLM_HOST_IP or HOST_IP.
+(EngineCore pid=95)   distributed_init_method = get_distributed_init_method(get_ip(), get_open_port())
+[W714 07:57:22.145161265 socket.cpp:207] [c10d] The hostname of the client socket cannot be retrieved. err=-3
+(EngineCore pid=95) Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00<?, ?it/s]
+(EngineCore pid=95) Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:36<00:36, 36.77s/it]
+(EngineCore pid=95) Loading safetensors checkpoint shards: 100% Completed | 2/2 [01:07<00:00, 33.42s/it]
+(EngineCore pid=95) Loading safetensors checkpoint shards: 100% Completed | 2/2 [01:07<00:00, 33.92s/it]
+(EngineCore pid=95) 
+(EngineCore pid=95) Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   0%|          | 0/51 [00:00<?, ?it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   4%|▍         | 2/51 [00:00<00:03, 12.37it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   8%|▊         | 4/51 [00:00<00:03, 12.72it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  12%|█▏        | 6/51 [00:00<00:03, 12.94it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  16%|█▌        | 8/51 [00:00<00:03, 13.14it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  20%|█▉        | 10/51 [00:00<00:03, 13.65it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  24%|██▎       | 12/51 [00:00<00:02, 14.04it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  27%|██▋       | 14/51 [00:01<00:02, 14.45it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  31%|███▏      | 16/51 [00:01<00:02, 14.78it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  35%|███▌      | 18/51 [00:01<00:02, 15.15it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  39%|███▉      | 20/51 [00:01<00:02, 15.45it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  43%|████▎     | 22/51 [00:01<00:01, 15.64it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  47%|████▋     | 24/51 [00:01<00:01, 15.80it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  51%|█████     | 26/51 [00:01<00:01, 16.11it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  55%|█████▍    | 28/51 [00:01<00:01, 16.39it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  59%|█████▉    | 30/51 [00:01<00:01, 16.56it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  63%|██████▎   | 32/51 [00:02<00:01, 16.82it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  67%|██████▋   | 34/51 [00:02<00:00, 17.20it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  71%|███████   | 36/51 [00:02<00:00, 17.49it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  75%|███████▍  | 38/51 [00:02<00:00, 17.76it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  78%|███████▊  | 40/51 [00:02<00:00, 18.01it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  82%|████████▏ | 42/51 [00:02<00:00, 18.30it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  86%|████████▋ | 44/51 [00:02<00:00, 18.43it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  90%|█████████ | 46/51 [00:02<00:00, 18.66it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  94%|█████████▍| 48/51 [00:02<00:00, 19.00it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE): 100%|██████████| 51/51 [00:03<00:00, 19.32it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE): 100%|██████████| 51/51 [00:03<00:00, 16.38it/s]
+(EngineCore pid=95) Capturing CUDA graphs (decode, FULL):   0%|          | 0/35 [00:00<?, ?it/s]Capturing CUDA graphs (decode, FULL):   6%|▌         | 2/35 [00:00<00:02, 14.88it/s]Capturing CUDA graphs (decode, FULL):  11%|█▏        | 4/35 [00:00<00:02, 15.00it/s]Capturing CUDA graphs (decode, FULL):  17%|█▋        | 6/35 [00:00<00:01, 15.06it/s]Capturing CUDA graphs (decode, FULL):  23%|██▎       | 8/35 [00:00<00:01, 15.23it/s]Capturing CUDA graphs (decode, FULL):  29%|██▊       | 10/35 [00:00<00:01, 15.53it/s]Capturing CUDA graphs (decode, FULL):  34%|███▍      | 12/35 [00:00<00:01, 15.75it/s]Capturing CUDA graphs (decode, FULL):  40%|████      | 14/35 [00:00<00:01, 16.01it/s]Capturing CUDA graphs (decode, FULL):  46%|████▌     | 16/35 [00:01<00:01, 16.27it/s]Capturing CUDA graphs (decode, FULL):  51%|█████▏    | 18/35 [00:01<00:01, 16.69it/s]Capturing CUDA graphs (decode, FULL):  57%|█████▋    | 20/35 [00:01<00:00, 17.04it/s]Capturing CUDA graphs (decode, FULL):  63%|██████▎   | 22/35 [00:01<00:00, 17.35it/s]Capturing CUDA graphs (decode, FULL):  69%|██████▊   | 24/35 [00:01<00:00, 17.60it/s]Capturing CUDA graphs (decode, FULL):  74%|███████▍  | 26/35 [00:01<00:00, 17.91it/s]Capturing CUDA graphs (decode, FULL):  80%|████████  | 28/35 [00:01<00:00, 18.29it/s]Capturing CUDA graphs (decode, FULL):  86%|████████▌ | 30/35 [00:01<00:00, 18.68it/s]Capturing CUDA graphs (decode, FULL):  94%|█████████▍| 33/35 [00:01<00:00, 19.42it/s]Capturing CUDA graphs (decode, FULL): 100%|██████████| 35/35 [00:02<00:00, 17.38it/s]
+(APIServer pid=35) WARNING 07-14 07:59:30 [model.py:1454] Default vLLM sampling parameters have been overridden by the model's `generation_config.json`: `{'temperature': 0.6, 'top_p': 0.9}`. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`.
+(APIServer pid=35) INFO:     Started server process [35]
+(APIServer pid=35) INFO:     Waiting for application startup.
+(APIServer pid=35) INFO:     Application startup complete.
+(APIServer pid=35) INFO:     127.0.0.1:57418 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=35) INFO:     172.24.0.1:0 - "GET /v1/models HTTP/1.1" 200 OK
+172.24.0.1 - - [14/Jul/2026:07:59:39 +0000] "GET /v1/health/live HTTP/1.1" 200 61 "-" "curl/8.5.0"
+(APIServer pid=35) INFO:     127.0.0.1:57432 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=35) INFO:     172.24.0.1:0 - "GET /v1/models HTTP/1.1" 200 OK
+(APIServer pid=35) INFO:     172.24.0.1:0 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=35) INFO:     172.24.0.1:0 - "GET /v1/metadata HTTP/1.1" 200 OK
+(APIServer pid=35) INFO:     172.24.0.1:0 - "GET /v1/version HTTP/1.1" 200 OK
+(APIServer pid=35) INFO:     172.24.0.1:0 - "GET /v1/manifest HTTP/1.1" 200 OK
+(APIServer pid=35) INFO:     172.24.0.1:0 - "GET /v1/license HTTP/1.1" 200 OK
+172.24.0.1 - - [14/Jul/2026:07:59:39 +0000] "GET /v1/health/live HTTP/1.1" 200 61 "-" "curl/8.5.0"
+(APIServer pid=35) INFO:     127.0.0.1:57440 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=35) INFO:     172.24.0.1:0 - "GET /v1/models HTTP/1.1" 200 OK
+(APIServer pid=35) INFO:     172.24.0.1:0 - "GET /metrics HTTP/1.1" 200 OK
+(EngineCore pid=95) WARNING 07-14 07:59:40 [jit_monitor.py:103] Triton kernel JIT compilation during inference: _compute_slot_mapping_kernel. This causes a latency spike; consider extending warmup to cover this shape/config.
+(APIServer pid=35) INFO:     127.0.0.1:52422 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=35) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+172.24.0.1 - - [14/Jul/2026:07:59:58 +0000] "GET /v1/health/live HTTP/1.1" 200 61 "-" "python-httpx2/2.5.0"
+(APIServer pid=35) INFO:     127.0.0.1:57440 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=35) INFO:     172.24.0.1:0 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=35) INFO:     172.24.0.1:0 - "GET /v1/models HTTP/1.1" 200 OK
+(APIServer pid=35) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=35) INFO:     127.0.0.1:51026 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=35) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=35) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=35) INFO:     127.0.0.1:53012 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=35) INFO:     127.0.0.1:38204 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=35) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=35) INFO:     127.0.0.1:51892 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=35) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=35) INFO:     127.0.0.1:54588 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=35) INFO:     127.0.0.1:53162 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=35) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=35) INFO:     127.0.0.1:60288 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=35) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=35) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=35) INFO:     127.0.0.1:60306 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=35) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=35) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=35) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=35) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=35) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=35) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=35) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=35) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK

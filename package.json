@@ -1,0 +1,23 @@
+{
+  "name": "ntc-nvidia-local-rag-chatbot",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@10.32.0",
+  "engines": {
+    "node": ">=22.13.0 <23",
+    "pnpm": ">=10.0.0"
+  },
+  "scripts": {
+    "dev": "pnpm --filter @ntc-rag/web dev",
+    "build": "pnpm --filter @ntc-rag/web build",
+    "lint": "pnpm --filter @ntc-rag/web lint",
+    "format": "prettier --write . --ignore-unknown",
+    "format:check": "prettier --check . --ignore-unknown",
+    "typecheck": "pnpm --filter @ntc-rag/web typecheck",
+    "test": "pnpm --filter @ntc-rag/web test"
+  },
+  "devDependencies": {
+    "prettier": "3.9.5",
+    "prettier-plugin-tailwindcss": "0.8.0"
+  }
+}

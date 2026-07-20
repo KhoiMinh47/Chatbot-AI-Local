@@ -1,0 +1,6 @@
+ Container ntc-rag-phase3-nim-reranking-500m-1  Stopping
+ Container ntc-rag-phase3-nim-llm-nemotron-1  Stopping
+ Container ntc-rag-phase3-nim-embedding-300m-1  Stopping
+ Container ntc-rag-phase3-nim-embedding-300m-1  Stopped
+ Container ntc-rag-phase3-nim-reranking-500m-1  Stopped
+ Container ntc-rag-phase3-nim-llm-nemotron-1  Stopped

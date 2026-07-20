@@ -1,0 +1,4 @@
+llama	pass	candidates/llama
+nemotron	fail	candidates/nemotron
+embedding-300m	fail	candidates/embedding-300m
+reranking-500m	fail	candidates/reranking-500m

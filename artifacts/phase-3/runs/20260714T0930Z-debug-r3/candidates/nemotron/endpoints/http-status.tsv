@@ -1,0 +1,8 @@
+/v1/health/live	200
+/v1/health/ready	200
+/v1/models	200
+/v1/metrics	200
+/v1/metadata	200
+/v1/version	200
+/v1/manifest	200
+/v1/license	200

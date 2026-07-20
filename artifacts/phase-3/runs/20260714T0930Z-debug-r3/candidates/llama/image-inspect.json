@@ -1,0 +1,45 @@
+[
+  {
+    "Id": "sha256:31e360dbb15f825d69e5d68c2032e334301523b4957091270385ed7ef3db5e81",
+    "RepoTags": [
+      "nvcr.io/nim/meta/llama-3.1-8b-instruct:2.0.6"
+    ],
+    "RepoDigests": [
+      "nvcr.io/nim/meta/llama-3.1-8b-instruct@sha256:31e360dbb15f825d69e5d68c2032e334301523b4957091270385ed7ef3db5e81"
+    ],
+    "Architecture": "arm64",
+    "Os": "linux",
+    "Config": {
+      "User": "nim",
+      "Entrypoint": [
+        "/opt/nim/start_server.sh"
+      ],
+      "Cmd": [
+        "/opt/nim/start_server.sh"
+      ],
+      "Labels": {
+        "ai.vllm.build.commit": "ad7125a431e176d4161099480a66f0169609a690",
+        "ai.vllm.build.pipeline": "019d130e-464e-4ff7-b84b-492992c0c06b",
+        "ai.vllm.build.url": "https://buildkite.com/vllm/release-v2/builds/1649",
+        "ai.vllm.image.tag": "vllm/vllm-openai:v0.21.0-ubuntu2404",
+        "com.nvidia.nim.base_image": "nvcr.io/nvstaging/nim-internal/ga-vllm-oss-nim-llm-2:2.0.6-rc.20260531182952",
+        "com.nvidia.nim.category": "LLM",
+        "com.nvidia.nim.inference_protocol": "http",
+        "com.nvidia.nim.model": "meta/llama-3.1-8b-instruct",
+        "com.nvidia.nim.model-nspect": "NSPECT-0DQP-LNLV",
+        "com.nvidia.nim.name": "llama-3.1-8b-instruct",
+        "com.nvidia.nim.nspect": "NSPECT-ZP6P-5LPY",
+        "com.nvidia.nim.type": "llm",
+        "com.nvidia.nim.version": "2.0.6",
+        "description": "NVIDIA NIM LLM Server (Stable)",
+        "maintainer": "NVIDIA Corporation",
+        "org.opencontainers.image.ref.name": "ubuntu",
+        "org.opencontainers.image.revision": "ad7125a431e176d4161099480a66f0169609a690",
+        "org.opencontainers.image.source": "https://github.com/vllm-project/vllm",
+        "org.opencontainers.image.url": "https://buildkite.com/vllm/release-v2/builds/1649",
+        "org.opencontainers.image.version": "vllm/vllm-openai:v0.21.0-ubuntu2404",
+        "version": "2.0.6"
+      }
+    }
+  }
+]

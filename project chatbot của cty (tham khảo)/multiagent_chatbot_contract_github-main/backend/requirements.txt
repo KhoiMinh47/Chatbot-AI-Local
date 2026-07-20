@@ -1,0 +1,59 @@
+
+# backend
+fastapi 
+uvicorn 
+pydantic[email]
+python-dotenv
+httpx
+aiohttp
+python-multipart
+openai
+pika
+
+# database
+qdrant-client
+sqlalchemy 
+alembic
+asyncpg
+psycopg2-binary
+minio
+redis[hiredis]
+
+# authentication
+bcrypt
+PyJWT
+aiosmtplib
+
+# security & monitoring
+geoip2
+user-agents
+prometheus-fastapi-instrumentator
+prometheus-client
+
+# AI & Workflow
+langchain
+langgraph
+
+#xử lý word
+docxtpl      
+docx2txt     
+python-docx  
+vietnam_number
+
+unidecode
+
+
+
+# đọc file
+python-multipart
+
+
+# đọc token
+transformers
+tokenizers
+
+# web search extraction stack
+trafilatura
+readability-lxml
+beautifulsoup4
+lxml

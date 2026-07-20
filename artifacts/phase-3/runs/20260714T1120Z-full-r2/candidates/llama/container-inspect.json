@@ -1,0 +1,86 @@
+[
+  {
+    "Id": "9b5baeff187c385b29064f988999b8ef1a419f08f3ac8a885a88ae7ecf35f8c1",
+    "Image": "sha256:31e360dbb15f825d69e5d68c2032e334301523b4957091270385ed7ef3db5e81",
+    "Name": "/ntc-rag-phase3-nim-llm-llama-1",
+    "Config": {
+      "NIM_MODEL_PROFILE": "c4789f7af56c770c1c88b73da666886365534d6980b6b922b41fd97036c77d73"
+    },
+    "State": {
+      "Status": "running",
+      "Running": true,
+      "OOMKilled": false,
+      "Health": {
+        "Status": "healthy",
+        "FailingStreak": 0,
+        "Log": [
+          {
+            "Start": "2026-07-14T18:20:17.986286037+07:00",
+            "End": "2026-07-14T18:20:18.024603462+07:00",
+            "ExitCode": 1,
+            "Output": ""
+          },
+          {
+            "Start": "2026-07-14T18:20:23.025230656+07:00",
+            "End": "2026-07-14T18:20:23.065526206+07:00",
+            "ExitCode": 1,
+            "Output": ""
+          },
+          {
+            "Start": "2026-07-14T18:20:28.066726337+07:00",
+            "End": "2026-07-14T18:20:28.098091464+07:00",
+            "ExitCode": 1,
+            "Output": ""
+          },
+          {
+            "Start": "2026-07-14T18:20:33.098966018+07:00",
+            "End": "2026-07-14T18:20:33.13245976+07:00",
+            "ExitCode": 1,
+            "Output": ""
+          },
+          {
+            "Start": "2026-07-14T18:20:38.133600211+07:00",
+            "End": "2026-07-14T18:20:38.175227638+07:00",
+            "ExitCode": 0,
+            "Output": ""
+          }
+        ]
+      }
+    },
+    "HostConfig": {
+      "NetworkMode": "ntc-rag-phase3_runtime",
+      "PortBindings": {}
+    },
+    "NetworkSettings": {
+      "Ports": {
+        "8000/tcp": null
+      },
+      "Networks": {
+        "ntc-rag-phase3_runtime": {
+          "IPAMConfig": null,
+          "Links": null,
+          "Aliases": [
+            "ntc-rag-phase3-nim-llm-llama-1",
+            "nim-llm-llama"
+          ],
+          "DriverOpts": null,
+          "GwPriority": 0,
+          "NetworkID": "5b59f2922f006b2a5ba9a35a7eab5a874aacada640f1b01849a26129bb1bc980",
+          "EndpointID": "68be7362068e8d499b5ce46ac49f06c112ab7c1ed964feed4377cc515aedcd1a",
+          "Gateway": "",
+          "IPAddress": "172.24.0.2",
+          "MacAddress": "ca:73:ff:5d:61:10",
+          "IPPrefixLen": 16,
+          "IPv6Gateway": "",
+          "GlobalIPv6Address": "",
+          "GlobalIPv6PrefixLen": 0,
+          "DNSNames": [
+            "ntc-rag-phase3-nim-llm-llama-1",
+            "nim-llm-llama",
+            "9b5baeff187c"
+          ]
+        }
+      }
+    }
+  }
+]

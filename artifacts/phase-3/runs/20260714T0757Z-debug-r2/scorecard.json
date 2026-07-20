@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "weights": {
+    "correctness_vi_en": 0.25,
+    "faithfulness_and_citation": 0.25,
+    "rag_instruction_following": 0.10,
+    "ttft_and_decode_throughput": 0.20,
+    "memory_and_concurrency": 0.10,
+    "operations_license_nim_compatibility": 0.10
+  },
+  "candidates": {
+    "llama": {
+      "quality_normalized_subscore": 0.7541666666666668,
+      "quality_components": {
+        "correctness": 0.8,
+        "faithfulness_citation": 0.65,
+        "instruction_following": 0.9
+      },
+      "performance_scenarios": [
+        {
+          "name": "engine-short-c1",
+          "status": "pass",
+          "ttft_seconds_p50": 0.051250835007522255,
+          "ttft_seconds_p95": 0.051250835007522255,
+          "decode_tokens_per_second_p50": 25.725890496701673,
+          "decode_tokens_per_second_p95": 25.725890496701673,
+          "total_latency_seconds_p50": 10.00243318399589,
+          "total_latency_seconds_p95": 10.00243318399589
+        },
+        {
+          "name": "rag-8k-c1",
+          "status": "pass",
+          "ttft_seconds_p50": 0.08191083298879676,
+          "ttft_seconds_p95": 0.08191083298879676,
+          "decode_tokens_per_second_p50": 23.082079514995893,
+          "decode_tokens_per_second_p95": 23.082079514995893,
+          "total_latency_seconds_p50": 22.263786486000754,
+          "total_latency_seconds_p95": 22.263786486000754
+        },
+        {
+          "name": "rag-8k-c4",
+          "status": "pass",
+          "ttft_seconds_p50": 0.08071486299741082,
+          "ttft_seconds_p95": 0.08071486299741082,
+          "decode_tokens_per_second_p50": 22.986030674267795,
+          "decode_tokens_per_second_p95": 22.986030674267795,
+          "total_latency_seconds_p50": 22.355279162991792,
+          "total_latency_seconds_p95": 22.355279162991792
+        }
+      ],
+      "metadata_completeness": {
+        "status": "complete",
+        "unverified_or_missing_fields": []
+      },
+      "human_review_required": true
+    },
+    "nemotron": {
+      "quality_normalized_subscore": 0.9583333333333333,
+      "quality_components": {
+        "correctness": 0.95,
+        "faithfulness_citation": 0.95,
+        "instruction_following": 1.0
+      },
+      "performance_scenarios": [
+        {
+          "name": "engine-short-c1",
+          "status": "pass",
+          "ttft_seconds_p50": 0.11929366699769162,
+          "ttft_seconds_p95": 0.11929366699769162,
+          "decode_tokens_per_second_p50": 27.33976688017024,
+          "decode_tokens_per_second_p95": 27.33976688017024,
+          "total_latency_seconds_p50": 9.48308476099919,
+          "total_latency_seconds_p95": 9.48308476099919
+        },
+        {
+          "name": "rag-8k-c1",
+          "status": "pass",
+          "ttft_seconds_p50": 1.9104419909999706,
+          "ttft_seconds_p95": 1.9104419909999706,
+          "decode_tokens_per_second_p50": 26.940164610158128,
+          "decode_tokens_per_second_p95": 26.940164610158128,
+          "total_latency_seconds_p50": 12.749233918992104,
+          "total_latency_seconds_p95": 12.749233918992104
+        },
+        {
+          "name": "rag-8k-c4",
+          "status": "pass",
+          "ttft_seconds_p50": 1.913441379001597,
+          "ttft_seconds_p95": 1.913441379001597,
+          "decode_tokens_per_second_p50": 26.87888399173846,
+          "decode_tokens_per_second_p95": 26.87888399173846,
+          "total_latency_seconds_p50": 12.777148430002853,
+          "total_latency_seconds_p95": 12.777148430002853
+        }
+      ],
+      "metadata_completeness": {
+        "status": "complete",
+        "unverified_or_missing_fields": []
+      },
+      "human_review_required": true
+    }
+  },
+  "winner": {
+    "status": "not_automatically_selected",
+    "reason": "generated answers require human review and target combination is provisional"
+  },
+  "metric_scope": {
+    "ttft": "client-observed request start to first streamed generated-token delta (content or reasoning_content)",
+    "backend_receive_ttft": "not measured by this direct client runner",
+    "total_latency": "direct NIM HTTP latency, not application end-to-end"
+  },
+  "scope": "Phase 3 supplied-context quality and engine performance; no Phase 4/5 claim"
+}

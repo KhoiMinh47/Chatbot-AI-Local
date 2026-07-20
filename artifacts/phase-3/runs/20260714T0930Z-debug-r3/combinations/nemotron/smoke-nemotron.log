@@ -1,0 +1,5 @@
+Checking documented NIM health endpoints at http://172.24.0.4:8000/v1
+true
+LLM reasoning control mode: nemotron-no-think
+true
+llm smoke passed for model nvidia/nemotron-nano-9b-v2

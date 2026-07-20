@@ -1,0 +1,5 @@
+Checking documented NIM health endpoints at http://172.24.0.2:8000/v1
+true
+LLM reasoning control mode: llama-standard
+true
+llm smoke passed for model meta/llama-3.1-8b-instruct

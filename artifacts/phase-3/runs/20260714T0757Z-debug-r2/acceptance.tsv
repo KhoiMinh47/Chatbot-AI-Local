@@ -1,0 +1,6 @@
+AC-01	blocked	four available candidates have health/sample/report; BGE-M3 live HTTP 402 has no exact reviewed runtime
+AC-02	blocked	validated 32K/64K/128K evidence and scorecard captured; human-reviewed LLM winner not selected
+AC-03	fail	debug workload does not meet master-plan minimum
+AC-04	blocked	Embed 300M is under 1B, but DG-03 BGE-M3 comparison is incomplete (live HTTP 402)
+AC-05	pass	explicitly configured provisional (not winner) LLM + Embed 300M + Rerank 500M was healthy with OOMKilled=false
+AC-06	pass	pinned image metadata and reviewed license declaration captured per candidate

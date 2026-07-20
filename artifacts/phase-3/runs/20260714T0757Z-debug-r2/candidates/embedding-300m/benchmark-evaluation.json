@@ -1,0 +1,9 @@
+{
+  "runner_exit_code": 0,
+  "report_shape_valid": true,
+  "contract_status": "pass",
+  "report_overall_status": "pass",
+  "semantic_status": "pass",
+  "all_scenarios_pass": true,
+  "failure": null
+}

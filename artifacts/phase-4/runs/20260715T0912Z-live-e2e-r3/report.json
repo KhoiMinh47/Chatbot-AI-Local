@@ -1,0 +1,338 @@
+{
+  "acceptance": {
+    "metadata_preserved": true,
+    "pdf_scanned_csv_pptx_e2e": true,
+    "rerun_no_duplicates": true,
+    "upload_non_blocking": true,
+    "useful_parser_error": true
+  },
+  "completed_at": "2026-07-15T02:12:36.884200+00:00",
+  "corpus": [
+    {
+      "sha256": "f35cbe8701bca1111387449fd08771a96b512bc8e0daf1f7d1cef2248342dc69",
+      "size_bytes": 22672,
+      "source_name": "01_leave_policy.pdf"
+    },
+    {
+      "sha256": "6263098e88790af217ff33ece93aa5621792cbf2c0261441abae0e124c2b1486",
+      "size_bytes": 67890,
+      "source_name": "02_security_scanned.pdf"
+    },
+    {
+      "sha256": "15cf2c5b96b400642e1d56b49655e8bfea3643a6b9f1429f9d474b9d9a446824",
+      "size_bytes": 29001,
+      "source_name": "03_benefits_table.pdf"
+    },
+    {
+      "sha256": "e6e78f28349c03af6d2e136edb7f9892d6d6f6f529b687977057aa0c3de784b5",
+      "size_bytes": 82,
+      "source_name": "04_finance_limits.csv"
+    },
+    {
+      "sha256": "c42fcdbba13b21f55c0f213f9ee8d187c2e86337e0bfc84b7e37295fb5b814f2",
+      "size_bytes": 29165,
+      "source_name": "05_architecture.pptx"
+    },
+    {
+      "sha256": "b16a17bb102072c849a8738c6197d9e8a2ad568a0333aee22753ecdf7d423860",
+      "size_bytes": 29156,
+      "source_name": "06_onboarding.pptx"
+    },
+    {
+      "sha256": "1c9e03da906751828e6f489ce211bb9a0be90d85dc9169675103a473a4fb37ee",
+      "size_bytes": 36707,
+      "source_name": "07_incident_runbook.docx"
+    },
+    {
+      "sha256": "472cb3eaa0d75b3b9c6e8970fd877b69073d0747af53e9aeda01c252bf208396",
+      "size_bytes": 83,
+      "source_name": "08_remote_handbook.txt"
+    },
+    {
+      "sha256": "f76dfb8c8b900c73a70cb9b8a62a77cf2b966537818f6d93a3bbc8ba1b3e0b1a",
+      "size_bytes": 83,
+      "source_name": "09_retention_policy.md"
+    },
+    {
+      "sha256": "43e0e82a63830aa6da5af2fdd40fe5dea14386c57b53ec092df8d7b9bfc82aaf",
+      "size_bytes": 71,
+      "source_name": "10_inventory.csv"
+    }
+  ],
+  "corrupt_parser_job": {
+    "completed_at": "2026-07-15T02:12:25.826362Z",
+    "document_id": "b64b3498-8e37-4875-8df2-a1ca42a29666",
+    "error_code": "PARSER_CORRUPT_DOCUMENT",
+    "error_message": "The document could not be parsed; verify that it is not corrupt or encrypted.",
+    "job_id": "c472e773-7797-4fdb-9bd4-b9c5683dd5e0",
+    "progress_message": "Processing failed",
+    "progress_percent": 25,
+    "retry_count": 1,
+    "state": "failed",
+    "version_id": "3709904c-9191-4665-9507-80770529ab71"
+  },
+  "database_counts": {
+    "chunks": 26,
+    "current_child_chunks": 12,
+    "documents": 10,
+    "ready_documents": 10,
+    "versions": 11
+  },
+  "duplicate_chunk_coordinate_groups": 0,
+  "gold": {
+    "calibration_samples": 10,
+    "evaluation_samples": 10,
+    "path": "gold.jsonl",
+    "sha256": "6199663c70747725031de26b742d0ec1c0374da78b6c9692d530f26ba2503d1e"
+  },
+  "http_uploads": [
+    {
+      "document_id": "177185e3-c454-49bf-88a8-a200e322717a",
+      "duplicate": false,
+      "job_id": "3f5fe21c-bd2d-4dd4-a08e-0c5897b4c578",
+      "latency_ms": 60.16928001190536,
+      "message": "Upload persisted; parsing continues asynchronously.",
+      "source_name": "01_leave_policy.pdf",
+      "version_id": "ddb9cf86-6197-4f24-b67e-b56769f57e24"
+    },
+    {
+      "document_id": "5848980b-be02-4a94-85b2-31d9e8b79ab2",
+      "duplicate": false,
+      "job_id": "c0efe68f-829d-462d-a310-2c3d387709ce",
+      "latency_ms": 14.902317023370415,
+      "message": "Upload persisted; parsing continues asynchronously.",
+      "source_name": "02_security_scanned.pdf",
+      "version_id": "a54c6deb-494a-48b9-9b70-80d6820d5f23"
+    },
+    {
+      "document_id": "ecf73021-5f8e-4a06-859d-49351c28a2f5",
+      "duplicate": false,
+      "job_id": "8a2d958d-b0aa-421e-b456-47624706086a",
+      "latency_ms": 13.199250010075048,
+      "message": "Upload persisted; parsing continues asynchronously.",
+      "source_name": "03_benefits_table.pdf",
+      "version_id": "3ee42b45-6975-477b-9125-12835c743704"
+    },
+    {
+      "document_id": "b91d3839-846d-4c14-a1a9-84abef5ebca9",
+      "duplicate": false,
+      "job_id": "d17a4eb9-508b-492a-954b-29e7377e1a94",
+      "latency_ms": 13.255425990791991,
+      "message": "Upload persisted; parsing continues asynchronously.",
+      "source_name": "04_finance_limits.csv",
+      "version_id": "47361e0f-f4a6-4074-b8d7-b0c2f1a47a75"
+    },
+    {
+      "document_id": "30b71249-5917-4dc0-aa41-b65dd04bc400",
+      "duplicate": false,
+      "job_id": "7789ddc2-5828-4d67-a9dd-1589670226a2",
+      "latency_ms": 13.346065999940038,
+      "message": "Upload persisted; parsing continues asynchronously.",
+      "source_name": "05_architecture.pptx",
+      "version_id": "9b5ab605-fd66-4f2c-bce4-357eb78ab560"
+    },
+    {
+      "document_id": "ae81f385-aeba-4031-9062-eab5ab8efdff",
+      "duplicate": false,
+      "job_id": "a60cb769-b5b7-46a1-aa98-f0c1fff60381",
+      "latency_ms": 12.85157198435627,
+      "message": "Upload persisted; parsing continues asynchronously.",
+      "source_name": "06_onboarding.pptx",
+      "version_id": "c5a3d494-8c2c-413f-821d-382cb4d7a57f"
+    },
+    {
+      "document_id": "e888ea3c-adf9-4699-8124-2f6bb97d7db5",
+      "duplicate": false,
+      "job_id": "2aebb7e3-f358-48c6-83b8-c369b9625bcc",
+      "latency_ms": 15.050235990202054,
+      "message": "Upload persisted; parsing continues asynchronously.",
+      "source_name": "07_incident_runbook.docx",
+      "version_id": "5aea857a-b454-420d-9238-2d9c234545bc"
+    },
+    {
+      "document_id": "96b77c7b-877d-48b3-83c5-332b04d4adb0",
+      "duplicate": false,
+      "job_id": "0e72d8e3-1c6a-4cc4-a9fa-7c0b923e1a80",
+      "latency_ms": 12.77537998976186,
+      "message": "Upload persisted; parsing continues asynchronously.",
+      "source_name": "08_remote_handbook.txt",
+      "version_id": "9d4e7605-417b-47d1-aed2-014d59f470d8"
+    },
+    {
+      "document_id": "fa17a790-68fc-4edb-9c53-07209d28d730",
+      "duplicate": false,
+      "job_id": "ebada0ee-c065-476c-b55e-5d845ed68f98",
+      "latency_ms": 12.68411599448882,
+      "message": "Upload persisted; parsing continues asynchronously.",
+      "source_name": "09_retention_policy.md",
+      "version_id": "d14a53aa-01ed-4733-861a-376dffa9cc71"
+    },
+    {
+      "document_id": "f0aaad6b-460c-4e8d-bcbb-aa18b8471c88",
+      "duplicate": false,
+      "job_id": "679e8f75-e68b-4064-80b9-2703a115e2a3",
+      "latency_ms": 12.566916993819177,
+      "message": "Upload persisted; parsing continues asynchronously.",
+      "source_name": "10_inventory.csv",
+      "version_id": "38475a19-427e-4815-ac41-b2d6079e07f8"
+    }
+  ],
+  "idempotency": {
+    "completed_task_redelivery_chunk_count_after": 26,
+    "completed_task_redelivery_chunk_count_before": 26,
+    "concurrent_reindex_same_job": true,
+    "delete_twice_http_204": true,
+    "duplicate_upload_returned_existing": true
+  },
+  "jobs": [
+    {
+      "completed_at": "2026-07-15T02:12:23.336218Z",
+      "document_id": "177185e3-c454-49bf-88a8-a200e322717a",
+      "error_code": null,
+      "error_message": null,
+      "job_id": "3f5fe21c-bd2d-4dd4-a08e-0c5897b4c578",
+      "progress_message": "Processed 2 chunks",
+      "progress_percent": 100,
+      "retry_count": 0,
+      "state": "success",
+      "version_id": "ddb9cf86-6197-4f24-b67e-b56769f57e24"
+    },
+    {
+      "completed_at": "2026-07-15T02:12:24.215873Z",
+      "document_id": "5848980b-be02-4a94-85b2-31d9e8b79ab2",
+      "error_code": null,
+      "error_message": null,
+      "job_id": "c0efe68f-829d-462d-a310-2c3d387709ce",
+      "progress_message": "Processed 2 chunks",
+      "progress_percent": 100,
+      "retry_count": 0,
+      "state": "success",
+      "version_id": "a54c6deb-494a-48b9-9b70-80d6820d5f23"
+    },
+    {
+      "completed_at": "2026-07-15T02:12:24.337273Z",
+      "document_id": "ecf73021-5f8e-4a06-859d-49351c28a2f5",
+      "error_code": null,
+      "error_message": null,
+      "job_id": "8a2d958d-b0aa-421e-b456-47624706086a",
+      "progress_message": "Processed 2 chunks",
+      "progress_percent": 100,
+      "retry_count": 0,
+      "state": "success",
+      "version_id": "3ee42b45-6975-477b-9125-12835c743704"
+    },
+    {
+      "completed_at": "2026-07-15T02:12:24.399960Z",
+      "document_id": "b91d3839-846d-4c14-a1a9-84abef5ebca9",
+      "error_code": null,
+      "error_message": null,
+      "job_id": "d17a4eb9-508b-492a-954b-29e7377e1a94",
+      "progress_message": "Processed 2 chunks",
+      "progress_percent": 100,
+      "retry_count": 0,
+      "state": "success",
+      "version_id": "47361e0f-f4a6-4074-b8d7-b0c2f1a47a75"
+    },
+    {
+      "completed_at": "2026-07-15T02:12:24.447672Z",
+      "document_id": "30b71249-5917-4dc0-aa41-b65dd04bc400",
+      "error_code": null,
+      "error_message": null,
+      "job_id": "7789ddc2-5828-4d67-a9dd-1589670226a2",
+      "progress_message": "Processed 4 chunks",
+      "progress_percent": 100,
+      "retry_count": 0,
+      "state": "success",
+      "version_id": "9b5ab605-fd66-4f2c-bce4-357eb78ab560"
+    },
+    {
+      "completed_at": "2026-07-15T02:12:24.504675Z",
+      "document_id": "ae81f385-aeba-4031-9062-eab5ab8efdff",
+      "error_code": null,
+      "error_message": null,
+      "job_id": "a60cb769-b5b7-46a1-aa98-f0c1fff60381",
+      "progress_message": "Processed 4 chunks",
+      "progress_percent": 100,
+      "retry_count": 0,
+      "state": "success",
+      "version_id": "c5a3d494-8c2c-413f-821d-382cb4d7a57f"
+    },
+    {
+      "completed_at": "2026-07-15T02:12:24.566244Z",
+      "document_id": "e888ea3c-adf9-4699-8124-2f6bb97d7db5",
+      "error_code": null,
+      "error_message": null,
+      "job_id": "2aebb7e3-f358-48c6-83b8-c369b9625bcc",
+      "progress_message": "Processed 2 chunks",
+      "progress_percent": 100,
+      "retry_count": 0,
+      "state": "success",
+      "version_id": "5aea857a-b454-420d-9238-2d9c234545bc"
+    },
+    {
+      "completed_at": "2026-07-15T02:12:24.614198Z",
+      "document_id": "96b77c7b-877d-48b3-83c5-332b04d4adb0",
+      "error_code": null,
+      "error_message": null,
+      "job_id": "0e72d8e3-1c6a-4cc4-a9fa-7c0b923e1a80",
+      "progress_message": "Processed 2 chunks",
+      "progress_percent": 100,
+      "retry_count": 0,
+      "state": "success",
+      "version_id": "9d4e7605-417b-47d1-aed2-014d59f470d8"
+    },
+    {
+      "completed_at": "2026-07-15T02:12:24.669963Z",
+      "document_id": "fa17a790-68fc-4edb-9c53-07209d28d730",
+      "error_code": null,
+      "error_message": null,
+      "job_id": "ebada0ee-c065-476c-b55e-5d845ed68f98",
+      "progress_message": "Processed 2 chunks",
+      "progress_percent": 100,
+      "retry_count": 0,
+      "state": "success",
+      "version_id": "d14a53aa-01ed-4733-861a-376dffa9cc71"
+    },
+    {
+      "completed_at": "2026-07-15T02:12:24.724550Z",
+      "document_id": "f0aaad6b-460c-4e8d-bcbb-aa18b8471c88",
+      "error_code": null,
+      "error_message": null,
+      "job_id": "679e8f75-e68b-4064-80b9-2703a115e2a3",
+      "progress_message": "Processed 2 chunks",
+      "progress_percent": 100,
+      "retry_count": 0,
+      "state": "success",
+      "version_id": "38475a19-427e-4815-ac41-b2d6079e07f8"
+    }
+  ],
+  "metadata_checks": {
+    "full_text_and_hash": true,
+    "pptx_slide": true,
+    "scanned_pdf_ocr": true,
+    "section_path_stored": true,
+    "text_pdf_page": true
+  },
+  "minio": {
+    "all_current_version_artifacts_present": true,
+    "bucket": "ntc-documents",
+    "object_count": 48
+  },
+  "owner_id": "bad9635f-069f-5e9c-80b8-308d5260597f",
+  "reindex_job": {
+    "completed_at": "2026-07-15T02:12:24.879922Z",
+    "document_id": "177185e3-c454-49bf-88a8-a200e322717a",
+    "error_code": null,
+    "error_message": null,
+    "job_id": "3020ab26-2fb6-49c6-9448-e3a79eb19c80",
+    "progress_message": "Processed 2 chunks",
+    "progress_percent": 100,
+    "retry_count": 0,
+    "state": "success",
+    "version_id": "bfec1955-5217-4d33-a2aa-3ea03594f9f9"
+  },
+  "run_id": "20260715T0912Z-live-e2e-r3",
+  "schema_version": 1,
+  "status": "PASS",
+  "tenant_id": "d30abdd6-3154-5de9-a295-1639bc36ebd4"
+}

@@ -1,0 +1,61 @@
+[
+  {
+    "Id": "sha256:82028e38ab950edd32f5053ca2030ee14d965e8fd4fe1c6e06468eb0be07a9a4",
+    "RepoTags": [
+      "nvcr.io/nim/nvidia/nvidia-nemotron-nano-9b-v2-dgx-spark:1.0.0-variant",
+      "nvcr.io/nim/nvidia/nvidia-nemotron-nano-9b-v2-dgx-spark@sha256:82028e38ab950edd32f5053ca2030ee14d965e8fd4fe1c6e06468eb0be07a9a4"
+    ],
+    "RepoDigests": [
+      "nvcr.io/nim/nvidia/nvidia-nemotron-nano-9b-v2-dgx-spark@sha256:82028e38ab950edd32f5053ca2030ee14d965e8fd4fe1c6e06468eb0be07a9a4"
+    ],
+    "Architecture": "arm64",
+    "Os": "linux",
+    "Config": {
+      "User": "nvs:1000",
+      "Entrypoint": [
+        "/opt/nvidia/nvidia_entrypoint.sh"
+      ],
+      "Cmd": [
+        "/bin/bash",
+        "-c",
+        "$SERVER_START_SCRIPT_PATH"
+      ],
+      "Labels": {
+        "com.nvidia.build.id": "216889558",
+        "com.nvidia.build.ref": "7924e724880e9460180ef2b5f986a8da91933c0d",
+        "com.nvidia.cublas.version": "13.1.0.2",
+        "com.nvidia.cublasmp.version": "0.6.0.84",
+        "com.nvidia.cuda.version": "9.0",
+        "com.nvidia.cudla.version": "13.0.2.005",
+        "com.nvidia.cudnn.version": "9.14.0.56",
+        "com.nvidia.cufft.version": "12.0.0.61",
+        "com.nvidia.curand.version": "10.4.0.35",
+        "com.nvidia.cusolver.version": "12.0.4.66",
+        "com.nvidia.cusparse.version": "12.6.3.3",
+        "com.nvidia.cusparselt.version": "0.8.1.1",
+        "com.nvidia.nccl.version": "2.28.3",
+        "com.nvidia.nim.category": "LLM",
+        "com.nvidia.nim.inference_protocol": "http",
+        "com.nvidia.nim.model": "nvidia/nemotron-nano-9b-v2",
+        "com.nvidia.nim.model-nspect": "NSPECT-G9R0-9QVY",
+        "com.nvidia.nim.name": "nemotron-nano-9b-v2",
+        "com.nvidia.nim.nspect": "NSPECT-3BOZ-2XZS",
+        "com.nvidia.nim.owner": "nvidia",
+        "com.nvidia.nim.version": "1.0.0",
+        "com.nvidia.npp.version": "13.0.1.2",
+        "com.nvidia.nsightcompute.version": "2025.3.1.4",
+        "com.nvidia.nsightsystems.version": "2025.5.1.121",
+        "com.nvidia.nvjpeg.version": "13.0.1.86",
+        "com.nvidia.nvvm.version": "13.0.88",
+        "com.nvidia.pytorch.version": "2.9.0a0+145a3a7",
+        "com.nvidia.tensorrt.version": "10.13.3.9",
+        "com.nvidia.tensorrtoss.version": "",
+        "com.nvidia.vllm.version": "0.10.2+d8fcb151",
+        "com.nvidia.volumes.needed": "nvidia_driver",
+        "model.manifest.yaml": "H4sIAAAAAAAC/92Vy46bMBSG93kKdllBsAFzkaqqarOo1HbRPgA6+BwTz3ArJumoT18PYW5MprMpyahWFskxnO/DjvmN3FEN+YF6o9smc9bc89errm+Vrig3VJEc7EQuez1QryFzYD+0q7pFqjKnqqAGN/CYmxSubszQ7+XgYnnjmg7661Vv7wdDmcM83/Pv2pps5ToaMweToKBAFPYjIyxkWggVMM7SUEhQMZdSKQmYpBGmYZz6hY9BCDEjwYUIQawcZ4DStnPsUARDXrW9VVwrqAytx3LZ7XOkg5bWghPjGfORxpmqqnNqSt3YmYP9MRYbXee/2v7a+kvKd2B2+YFZUyWZRAoZpEUIijAMmeQpCFTIg0QkcQzIb2XBj2Phk2BBgcpPRIQQCDb27jqrxo5aXU9SH5e8OaguHIvD/QX3CtOzHVfNGceXzx+3335svQ7VXclx9r22nUqZbTbNwdhV0U25sQ+zeWWLsp1yLd4tsIhC4u9vSe8eESbA9+2HT1+3Xo0LEe/7T+3lzm7mQHVXwUDelW6uYCHyCdKdQ9soXXpXxm7SQuwHwgQoqaEejiducfxp2MTaqfznHprhDB6nUBNpfM+4vh3MbdX4hXvGHsCBGtP2ZiGj17DP7Phl7Pirdo/rnm6Qbpbcyb8hJ6Lp7IsPqnxor+0leQ3dkkIv0CbYWNW/qV9S4SlkTj7D8TrJmhKYYsQwYAUKLEIMpUyYjEBCGscRj5jgASpQMkWZUJD6aRBzruwsDySmsZD/RwKrLrls/iZuyDGNWHS2/J0Rn+Xvv/9Xzojnzr4Z/mLZN/N4A9k3M3pj2fei3cWz75TZRbNvJnSJ7JspnD/7XhJ4cr7+AEylDNX1DgAA",
+        "org.opencontainers.image.ref.name": "ubuntu",
+        "org.opencontainers.image.version": "24.04"
+      }
+    }
+  }
+]

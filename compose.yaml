@@ -1,0 +1,570 @@
+# name: ${COMPOSE_PROJECT_NAME:-ntc-rag-phase2}
+
+services:
+  postgres:
+    profiles: ["core"]
+    image: ${POSTGRES_IMAGE:?set POSTGRES_IMAGE}
+    pull_policy: never
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-ntc_rag}
+      POSTGRES_USER: ${POSTGRES_USER:-ntc_app}
+      POSTGRES_PASSWORD_FILE: /run/secrets/postgres_password
+    secrets:
+      - postgres_password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    expose: ["5432"]
+    ports: ["5432:5432"] # Temporary for migrations
+    networks: [internal]
+    healthcheck:
+      test:
+        ["CMD-SHELL", "pg_isready -q -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+      start_period: 15s
+    cpus: "2.0"
+    mem_limit: 4g
+    pids_limit: 256
+    security_opt: ["no-new-privileges:true"]
+
+  redis:
+    profiles: ["core"]
+    image: ${REDIS_IMAGE:?set REDIS_IMAGE}
+    pull_policy: never
+    restart: unless-stopped
+    entrypoint: ["/usr/local/bin/ntc-redis-entrypoint"]
+    secrets:
+      - redis_password
+    volumes:
+      - redis_data:/data
+      - ./infra/redis/entrypoint.sh:/usr/local/bin/ntc-redis-entrypoint:ro
+    tmpfs:
+      - /run/ntc-redis:mode=0700
+    expose: ["6379"]
+    networks: [internal]
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "REDISCLI_AUTH=$$(cat /run/secrets/redis_password) redis-cli --no-auth-warning ping | grep -qx PONG",
+        ]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+      start_period: 5s
+    cpus: "1.0"
+    mem_limit: 1g
+    pids_limit: 128
+    security_opt: ["no-new-privileges:true"]
+
+  rabbitmq:
+    profiles: ["core"]
+    image: ${RABBITMQ_IMAGE:?set RABBITMQ_IMAGE}
+    pull_policy: never
+    hostname: rabbitmq
+    restart: unless-stopped
+    entrypoint: ["/usr/local/bin/ntc-rabbitmq-entrypoint"]
+    environment:
+      RABBITMQ_DEFAULT_USER: ${RABBITMQ_DEFAULT_USER:-ntc_worker}
+      RABBITMQ_NODENAME: rabbit@rabbitmq
+    secrets:
+      - rabbitmq_password
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+      - ./infra/rabbitmq/entrypoint.sh:/usr/local/bin/ntc-rabbitmq-entrypoint:ro
+    tmpfs:
+      - /run/ntc-rabbitmq:mode=0750
+    expose: ["5672", "15672", "15692"]
+    networks: [internal]
+    healthcheck:
+      # rabbitmq-diagnostics starts a second Erlang VM. Under a container PID cap,
+      # timed-out probes can accumulate hundreds of scheduler threads and make a
+      # healthy broker report unhealthy. Probe both listeners with BusyBox nc.
+      test: ["CMD-SHELL", "nc -z 127.0.0.1 5672 && nc -z 127.0.0.1 15672"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+      start_period: 20s
+    cpus: "2.0"
+    mem_limit: 2g
+    pids_limit: 512
+    security_opt: ["no-new-privileges:true"]
+
+  minio:
+    profiles: ["core"]
+    image: ${MINIO_IMAGE:?set MINIO_IMAGE}
+    pull_policy: never
+    restart: unless-stopped
+    command: ["server", "/data", "--console-address", ":9001"]
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER:-ntc_minio_admin}
+      MINIO_ROOT_PASSWORD_FILE: /run/secrets/minio_root_password
+    secrets:
+      - minio_root_password
+    volumes:
+      - minio_data:/data
+    expose: ["9000", "9001"]
+    networks: [internal]
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "MC_HOST_probe=http://$${MINIO_ROOT_USER}:$$(cat /run/secrets/minio_root_password)@127.0.0.1:9000 mc ready probe --quiet",
+        ]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+      start_period: 15s
+    cpus: "2.0"
+    mem_limit: 4g
+    pids_limit: 256
+    security_opt: ["no-new-privileges:true"]
+
+  qdrant:
+    profiles: ["core"]
+    image: ${QDRANT_IMAGE:?set QDRANT_IMAGE}
+    pull_policy: never
+    restart: unless-stopped
+    volumes:
+      - qdrant_data:/qdrant/storage
+    expose: ["6333", "6334"]
+    networks: [internal]
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "bash -ec 'exec 3<>/dev/tcp/127.0.0.1/6333; printf \"GET /healthz HTTP/1.0\\r\\nHost: localhost\\r\\n\\r\\n\" >&3; grep -q \"200 OK\" <&3'",
+        ]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+      start_period: 10s
+    cpus: "4.0"
+    mem_limit: 8g
+    pids_limit: 512
+    security_opt: ["no-new-privileges:true"]
+
+  api:
+    profiles: ["app"]
+    image: ${API_IMAGE:-ntc-rag-phase2-api:0.2.0}
+    pull_policy: never
+    build:
+      context: .
+      dockerfile: apps/api/Dockerfile
+      args:
+        PYTHON_IMAGE: ${PYTHON_IMAGE:?set PYTHON_IMAGE}
+        UV_IMAGE: ${UV_IMAGE:?set UV_IMAGE}
+    restart: unless-stopped
+    environment:
+      APP_ENV: development
+      APP_HOST: 0.0.0.0
+      APP_PORT: 8000
+      APP_LOG_LEVEL: info
+      APP_DATABASE_HOST: postgres
+      APP_DATABASE_PORT: 5432
+      APP_DATABASE_NAME: ${POSTGRES_DB:-ntc_rag}
+      APP_DATABASE_USER: ${POSTGRES_USER:-ntc_app}
+      APP_DATABASE_PASSWORD: ${DATABASE_PASSWORD:-ntc_secure_pass_2024}
+      APP_REDIS_HOST: redis
+      APP_REDIS_PORT: 6379
+      APP_REDIS_PASSWORD: ${REDIS_PASSWORD:-ntc_redis_pass_2024}
+      APP_QDRANT_HEALTH_URL: http://qdrant:6333/healthz
+      APP_RABBITMQ_HEALTH_URL: http://rabbitmq:15672/api/health/checks/virtual-hosts
+      APP_RABBITMQ_USER: ${RABBITMQ_DEFAULT_USER:-ntc_worker}
+      APP_RABBITMQ_PASSWORD: ${RABBITMQ_DEFAULT_PASS:-ntc_rabbitmq_pass_2024}
+      APP_MINIO_HEALTH_URL: http://minio:9000/minio/health/ready
+      APP_LLM_HEALTH_URL: http://nim-llm-nemotron:8000/v1/health/ready
+      # Auth configuration
+      AUTH_ENABLED: "true"
+      AUTH_DATABASE_HOST: postgres
+      AUTH_DATABASE_PORT: 5432
+      AUTH_DATABASE_NAME: ${POSTGRES_DB:-ntc_rag}
+      AUTH_DATABASE_USER: ${POSTGRES_USER:-ntc_app}
+      AUTH_DATABASE_PASSWORD: ${DATABASE_PASSWORD:-ntc_secure_pass_2024}
+      AUTH_JWT_SECRET: ${AUTH_JWT_SECRET:-dev-secret-change-in-production-at-least-32-bytes}
+      AUTH_FRONTEND_BASE_URL: http://localhost:3000
+      AUTH_SMTP_HOST: ${SMTP_HOST:-localhost}
+      AUTH_SMTP_PORT: ${SMTP_PORT:-1025}
+      AUTH_SMTP_FROM_EMAIL: noreply@ntc.local
+      # Ingestion configuration
+      INGESTION_ENABLED: "true"
+      INGESTION_TRUSTED_ACTOR_HEADERS_ENABLED: "true"
+      INGESTION_DATABASE_HOST: postgres
+      INGESTION_DATABASE_PORT: 5432
+      INGESTION_DATABASE_NAME: ${POSTGRES_DB:-ntc_rag}
+      INGESTION_DATABASE_USER: ${POSTGRES_USER:-ntc_app}
+      INGESTION_DATABASE_PASSWORD: ${DATABASE_PASSWORD:-ntc_secure_pass_2024}
+      INGESTION_MINIO_ENDPOINT: minio:9000
+      INGESTION_MINIO_ACCESS_KEY: ${MINIO_ROOT_USER:-ntc_minio_admin}
+      INGESTION_MINIO_SECRET_KEY: ${MINIO_ROOT_PASSWORD:-ntc_minio_pass_2024}
+      INGESTION_MINIO_BUCKET: ntc-documents
+      INGESTION_BROKER_HOST: rabbitmq
+      INGESTION_BROKER_PORT: 5672
+      INGESTION_BROKER_USER: ${RABBITMQ_DEFAULT_USER:-ntc_worker}
+      INGESTION_BROKER_PASSWORD: ${RABBITMQ_DEFAULT_PASS:-ntc_rabbitmq_pass_2024}
+      # Maximum file upload size (500MB)
+      INGESTION_MAX_FILE_SIZE: "524288000"
+      # Phase 3/5 winners. These services run from compose.phase3.yaml on the
+      # shared, host-local AI runtime network.
+      APP_NIM_CLIENTS_ENABLED: "true"
+      APP_NIM_LLM_BASE_URL: http://nim-llm-nemotron:8000/v1
+      APP_NIM_LLM_MODEL: ${NIM_LLM_MODEL:-nvidia/nemotron-nano-9b-v2}
+      APP_NIM_LLM_MODEL_VERSION: ${NIM_LLM_MODEL_VERSION:-1.0.0}
+      APP_NIM_EMBED_BASE_URL: http://nim-embedding-300m:8000/v1
+      APP_NIM_EMBED_MODEL: ${NIM_EMBED_MODEL:-nvidia/llama-nemotron-embed-300m-v2}
+      APP_NIM_EMBED_MODEL_VERSION: ${NIM_EMBED_MODEL_VERSION:-1.13.0}
+      APP_EMBEDDING_DIMENSION: ${EMBEDDING_DIMENSION:-2048}
+      APP_RAG_COLLECTION_NAME: ${RAG_COLLECTION_NAME:-ntc_chunks_active}
+      APP_RAG_INDEX_VERSION: ${RAG_INDEX_VERSION:-embed300m-v2-1.13.0}
+      APP_RAG_CHUNK_SIZE: ${RAG_CHUNK_SIZE:-256}
+      APP_RAG_OVERLAP_PERCENT: ${RAG_OVERLAP_PERCENT:-10}
+      APP_RAG_DENSE_CANDIDATE_LIMIT: ${RAG_DENSE_CANDIDATE_LIMIT:-20}
+      APP_RAG_FINAL_LIMIT: ${RAG_FINAL_LIMIT:-10}
+      APP_RAG_DENSE_THRESHOLD: ${RAG_DENSE_THRESHOLD:-0.2300481}
+      APP_RAG_HNSW_EF: ${RAG_HNSW_EF:-128}
+      APP_ENABLE_HYBRID_RETRIEVAL: ${ENABLE_HYBRID_RETRIEVAL:-true}
+      APP_RAG_RRF_K: ${RAG_RRF_K:-60}
+      APP_RAG_DENSE_WEIGHT: ${RAG_DENSE_WEIGHT:-1.0}
+      APP_RAG_LEXICAL_WEIGHT: ${RAG_LEXICAL_WEIGHT:-1.0}
+      APP_RAG_RERANKER_ENABLED: ${ENABLE_RERANKER:-false}
+      APP_NIM_RERANK_BASE_URL: ${NIM_RERANK_BASE_URL:-http://nim-reranking-500m:8000/v1}
+      APP_NIM_RERANK_MODEL: ${NIM_RERANK_MODEL:-nvidia/llama-nemotron-rerank-500m-v2}
+      APP_NIM_RERANK_MODEL_VERSION: ${NIM_RERANK_MODEL_VERSION:-1.1}
+      APP_RAG_RERANK_THRESHOLD: ${RAG_RERANK_THRESHOLD:--100.0}
+      APP_ENABLE_NEW_MEMORY: ${ENABLE_NEW_MEMORY:-true}
+      APP_MEMORY_RECENT_MAX_TURNS: ${MEMORY_RECENT_MAX_TURNS:-16}
+      APP_MEMORY_RECENT_TOKEN_LIMIT: ${MEMORY_RECENT_TOKEN_LIMIT:-12000}
+      APP_ENABLE_ROLLING_SUMMARY: ${ENABLE_ROLLING_SUMMARY:-true}
+      APP_ENABLE_LONG_TERM_MEMORY: ${ENABLE_LONG_TERM_MEMORY:-true}
+      APP_MEMORY_SUMMARY_SOURCE_LIMIT: ${MEMORY_SUMMARY_SOURCE_LIMIT:-128}
+      APP_MEMORY_SEMANTIC_CANDIDATE_LIMIT: ${MEMORY_SEMANTIC_CANDIDATE_LIMIT:-200}
+      APP_MEMORY_SEMANTIC_FINAL_LIMIT: ${MEMORY_SEMANTIC_FINAL_LIMIT:-6}
+      APP_REQUIRE_EXACT_TOKENIZER: "true"
+      APP_ENABLE_ADAPTIVE_REASONING: ${ENABLE_ADAPTIVE_REASONING:-true}
+      APP_RAG_MAX_CONCURRENCY: ${RAG_MAX_CONCURRENCY:-4}
+      # Final-answer cache remains off: memory/evidence-aware cache identity is
+      # intentionally not treated as a latency shortcut.
+      APP_ENABLE_RAG_CACHE: "false"
+      APP_NIM_TIMEOUT_SECONDS: "120"
+    extra_hosts:
+      - "host-gateway:host-gateway"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+      minio:
+        condition: service_healthy
+      qdrant:
+        condition: service_healthy
+    expose: ["8000"]
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "python",
+          "-c",
+          "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health/live', timeout=2).read()",
+        ]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+      start_period: 10s
+    read_only: true
+    tmpfs: ["/tmp:mode=1777"]
+    ports:
+      - "8000:8000"
+    networks:
+      - edge
+      - internal
+      - ai-runtime
+    cpus: "2.0"
+    mem_limit: 2g
+    pids_limit: 256
+    security_opt: ["no-new-privileges:true"]
+
+  worker:
+    profiles: ["app"]
+    image: ${WORKER_IMAGE:-ntc-rag-phase2-worker:0.2.0}
+    pull_policy: never
+    build:
+      context: .
+      dockerfile: apps/worker/Dockerfile
+      args:
+        PYTHON_IMAGE: ${PYTHON_IMAGE:?set PYTHON_IMAGE}
+        UV_IMAGE: ${UV_IMAGE:?set UV_IMAGE}
+    restart: unless-stopped
+    environment:
+      CELERY_BROKER_HOST: rabbitmq
+      CELERY_BROKER_PORT: 5672
+      CELERY_BROKER_USER: ${RABBITMQ_DEFAULT_USER:-ntc_worker}
+      CELERY_BROKER_PASSWORD: ${RABBITMQ_DEFAULT_PASS:-ntc_rabbitmq_pass_2024}
+      CELERY_WORKER_CONCURRENCY: 2
+      WORKER_DATABASE_HOST: postgres
+      WORKER_DATABASE_PORT: 5432
+      WORKER_DATABASE_NAME: ${POSTGRES_DB:-ntc_rag}
+      WORKER_DATABASE_USER: ${POSTGRES_USER:-ntc_app}
+      WORKER_DATABASE_PASSWORD: ${POSTGRES_PASSWORD:-ntc_secure_pass_2024}
+      WORKER_MINIO_ENDPOINT: minio:9000
+      WORKER_MINIO_ACCESS_KEY: ${MINIO_ROOT_USER:-ntc_minio_admin}
+      WORKER_MINIO_SECRET_KEY: ${MINIO_ROOT_PASSWORD:-ntc_minio_pass_2024}
+      # Must match the public/API file limit so accepted uploads remain processable.
+      MAX_DOCUMENT_BYTES: "524288000"
+      EMBEDDING_BASE_URL: http://nim-embedding-300m:8000/v1
+      EMBEDDING_MODEL: ${NIM_EMBED_MODEL:-nvidia/llama-nemotron-embed-300m-v2}
+      EMBEDDING_DIMENSION: ${EMBEDDING_DIMENSION:-2048}
+      QDRANT_URL: http://qdrant:6333
+      QDRANT_COLLECTION: ${RAG_PHYSICAL_COLLECTION:-ntc_chunks_embed300m_v2_uploads_v1}
+      QDRANT_ACTIVE_ALIAS: ${RAG_COLLECTION_NAME:-ntc_chunks_active}
+      VECTOR_INDEX_VERSION: ${RAG_INDEX_VERSION:-embed300m-v2-1.13.0}
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
+      minio:
+        condition: service_healthy
+    volumes:
+      - ./infra/worker/entrypoint.sh:/usr/local/bin/ntc-worker-entrypoint:ro
+      - ./infra/worker/healthcheck.sh:/usr/local/bin/ntc-worker-healthcheck:ro
+    extra_hosts:
+      - "host-gateway:host-gateway"
+    networks: [edge, internal, ai-runtime]
+    healthcheck:
+      test: ["CMD", "/usr/local/bin/ntc-worker-healthcheck"]
+      interval: 10s
+      timeout: 8s
+      retries: 20
+      start_period: 15s
+    read_only: true
+    tmpfs: ["/tmp:mode=1777"]
+    cpus: "4.0"
+    mem_limit: 8g
+    pids_limit: 256
+    security_opt: ["no-new-privileges:true"]
+
+  web:
+    profiles: ["app"]
+    image: ${WEB_IMAGE:-ntc-rag-phase2-web:0.2.0}
+    pull_policy: never
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile
+      args:
+        NODE_IMAGE: ${NODE_IMAGE:?set NODE_IMAGE}
+    restart: unless-stopped
+    environment:
+      API_INTERNAL_URL: http://api:8000
+    ports:
+      - "3000:3000"
+    expose: ["3000"]
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "fetch('http://127.0.0.1:3000/login').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))",
+        ]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+      start_period: 10s
+    read_only: true
+    tmpfs: ["/tmp:mode=1777"]
+    networks:
+      - edge
+      - internal
+    cpus: "2.0"
+    mem_limit: 2g
+    pids_limit: 256
+    security_opt: ["no-new-privileges:true"]
+
+  reverse-proxy:
+    profiles: ["app"]
+    image: ${NGINX_IMAGE:?set NGINX_IMAGE}
+    pull_policy: never
+    restart: unless-stopped
+    user: "101:101"
+    depends_on:
+      api:
+        condition: service_healthy
+      web:
+        condition: service_healthy
+    volumes:
+      - ./infra/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    tmpfs:
+      - /tmp:uid=101,gid=101,mode=1770
+      - /var/cache/nginx:uid=101,gid=101,mode=0770
+    ports:
+      - "127.0.0.1:${PHASE2_PROXY_PORT:-8080}:8080"
+    networks: [edge, internal]
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1:8080/gateway-health"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+      start_period: 5s
+    read_only: true
+    cpus: "0.5"
+    mem_limit: 256m
+    pids_limit: 128
+    security_opt: ["no-new-privileges:true"]
+
+  dcgm-exporter:
+    profiles: ["observability"]
+    image: ${DCGM_EXPORTER_IMAGE:?set DCGM_EXPORTER_IMAGE}
+    pull_policy: never
+    restart: unless-stopped
+    # gpus: all  # Requires Docker Compose 2.2+
+    cap_add: ["SYS_ADMIN"]
+    expose: ["9400"]
+    networks: [internal]
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "bash -ec 'exec 3<>/dev/tcp/127.0.0.1/9400; printf \"GET /metrics HTTP/1.0\\r\\nHost: localhost\\r\\n\\r\\n\" >&3; grep -q \"^DCGM_FI_DEV_GPU_UTIL{\" <&3'",
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 30
+      start_period: 30s
+    cpus: "0.5"
+    mem_limit: 512m
+    pids_limit: 256
+    security_opt: ["no-new-privileges:true"]
+
+  prometheus:
+    profiles: ["observability"]
+    image: ${PROMETHEUS_IMAGE:?set PROMETHEUS_IMAGE}
+    pull_policy: never
+    restart: unless-stopped
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+      - --storage.tsdb.path=/prometheus
+      - --storage.tsdb.retention.time=7d
+      - --storage.tsdb.retention.size=10GB
+      - --web.enable-lifecycle
+    volumes:
+      - ./infra/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus_data:/prometheus
+    expose: ["9090"]
+    networks: [internal]
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1:9090/-/ready"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+      start_period: 10s
+    cpus: "2.0"
+    mem_limit: 4g
+    pids_limit: 256
+    security_opt: ["no-new-privileges:true"]
+
+  grafana:
+    profiles: ["observability"]
+    image: ${GRAFANA_IMAGE:?set GRAFANA_IMAGE}
+    pull_policy: never
+    restart: unless-stopped
+    environment:
+      GF_ANALYTICS_REPORTING_ENABLED: "false"
+      GF_ANALYTICS_CHECK_FOR_UPDATES: "false"
+      GF_ANALYTICS_CHECK_FOR_PLUGIN_UPDATES: "false"
+      GF_PLUGINS_PLUGIN_ADMIN_ENABLED: "false"
+      GF_PLUGINS_PREINSTALL_DISABLED: "true"
+      GF_PLUGINS_PUBLIC_KEY_RETRIEVAL_DISABLED: "true"
+      GF_SECURITY_ADMIN_USER: ${GRAFANA_ADMIN_USER:-ntc_grafana_admin}
+      GF_SECURITY_ADMIN_PASSWORD__FILE: /run/secrets/grafana_admin_password
+      GF_SERVER_ROOT_URL: http://127.0.0.1:${PHASE2_PROXY_PORT:-8080}/grafana/
+      GF_SERVER_SERVE_FROM_SUB_PATH: "true"
+      GF_USERS_ALLOW_SIGN_UP: "false"
+    secrets:
+      - grafana_admin_password
+    group_add: ["${PHASE2_SECRET_GID:?set PHASE2_SECRET_GID}"]
+    depends_on:
+      prometheus:
+        condition: service_healthy
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./infra/grafana/provisioning:/etc/grafana/provisioning:ro
+      - ./infra/grafana/dashboards:/var/lib/grafana/dashboards:ro
+    expose: ["3000"]
+    networks: [internal]
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          'wget -qO- http://127.0.0.1:3000/api/health | grep -q ''"database"''',
+        ]
+      interval: 5s
+      timeout: 3s
+      retries: 30
+      start_period: 15s
+    cpus: "1.0"
+    mem_limit: 1g
+    pids_limit: 256
+    security_opt: ["no-new-privileges:true"]
+
+  mailpit:
+    profiles: ["dev"]
+    image: ${MAILPIT_IMAGE:?set MAILPIT_IMAGE}
+    pull_policy: never
+    restart: unless-stopped
+    environment:
+      MP_DATABASE: /data/mailpit.db
+      MP_MAX_MESSAGES: 5000
+      MP_WEBROOT: /mailpit/
+      MP_DISABLE_VERSION_CHECK: "true"
+    volumes:
+      - mailpit_data:/data
+    expose: ["1025", "8025"]
+    networks: [internal]
+    healthcheck:
+      test: ["CMD", "/mailpit", "readyz"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+      start_period: 5s
+    cpus: "0.5"
+    mem_limit: 512m
+    pids_limit: 128
+    security_opt: ["no-new-privileges:true"]
+
+networks:
+  edge:
+    driver: bridge
+  internal:
+    driver: bridge
+    internal: true
+  ai-runtime:
+    external: true
+    name: ntc-rag-phase3_runtime
+
+volumes:
+  postgres_data:
+  redis_data:
+  rabbitmq_data:
+  minio_data:
+  qdrant_data:
+  prometheus_data:
+  grafana_data:
+  mailpit_data:
+
+secrets:
+  postgres_password:
+    file: ${PHASE2_SECRET_DIR:-.secrets/phase2}/postgres_password
+  database_password:
+    file: ${PHASE2_SECRET_DIR:-.secrets/phase2}/database_password
+  redis_password:
+    file: ${PHASE2_SECRET_DIR:-.secrets/phase2}/redis_password
+  rabbitmq_password:
+    file: ${PHASE2_SECRET_DIR:-.secrets/phase2}/rabbitmq_password
+  minio_root_password:
+    file: ${PHASE2_SECRET_DIR:-.secrets/phase2}/minio_root_password
+  grafana_admin_password:
+    file: ${PHASE2_SECRET_DIR:-.secrets/phase2}/grafana_admin_password

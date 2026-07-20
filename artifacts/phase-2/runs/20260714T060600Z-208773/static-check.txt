@@ -1,0 +1,1 @@
+Phase 2 Compose config and static security contract passed.

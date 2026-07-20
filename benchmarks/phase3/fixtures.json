@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "description": "Deterministic, synthetic, non-sensitive fixtures for Phase 3 engine benchmarks only.",
+  "llm": {
+    "system": "You are running a deterministic inference benchmark. Follow the requested output format and do not add private or external facts.",
+    "repeat_unit": " datum",
+    "short_prefix": "Synthetic short-context payload follows.",
+    "rag_prefix": "Synthetic RAG-sized evidence follows. Every evidence item is deliberately non-sensitive and equivalent.",
+    "long_prefix": "Synthetic long-context capability payload follows. This is not a document-ingestion or retrieval test.",
+    "suffix": "Return a numbered sequence of the word OK. Continue until the configured output limit unless the server stops generation."
+  },
+  "embedding": {
+    "query": "Thủ đô của Việt Nam là thành phố nào?",
+    "positive_passage": "Hà Nội là thủ đô của Việt Nam.",
+    "negative_passage": "Tokyo là thủ đô của Nhật Bản.",
+    "performance_passage_template": "Synthetic passage {index}: service availability is measured without company data."
+  },
+  "reranking": {
+    "query": "Thủ đô của Việt Nam là thành phố nào?",
+    "positive_passage": "Hà Nội là thủ đô của Việt Nam.",
+    "negative_passage": "Tokyo là thủ đô của Nhật Bản.",
+    "performance_passage_template": "Synthetic candidate {index}: deterministic reranking performance fixture."
+  }
+}

@@ -1,0 +1,16 @@
+Using CPython 3.14.5
+Resolved 183 packages in 0.66ms
+ntc-rag-python-compatibility-spike v0.0.0
+├── alembic v1.18.5
+├── celery v5.6.3
+├── docling v2.112.0
+├── fastapi v0.139.0
+├── langchain-openai v1.3.5
+├── langgraph v1.2.9
+├── minio v7.2.20
+├── psycopg[binary] v3.3.4
+├── pydantic-settings v2.14.2
+├── qdrant-client v1.18.0
+├── redis v8.0.1
+├── sqlalchemy[asyncio] v2.0.51
+└── uvicorn[standard] v0.51.0

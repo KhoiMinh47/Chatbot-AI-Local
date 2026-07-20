@@ -1,0 +1,2 @@
+registry-tag	index-digest	arm64-manifest-digest
+nvcr.io/nim/meta/llama-3.1-8b-instruct:2.0.6	sha256:31e360dbb15f825d69e5d68c2032e334301523b4957091270385ed7ef3db5e81	sha256:249dcac461f20bc29ddb0924bf0c30e0e3f646c26bd849d978996cbe30b4d06e

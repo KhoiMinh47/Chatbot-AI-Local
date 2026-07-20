@@ -1,0 +1,35 @@
+{
+  "candidate": "llama",
+  "active_runtime_profile": {
+    "value": "c4789f7af56c770c1c88b73da666886365534d6980b6b922b41fd97036c77d73",
+    "evidence_source": "exact-profile-configured-and-live-fp8-confirmed",
+    "live_runtime_verified": true
+  },
+  "precision": {
+    "value": "FP8",
+    "evidence_source": "exact-profile-configured-and-live-fp8-confirmed"
+  },
+  "max_model_length": {
+    "value": 131072,
+    "evidence_source": "model-capability-and-live-capability-test",
+    "distinction": "declared/profile capability; live request evidence is separate"
+  },
+  "reviewed_llama_compatible_profiles": [
+    {
+      "id": "c4789f7af56c770c1c88b73da666886365534d6980b6b922b41fd97036c77d73",
+      "backend": "vLLM",
+      "precision": "FP8"
+    },
+    {
+      "id": "092ed4213624e774d24cdaf84e3b6222839bab2008a21d3c214ab46626366f90",
+      "backend": "vLLM",
+      "precision": "BF16"
+    },
+    {
+      "id": "a28963301b18077db3454d5eb21f5678304936c5a425ddc552443de1f5449f2a",
+      "backend": "vLLM",
+      "precision": "NVFP4"
+    }
+  ],
+  "compatible_profile_is_not_automatically_an_active_profile": true
+}

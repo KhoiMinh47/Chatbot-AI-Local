@@ -1,0 +1,19 @@
+{
+  "candidate": "reranking-500m",
+  "active_runtime_profile": {
+    "value": "f7391ddbcb95b2406853526b8e489fedf20083a2420563ca3e65358ff417b10f",
+    "evidence_source": "exact-profile-id-observed-in-live-startup-log",
+    "live_runtime_verified": true
+  },
+  "precision": {
+    "value": "ONNX-FP16",
+    "evidence_source": "precision-mapped-from-reviewed-exact-profile-id"
+  },
+  "max_model_length": {
+    "value": 4096,
+    "evidence_source": "rerank-1.10-conservative-runtime-limit",
+    "distinction": "declared/profile capability; live request evidence is separate"
+  },
+  "reviewed_llama_compatible_profiles": [],
+  "compatible_profile_is_not_automatically_an_active_profile": true
+}

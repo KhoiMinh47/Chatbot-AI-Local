@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "phase": 3,
+  "run_id": "20260714T1000Z-full-r1",
+  "result": "failed",
+  "exit_code": 130,
+  "reason": "unexpected failure during quality-nemotron",
+  "current_step": "quality-nemotron",
+  "current_service_at_finalize": "",
+  "current_container_id_at_finalize": "",
+  "completed_at_utc": "2026-07-14T11:10:00Z",
+  "workload": {
+    "measured_requests_per_scenario": 20,
+    "warmup_requests_per_scenario": 2,
+    "includes_32k_64k_128k": true,
+    "conforms_to_master_plan_minimum": true
+  },
+  "metric_scope": {
+    "ttft_seconds": "client-observed request start to first non-empty streamed generated-token delta (content or reasoning_content)",
+    "master_backend_receive_ttft_measured": false,
+    "decode_tokens_per_second": "server-reported completion tokens divided by first-to-last client-observed generated-token delta duration (content or reasoning_content)",
+    "total_latency_seconds": "client-observed direct NIM HTTP request duration; not application end-to-end"
+  },
+  "target_combination": {
+    "llms_tested": [
+      "llama",
+      "nemotron"
+    ],
+    "operator_preference_not_used_as_acceptance_shortcut": "llama",
+    "selection_status": "both_llm_candidates_tested_before_final_winner",
+    "no_oom_live_proven": false
+  },
+  "decision_gates": {
+    "llm_winner": "not_selected_human_review_pending",
+    "embedding_winner": "blocked_exact_bge_m3_runtime_missing",
+    "any_llm_automatic_quality_gate_failed": false,
+    "phase3_complete": false
+  },
+  "execution": [
+    {
+      "item": "preexisting-container-gate",
+      "status": "pass",
+      "evidence": "docker project label query"
+    },
+    {
+      "item": "compose-static-gate",
+      "status": "pass",
+      "evidence": "compose-check.log"
+    },
+    {
+      "item": "secret-gate",
+      "status": "pass",
+      "evidence": "secret-check.log"
+    },
+    {
+      "item": "image-gate",
+      "status": "pass",
+      "evidence": "image-check.log"
+    },
+    {
+      "item": "bge-m3-access-gate",
+      "status": "blocked",
+      "evidence": "bge-m3-access.json"
+    },
+    {
+      "item": "cache-staging",
+      "status": "skipped",
+      "evidence": "existing staged-cache markers required by runtime wrapper"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate": "llama",
+      "status": "pass",
+      "evidence": "candidates/llama"
+    }
+  ],
+  "acceptance": [],
+  "exact_secret_scan": {
+    "performed": true,
+    "status": "pass",
+    "evidence": "secret-artifact-scan.json"
+  },
+  "secrets_persisted": false,
+  "cleanup": {
+    "performed": true,
+    "status": "pass",
+    "evidence": "cleanup.json"
+  },
+  "cache_volumes_preserved": true,
+  "phase4_started": false
+}

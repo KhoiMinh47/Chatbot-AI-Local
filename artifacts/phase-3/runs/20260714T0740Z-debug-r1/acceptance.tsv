@@ -1,0 +1,6 @@
+AC-01	fail	one or more available candidates failed live acceptance
+AC-02	fail	complete LLM context evidence/scorecard unavailable
+AC-03	fail	complete conforming benchmark evidence unavailable
+AC-04	blocked	BGE-M3 exact image/runtime missing; live scope status 402
+AC-05	fail	target service combination was not proven healthy/no-OOM
+AC-06	fail	complete model/license runtime evidence unavailable

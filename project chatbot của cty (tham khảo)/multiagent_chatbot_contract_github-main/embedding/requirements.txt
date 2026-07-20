@@ -1,0 +1,15 @@
+# Backend framework
+fastapi
+uvicorn
+
+# environment variables
+python-dotenv
+
+# AI models
+torch
+transformers
+accelerate
+
+# monitoring
+prometheus-fastapi-instrumentator
+prometheus-client

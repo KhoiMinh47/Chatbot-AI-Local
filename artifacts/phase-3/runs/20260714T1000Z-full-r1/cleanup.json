@@ -1,0 +1,7 @@
+{
+  "status": "pass",
+  "mutation_started": true,
+  "project_container_count_after_cleanup": 0,
+  "expected_cache_volume_count": 4,
+  "cache_volumes_preserved": true
+}

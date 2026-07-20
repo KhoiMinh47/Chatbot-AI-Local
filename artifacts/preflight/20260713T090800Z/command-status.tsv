@@ -1,0 +1,12 @@
+command	exit_code	status
+uname-a	0	ok
+uname-m	0	ok
+nvidia-smi	0	ok
+docker-version	0	ok
+docker-compose-version	0	ok
+docker-info	0	ok-safe-projection
+docker-images-digests	0	ok
+disk	0	ok
+memory	0	ok
+local-image-inspect	0	ok
+secret-pattern-scan	0	ok

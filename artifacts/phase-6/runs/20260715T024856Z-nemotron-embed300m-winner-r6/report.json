@@ -1,0 +1,418 @@
+{
+  "acceptance_pass": true,
+  "active_alias_acl_evidence": {
+    "owner_expected_source_retrieved": true,
+    "owner_hit_count": 1,
+    "query_recorded": false,
+    "query_sha256": "41255439f7e251a42e644d4f6dadb3a50afa0ae869d3aa8f2c6503f9a326d133",
+    "unrelated_principal_recorded": false,
+    "unrelated_user_hit_count": 0
+  },
+  "checks": {
+    "active_alias_owner_scope_retrieves": true,
+    "active_alias_unrelated_scope_is_empty": true,
+    "answer_citations_are_server_issued": true,
+    "answer_cites_expected_phase4_source": true,
+    "client_received_no_chain_of_thought": true,
+    "context_never_exceeds_budget": true,
+    "embedding_models_endpoint_exact": true,
+    "event_sequences_contiguous": true,
+    "fast_and_reasoning_answered": true,
+    "hidden_reasoning_field_absent_from_events": true,
+    "llm_models_endpoint_exact": true,
+    "mode_live_latencies_differ": true,
+    "mode_retrieval_budgets_distinct_and_bounded": true,
+    "mode_token_budgets_differ": true,
+    "nemotron_identity_exact": true,
+    "nim_usage_matches_exact_tokenizer": true,
+    "no_fabricated_citation": true,
+    "postgres_trace_readback_bound": true,
+    "postgres_trace_schema_redacts_content": true,
+    "same_question_exercised_in_both_modes": true,
+    "selected_index_and_policy_bound_in_memory": true,
+    "unanswerable_refused_without_generation": true,
+    "visible_answer_hashes_match_traces": true
+  },
+  "created_at": "2026-07-15T02:49:11.845653+00:00",
+  "gold_binding": {
+    "answerable_case_id": "p4-001-v1",
+    "gold_sha256": "393c9147f6a59a41e1a038a7622dc7d4183571fb4a1aa3a1940514629c155ca3",
+    "matches_phase5_decision": true,
+    "questions_recorded": false,
+    "unanswerable_case_id": "p4-019-v1"
+  },
+  "mode_policy_binding": {
+    "fast": {
+      "candidate_limit_per_query": 12,
+      "context_token_cap": 8192,
+      "context_window_tokens": 32768,
+      "final_context_limit": 6,
+      "max_dense_candidates": 12,
+      "max_output_tokens": 768,
+      "max_retrieval_rounds": 1,
+      "max_subqueries": 1,
+      "mode": "fast",
+      "reasoning_control": "no_think",
+      "rerank_limit": 10,
+      "safety_tokens": 1536,
+      "temperature": 0.0
+    },
+    "reasoning": {
+      "candidate_limit_per_query": 10,
+      "context_token_cap": 16384,
+      "context_window_tokens": 32768,
+      "final_context_limit": 12,
+      "max_dense_candidates": 30,
+      "max_output_tokens": 4096,
+      "max_retrieval_rounds": 2,
+      "max_subqueries": 3,
+      "mode": "reasoning",
+      "reasoning_control": "think",
+      "rerank_limit": 20,
+      "safety_tokens": 2048,
+      "temperature": 0.0
+    }
+  },
+  "model_binding": {
+    "embedding_dimension": 2048,
+    "embedding_model": "nvidia/llama-nemotron-embed-300m-v2",
+    "embedding_model_version": "1.13.0",
+    "embedding_models_endpoint_ids": [
+      "nvidia/llama-nemotron-embed-300m-v2"
+    ],
+    "exact_tokenizer": true,
+    "llm_model": "nvidia/nemotron-nano-9b-v2",
+    "llm_model_version": "1.0.0",
+    "llm_models_endpoint_ids": [
+      "nvidia/nemotron-nano-9b-v2"
+    ],
+    "tokenizer_id": "nvidia/nemotron-nano-9b-v2",
+    "tokenizer_sha256": "32bd2509c1acc93dc18bdd0f9a2d9a15e72fd3110f24cfc9ff3fb820f4e20b6b"
+  },
+  "postgres_readback": {
+    "78e0083b-957e-4a5d-a624-790da29edadd": {
+      "answer_sha256": "080e25f3ae96c9ca2b5add2a38716d17bbacfed6c54e4c3fc0d9e3f6fb89a5da",
+      "citation_count": 1,
+      "context_ref_count": 1,
+      "created_at": "2026-07-15T02:49:11.791510+00:00",
+      "error_codes": [],
+      "index_fingerprint": "a3cc25bb8e65a03ac1146c227c4c2b8c5a86370f4852eb35eb4d66330dd20290",
+      "mode": "reasoning",
+      "model": "nvidia/nemotron-nano-9b-v2",
+      "model_version": "1.0.0",
+      "outcome": "answered",
+      "question_sha256": "41255439f7e251a42e644d4f6dadb3a50afa0ae869d3aa8f2c6503f9a326d133",
+      "retrieval_policy_fingerprint": "37a6fb7d83d292ba67f7709ce5e8e77483a73b86cd470938486d37b2d38c65b8",
+      "token_budget_present": true
+    },
+    "98f97777-9f8b-4007-bd31-5f0a9a722937": {
+      "answer_sha256": "06d5fa0f93408b545d68d1b43847b6f7a710d4616d50c12664a4b8c43703a358",
+      "citation_count": 0,
+      "context_ref_count": 0,
+      "created_at": "2026-07-15T02:49:11.824037+00:00",
+      "error_codes": [],
+      "index_fingerprint": "a3cc25bb8e65a03ac1146c227c4c2b8c5a86370f4852eb35eb4d66330dd20290",
+      "mode": "fast",
+      "model": null,
+      "model_version": null,
+      "outcome": "insufficient_evidence",
+      "question_sha256": "8a94555ec6674a559437b05103d23015b102f7cb0c52b4213d0f1e9f4b6d2f22",
+      "retrieval_policy_fingerprint": "37a6fb7d83d292ba67f7709ce5e8e77483a73b86cd470938486d37b2d38c65b8",
+      "token_budget_present": true
+    },
+    "aba7124a-9d2c-4c2d-b82c-4e8249f488b8": {
+      "answer_sha256": "6317206acecc9a33f22c6cc0da28583e83efed85ace3d3dd430b646ac33bee51",
+      "citation_count": 1,
+      "context_ref_count": 1,
+      "created_at": "2026-07-15T02:49:02.368976+00:00",
+      "error_codes": [],
+      "index_fingerprint": "a3cc25bb8e65a03ac1146c227c4c2b8c5a86370f4852eb35eb4d66330dd20290",
+      "mode": "fast",
+      "model": "nvidia/nemotron-nano-9b-v2",
+      "model_version": "1.0.0",
+      "outcome": "answered",
+      "question_sha256": "41255439f7e251a42e644d4f6dadb3a50afa0ae869d3aa8f2c6503f9a326d133",
+      "retrieval_policy_fingerprint": "37a6fb7d83d292ba67f7709ce5e8e77483a73b86cd470938486d37b2d38c65b8",
+      "token_budget_present": true
+    }
+  },
+  "prompt_binding": {
+    "fast_reasoning_control": "/no_think",
+    "graph_version": "phase6-stategraph-v1",
+    "prompt_sha256": "d6199475354b9cf097aaaf7f04a274b8d37f427a1a6575a8fea4490cf81a89c3",
+    "prompt_version": "phase6-grounded-v4",
+    "reasoning_reasoning_control": "/think"
+  },
+  "results": {
+    "fast": {
+      "answer_sha256": "6317206acecc9a33f22c6cc0da28583e83efed85ace3d3dd430b646ac33bee51",
+      "case_id": "p4-001-v1",
+      "citations": [
+        {
+          "chunk_id": "07306e9f-7e75-5fea-b4d8-091ef87788d2",
+          "citation_id": "S1",
+          "document_id": "177185e3-c454-49bf-88a8-a200e322717a",
+          "page": 1,
+          "slide": null,
+          "source_name": "01_leave_policy.pdf"
+        }
+      ],
+      "contains_hidden_reasoning": false,
+      "context_refs": [
+        {
+          "chunk_id": "07306e9f-7e75-5fea-b4d8-091ef87788d2",
+          "citation_id": "S1",
+          "content_hash": "05e2bacbf1ecda3418af2cdea4cd3aeb6dd318c268237882391c7c08647ab4f5",
+          "dense_rank": 1,
+          "document_id": "177185e3-c454-49bf-88a8-a200e322717a",
+          "final_rank": 1,
+          "score": 0.4252805
+        }
+      ],
+      "elapsed_seconds": 1.4485094340052456,
+      "error_codes": [],
+      "event_sequence_contiguous": true,
+      "event_types": [
+        "status",
+        "retrieval_summary",
+        "token",
+        "citation",
+        "usage",
+        "done"
+      ],
+      "index_fingerprint": "a3cc25bb8e65a03ac1146c227c4c2b8c5a86370f4852eb35eb4d66330dd20290",
+      "input_tokens": 347,
+      "llm_calls": {
+        "chat": 0,
+        "stream": 1
+      },
+      "mode": "fast",
+      "model": "nvidia/nemotron-nano-9b-v2",
+      "model_version": "1.0.0",
+      "node_path": [
+        "validate_request",
+        "load_conversation_memory",
+        "classify_query",
+        "rewrite_followup",
+        "build_retrieval_plan",
+        "retrieve",
+        "rerank",
+        "assemble_context",
+        "generate",
+        "validate_citations",
+        "persist_message_and_trace"
+      ],
+      "outcome": "answered",
+      "output_tokens": 27,
+      "question_sha256": "41255439f7e251a42e644d4f6dadb3a50afa0ae869d3aa8f2c6503f9a326d133",
+      "retrieval_policy_fingerprint": "37a6fb7d83d292ba67f7709ce5e8e77483a73b86cd470938486d37b2d38c65b8",
+      "retrieval_rounds": 1,
+      "subquery_count": 1,
+      "token_budget": {
+        "context_tokens": 80,
+        "context_window_tokens": 32768,
+        "exact": true,
+        "output_reserved_tokens": 768,
+        "prompt_tokens": 347,
+        "safety_reserved_tokens": 1536,
+        "tokenizer_id": "nvidia/nemotron-nano-9b-v2",
+        "tokenizer_sha256": "32bd2509c1acc93dc18bdd0f9a2d9a15e72fd3110f24cfc9ff3fb820f4e20b6b"
+      },
+      "visible_answer_recorded": false
+    },
+    "reasoning": {
+      "answer_sha256": "080e25f3ae96c9ca2b5add2a38716d17bbacfed6c54e4c3fc0d9e3f6fb89a5da",
+      "case_id": "p4-001-v1",
+      "citations": [
+        {
+          "chunk_id": "07306e9f-7e75-5fea-b4d8-091ef87788d2",
+          "citation_id": "S1",
+          "document_id": "177185e3-c454-49bf-88a8-a200e322717a",
+          "page": 1,
+          "slide": null,
+          "source_name": "01_leave_policy.pdf"
+        }
+      ],
+      "contains_hidden_reasoning": false,
+      "context_refs": [
+        {
+          "chunk_id": "07306e9f-7e75-5fea-b4d8-091ef87788d2",
+          "citation_id": "S1",
+          "content_hash": "05e2bacbf1ecda3418af2cdea4cd3aeb6dd318c268237882391c7c08647ab4f5",
+          "dense_rank": 1,
+          "document_id": "177185e3-c454-49bf-88a8-a200e322717a",
+          "final_rank": 1,
+          "score": 0.4252805
+        }
+      ],
+      "elapsed_seconds": 9.388485938019585,
+      "error_codes": [],
+      "event_sequence_contiguous": true,
+      "event_types": [
+        "status",
+        "retrieval_summary",
+        "token",
+        "citation",
+        "usage",
+        "done"
+      ],
+      "index_fingerprint": "a3cc25bb8e65a03ac1146c227c4c2b8c5a86370f4852eb35eb4d66330dd20290",
+      "input_tokens": 345,
+      "llm_calls": {
+        "chat": 1,
+        "stream": 1
+      },
+      "mode": "reasoning",
+      "model": "nvidia/nemotron-nano-9b-v2",
+      "model_version": "1.0.0",
+      "node_path": [
+        "validate_request",
+        "load_conversation_memory",
+        "classify_query",
+        "rewrite_followup",
+        "build_retrieval_plan",
+        "retrieve",
+        "rerank",
+        "assemble_context",
+        "generate",
+        "validate_citations",
+        "persist_message_and_trace"
+      ],
+      "outcome": "answered",
+      "output_tokens": 223,
+      "question_sha256": "41255439f7e251a42e644d4f6dadb3a50afa0ae869d3aa8f2c6503f9a326d133",
+      "retrieval_policy_fingerprint": "37a6fb7d83d292ba67f7709ce5e8e77483a73b86cd470938486d37b2d38c65b8",
+      "retrieval_rounds": 1,
+      "subquery_count": 1,
+      "token_budget": {
+        "context_tokens": 80,
+        "context_window_tokens": 32768,
+        "exact": true,
+        "output_reserved_tokens": 4096,
+        "prompt_tokens": 345,
+        "safety_reserved_tokens": 2048,
+        "tokenizer_id": "nvidia/nemotron-nano-9b-v2",
+        "tokenizer_sha256": "32bd2509c1acc93dc18bdd0f9a2d9a15e72fd3110f24cfc9ff3fb820f4e20b6b"
+      },
+      "visible_answer_recorded": false
+    },
+    "unanswerable": {
+      "answer_sha256": "06d5fa0f93408b545d68d1b43847b6f7a710d4616d50c12664a4b8c43703a358",
+      "case_id": "p4-019-v1",
+      "citations": [],
+      "contains_hidden_reasoning": false,
+      "context_refs": [],
+      "elapsed_seconds": 0.0315172620175872,
+      "error_codes": [],
+      "event_sequence_contiguous": true,
+      "event_types": [
+        "status",
+        "retrieval_summary",
+        "token",
+        "token",
+        "usage",
+        "done"
+      ],
+      "index_fingerprint": "a3cc25bb8e65a03ac1146c227c4c2b8c5a86370f4852eb35eb4d66330dd20290",
+      "input_tokens": 262,
+      "llm_calls": {
+        "chat": 0,
+        "stream": 0
+      },
+      "mode": "fast",
+      "model": null,
+      "model_version": null,
+      "node_path": [
+        "validate_request",
+        "load_conversation_memory",
+        "classify_query",
+        "rewrite_followup",
+        "build_retrieval_plan",
+        "retrieve",
+        "rerank",
+        "assemble_context",
+        "insufficient_evidence",
+        "validate_citations",
+        "persist_message_and_trace"
+      ],
+      "outcome": "insufficient_evidence",
+      "output_tokens": 19,
+      "question_sha256": "8a94555ec6674a559437b05103d23015b102f7cb0c52b4213d0f1e9f4b6d2f22",
+      "retrieval_policy_fingerprint": "37a6fb7d83d292ba67f7709ce5e8e77483a73b86cd470938486d37b2d38c65b8",
+      "retrieval_rounds": 1,
+      "subquery_count": 1,
+      "token_budget": {
+        "context_tokens": 0,
+        "context_window_tokens": 32768,
+        "exact": true,
+        "output_reserved_tokens": 768,
+        "prompt_tokens": 262,
+        "safety_reserved_tokens": 1536,
+        "tokenizer_id": "nvidia/nemotron-nano-9b-v2",
+        "tokenizer_sha256": "32bd2509c1acc93dc18bdd0f9a2d9a15e72fd3110f24cfc9ff3fb820f4e20b6b"
+      },
+      "visible_answer_recorded": false
+    }
+  },
+  "schema_version": 1,
+  "scope": "phase6-live-winner-e2e-no-phase7-surface",
+  "security": {
+    "answers_recorded": false,
+    "chain_of_thought_recorded": false,
+    "database_url_recorded": false,
+    "document_text_recorded": false,
+    "prompts_recorded": false,
+    "questions_recorded": false,
+    "raw_event_payloads_recorded": false,
+    "service_credentials_recorded": false
+  },
+  "source_provenance": {
+    "apps/api/app/application/rag.py": "0dbb682844d26b42d2dfd3788f75f49020753a0218e557aa7272ac9a18650024",
+    "apps/api/app/application/retrieval.py": "60d52d9389a1b3b82c8612f2f63ba8f90ce2f9df811f5cefa584b61c78bab425",
+    "apps/api/app/domain/rag.py": "1607d8525779c25c157bfb2a3bb2e715412a37321ca30a24d36bb278b34fd815",
+    "apps/api/app/domain/retrieval.py": "62d5e57e328974ed35ec3f7e2f5a034ec94a5be98b9db1d950e3511f44bd9027",
+    "apps/api/app/infrastructure/exact_token_counter.py": "270b433eb4f8fe6517438f9a1c5328f726019b8763b7eb3007d7dad809db11d0",
+    "apps/api/app/infrastructure/generation_trace_store.py": "3a80e5478affcc0ab972bcaa08c799ef34338c7664c9438c4e30710ab67f6515",
+    "apps/api/app/infrastructure/nim_clients.py": "95105ae513976f108f4f69618a9741572bddebafef236dc579acdcad6ebc3693",
+    "apps/api/app/infrastructure/qdrant_store.py": "d5f414897c9448f5ae3e541c91c727806434af8e794b635a2983da04d998bb4e",
+    "apps/api/app/rag/graph.py": "4f5caf2dc9580498ae0eb1ce63cd4305a73080b1acdd8e3ff829445ae59b28a0",
+    "apps/api/app/rag/planner.py": "4fd190f1625e3fcac27aec29a23b71eeadc779f86da138f192bf98ec7e319836",
+    "migrations/versions/0005_phase6_winner_trace_binding.py": "7668b4e05a5b5d91b0053b3e5ec56013fde8dd1f6db97b37e6e7215683c1f985",
+    "scripts/phase6_winner_e2e.py": "26c9f7dc7537645ec4557774d42a716eb3c605cf7c8cafaa7cbc17767d14077e",
+    "uv.lock": "064d08d9e15224150f24193e263d200eb609b67242672c248288ba66dffccd29"
+  },
+  "source_provenance_sha256": "0adaed24befe724f4bcbed0f7ff707678bc8a6b090aeb2342c7cc952959f7712",
+  "status": "PASS",
+  "winner_binding": {
+    "active_alias": "ntc_chunks_active",
+    "expected_point_count": 12,
+    "index_config": {
+      "chunk_size": 256,
+      "collection_name": "ntc_chunks_embed300m_v2_s256_o10_095bc081a101_recall95_v3",
+      "distance": "Cosine",
+      "embedding_model": "nvidia/llama-nemotron-embed-300m-v2",
+      "embedding_model_version": "1.13.0",
+      "fingerprint": "a3cc25bb8e65a03ac1146c227c4c2b8c5a86370f4852eb35eb4d66330dd20290",
+      "index_version": "embed300m-v2-phase4",
+      "overlap_percent": 10,
+      "vector_dimension": 2048
+    },
+    "phase5_activation_receipt_sha256": "2b0f68582a8e1398b4507e73a596887fa271cf33308456efeb294225f08fd76f",
+    "phase5_decision_sha256": "290d1b34f7c350658207dea14c8e1f045314fc2126c3522adeecf1eea12cb610",
+    "phase5_run_id": "20260715T022157Z-embed300m-final-r3",
+    "physical_collection": "ntc_chunks_embed300m_v2_s256_o10_095bc081a101_recall95_v3",
+    "retrieval_policy": {
+      "deduplication_policy": "content_hash_and_document_section_v1",
+      "dense_candidate_limit": 20,
+      "dense_threshold": 0.2300481,
+      "final_limit": 10,
+      "fingerprint": "37a6fb7d83d292ba67f7709ce5e8e77483a73b86cd470938486d37b2d38c65b8",
+      "hnsw_ef": 128,
+      "index_config_fingerprint": "a3cc25bb8e65a03ac1146c227c4c2b8c5a86370f4852eb35eb4d66330dd20290",
+      "rerank_threshold": null,
+      "reranker_enabled": false,
+      "reranker_model": null,
+      "reranker_model_version": null
+    }
+  }
+}

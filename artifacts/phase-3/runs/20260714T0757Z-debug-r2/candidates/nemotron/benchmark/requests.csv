@@ -1,0 +1,4 @@
+kind,scenario,request_index,concurrency,status,error_code,target_context_tokens,target_input_tokens,max_output_tokens,prompt_tokens_actual,completion_tokens_actual,total_tokens_actual,ttft_seconds,decode_duration_seconds,decode_tokens_per_second,total_latency_seconds,batch_size,passage_count,vector_dimension_observed,response_model_observed
+llm,engine-short-c1,0,1,ok,,,512,256,449,256,705,0.11929366699769162,9.363649701990653,27.33976688017024,9.48308476099919,,,,nvidia/nemotron-nano-9b-v2
+llm,rag-8k-c1,0,1,ok,,,8192,512,8140,291,8431,1.9104419909999706,10.801715736000915,26.940164610158128,12.749233918992104,,,,nvidia/nemotron-nano-9b-v2
+llm,rag-8k-c4,0,4,ok,,,8192,512,8140,291,8431,1.913441379001597,10.826342347005266,26.87888399173846,12.777148430002853,,,,nvidia/nemotron-nano-9b-v2

@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "measured": true,
+  "base_url": "http://localhost:8000",
+  "mode": "fast",
+  "rag_documents_attached": false,
+  "concurrency": 1,
+  "requests": 3,
+  "successful": 3,
+  "failed": 0,
+  "wall_seconds": 11.43781425099587,
+  "throughput_requests_per_second": 0.26228787547750176,
+  "effective_output_tokens_per_second": 26.753363298705178,
+  "ttft_ms": {
+    "p50": 3786.0124409780838,
+    "p95": 3813.878402975388
+  },
+  "total_latency_ms": {
+    "p50": 3803.7300719879568,
+    "p95": 3835.657045483822,
+    "mean": 3812.569518321349
+  },
+  "results": [
+    {
+      "request_index": 0,
+      "status_code": 200,
+      "ttft_ms": 3816.9746209750883,
+      "total_latency_ms": 3839.2044869833626,
+      "input_tokens": 211,
+      "output_tokens": 102,
+      "citation_count": 0,
+      "outcome": "answered",
+      "error": null
+    },
+    {
+      "request_index": 1,
+      "status_code": 200,
+      "ttft_ms": 3786.0124409780838,
+      "total_latency_ms": 3803.7300719879568,
+      "input_tokens": 211,
+      "output_tokens": 102,
+      "citation_count": 0,
+      "outcome": "answered",
+      "error": null
+    },
+    {
+      "request_index": 2,
+      "status_code": 200,
+      "ttft_ms": 3777.924381021876,
+      "total_latency_ms": 3794.7739959927276,
+      "input_tokens": 211,
+      "output_tokens": 102,
+      "citation_count": 0,
+      "outcome": "answered",
+      "error": null
+    }
+  ]
+}

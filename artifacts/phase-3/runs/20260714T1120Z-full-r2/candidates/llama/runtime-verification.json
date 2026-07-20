@@ -1,0 +1,80 @@
+{
+  "candidate": "llama",
+  "checks": {
+    "arm64_image_container_identity": true,
+    "expectations_allowlisted": true,
+    "live_license_sha_content_consistent": true,
+    "nim_version_exact": true,
+    "operator_license_declaration_allowlisted": true,
+    "precision_from_closed_allowlist": true,
+    "required_http_statuses": true,
+    "selected_profile_exact": true,
+    "served_model_exact": true
+  },
+  "expected_identity": {
+    "image_digest": "sha256:31e360dbb15f825d69e5d68c2032e334301523b4957091270385ed7ef3db5e81",
+    "model": "meta/llama-3.1-8b-instruct",
+    "nim_version": "2.0.6",
+    "precision": "FP8",
+    "profile_id": "c4789f7af56c770c1c88b73da666886365534d6980b6b922b41fd97036c77d73"
+  },
+  "failure_codes": [],
+  "live_nim_license": {
+    "content_persisted_in_output": false,
+    "content_sha": "200ff21f677bd2ee2fdf915f21417a20668a29c1",
+    "content_sha_algorithm": "sha1",
+    "document_name": "LICENSE",
+    "metadata_and_license_endpoint_consistent": true,
+    "term_names": [
+      "NVIDIA Software License Agreement",
+      "Product-Specific Terms for AI Products",
+      "NVIDIA Open Model License Agreement"
+    ],
+    "term_urls": [
+      "https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-software-license-agreement",
+      "https://www.nvidia.com/en-us/agreements/enterprise-software/product-specific-terms-for-ai-products",
+      "https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-open-model-license"
+    ]
+  },
+  "max_model_length": {
+    "claim_scope": "declared-profile-capability-only",
+    "evidence_kind": "closed-candidate-profile-capability-declaration",
+    "live_long_request_executed_by_this_validator": false,
+    "live_long_request_result": null,
+    "value": 131072
+  },
+  "operator_reviewed_model_terms": {
+    "additional_term_names": [
+      "NVIDIA Software License Agreement",
+      "Product-Specific Terms for AI Products",
+      "NVIDIA Open Model License Agreement"
+    ],
+    "declaration_name": "llama-3.1-community-license-and-nvidia-nim-terms",
+    "evidence_kind": "operator-reviewed-declaration",
+    "legal_approval": "pending",
+    "model_license_names": [
+      "Llama 3.1 Community License Agreement"
+    ],
+    "separate_from_live_nim_license": true
+  },
+  "phase": 3,
+  "runtime_identity": {
+    "architecture": "arm64",
+    "image_digest": "sha256:31e360dbb15f825d69e5d68c2032e334301523b4957091270385ed7ef3db5e81",
+    "image_repository": "nvcr.io/nim/meta/llama-3.1-8b-instruct",
+    "nim_version": "2.0.6",
+    "operating_system": "linux",
+    "precision": "FP8",
+    "required_endpoint_http_statuses": {
+      "/v1/license": 200,
+      "/v1/metadata": 200,
+      "/v1/models": 200,
+      "/v1/version": 200
+    },
+    "selected_profile_field": "profile_id",
+    "selected_profile_id": "c4789f7af56c770c1c88b73da666886365534d6980b6b922b41fd97036c77d73",
+    "served_model": "meta/llama-3.1-8b-instruct"
+  },
+  "schema_version": 1,
+  "status": "pass"
+}

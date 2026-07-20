@@ -1,0 +1,4 @@
+Checking documented NIM health endpoints at http://172.24.0.2:8000/v1
+true
+true
+llm smoke passed for model nvidia/nemotron-nano-9b-v2

@@ -1,0 +1,12 @@
+# Backend framework
+fastapi
+uvicorn
+python-multipart
+
+# PDF parsing & Image OCR
+docling
+easyocr
+
+# monitoring
+prometheus-fastapi-instrumentator
+prometheus-client

@@ -1,0 +1,35 @@
+{
+  "candidate": {
+    "candidate_id": "reranking-500m",
+    "image_digest": {
+      "evidence_source": "operator_cli_not_independently_verified_by_runner",
+      "value": "sha256:3e39d44bdb3dd683d6a2ac8d7689b484aee6c18dc7e00c2064f19501742720f3"
+    },
+    "image_ref": {
+      "evidence_source": "operator_cli_not_independently_verified_by_runner",
+      "value": "nvcr.io/nim/nvidia/llama-nemotron-rerank-500m-v2:1.1@sha256:3e39d44bdb3dd683d6a2ac8d7689b484aee6c18dc7e00c2064f19501742720f3"
+    },
+    "license_id": {
+      "evidence_source": "operator_cli_not_independently_verified_by_runner",
+      "value": "nvidia-community-model-license"
+    },
+    "requested_model_id": "nvidia/llama-nemotron-rerank-500m-v2"
+  },
+  "completed_at_utc": "2026-07-14T07:50:45.542384+00:00",
+  "failure": {
+    "detail_persisted": false,
+    "error_code": "invalid_usage_token_counts"
+  },
+  "fixture": {
+    "classification": "synthetic_non_sensitive",
+    "schema_version": 1,
+    "sha256": "8cc16c6e7283c4435ffd6fc98a27ca6b9cf4108eb72efc98eeb536466466e5dd"
+  },
+  "kind": "reranking",
+  "run_config": {
+    "base_url_persisted": false,
+    "credentials_persisted": false
+  },
+  "schema_version": 1,
+  "status": "fail"
+}

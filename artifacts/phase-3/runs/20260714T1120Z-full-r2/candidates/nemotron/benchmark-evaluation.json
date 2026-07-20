@@ -1,0 +1,149 @@
+{
+  "runner_exit_code": 0,
+  "report_shape_valid": true,
+  "evidence_identity_valid": true,
+  "workload_valid": true,
+  "exact_scenario_matrix_valid": true,
+  "all_scenarios_pass": true,
+  "contract_status": "pass",
+  "core_short_and_rag_status": "pass",
+  "long_context_matrix_present": true,
+  "long_context_all_pass": true,
+  "long_context_required_for_this_run": true,
+  "long_context_results": [
+    {
+      "name": "long-32k-c1",
+      "status": "pass",
+      "target_context_tokens": 32768,
+      "actual_to_target_p50_ratio": 1.000446868836292,
+      "input_token_target_check": {
+        "absolute_context_lower_bound": 32256,
+        "absolute_context_upper_bound": 32768,
+        "max_output_tokens": 64,
+        "maximum_ratio": null,
+        "minimum_ratio": null,
+        "observed_prompt_plus_max_output_max": 32531.0,
+        "observed_prompt_plus_max_output_min": 32520.0,
+        "observed_prompt_tokens_max": 32467.0,
+        "observed_prompt_tokens_min": 32456.0,
+        "required_relation": "every_observed_prompt_plus_max_output_within_absolute_context_window",
+        "status": "pass",
+        "target_context_tokens": 32768,
+        "target_input_tokens": 32448
+      },
+      "output_token_target_check": {
+        "fixed_request_control": {
+          "ignore_eos": true,
+          "scope": "synthetic_llm_benchmark_only"
+        },
+        "measured": {
+          "matching_count": 20,
+          "observed_count": 20,
+          "observed_max": 64,
+          "observed_min": 64,
+          "required_count": 20
+        },
+        "required_relation": "completion_tokens_actual_equals_max_output_tokens",
+        "status": "pass",
+        "target_completion_tokens": 64,
+        "warmup": {
+          "matching_count": 2,
+          "observed_count": 2,
+          "observed_max": 64,
+          "observed_min": 64,
+          "required_count": 2
+        }
+      }
+    },
+    {
+      "name": "long-64k-c1",
+      "status": "pass",
+      "target_context_tokens": 65536,
+      "actual_to_target_p50_ratio": 1.00021467124632,
+      "input_token_target_check": {
+        "absolute_context_lower_bound": 65024,
+        "absolute_context_upper_bound": 65536,
+        "max_output_tokens": 64,
+        "maximum_ratio": null,
+        "minimum_ratio": null,
+        "observed_prompt_plus_max_output_max": 65297.0,
+        "observed_prompt_plus_max_output_min": 65289.0,
+        "observed_prompt_tokens_max": 65233.0,
+        "observed_prompt_tokens_min": 65225.0,
+        "required_relation": "every_observed_prompt_plus_max_output_within_absolute_context_window",
+        "status": "pass",
+        "target_context_tokens": 65536,
+        "target_input_tokens": 65216
+      },
+      "output_token_target_check": {
+        "fixed_request_control": {
+          "ignore_eos": true,
+          "scope": "synthetic_llm_benchmark_only"
+        },
+        "measured": {
+          "matching_count": 20,
+          "observed_count": 20,
+          "observed_max": 64,
+          "observed_min": 64,
+          "required_count": 20
+        },
+        "required_relation": "completion_tokens_actual_equals_max_output_tokens",
+        "status": "pass",
+        "target_completion_tokens": 64,
+        "warmup": {
+          "matching_count": 2,
+          "observed_count": 2,
+          "observed_max": 64,
+          "observed_min": 64,
+          "required_count": 2
+        }
+      }
+    },
+    {
+      "name": "long-128k-c1",
+      "status": "pass",
+      "target_context_tokens": 131072,
+      "actual_to_target_p50_ratio": 1.0001070729319628,
+      "input_token_target_check": {
+        "absolute_context_lower_bound": 130560,
+        "absolute_context_upper_bound": 131072,
+        "max_output_tokens": 64,
+        "maximum_ratio": null,
+        "minimum_ratio": null,
+        "observed_prompt_plus_max_output_max": 130832.0,
+        "observed_prompt_plus_max_output_min": 130826.0,
+        "observed_prompt_tokens_max": 130768.0,
+        "observed_prompt_tokens_min": 130762.0,
+        "required_relation": "every_observed_prompt_plus_max_output_within_absolute_context_window",
+        "status": "pass",
+        "target_context_tokens": 131072,
+        "target_input_tokens": 130752
+      },
+      "output_token_target_check": {
+        "fixed_request_control": {
+          "ignore_eos": true,
+          "scope": "synthetic_llm_benchmark_only"
+        },
+        "measured": {
+          "matching_count": 20,
+          "observed_count": 20,
+          "observed_max": 64,
+          "observed_min": 64,
+          "required_count": 20
+        },
+        "required_relation": "completion_tokens_actual_equals_max_output_tokens",
+        "status": "pass",
+        "target_completion_tokens": 64,
+        "warmup": {
+          "matching_count": 2,
+          "observed_count": 2,
+          "observed_max": 64,
+          "observed_min": 64,
+          "required_count": 2
+        }
+      }
+    }
+  ],
+  "report_overall_status": "pass",
+  "failure": null
+}

@@ -1,0 +1,10 @@
+{
+  "runner_exit_code": 0,
+  "contract_status": "pass",
+  "core_short_and_rag_status": "pass",
+  "long_context_matrix_present": false,
+  "long_context_all_pass": null,
+  "long_context_required_for_this_run": false,
+  "long_context_results": [],
+  "report_overall_status": "pass"
+}

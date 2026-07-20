@@ -1,0 +1,4 @@
+Checking documented NIM health endpoints at http://172.24.0.3:8000/v1
+true
+true
+reranking smoke passed for model nvidia/llama-nemotron-rerank-500m-v2

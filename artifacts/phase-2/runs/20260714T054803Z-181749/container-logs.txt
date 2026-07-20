@@ -1,0 +1,753 @@
+mailpit-1  | time="2026/07/14 05:48:05" level=info msg="[smtpd] starting on [::]:1025 (no encryption)"
+mailpit-1     | time="2026/07/14 05:48:05" level=info msg="[cors] allowed API origins: "
+mailpit-1     | time="2026/07/14 05:48:05" level=info msg="[http] starting on [::]:8025"
+mailpit-1     | time="2026/07/14 05:48:05" level=info msg="[http] accessible via http://localhost:8025/mailpit/"
+reverse-proxy-1  | /docker-entrypoint.sh: /docker-entrypoint.d/ is not empty, will attempt to perform configuration
+prometheus-1  | ts=2026-07-14T05:48:05.949Z caller=main.go:671 level=info msg="Starting Prometheus Server" mode=server version="(version=2.55.1, branch=HEAD, revision=6d7569113f1ca814f1e149f74176656540043b8d)"
+prometheus-1     | ts=2026-07-14T05:48:05.949Z caller=main.go:676 level=info build_context="(go=go1.23.2, platform=linux/arm64, user=root@194e0f5dd5e8, date=20241106-10:11:03, tags=netgo,builtinassets,stringlabels)"
+reverse-proxy-1  | /docker-entrypoint.sh: Looking for shell scripts in /docker-entrypoint.d/
+prometheus-1     | ts=2026-07-14T05:48:05.949Z caller=main.go:677 level=info host_details="(Linux 6.17.0-1014-nvidia #14-Ubuntu SMP PREEMPT_DYNAMIC Tue Mar 17 19:01:40 UTC 2026 aarch64 9065f391f99e (none))"
+reverse-proxy-1  | /docker-entrypoint.sh: Launching /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
+reverse-proxy-1  | 10-listen-on-ipv6-by-default.sh: info: can not modify /etc/nginx/conf.d/default.conf (read-only file system?)
+prometheus-1     | ts=2026-07-14T05:48:05.949Z caller=main.go:678 level=info fd_limits="(soft=524288, hard=524288)"
+reverse-proxy-1  | /docker-entrypoint.sh: Sourcing /docker-entrypoint.d/15-local-resolvers.envsh
+prometheus-1     | ts=2026-07-14T05:48:05.949Z caller=main.go:679 level=info vm_limits="(soft=unlimited, hard=unlimited)"
+prometheus-1     | ts=2026-07-14T05:48:05.952Z caller=web.go:585 level=info component=web msg="Start listening for connections" address=0.0.0.0:9090
+web-1            | ▲ Next.js 16.2.10
+web-1            | - Local:         http://localhost:3000
+redis-1          | 1:C 14 Jul 2026 05:48:31.118 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+redis-1          | 1:C 14 Jul 2026 05:48:31.118 * Redis version=7.4.9, bits=64, commit=00000000, modified=0, pid=1, just started
+redis-1          | 1:C 14 Jul 2026 05:48:31.118 * Configuration loaded
+redis-1          | 1:M 14 Jul 2026 05:48:31.118 * Increased maximum number of open files to 10032 (it was originally set to 1024).
+redis-1          | 1:M 14 Jul 2026 05:48:31.118 * monotonic clock: POSIX clock_gettime
+redis-1          | 1:M 14 Jul 2026 05:48:31.119 * Running mode=standalone, port=6379.
+redis-1          | 1:M 14 Jul 2026 05:48:31.119 * Server initialized
+reverse-proxy-1  | /docker-entrypoint.sh: Launching /docker-entrypoint.d/20-envsubst-on-templates.sh
+reverse-proxy-1  | /docker-entrypoint.sh: Launching /docker-entrypoint.d/30-tune-worker-processes.sh
+reverse-proxy-1  | /docker-entrypoint.sh: Configuration complete; ready for start up
+reverse-proxy-1  | 172.25.0.1 - - [14/Jul/2026:05:48:25 +0000] "GET /health/live HTTP/1.1" 200 53 "-" "curl/8.5.0"
+reverse-proxy-1  | 172.25.0.1 - - [14/Jul/2026:05:48:25 +0000] "GET /health/dependencies HTTP/1.1" 200 435 "-" "curl/8.5.0"
+redis-1          | 1:M 14 Jul 2026 05:48:31.120 * Reading RDB base file on AOF loading...
+redis-1          | 1:M 14 Jul 2026 05:48:31.120 * Loading RDB produced by version 7.4.9
+redis-1          | 1:M 14 Jul 2026 05:48:31.120 * RDB age 997 seconds
+reverse-proxy-1  | 172.25.0.1 - - [14/Jul/2026:05:48:25 +0000] "GET /health/ready HTTP/1.1" 503 435 "-" "curl/8.5.0"
+redis-1          | 1:M 14 Jul 2026 05:48:31.120 * RDB memory usage when created 0.94 Mb
+redis-1          | 1:M 14 Jul 2026 05:48:31.120 * RDB is base AOF
+redis-1          | 1:M 14 Jul 2026 05:48:31.120 * Done loading RDB, keys loaded: 0, keys expired: 0.
+prometheus-1     | ts=2026-07-14T05:48:05.952Z caller=main.go:1197 level=info msg="Starting TSDB ..."
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:48:39 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=DCGM_FI_DEV_GPU_UTIL HTTP/1.1" 200 730 "-" "curl/8.5.0"
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:48:39 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=up%7bjob%3d%22dcgm-exporter%22%7d+%3d%3d+1 HTTP/1.1" 200 185 "-" "curl/8.5.0"
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:48:39 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=time%28%29+-+timestamp%28DCGM_FI_DEV_GPU_UTIL%29 HTTP/1.1" 200 695 "-" "curl/8.5.0"
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:48:41 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=DCGM_FI_DEV_GPU_UTIL HTTP/1.1" 200 730 "-" "curl/8.5.0"
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:48:41 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=up%7bjob%3d%22dcgm-exporter%22%7d+%3d%3d+1 HTTP/1.1" 200 185 "-" "curl/8.5.0"
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:48:41 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=time%28%29+-+timestamp%28DCGM_FI_DEV_GPU_UTIL%29 HTTP/1.1" 200 696 "-" "curl/8.5.0"
+minio-1          | MinIO Object Storage Server
+prometheus-1     | ts=2026-07-14T05:48:05.953Z caller=tls_config.go:348 level=info component=web msg="Listening on" address=[::]:9090
+minio-1          | Copyright: 2015-2026 MinIO, Inc.
+minio-1          | License: GNU AGPLv3 - https://www.gnu.org/licenses/agpl-3.0.html
+web-1            | - Network:       http://0.0.0.0:3000
+minio-1          | Version: RELEASE.2024-05-10T01-41-38Z (go1.22.3 linux/arm64)
+minio-1          | 
+minio-1          | API: http://172.24.0.7:9000  http://127.0.0.1:9000 
+dcgm-exporter-1  | time=2026-07-14T05:48:06.074Z level=INFO msg="Starting dcgm-exporter" Version=4.4.2-4.7.0
+dcgm-exporter-1  | time=2026-07-14T05:48:06.076Z level=INFO msg="Attempting to initialize DCGM."
+dcgm-exporter-1  | time=2026-07-14T05:48:06.101Z level=INFO msg="Initialized DCGM Fields module."
+dcgm-exporter-1  | time=2026-07-14T05:48:06.101Z level=INFO msg="Attempting to initialize NVML library."
+minio-1          | WebUI: http://172.24.0.7:9001 http://127.0.0.1:9001  
+minio-1          | 
+worker-1         |  
+worker-1         |  -------------- ntc-worker@345e648ac7ad v5.6.3 (recovery)
+worker-1         | --- ***** ----- 
+worker-1         | -- ******* ---- Linux-6.17.0-1014-nvidia-aarch64-with-glibc2.36 2026-07-14 05:48:11
+worker-1         | - *** --- * --- 
+worker-1         | - ** ---------- [config]
+redis-1          | 1:M 14 Jul 2026 05:48:31.120 * DB loaded from base file appendonly.aof.1.base.rdb: 0.000 seconds
+worker-1         | - ** ---------- .> app:         ntc-worker:0xfd5e1b9a2510
+web-1            | ✓ Ready in 0ms
+worker-1         | - ** ---------- .> transport:   amqp://ntc_worker:**@rabbitmq:5672//
+dcgm-exporter-1  | time=2026-07-14T05:48:06.101Z level=INFO msg="DCGM successfully initialized!"
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:48:43 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=DCGM_FI_DEV_GPU_UTIL HTTP/1.1" 200 730 "-" "curl/8.5.0"
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:48:43 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=up%7bjob%3d%22dcgm-exporter%22%7d+%3d%3d+1 HTTP/1.1" 200 185 "-" "curl/8.5.0"
+redis-1          | 1:M 14 Jul 2026 05:48:31.120 * DB loaded from incr file appendonly.aof.1.incr.aof: 0.000 seconds
+worker-1         | - ** ---------- .> results:     disabled://
+redis-1          | 1:M 14 Jul 2026 05:48:31.120 * DB loaded from append only file: 0.000 seconds
+worker-1         | - *** --- * --- .> concurrency: 2 (prefork)
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:48:43 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=time%28%29+-+timestamp%28DCGM_FI_DEV_GPU_UTIL%29 HTTP/1.1" 200 695 "-" "curl/8.5.0"
+worker-1         | -- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+worker-1         | --- ***** ----- 
+prometheus-1     | ts=2026-07-14T05:48:05.953Z caller=tls_config.go:351 level=info component=web msg="TLS is disabled." http2=false address=[::]:9090
+prometheus-1     | ts=2026-07-14T05:48:05.955Z caller=head.go:627 level=info component=tsdb msg="Replaying on-disk memory mappable chunks if any"
+prometheus-1     | ts=2026-07-14T05:48:05.955Z caller=head.go:714 level=info component=tsdb msg="On-disk memory mappable chunks replay completed" duration=1.536µs
+prometheus-1     | ts=2026-07-14T05:48:05.955Z caller=head.go:722 level=info component=tsdb msg="Replaying WAL, this may take a while"
+worker-1         |  -------------- [queues]
+minio-1          | Docs: https://min.io/docs/minio/linux/index.html
+worker-1         |                 .> celery           exchange=celery(direct) key=celery
+worker-1         |                 
+redis-1          | 1:M 14 Jul 2026 05:48:31.120 * Opening AOF incr file appendonly.aof.1.incr.aof on server start
+redis-1          | 1:M 14 Jul 2026 05:48:31.120 * Ready to accept connections tcp
+redis-1          | 1:M 14 Jul 2026 05:49:32.006 * 1 changes in 60 seconds. Saving...
+redis-1          | 1:M 14 Jul 2026 05:49:32.007 * Background saving started by pid 132
+postgres-1       | 
+postgres-1       | PostgreSQL Database directory appears to contain a database; Skipping initialization
+postgres-1       | 
+postgres-1       | 2026-07-14 05:48:31.113 UTC [1] LOG:  starting PostgreSQL 16.14 (Debian 16.14-1.pgdg13+1) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit
+postgres-1       | 2026-07-14 05:48:31.113 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+postgres-1       | 2026-07-14 05:48:31.113 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+postgres-1       | 2026-07-14 05:48:31.122 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:48:45 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=DCGM_FI_DEV_GPU_UTIL HTTP/1.1" 200 730 "-" "curl/8.5.0"
+dcgm-exporter-1  | time=2026-07-14T05:48:06.101Z level=INFO msg="NVML provider successfully initialized!"
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:48:45 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=up%7bjob%3d%22dcgm-exporter%22%7d+%3d%3d+1 HTTP/1.1" 200 185 "-" "curl/8.5.0"
+prometheus-1     | ts=2026-07-14T05:48:05.961Z caller=head.go:794 level=info component=tsdb msg="WAL segment loaded" segment=0 maxSegment=2
+prometheus-1     | ts=2026-07-14T05:48:05.963Z caller=head.go:794 level=info component=tsdb msg="WAL segment loaded" segment=1 maxSegment=2
+prometheus-1     | ts=2026-07-14T05:48:05.963Z caller=head.go:794 level=info component=tsdb msg="WAL segment loaded" segment=2 maxSegment=2
+prometheus-1     | ts=2026-07-14T05:48:05.963Z caller=head.go:831 level=info component=tsdb msg="WAL replay completed" checkpoint_replay_duration=32.593µs wal_replay_duration=8.714023ms wbl_replay_duration=128ns chunk_snapshot_load_duration=0s mmap_chunk_replay_duration=1.536µs total_replay_duration=8.765976ms
+prometheus-1     | ts=2026-07-14T05:48:05.966Z caller=main.go:1218 level=info fs_type=EXT4_SUPER_MAGIC
+prometheus-1     | ts=2026-07-14T05:48:05.966Z caller=main.go:1221 level=info msg="TSDB started"
+prometheus-1     | ts=2026-07-14T05:48:05.966Z caller=main.go:1404 level=info msg="Loading configuration file" filename=/etc/prometheus/prometheus.yml
+prometheus-1     | ts=2026-07-14T05:48:05.966Z caller=main.go:1441 level=info msg="updated GOGC" old=100 new=75
+prometheus-1     | ts=2026-07-14T05:48:05.966Z caller=main.go:1452 level=info msg="Completed loading of configuration file" filename=/etc/prometheus/prometheus.yml totalDuration=336.849µs db_storage=960ns remote_storage=1.2µs web_handler=320ns query_engine=592ns scrape=161.953µs scrape_sd=23.968µs notify=896ns notify_sd=608ns rules=1.152µs tracing=2.624µs
+prometheus-1     | ts=2026-07-14T05:48:05.967Z caller=main.go:1182 level=info msg="Server is ready to receive web requests."
+dcgm-exporter-1  | time=2026-07-14T05:48:06.360Z level=INFO msg="Not collecting DCP metrics: This request is serviced by a module of DCGM that is not currently loaded"
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:48:45 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=time%28%29+-+timestamp%28DCGM_FI_DEV_GPU_UTIL%29 HTTP/1.1" 200 696 "-" "curl/8.5.0"
+dcgm-exporter-1  | time=2026-07-14T05:48:06.361Z level=INFO msg="Falling back to metric file '/etc/dcgm-exporter/default-counters.csv'"
+dcgm-exporter-1  | time=2026-07-14T05:48:06.361Z level=WARN msg="Skipping line 21 ('DCGM_FI_PROF_GR_ENGINE_ACTIVE'): metric not enabled"
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:48:47 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=DCGM_FI_DEV_GPU_UTIL HTTP/1.1" 200 730 "-" "curl/8.5.0"
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:48:47 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=up%7bjob%3d%22dcgm-exporter%22%7d+%3d%3d+1 HTTP/1.1" 200 185 "-" "curl/8.5.0"
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:48:47 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=time%28%29+-+timestamp%28DCGM_FI_DEV_GPU_UTIL%29 HTTP/1.1" 200 695 "-" "curl/8.5.0"
+worker-1         | 
+qdrant-1         |            _                 _    
+worker-1         | [tasks]
+worker-1         | 
+worker-1         | 
+worker-1         | [2026-07-14 05:48:12,041: INFO/MainProcess] Connected to amqp://ntc_worker:**@rabbitmq:5672//
+redis-1          | 132:C 14 Jul 2026 05:49:32.026 * DB saved on disk
+prometheus-1     | ts=2026-07-14T05:48:05.967Z caller=manager.go:164 level=info component="rule manager" msg="Starting rule manager..."
+redis-1          | 132:C 14 Jul 2026 05:49:32.026 * Fork CoW for RDB: current 0 MB, peak 0 MB, average 0 MB
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:48:49 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=DCGM_FI_DEV_GPU_UTIL HTTP/1.1" 200 730 "-" "curl/8.5.0"
+redis-1          | 1:M 14 Jul 2026 05:49:32.107 * Background saving terminated with success
+worker-1         | [2026-07-14 05:48:12,080: INFO/MainProcess] ntc-worker@345e648ac7ad ready.
+qdrant-1         |   __ _  __| |_ __ __ _ _ __ | |_  
+qdrant-1         |  / _` |/ _` | '__/ _` | '_ \| __| 
+qdrant-1         | | (_| | (_| | | | (_| | | | | |_  
+qdrant-1         |  \__, |\__,_|_|  \__,_|_| |_|\__| 
+dcgm-exporter-1  | time=2026-07-14T05:48:06.361Z level=WARN msg="Skipping line 22 ('DCGM_FI_PROF_PIPE_TENSOR_ACTIVE'): metric not enabled"
+dcgm-exporter-1  | time=2026-07-14T05:48:06.361Z level=WARN msg="Skipping line 23 ('DCGM_FI_PROF_DRAM_ACTIVE'): metric not enabled"
+dcgm-exporter-1  | time=2026-07-14T05:48:06.361Z level=WARN msg="Skipping line 24 ('DCGM_FI_PROF_PCIE_TX_BYTES'): metric not enabled"
+dcgm-exporter-1  | time=2026-07-14T05:48:06.361Z level=WARN msg="Skipping line 25 ('DCGM_FI_PROF_PCIE_RX_BYTES'): metric not enabled"
+dcgm-exporter-1  | time=2026-07-14T05:48:06.361Z level=INFO msg="Initializing system entities of type 'GPU'"
+dcgm-exporter-1  | time=2026-07-14T05:48:06.459Z level=INFO msg="Initializing system entities of type 'NvSwitch'"
+dcgm-exporter-1  | time=2026-07-14T05:48:06.459Z level=INFO msg="Not collecting NvSwitch metrics; no switches to monitor"
+dcgm-exporter-1  | time=2026-07-14T05:48:06.459Z level=INFO msg="Initializing system entities of type 'NvLink'"
+dcgm-exporter-1  | time=2026-07-14T05:48:06.459Z level=WARN msg="Failed to initialize NvSwitch/NvLink info" error="no switches to monitor"
+dcgm-exporter-1  | time=2026-07-14T05:48:06.464Z level=INFO msg="Initializing system entities of type 'CPU'"
+dcgm-exporter-1  | time=2026-07-14T05:48:06.647Z level=INFO msg="Not collecting CPU metrics; error retrieving DCGM CPU hierarchy: This request is serviced by a module of DCGM that is not currently loaded"
+dcgm-exporter-1  | time=2026-07-14T05:48:06.647Z level=INFO msg="Initializing system entities of type 'CPU Core'"
+dcgm-exporter-1  | time=2026-07-14T05:48:06.647Z level=INFO msg="Not collecting CPU Core metrics; error retrieving DCGM CPU hierarchy: This request is serviced by a module of DCGM that is not currently loaded"
+dcgm-exporter-1  | time=2026-07-14T05:48:06.657Z level=INFO msg="Starting webserver"
+dcgm-exporter-1  | time=2026-07-14T05:48:06.658Z level=INFO msg="Watching for changes in file" file=/etc/dcgm-exporter/default-counters.csv
+dcgm-exporter-1  | time=2026-07-14T05:48:06.658Z level=INFO msg="Listening on" address=[::]:9400
+dcgm-exporter-1  | time=2026-07-14T05:48:06.658Z level=INFO msg="TLS is disabled." http2=false address=[::]:9400
+qdrant-1         |     |_|                           
+worker-1         | [2026-07-14 05:48:29,630: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+worker-1         | Traceback (most recent call last):
+worker-1         |   File "/workspace/.venv/lib/python3.14/site-packages/celery/worker/consumer/consumer.py", line 346, in start
+qdrant-1         | 
+postgres-1       | 2026-07-14 05:48:31.134 UTC [29] LOG:  database system was shut down at 2026-07-14 05:48:29 UTC
+minio-1          | Status:         1 Online, 0 Offline. 
+postgres-1       | 2026-07-14 05:48:31.140 UTC [1] LOG:  database system is ready to accept connections
+worker-1         |     blueprint.start(self)
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:48:49 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=up%7bjob%3d%22dcgm-exporter%22%7d+%3d%3d+1 HTTP/1.1" 200 185 "-" "curl/8.5.0"
+worker-1         |     ~~~~~~~~~~~~~~~^^^^^^
+worker-1         |   File "/workspace/.venv/lib/python3.14/site-packages/celery/bootsteps.py", line 116, in start
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:48:49 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=time%28%29+-+timestamp%28DCGM_FI_DEV_GPU_UTIL%29 HTTP/1.1" 200 695 "-" "curl/8.5.0"
+worker-1         |     step.start(parent)
+worker-1         |     ~~~~~~~~~~^^^^^^^^
+worker-1         |   File "/workspace/.venv/lib/python3.14/site-packages/celery/worker/consumer/consumer.py", line 788, in start
+worker-1         |     c.loop(*c.loop_args())
+worker-1         |     ~~~~~~^^^^^^^^^^^^^^^^
+grafana-1        | logger=settings t=2026-07-14T05:48:11.642385213Z level=info msg="Config overridden from command line" arg="default.paths.logs=/var/log/grafana"
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:48:51 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=DCGM_FI_DEV_GPU_UTIL HTTP/1.1" 200 730 "-" "curl/8.5.0"
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:48:51 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=up%7bjob%3d%22dcgm-exporter%22%7d+%3d%3d+1 HTTP/1.1" 200 185 "-" "curl/8.5.0"
+grafana-1        | logger=settings t=2026-07-14T05:48:11.642386653Z level=info msg="Config overridden from command line" arg="default.paths.plugins=/var/lib/grafana/plugins"
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:48:51 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=time%28%29+-+timestamp%28DCGM_FI_DEV_GPU_UTIL%29 HTTP/1.1" 200 696 "-" "curl/8.5.0"
+grafana-1        | logger=settings t=2026-07-14T05:48:11.642387917Z level=info msg="Config overridden from command line" arg="default.paths.provisioning=/etc/grafana/provisioning"
+qdrant-1         | Version: 1.18.1, build: e01c207f
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:48:53 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=DCGM_FI_DEV_GPU_UTIL HTTP/1.1" 200 730 "-" "curl/8.5.0"
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:48:53 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=up%7bjob%3d%22dcgm-exporter%22%7d+%3d%3d+1 HTTP/1.1" 200 185 "-" "curl/8.5.0"
+grafana-1        | logger=settings t=2026-07-14T05:48:11.642389101Z level=info msg="Config overridden from command line" arg="default.log.mode=console"
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:48:54 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=time%28%29+-+timestamp%28DCGM_FI_DEV_GPU_UTIL%29 HTTP/1.1" 200 687 "-" "curl/8.5.0"
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:48:56 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=DCGM_FI_DEV_GPU_UTIL HTTP/1.1" 200 730 "-" "curl/8.5.0"
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:48:56 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=up%7bjob%3d%22dcgm-exporter%22%7d+%3d%3d+1 HTTP/1.1" 200 185 "-" "curl/8.5.0"
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:48:56 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=time%28%29+-+timestamp%28DCGM_FI_DEV_GPU_UTIL%29 HTTP/1.1" 200 695 "-" "curl/8.5.0"
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:48:58 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=DCGM_FI_DEV_GPU_UTIL HTTP/1.1" 200 730 "-" "curl/8.5.0"
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:48:58 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=up%7bjob%3d%22dcgm-exporter%22%7d+%3d%3d+1 HTTP/1.1" 200 185 "-" "curl/8.5.0"
+grafana-1        | logger=settings t=2026-07-14T05:48:11.642390605Z level=info msg="Config overridden from Environment variable" var="GF_PATHS_DATA=/var/lib/grafana"
+grafana-1        | logger=settings t=2026-07-14T05:48:11.642391789Z level=info msg="Config overridden from Environment variable" var="GF_PATHS_LOGS=/var/log/grafana"
+grafana-1        | logger=settings t=2026-07-14T05:48:11.642392989Z level=info msg="Config overridden from Environment variable" var="GF_PATHS_PLUGINS=/var/lib/grafana/plugins"
+grafana-1        | logger=settings t=2026-07-14T05:48:11.642394285Z level=info msg="Config overridden from Environment variable" var="GF_PATHS_PROVISIONING=/etc/grafana/provisioning"
+grafana-1        | logger=settings t=2026-07-14T05:48:11.642395613Z level=info msg="Config overridden from Environment variable" var="GF_SERVER_ROOT_URL=http://127.0.0.1:8080/grafana/"
+grafana-1        | logger=settings t=2026-07-14T05:48:11.642396765Z level=info msg="Config overridden from Environment variable" var="GF_SERVER_SERVE_FROM_SUB_PATH=true"
+grafana-1        | logger=settings t=2026-07-14T05:48:11.642397965Z level=info msg="Config overridden from Environment variable" var="GF_ANALYTICS_REPORTING_ENABLED=false"
+grafana-1        | logger=settings t=2026-07-14T05:48:11.642399101Z level=info msg="Config overridden from Environment variable" var="GF_ANALYTICS_CHECK_FOR_UPDATES=false"
+grafana-1        | logger=settings t=2026-07-14T05:48:11.642400349Z level=info msg="Config overridden from Environment variable" var="GF_ANALYTICS_CHECK_FOR_PLUGIN_UPDATES=false"
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:48:58 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=time%28%29+-+timestamp%28DCGM_FI_DEV_GPU_UTIL%29 HTTP/1.1" 200 695 "-" "curl/8.5.0"
+rabbitmq-1       | 2026-07-14 05:48:34.259827+00:00 [info] <0.254.0> Running boot step rabbit_core_metrics defined by app rabbit[0m
+qdrant-1         | Access web UI at http://localhost:6333/dashboard
+minio-1          | STARTUP WARNINGS:
+api-1            | INFO:     Started server process [1]
+qdrant-1         | Agentic Skills: https://skills.qdrant.tech/
+minio-1          | - The standard parity is set to 0. This can lead to data loss.
+qdrant-1         | 
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:49:00 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=DCGM_FI_DEV_GPU_UTIL HTTP/1.1" 200 730 "-" "curl/8.5.0"
+qdrant-1         | 2026-07-14T05:48:31.082702Z  INFO storage::content_manager::consensus::persistent: Loading raft state from ./storage/raft_state.json
+worker-1         |   File "/workspace/.venv/lib/python3.14/site-packages/celery/worker/loops.py", line 97, in asynloop
+qdrant-1         | 2026-07-14T05:48:31.083289Z  INFO storage::content_manager::toc: Loading collection: phase2_acceptance_phase2_20260714t054803z_181749
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:49:00 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=up%7bjob%3d%22dcgm-exporter%22%7d+%3d%3d+1 HTTP/1.1" 200 185 "-" "curl/8.5.0"
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:49:00 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=time%28%29+-+timestamp%28DCGM_FI_DEV_GPU_UTIL%29 HTTP/1.1" 200 695 "-" "curl/8.5.0"
+qdrant-1         | 2026-07-14T05:48:31.086798Z  INFO collection::shards::local_shard: Recovering shard ./storage/collections/phase2_acceptance_phase2_20260714t054803z_181749/0: 0/2 (0%)
+api-1            | INFO:     Waiting for application startup.
+grafana-1        | logger=settings t=2026-07-14T05:48:11.642401469Z level=info msg="Config overridden from Environment variable" var="GF_SECURITY_ADMIN_USER=ntc_grafana_admin"
+rabbitmq-1       | 2026-07-14 05:48:34.260576+00:00 [info] <0.254.0> Running boot step rabbit_alarm defined by app rabbit[0m
+grafana-1        | logger=settings t=2026-07-14T05:48:11.642402749Z level=info msg="Config overridden from Environment variable" var="GF_SECURITY_ADMIN_PASSWORD=*********"
+api-1            | INFO:     Application startup complete.
+grafana-1        | logger=settings t=2026-07-14T05:48:11.642403885Z level=info msg="Config overridden from Environment variable" var="GF_USERS_ALLOW_SIGN_UP=false"
+worker-1         |     next(loop)
+grafana-1        | logger=settings t=2026-07-14T05:48:11.642405581Z level=info msg="Config overridden from Environment variable" var="GF_PLUGINS_PLUGIN_ADMIN_ENABLED=false"
+rabbitmq-1       | 2026-07-14 05:48:34.267523+00:00 [info] <0.403.0> Memory high watermark set to 49844 MiB (52265451520 bytes) of 124610 MiB (130663628800 bytes) total[0m
+qdrant-1         | 2026-07-14T05:48:31.139100Z  INFO collection::shards::local_shard: Recovered collection phase2_acceptance_phase2_20260714t054803z_181749: 2/2 (100%)
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:49:02 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=DCGM_FI_DEV_GPU_UTIL HTTP/1.1" 200 730 "-" "curl/8.5.0"
+api-1            | INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+qdrant-1         | 2026-07-14T05:48:31.139282Z  INFO qdrant: Distributed mode disabled
+qdrant-1         | 2026-07-14T05:48:31.139289Z  INFO qdrant: Telemetry reporting enabled, id: e19cbcb7-d6ea-4f34-9a27-dae9b4f93534
+qdrant-1         | 2026-07-14T05:48:31.145117Z  INFO qdrant::actix: REST transport settings: keep_alive=5s, client_request_timeout=5s, client_disconnect_timeout=5s
+qdrant-1         | 2026-07-14T05:48:31.145138Z  INFO qdrant::actix: TLS disabled for REST API
+qdrant-1         | 2026-07-14T05:48:31.145180Z  INFO qdrant::actix: Qdrant HTTP listening on 6333
+qdrant-1         | 2026-07-14T05:48:31.145185Z  INFO actix_server::builder: starting 3 workers
+qdrant-1         | 2026-07-14T05:48:31.145192Z  INFO actix_server::server: Actix runtime found; starting in Actix runtime
+qdrant-1         | 2026-07-14T05:48:31.145195Z  INFO actix_server::server: starting service: "actix-web-service-0.0.0.0:6333", workers: 3, listening on: 0.0.0.0:6333
+qdrant-1         | 2026-07-14T05:48:31.148080Z ERROR qdrant::common::telemetry_reporting: Failed to report telemetry Service internal error: Http request error: error sending request for url (https://telemetry.qdrant.io/)
+qdrant-1         | 2026-07-14T05:48:31.148780Z  INFO qdrant::tonic: Qdrant gRPC listening on 6334
+qdrant-1         | 2026-07-14T05:48:31.148804Z  INFO qdrant::tonic: TLS disabled for gRPC API
+qdrant-1         | 2026-07-14T05:48:39.570621Z  INFO actix_web::middleware::logger: 172.24.0.1 "GET /collections/phase2_acceptance_phase2_20260714t054803z_181749/points/1 HTTP/1.1" 200 115 "-" "python-httpx2/2.5.0" 0.001639
+qdrant-1         | 2026-07-14T05:48:39.606512Z  INFO storage::content_manager::toc::collection_meta_ops: Deleting collection phase2_acceptance_phase2_20260714t054803z_181749
+qdrant-1         | 2026-07-14T05:48:39.613016Z  INFO actix_web::middleware::logger: 172.24.0.1 "DELETE /collections/phase2_acceptance_phase2_20260714t054803z_181749 HTTP/1.1" 200 57 "-" "python-httpx2/2.5.0" 0.006587
+rabbitmq-1       | 2026-07-14 05:48:34.270038+00:00 [info] <0.405.0> Enabling free disk space monitoring (disk free space: 2717401382912, total memory: 130663628800)[0m
+rabbitmq-1       | 2026-07-14 05:48:34.270074+00:00 [info] <0.405.0> Disk free limit set to 50MB[0m
+rabbitmq-1       | 2026-07-14 05:48:34.271412+00:00 [info] <0.254.0> Running boot step code_server_cache defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:48:34.271467+00:00 [info] <0.254.0> Running boot step file_handle_cache defined by app rabbit[0m
+grafana-1        | logger=settings t=2026-07-14T05:48:11.642406797Z level=info msg="Config overridden from Environment variable" var="GF_PLUGINS_PUBLIC_KEY_RETRIEVAL_DISABLED=true"
+grafana-1        | logger=settings t=2026-07-14T05:48:11.642408509Z level=info msg="Config overridden from Environment variable" var="GF_PLUGINS_PREINSTALL_DISABLED=true"
+rabbitmq-1       | 2026-07-14 05:48:34.274815+00:00 [info] <0.408.0> Limiting to approx 927 file handles (832 sockets)[0m
+rabbitmq-1       | 2026-07-14 05:48:34.274923+00:00 [info] <0.409.0> FHC read buffering: OFF[0m
+rabbitmq-1       | 2026-07-14 05:48:34.274950+00:00 [info] <0.409.0> FHC write buffering: ON[0m
+rabbitmq-1       | 2026-07-14 05:48:34.275134+00:00 [info] <0.254.0> Running boot step worker_pool defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:48:34.275178+00:00 [info] <0.342.0> Will use 20 processes for default worker pool[0m
+rabbitmq-1       | 2026-07-14 05:48:34.275204+00:00 [info] <0.342.0> Starting worker pool 'worker_pool' with 20 processes in it[0m
+rabbitmq-1       | 2026-07-14 05:48:34.275693+00:00 [info] <0.254.0> Running boot step database defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:48:34.276023+00:00 [info] <0.254.0> Peer discovery: configured backend: rabbit_peer_discovery_classic_config[0m
+rabbitmq-1       | 2026-07-14 05:48:34.276681+00:00 [info] <0.254.0> Waiting for Mnesia tables for 30000 ms, 9 retries left[0m
+rabbitmq-1       | 2026-07-14 05:48:34.289226+00:00 [info] <0.254.0> Successfully synced tables from a peer[0m
+rabbitmq-1       | 2026-07-14 05:48:34.300068+00:00 [info] <0.254.0> Waiting for Mnesia tables for 30000 ms, 9 retries left[0m
+rabbitmq-1       | 2026-07-14 05:48:34.300135+00:00 [info] <0.254.0> Successfully synced tables from a peer[0m
+rabbitmq-1       | 2026-07-14 05:48:34.300221+00:00 [info] <0.254.0> Running boot step tracking_metadata_store defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:48:34.300271+00:00 [info] <0.439.0> Setting up a table for connection tracking on this node: tracked_connection[0m
+rabbitmq-1       | 2026-07-14 05:48:34.300305+00:00 [info] <0.439.0> Setting up a table for per-vhost connection counting on this node: tracked_connection_per_vhost[0m
+rabbitmq-1       | 2026-07-14 05:48:34.300340+00:00 [info] <0.439.0> Setting up a table for per-user connection counting on this node: tracked_connection_per_user[0m
+api-1            | INFO:     127.0.0.1:33250 - "GET /health/live HTTP/1.1" 200 OK
+worker-1         |     ~~~~^^^^^^
+api-1            | INFO:     127.0.0.1:33264 - "GET /health/live HTTP/1.1" 200 OK
+worker-1         |   File "/workspace/.venv/lib/python3.14/site-packages/kombu/asynchronous/hub.py", line 377, in create_loop
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:49:02 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=up%7bjob%3d%22dcgm-exporter%22%7d+%3d%3d+1 HTTP/1.1" 200 185 "-" "curl/8.5.0"
+worker-1         |     cb(*cbargs)
+rabbitmq-1       | 2026-07-14 05:48:34.300366+00:00 [info] <0.439.0> Setting up a table for channel tracking on this node: tracked_channel[0m
+worker-1         |     ~~^^^^^^^^^
+worker-1         |   File "/workspace/.venv/lib/python3.14/site-packages/kombu/transport/base.py", line 248, in on_readable
+worker-1         |     reader(loop)
+worker-1         |     ~~~~~~^^^^^^
+worker-1         |   File "/workspace/.venv/lib/python3.14/site-packages/kombu/transport/base.py", line 230, in _read
+worker-1         |     drain_events(timeout=0)
+worker-1         |     ~~~~~~~~~~~~^^^^^^^^^^^
+worker-1         |   File "/workspace/.venv/lib/python3.14/site-packages/amqp/connection.py", line 526, in drain_events
+worker-1         |     while not self.blocking_read(timeout):
+worker-1         |               ~~~~~~~~~~~~~~~~~~^^^^^^^^^
+worker-1         |   File "/workspace/.venv/lib/python3.14/site-packages/amqp/connection.py", line 532, in blocking_read
+worker-1         |     return self.on_inbound_frame(frame)
+worker-1         |            ~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+worker-1         |   File "/workspace/.venv/lib/python3.14/site-packages/amqp/method_framing.py", line 53, in on_frame
+api-1            | INFO:     172.24.0.14:43848 - "GET /health/live HTTP/1.1" 200 OK
+worker-1         |     callback(channel, method_sig, buf, None)
+api-1            | INFO:     172.24.0.14:43862 - "GET /health/dependencies HTTP/1.1" 200 OK
+rabbitmq-1       | 2026-07-14 05:48:34.300403+00:00 [info] <0.439.0> Setting up a table for channel tracking on this node: tracked_channel_per_user[0m
+api-1            | INFO:     172.24.0.14:43876 - "GET /health/ready HTTP/1.1" 503 Service Unavailable
+worker-1         |     ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+rabbitmq-1       | 2026-07-14 05:48:34.300438+00:00 [info] <0.254.0> Running boot step networking_metadata_store defined by app rabbit[0m
+worker-1         |   File "/workspace/.venv/lib/python3.14/site-packages/amqp/connection.py", line 538, in on_inbound_method
+grafana-1        | logger=settings t=2026-07-14T05:48:11.642409837Z level=info msg="Config overridden from Environment variable" var="GF_PATHS_HOME=/usr/share/grafana"
+worker-1         |     return self.channels[channel_id].dispatch_method(
+worker-1         |            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+grafana-1        | logger=settings t=2026-07-14T05:48:11.642411053Z level=info msg="Config overridden from Environment variable" var="GF_PATHS_CONFIG=/etc/grafana/grafana.ini"
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:49:02 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=time%28%29+-+timestamp%28DCGM_FI_DEV_GPU_UTIL%29 HTTP/1.1" 200 696 "-" "curl/8.5.0"
+grafana-1        | logger=settings t=2026-07-14T05:48:11.642412221Z level=info msg=Target target=[all]
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:49:04 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=DCGM_FI_DEV_GPU_UTIL HTTP/1.1" 200 730 "-" "curl/8.5.0"
+grafana-1        | logger=settings t=2026-07-14T05:48:11.642413725Z level=info msg="Path Home" path=/usr/share/grafana
+grafana-1        | logger=settings t=2026-07-14T05:48:11.642414925Z level=info msg="Path Data" path=/var/lib/grafana
+grafana-1        | logger=settings t=2026-07-14T05:48:11.642415997Z level=info msg="Path Logs" path=/var/log/grafana
+grafana-1        | logger=settings t=2026-07-14T05:48:11.642417085Z level=info msg="Path Plugins" path="[/var/lib/grafana/plugins /usr/share/grafana/data/plugins-bundled]"
+grafana-1        | logger=settings t=2026-07-14T05:48:11.642418813Z level=info msg="Path Provisioning" path=/etc/grafana/provisioning
+grafana-1        | logger=settings t=2026-07-14T05:48:11.642419997Z level=info msg="App mode production"
+grafana-1        | logger=featuremgmt t=2026-07-14T05:48:11.642752237Z level=info msg=FeatureToggles alertRuleRestore=true alertingBulkActionsInUI=true alertingImportYAMLUI=true alertingListViewV2=true alertingListViewV2PreviewToggle=true alertingMigrationUI=true alertingNavigationV2=true alertingNotificationsStepMode=true alertingQueryAndExpressionsStepMode=true alertingRulePermanentlyDelete=true alertingRuleRecoverDeleted=true alertingRuleVersionHistoryRestore=true alertingSaveStateCompressed=true alertingUIOptimizeReducer=true alertingUIUseBackendFilters=true alertingUIUseFullyCompatBackendFilters=true alertingUseNewSimplifiedRoutingHashAlgorithm=true annotationPermissionUpdate=true awsAsyncQueryCaching=true awsDatasourcesTempCredentials=true azureMonitorEnableUserAuth=true azureMonitorPrometheusExemplars=true azureResourcePickerUpdates=true cloudWatchCrossAccountQuerying=true cloudWatchNewLabelParsing=true cloudWatchRoundUpEndTime=true dashboardDefaultLayoutSelector=true dashboardNewLayouts=true dashboardScene=true dashgpt=true enableSCIM=true externalVizSuggestions=true feedbackButton=true grafanaAdvisor=true grafanaAssistantInProfilesDrilldown=true grafanaconThemes=true improvedExternalSessionHandling=true improvedExternalSessionHandlingSAML=true influxdbBackendMigration=true logsPanelControls=true lokiLabelNamesQueryApi=true lokiQuerySplitting=true multiPropsVariables=true newLogsPanel=true newPanelPadding=true newTimeRangeZoomShortcuts=true newUnconfiguredPanel=true newVizSuggestions=true onlyStoreActionSets=true preventPanelChromeOverflow=true prometheusAzureOverrideAudience=true prometheusTypeMigration=true provisioning=true provisioningFolderMetadata=true publicDashboardsScene=true rememberUserOrgForSso=true renderAuthJWT=true restoreDashboards=true restrictedPluginApis=true sharingDashboardImage=true splashScreen=true timeRangePan=true useSessionStorageForRedirection=true
+grafana-1        | logger=sqlstore t=2026-07-14T05:48:11.642780878Z level=info msg="Connecting to DB" dbtype=sqlite3
+grafana-1        | logger=sqlstore t=2026-07-14T05:48:11.642784142Z level=info msg="Using SQLite driver" driver=modernc.org/sqlite
+grafana-1        | logger=migrator t=2026-07-14T05:48:11.643357103Z level=info msg="Locking database"
+worker-1         |         method_sig, payload, content,
+worker-1         |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+rabbitmq-1       | 2026-07-14 05:48:34.300473+00:00 [info] <0.254.0> Running boot step feature_flags defined by app rabbit[0m
+worker-1         |     )
+rabbitmq-1       | 2026-07-14 05:48:34.300518+00:00 [info] <0.254.0> Running boot step codec_correctness_check defined by app rabbit[0m
+worker-1         |     ^
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:49:04 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=up%7bjob%3d%22dcgm-exporter%22%7d+%3d%3d+1 HTTP/1.1" 200 185 "-" "curl/8.5.0"
+worker-1         |   File "/workspace/.venv/lib/python3.14/site-packages/amqp/abstract_channel.py", line 156, in dispatch_method
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:49:04 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=time%28%29+-+timestamp%28DCGM_FI_DEV_GPU_UTIL%29 HTTP/1.1" 200 695 "-" "curl/8.5.0"
+grafana-1        | logger=migrator t=2026-07-14T05:48:11.643362943Z level=info msg="Starting DB migrations"
+grafana-1        | logger=migrator t=2026-07-14T05:48:11.647817003Z level=info msg="migrations completed" performed=0 skipped=710 duration=423.121µs
+grafana-1        | logger=migrator t=2026-07-14T05:48:11.647935995Z level=info msg="Unlocking database"
+grafana-1        | logger=secrets t=2026-07-14T05:48:11.648852733Z level=info msg="Envelope encryption state" currentprovider=secretKey.v1
+grafana-1        | logger=plugin.angulardetectorsprovider.dynamic t=2026-07-14T05:48:11.703593819Z level=info msg="Restored cache from database" duration=176.384µs
+grafana-1        | logger=accesscontrol.service t=2026-07-14T05:48:11.70402238Z level=info msg="Starting migration to remove deprecated permissions" migration=removeDeprecatedPermissions
+grafana-1        | logger=accesscontrol.service t=2026-07-14T05:48:11.704183661Z level=info msg="Completed migration to remove deprecated permissions" migration=removeDeprecatedPermissions totalRemoved=0 duration=161.489µs
+grafana-1        | logger=plugin.store t=2026-07-14T05:48:11.704233965Z level=info msg="Loading plugins..."
+grafana-1        | logger=plugins.registration t=2026-07-14T05:48:11.804679282Z level=info msg="Plugin registered" pluginId=elasticsearch
+grafana-1        | logger=plugin.store t=2026-07-14T05:48:11.804700786Z level=info msg="Plugins loaded" count=52 duration=100.467029ms
+grafana-1        | logger=authz-grpc-server t=2026-07-14T05:48:11.804820306Z level=info msg="cache ttl is 0, using noop cache"
+grafana-1        | logger=authz-grpc-server t=2026-07-14T05:48:11.80482365Z level=info msg="cache ttl is 0, using noop cache"
+grafana-1        | logger=authz-grpc-server t=2026-07-14T05:48:11.804824978Z level=info msg="cache ttl is 0, using noop cache"
+grafana-1        | logger=authz-grpc-server t=2026-07-14T05:48:11.80482629Z level=info msg="cache ttl is 0, using noop cache"
+grafana-1        | logger=authz-grpc-server t=2026-07-14T05:48:11.804827506Z level=info msg="cache ttl is 0, using noop cache"
+grafana-1        | logger=secret-migrator t=2026-07-14T05:48:11.804965794Z level=info msg="Locking database"
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:49:06 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=DCGM_FI_DEV_GPU_UTIL HTTP/1.1" 200 730 "-" "curl/8.5.0"
+grafana-1        | logger=secret-migrator t=2026-07-14T05:48:11.804969042Z level=info msg="Starting DB migrations"
+rabbitmq-1       | 2026-07-14 05:48:34.300534+00:00 [info] <0.254.0> Running boot step external_infrastructure defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:48:34.300560+00:00 [info] <0.254.0> Running boot step rabbit_event defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:48:34.300644+00:00 [info] <0.254.0> Running boot step rabbit_registry defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:48:34.300717+00:00 [info] <0.254.0> Running boot step rabbit_auth_mechanism_amqplain defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:48:34.300787+00:00 [info] <0.254.0> Running boot step rabbit_auth_mechanism_cr_demo defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:48:34.300821+00:00 [info] <0.254.0> Running boot step rabbit_auth_mechanism_plain defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:48:34.300855+00:00 [info] <0.254.0> Running boot step rabbit_exchange_type_direct defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:48:34.300894+00:00 [info] <0.254.0> Running boot step rabbit_exchange_type_fanout defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:48:34.300921+00:00 [info] <0.254.0> Running boot step rabbit_exchange_type_headers defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:48:34.300957+00:00 [info] <0.254.0> Running boot step rabbit_exchange_type_topic defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:48:34.301012+00:00 [info] <0.254.0> Running boot step rabbit_mirror_queue_mode_all defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:48:34.301041+00:00 [info] <0.254.0> Running boot step rabbit_mirror_queue_mode_exactly defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:48:34.301063+00:00 [info] <0.254.0> Running boot step rabbit_mirror_queue_mode_nodes defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:48:34.301090+00:00 [info] <0.254.0> Running boot step rabbit_priority_queue defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:48:34.301104+00:00 [info] <0.254.0> Priority queues enabled, real BQ is rabbit_variable_queue[0m
+rabbitmq-1       | 2026-07-14 05:48:34.301157+00:00 [info] <0.254.0> Running boot step rabbit_queue_location_client_local defined by app rabbit[0m
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:49:06 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=up%7bjob%3d%22dcgm-exporter%22%7d+%3d%3d+1 HTTP/1.1" 200 185 "-" "curl/8.5.0"
+worker-1         |     listener(*args)
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:49:06 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=time%28%29+-+timestamp%28DCGM_FI_DEV_GPU_UTIL%29 HTTP/1.1" 200 695 "-" "curl/8.5.0"
+grafana-1        | logger=secret-migrator t=2026-07-14T05:48:11.805363267Z level=info msg="migrations completed" performed=0 skipped=33 duration=21.952µs
+rabbitmq-1       | 2026-07-14 05:48:34.301181+00:00 [info] <0.254.0> Running boot step rabbit_queue_location_min_masters defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:48:34.301213+00:00 [info] <0.254.0> Running boot step rabbit_queue_location_random defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:48:34.301238+00:00 [info] <0.254.0> Running boot step kernel_ready defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:48:34.301253+00:00 [info] <0.254.0> Running boot step rabbit_sysmon_minder defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:48:34.301346+00:00 [info] <0.254.0> Running boot step rabbit_epmd_monitor defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:48:34.302413+00:00 [info] <0.447.0> epmd monitor knows us, inter-node communication (distribution) port: 25672[0m
+rabbitmq-1       | 2026-07-14 05:48:34.302497+00:00 [info] <0.254.0> Running boot step guid_generator defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:48:34.305464+00:00 [info] <0.254.0> Running boot step rabbit_node_monitor defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:48:34.305593+00:00 [info] <0.451.0> Starting rabbit_node_monitor (in ignore mode)[0m
+rabbitmq-1       | 2026-07-14 05:48:34.305657+00:00 [info] <0.254.0> Running boot step delegate_sup defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:48:34.305916+00:00 [info] <0.254.0> Running boot step rabbit_memory_monitor defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:48:34.306036+00:00 [info] <0.254.0> Running boot step rabbit_fifo_dlx_sup defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:48:34.306073+00:00 [info] <0.254.0> Running boot step core_initialized defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:48:34.306086+00:00 [info] <0.254.0> Running boot step rabbit_channel_tracking_handler defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:48:34.306113+00:00 [info] <0.254.0> Running boot step rabbit_connection_tracking_handler defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:48:34.306135+00:00 [info] <0.254.0> Running boot step rabbit_definitions_hashing defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:48:34.306178+00:00 [info] <0.254.0> Running boot step rabbit_exchange_parameters defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:48:34.312221+00:00 [info] <0.254.0> Running boot step rabbit_mirror_queue_misc defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:48:34.312476+00:00 [info] <0.254.0> Running boot step rabbit_policies defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:48:34.312641+00:00 [info] <0.254.0> Running boot step rabbit_policy defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:48:34.312672+00:00 [info] <0.254.0> Running boot step rabbit_queue_location_validator defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:48:34.312707+00:00 [info] <0.254.0> Running boot step rabbit_quorum_memory_manager defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:48:34.312730+00:00 [info] <0.254.0> Running boot step rabbit_quorum_queue defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:48:34.312769+00:00 [info] <0.254.0> Running boot step rabbit_stream_coordinator defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:48:34.312823+00:00 [info] <0.254.0> Running boot step rabbit_vhost_limit defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:48:34.312863+00:00 [info] <0.254.0> Running boot step rabbit_federation_parameters defined by app rabbitmq_federation[0m
+rabbitmq-1       | 2026-07-14 05:48:34.312960+00:00 [info] <0.254.0> Running boot step rabbit_federation_supervisor defined by app rabbitmq_federation[0m
+rabbitmq-1       | 2026-07-14 05:48:34.317512+00:00 [info] <0.254.0> Running boot step rabbit_federation_queue defined by app rabbitmq_federation[0m
+rabbitmq-1       | 2026-07-14 05:48:34.317619+00:00 [info] <0.254.0> Running boot step rabbit_federation_upstream_exchange defined by app rabbitmq_federation[0m
+rabbitmq-1       | 2026-07-14 05:48:34.317664+00:00 [info] <0.254.0> Running boot step rabbit_mgmt_reset_handler defined by app rabbitmq_management[0m
+rabbitmq-1       | 2026-07-14 05:48:34.317729+00:00 [info] <0.254.0> Running boot step rabbit_mgmt_db_handler defined by app rabbitmq_management_agent[0m
+rabbitmq-1       | 2026-07-14 05:48:34.317753+00:00 [info] <0.254.0> Management plugin: using rates mode 'basic'[0m
+rabbitmq-1       | 2026-07-14 05:48:34.317930+00:00 [info] <0.254.0> Running boot step recovery defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:48:34.326961+00:00 [info] <0.501.0> Making sure data directory '/var/lib/rabbitmq/mnesia/rabbit@rabbitmq/msg_stores/vhosts/628WB79CIFDYO9LJI6DKMI09L' for vhost '/' exists[0m
+api-1            | INFO:     127.0.0.1:48344 - "GET /health/live HTTP/1.1" 200 OK
+worker-1         |     ~~~~~~~~^^^^^^^
+api-1            | INFO:     127.0.0.1:48358 - "GET /health/live HTTP/1.1" 200 OK
+api-1            | INFO:     127.0.0.1:59166 - "GET /health/live HTTP/1.1" 200 OK
+worker-1         |   File "/workspace/.venv/lib/python3.14/site-packages/amqp/connection.py", line 667, in _on_close
+api-1            | INFO:     127.0.0.1:59176 - "GET /health/live HTTP/1.1" 200 OK
+worker-1         |     self._x_close_ok()
+api-1            | INFO:     127.0.0.1:53656 - "GET /health/live HTTP/1.1" 200 OK
+api-1            | INFO:     127.0.0.1:53664 - "GET /health/live HTTP/1.1" 200 OK
+api-1            | INFO:     127.0.0.1:50546 - "GET /health/live HTTP/1.1" 200 OK
+api-1            | INFO:     127.0.0.1:50548 - "GET /health/live HTTP/1.1" 200 OK
+api-1            | INFO:     127.0.0.1:43420 - "GET /health/live HTTP/1.1" 200 OK
+api-1            | INFO:     127.0.0.1:43432 - "GET /health/live HTTP/1.1" 200 OK
+api-1            | INFO:     127.0.0.1:58650 - "GET /health/live HTTP/1.1" 200 OK
+api-1            | INFO:     127.0.0.1:35084 - "GET /health/live HTTP/1.1" 200 OK
+api-1            | INFO:     127.0.0.1:35086 - "GET /health/live HTTP/1.1" 200 OK
+api-1            | INFO:     127.0.0.1:39298 - "GET /health/live HTTP/1.1" 200 OK
+api-1            | INFO:     127.0.0.1:39304 - "GET /health/live HTTP/1.1" 200 OK
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:49:08 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=DCGM_FI_DEV_GPU_UTIL HTTP/1.1" 200 730 "-" "curl/8.5.0"
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:49:08 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=up%7bjob%3d%22dcgm-exporter%22%7d+%3d%3d+1 HTTP/1.1" 200 185 "-" "curl/8.5.0"
+grafana-1        | logger=secret-migrator t=2026-07-14T05:48:11.805440403Z level=info msg="Unlocking database"
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:49:08 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=time%28%29+-+timestamp%28DCGM_FI_DEV_GPU_UTIL%29 HTTP/1.1" 200 696 "-" "curl/8.5.0"
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:49:10 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=DCGM_FI_DEV_GPU_UTIL HTTP/1.1" 200 730 "-" "curl/8.5.0"
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:49:10 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=up%7bjob%3d%22dcgm-exporter%22%7d+%3d%3d+1 HTTP/1.1" 200 185 "-" "curl/8.5.0"
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:49:10 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=time%28%29+-+timestamp%28DCGM_FI_DEV_GPU_UTIL%29 HTTP/1.1" 200 695 "-" "curl/8.5.0"
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:49:12 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=DCGM_FI_DEV_GPU_UTIL HTTP/1.1" 200 730 "-" "curl/8.5.0"
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:49:12 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=up%7bjob%3d%22dcgm-exporter%22%7d+%3d%3d+1 HTTP/1.1" 200 185 "-" "curl/8.5.0"
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:49:12 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=time%28%29+-+timestamp%28DCGM_FI_DEV_GPU_UTIL%29 HTTP/1.1" 200 696 "-" "curl/8.5.0"
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:49:14 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=DCGM_FI_DEV_GPU_UTIL HTTP/1.1" 200 730 "-" "curl/8.5.0"
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:49:14 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=up%7bjob%3d%22dcgm-exporter%22%7d+%3d%3d+1 HTTP/1.1" 200 185 "-" "curl/8.5.0"
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:49:14 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=time%28%29+-+timestamp%28DCGM_FI_DEV_GPU_UTIL%29 HTTP/1.1" 200 696 "-" "curl/8.5.0"
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:49:16 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=DCGM_FI_DEV_GPU_UTIL HTTP/1.1" 200 730 "-" "curl/8.5.0"
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:49:16 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=up%7bjob%3d%22dcgm-exporter%22%7d+%3d%3d+1 HTTP/1.1" 200 185 "-" "curl/8.5.0"
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:49:16 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=time%28%29+-+timestamp%28DCGM_FI_DEV_GPU_UTIL%29 HTTP/1.1" 200 696 "-" "curl/8.5.0"
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:49:18 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=DCGM_FI_DEV_GPU_UTIL HTTP/1.1" 200 730 "-" "curl/8.5.0"
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:49:18 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=up%7bjob%3d%22dcgm-exporter%22%7d+%3d%3d+1 HTTP/1.1" 200 185 "-" "curl/8.5.0"
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:49:18 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=time%28%29+-+timestamp%28DCGM_FI_DEV_GPU_UTIL%29 HTTP/1.1" 200 694 "-" "curl/8.5.0"
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:49:20 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=DCGM_FI_DEV_GPU_UTIL HTTP/1.1" 200 730 "-" "curl/8.5.0"
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:49:20 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=up%7bjob%3d%22dcgm-exporter%22%7d+%3d%3d+1 HTTP/1.1" 200 185 "-" "curl/8.5.0"
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:49:20 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=time%28%29+-+timestamp%28DCGM_FI_DEV_GPU_UTIL%29 HTTP/1.1" 200 694 "-" "curl/8.5.0"
+worker-1         |     ~~~~~~~~~~~~~~~~^^
+worker-1         |   File "/workspace/.venv/lib/python3.14/site-packages/amqp/connection.py", line 682, in _x_close_ok
+worker-1         |     self.send_method(spec.Connection.CloseOk, callback=self._on_close_ok)
+worker-1         |     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+worker-1         |   File "/workspace/.venv/lib/python3.14/site-packages/amqp/abstract_channel.py", line 70, in send_method
+worker-1         |     conn.frame_writer(1, self.channel_id, sig, args, content)
+worker-1         |     ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+worker-1         |   File "/workspace/.venv/lib/python3.14/site-packages/amqp/method_framing.py", line 186, in write_frame
+worker-1         |     write(buffer_store.view[:offset])
+worker-1         |     ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+worker-1         |   File "/workspace/.venv/lib/python3.14/site-packages/amqp/transport.py", line 350, in write
+worker-1         |     self._write(s)
+worker-1         |     ~~~~~~~~~~~^^^
+worker-1         | ConnectionResetError: [Errno 104] Connection reset by peer
+worker-1         | [2026-07-14 05:48:29,633: WARNING/MainProcess] /workspace/.venv/lib/python3.14/site-packages/celery/worker/consumer/consumer.py:397: CPendingDeprecationWarning: 
+worker-1         | In Celery 5.1 we introduced an optional breaking change which
+worker-1         | on connection loss cancels all currently executed tasks with late acknowledgement enabled.
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:49:22 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=DCGM_FI_DEV_GPU_UTIL HTTP/1.1" 200 730 "-" "curl/8.5.0"
+worker-1         | These tasks cannot be acknowledged as the connection is gone, and the tasks are automatically redelivered
+grafana-1        | logger=resource-db t=2026-07-14T05:48:11.805701812Z level=info msg="Using database section" db_type=sqlite3
+grafana-1        | logger=resource-db t=2026-07-14T05:48:11.805734596Z level=info msg="Initializing Resource DB" db_type=sqlite3 open_conn=0 in_use_conn=0 idle_conn=0 max_open_conn=0
+grafana-1        | logger=resource-migrator t=2026-07-14T05:48:11.805962485Z level=info msg="Locking database"
+grafana-1        | logger=resource-migrator t=2026-07-14T05:48:11.805965749Z level=info msg="Starting DB migrations"
+grafana-1        | logger=resource-migrator t=2026-07-14T05:48:11.807292568Z level=info msg="migrations completed" performed=0 skipped=43 duration=25.888µs
+grafana-1        | logger=resource-migrator t=2026-07-14T05:48:11.807365753Z level=info msg="Unlocking database"
+grafana-1        | t=2026-07-14T05:48:11.808293131Z level=info caller=logger.go:214 time=2026-07-14T05:48:11.808283819Z msg="Using channel notifier" logger=sql-resource-server
+grafana-1        | logger=bleve-backend namespace=default group=advisor.grafana.app resource=checktypes size=5 reason=init t=2026-07-14T05:48:11.808824364Z level=info msg="Building index using memory"
+grafana-1        | logger=bleve-backend namespace=default group=advisor.grafana.app resource=checktypes size=5 reason=init t=2026-07-14T05:48:11.810026031Z level=info msg="Finished building index" elapsed=1.191411ms listRV=1784007725779997
+grafana-1        | logger=bleve-backend namespace=default group=advisor.grafana.app resource=checktypes size=5 reason=init t=2026-07-14T05:48:11.810041039Z level=info msg="Storing index in cache" key="{Namespace:default Group:advisor.grafana.app Resource:checktypes}" expiration=2026-07-14T05:58:11.810040511Z
+grafana-1        | logger=resource-search t=2026-07-14T05:48:11.81008Z level=info msg="search index initialized" duration_secs=0 total_docs=5
+grafana-1        | logger=storage.unified.migrations t=2026-07-14T05:48:11.811020562Z level=info msg="Running migrations for unified storage"
+grafana-1        | logger=storage.unified.migrations t=2026-07-14T05:48:11.811062354Z level=info msg="Migration is disabled in config, skipping" migration=shorturls
+grafana-1        | logger=storage.unified.migrations t=2026-07-14T05:48:11.811064962Z level=info msg="Migration is disabled in config, skipping" migration=datasource
+grafana-1        | logger=storage.unified.migrations t=2026-07-14T05:48:11.81106637Z level=info msg="Migration is disabled in config, skipping" migration=stars
+grafana-1        | logger=unifiedstorage-migrator t=2026-07-14T05:48:11.811075378Z level=info msg="Locking database"
+grafana-1        | logger=unifiedstorage-migrator t=2026-07-14T05:48:11.811077762Z level=info msg="Starting DB migrations"
+grafana-1        | logger=unifiedstorage-migrator t=2026-07-14T05:48:11.81117557Z level=info msg="migrations completed" performed=0 skipped=3 duration=5.072µs
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:49:22 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=up%7bjob%3d%22dcgm-exporter%22%7d+%3d%3d+1 HTTP/1.1" 200 185 "-" "curl/8.5.0"
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:49:22 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=time%28%29+-+timestamp%28DCGM_FI_DEV_GPU_UTIL%29 HTTP/1.1" 200 696 "-" "curl/8.5.0"
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:49:24 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=DCGM_FI_DEV_GPU_UTIL HTTP/1.1" 200 730 "-" "curl/8.5.0"
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:49:24 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=up%7bjob%3d%22dcgm-exporter%22%7d+%3d%3d+1 HTTP/1.1" 200 185 "-" "curl/8.5.0"
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:49:24 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=time%28%29+-+timestamp%28DCGM_FI_DEV_GPU_UTIL%29 HTTP/1.1" 200 696 "-" "curl/8.5.0"
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:49:26 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=DCGM_FI_DEV_GPU_UTIL HTTP/1.1" 200 730 "-" "curl/8.5.0"
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:49:26 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=up%7bjob%3d%22dcgm-exporter%22%7d+%3d%3d+1 HTTP/1.1" 200 185 "-" "curl/8.5.0"
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:49:26 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=time%28%29+-+timestamp%28DCGM_FI_DEV_GPU_UTIL%29 HTTP/1.1" 200 695 "-" "curl/8.5.0"
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:49:28 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=DCGM_FI_DEV_GPU_UTIL HTTP/1.1" 200 730 "-" "curl/8.5.0"
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:49:28 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=up%7bjob%3d%22dcgm-exporter%22%7d+%3d%3d+1 HTTP/1.1" 200 185 "-" "curl/8.5.0"
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:49:28 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=time%28%29+-+timestamp%28DCGM_FI_DEV_GPU_UTIL%29 HTTP/1.1" 200 696 "-" "curl/8.5.0"
+grafana-1        | logger=unifiedstorage-migrator t=2026-07-14T05:48:11.811246995Z level=info msg="Unlocking database"
+grafana-1        | logger=storage.unified.migrations t=2026-07-14T05:48:11.811253491Z level=info msg="Unified storage migrations completed successfully"
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:49:30 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=DCGM_FI_DEV_GPU_UTIL HTTP/1.1" 200 730 "-" "curl/8.5.0"
+grafana-1        | logger=annotations t=2026-07-14T05:48:11.811544803Z level=info msg="Starting annotation dashboard_uid migration in background"
+grafana-1        | logger=annotations t=2026-07-14T05:48:11.811560163Z level=info msg="Starting batched dashboard_uid migration for annotations (newest first)" batchSize=5000
+grafana-1        | logger=annotations t=2026-07-14T05:48:11.811908292Z level=info msg="Completed dashboard_uid migration for annotations" totalUpdated=0
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:49:30 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=up%7bjob%3d%22dcgm-exporter%22%7d+%3d%3d+1 HTTP/1.1" 200 185 "-" "curl/8.5.0"
+rabbitmq-1       | 2026-07-14 05:48:34.334672+00:00 [info] <0.501.0> Starting message stores for vhost '/'[0m
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:49:30 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=time%28%29+-+timestamp%28DCGM_FI_DEV_GPU_UTIL%29 HTTP/1.1" 200 694 "-" "curl/8.5.0"
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:49:32 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=DCGM_FI_DEV_GPU_UTIL HTTP/1.1" 200 730 "-" "curl/8.5.0"
+grafana-1        | logger=annotations t=2026-07-14T05:48:11.811923908Z level=info msg="Annotation dashboard_uid migration completed successfully"
+grafana-1        | logger=storage.unified.migrations t=2026-07-14T05:48:11.812604934Z level=info msg="Resolved storage mode from migration log" resource=folders.folder.grafana.app mode=unified
+grafana-1        | logger=live.push_http t=2026-07-14T05:48:11.817568547Z level=info msg="Live Push Gateway initialization"
+grafana-1        | logger=ngalert.notifier t=2026-07-14T05:48:11.818834742Z level=info component=alertmanager orgID=1 msg="template definitions loaded" mimir=0 grafana=0 total=0 maxTemplateOutput=10485760
+grafana-1        | logger=ngalert.notifier component=alertmanager orgID=1 t=2026-07-14T05:48:11.819862953Z level=info msg="Applying new configuration to Alertmanager" configHash="{16778549912962373901 16454292769479786371 11334157631281353376 13684829433332818750 9889444224312429563 10278876130067529486 13274274624283075277 5144611013662998819}"
+worker-1         | back to the queue. You can enable this behavior using the worker_cancel_long_running_tasks_on_connection_loss
+grafana-1        | logger=ngalert.notifier t=2026-07-14T05:48:11.819883177Z level=info component=alertmanager orgID=1 msg="template definitions loaded" mimir=0 grafana=0 total=0 maxTemplateOutput=10485760
+worker-1         | setting. In Celery 5.1 it is set to False by default. The setting will be set to True by default in Celery 6.0.
+grafana-1        | logger=ngalert.writer t=2026-07-14T05:48:11.831285511Z level=info msg="Setting up remote write using data sources" timeout=30s default_datasource_uid=
+worker-1         | 
+grafana-1        | logger=ngalert t=2026-07-14T05:48:11.831312295Z level=info msg="Using protobuf-based alert instance store"
+worker-1         |   warnings.warn(CANCEL_TASKS_BY_DEFAULT, CPendingDeprecationWarning)
+grafana-1        | logger=ngalert.state.manager.persist t=2026-07-14T05:48:11.831318903Z level=info msg="Using sync rule state persister (compressed)"
+worker-1         | 
+grafana-1        | logger=query_data t=2026-07-14T05:48:11.831732936Z level=info msg="Query Service initialization"
+worker-1         | [2026-07-14 05:48:29,635: ERROR/MainProcess] consumer: Cannot connect to amqp://ntc_worker:**@rabbitmq:5672//: [Errno 111] Connection refused.
+rabbitmq-1       | 2026-07-14 05:48:34.334813+00:00 [info] <0.510.0> Message store "628WB79CIFDYO9LJI6DKMI09L/msg_store_transient": using rabbit_msg_store_ets_index to provide index[0m
+worker-1         | Trying again in 2.00 seconds... (1/100)
+rabbitmq-1       | 2026-07-14 05:48:34.335892+00:00 [info] <0.501.0> Started message store of type transient for vhost '/'[0m
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:49:32 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=up%7bjob%3d%22dcgm-exporter%22%7d+%3d%3d+1 HTTP/1.1" 200 185 "-" "curl/8.5.0"
+rabbitmq-1       | 2026-07-14 05:48:34.336008+00:00 [info] <0.514.0> Message store "628WB79CIFDYO9LJI6DKMI09L/msg_store_persistent": using rabbit_msg_store_ets_index to provide index[0m
+rabbitmq-1       | 2026-07-14 05:48:34.337107+00:00 [info] <0.501.0> Started message store of type persistent for vhost '/'[0m
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:49:32 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=time%28%29+-+timestamp%28DCGM_FI_DEV_GPU_UTIL%29 HTTP/1.1" 200 696 "-" "curl/8.5.0"
+grafana-1        | logger=annotation.app t=2026-07-14T05:48:11.84871474Z level=info msg="Starting annotation cleanup loop" interval=24h0m0s retention=2160h0m0s
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:49:34 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=DCGM_FI_DEV_GPU_UTIL HTTP/1.1" 200 730 "-" "curl/8.5.0"
+grafana-1        | logger=infra.usagestats.collector t=2026-07-14T05:48:11.84939767Z level=info msg="registering usage stat providers" usageStatsProvidersLen=2
+rabbitmq-1       | 2026-07-14 05:48:34.345569+00:00 [info] <0.501.0> Recovering 2 queues of type rabbit_classic_queue took 17ms[0m
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:48:11.890209231Z level=info msg=starting module=tracing
+rabbitmq-1       | 2026-07-14 05:48:34.345603+00:00 [info] <0.501.0> Recovering 0 queues of type rabbit_quorum_queue took 0ms[0m
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:48:11.890330128Z level=info msg=starting module=grafana-apiserver
+rabbitmq-1       | 2026-07-14 05:48:34.345654+00:00 [info] <0.501.0> Recovering 0 queues of type rabbit_stream_queue took 0ms[0m
+grafana-1        | logger=grafana-apiserver t=2026-07-14T05:48:12.0851346Z level=info msg="Adding GroupVersion dashboard.grafana.app v2 to ResourceManager"
+grafana-1        | logger=grafana-apiserver t=2026-07-14T05:48:12.085326665Z level=info msg="Adding GroupVersion dashboard.grafana.app v2beta1 to ResourceManager"
+grafana-1        | logger=grafana-apiserver t=2026-07-14T05:48:12.085504889Z level=info msg="Adding GroupVersion dashboard.grafana.app v2alpha1 to ResourceManager"
+grafana-1        | logger=grafana-apiserver t=2026-07-14T05:48:12.085757898Z level=info msg="Adding GroupVersion dashboard.grafana.app v0alpha1 to ResourceManager"
+grafana-1        | logger=grafana-apiserver t=2026-07-14T05:48:12.085908858Z level=info msg="Adding GroupVersion dashboard.grafana.app v1 to ResourceManager"
+grafana-1        | logger=grafana-apiserver t=2026-07-14T05:48:12.086043258Z level=info msg="Adding GroupVersion dashboard.grafana.app v1beta1 to ResourceManager"
+grafana-1        | t=2026-07-14T05:48:12.086097067Z level=info caller=logger.go:214 time=2026-07-14T05:48:12.086091147Z msg="Zanzana is not enabled; skipping folder propagation hooks"
+grafana-1        | t=2026-07-14T05:48:12.086111147Z level=info caller=logger.go:214 time=2026-07-14T05:48:12.086109195Z msg="Zanzana is not enabled; skipping folder propagation hooks"
+grafana-1        | logger=grafana-apiserver t=2026-07-14T05:48:12.086511036Z level=info msg="Adding GroupVersion folder.grafana.app v1 to ResourceManager"
+grafana-1        | logger=grafana-apiserver t=2026-07-14T05:48:12.086690428Z level=info msg="Adding GroupVersion folder.grafana.app v1beta1 to ResourceManager"
+grafana-1        | logger=grafana-apiserver t=2026-07-14T05:48:12.086964301Z level=info msg="Adding GroupVersion userstorage.grafana.app v0alpha1 to ResourceManager"
+grafana-1        | logger=grafana-apiserver t=2026-07-14T05:48:12.087162509Z level=info msg="Adding GroupVersion preferences.grafana.app v1alpha1 to ResourceManager"
+grafana-1        | logger=grafana-apiserver t=2026-07-14T05:48:12.087596767Z level=info msg="Adding GroupVersion collections.grafana.app v1alpha1 to ResourceManager"
+grafana-1        | logger=grafana-apiserver t=2026-07-14T05:48:12.090547478Z level=info msg="Adding GroupVersion provisioning.grafana.app v0alpha1 to ResourceManager"
+grafana-1        | logger=grafana-apiserver t=2026-07-14T05:48:12.091392104Z level=info msg="Adding GroupVersion provisioning.grafana.app v1beta1 to ResourceManager"
+grafana-1        | logger=grafana-apiserver t=2026-07-14T05:48:12.091498377Z level=info msg="Adding GroupVersion features.grafana.app v0alpha1 to ResourceManager"
+grafana-1        | logger=grafana-apiserver t=2026-07-14T05:48:12.091822985Z level=info msg="Adding GroupVersion playlist.grafana.app v1 to ResourceManager"
+grafana-1        | logger=grafana-apiserver t=2026-07-14T05:48:12.092015146Z level=info msg="Adding GroupVersion playlist.grafana.app v0alpha1 to ResourceManager"
+worker-1         | 
+rabbitmq-1       | 2026-07-14 05:48:34.347439+00:00 [info] <0.254.0> Running boot step empty_db_check defined by app rabbit[0m
+worker-1         | [2026-07-14 05:48:31,637: ERROR/MainProcess] consumer: Cannot connect to amqp://ntc_worker:**@rabbitmq:5672//: [Errno 111] Connection refused.
+worker-1         | Trying again in 4.00 seconds... (2/100)
+grafana-1        | t=2026-07-14T05:48:12.092040666Z level=info caller=logger.go:214 time=2026-07-14T05:48:12.092034058Z msg="Installed APIs for app" app=playlist
+rabbitmq-1       | 2026-07-14 05:48:34.347473+00:00 [info] <0.254.0> Will not seed default virtual host and user: have definitions to load...[0m
+rabbitmq-1       | 2026-07-14 05:48:34.347505+00:00 [info] <0.254.0> Running boot step rabbit_observer_cli defined by app rabbit[0m
+grafana-1        | logger=grafana-apiserver t=2026-07-14T05:48:12.092604331Z level=info msg="Adding GroupVersion plugins.grafana.app v0alpha1 to ResourceManager"
+grafana-1        | t=2026-07-14T05:48:12.092625291Z level=info caller=logger.go:214 time=2026-07-14T05:48:12.092622827Z msg="Installed APIs for app" app=plugins
+grafana-1        | logger=grafana-apiserver t=2026-07-14T05:48:12.093067245Z level=info msg="Adding GroupVersion example.grafana.app v1alpha1 to ResourceManager"
+grafana-1        | logger=grafana-apiserver t=2026-07-14T05:48:12.093237421Z level=info msg="Adding GroupVersion example.grafana.app v0alpha1 to ResourceManager"
+grafana-1        | t=2026-07-14T05:48:12.093271549Z level=info caller=logger.go:214 time=2026-07-14T05:48:12.093269181Z msg="Installed APIs for app" app=example
+grafana-1        | t=2026-07-14T05:48:12.093309997Z level=warn caller=logger.go:224 time=2026-07-14T05:48:12.093307949Z msg="skipped registering status sub-resource that does not support dual writing" resource=alertrules.rules.alerting.grafana.app version=v0alpha1 storagePath=alertrules/status
+grafana-1        | t=2026-07-14T05:48:12.093321293Z level=warn caller=logger.go:224 time=2026-07-14T05:48:12.093319421Z msg="skipped registering status sub-resource that does not support dual writing" resource=recordingrules.rules.alerting.grafana.app version=v0alpha1 storagePath=recordingrules/status
+grafana-1        | logger=grafana-apiserver t=2026-07-14T05:48:12.093780927Z level=info msg="Adding GroupVersion rules.alerting.grafana.app v0alpha1 to ResourceManager"
+grafana-1        | t=2026-07-14T05:48:12.093799791Z level=info caller=logger.go:214 time=2026-07-14T05:48:12.093797999Z msg="Installed APIs for app" app=alerting
+grafana-1        | logger=grafana-apiserver t=2026-07-14T05:48:12.094713265Z level=info msg="Adding GroupVersion notifications.alerting.grafana.app v1beta1 to ResourceManager"
+grafana-1        | logger=grafana-apiserver t=2026-07-14T05:48:12.09528365Z level=info msg="Adding GroupVersion notifications.alerting.grafana.app v0alpha1 to ResourceManager"
+worker-1         | 
+rabbitmq-1       | 2026-07-14 05:48:34.347564+00:00 [info] <0.254.0> Running boot step rabbit_looking_glass defined by app rabbit[0m
+worker-1         | [2026-07-14 05:48:35,639: ERROR/MainProcess] consumer: Cannot connect to amqp://ntc_worker:**@rabbitmq:5672//: [Errno 111] Connection refused.
+worker-1         | Trying again in 6.00 seconds... (3/100)
+rabbitmq-1       | 2026-07-14 05:48:34.347582+00:00 [info] <0.254.0> Running boot step rabbit_core_metrics_gc defined by app rabbit[0m
+worker-1         | 
+rabbitmq-1       | 2026-07-14 05:48:34.347679+00:00 [info] <0.254.0> Running boot step background_gc defined by app rabbit[0m
+grafana-1        | t=2026-07-14T05:48:12.09533141Z level=info caller=logger.go:214 time=2026-07-14T05:48:12.095329074Z msg="Installed APIs for app" app=alerting-notifications
+rabbitmq-1       | 2026-07-14 05:48:34.347766+00:00 [info] <0.254.0> Running boot step routing_ready defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:48:34.347783+00:00 [info] <0.254.0> Running boot step pre_flight defined by app rabbit[0m
+grafana-1        | logger=grafana-apiserver t=2026-07-14T05:48:12.095837652Z level=info msg="Adding GroupVersion advisor.grafana.app v0alpha1 to ResourceManager"
+rabbitmq-1       | 2026-07-14 05:48:34.347813+00:00 [info] <0.254.0> Running boot step notify_cluster defined by app rabbit[0m
+grafana-1        | t=2026-07-14T05:48:12.09586922Z level=info caller=logger.go:214 time=2026-07-14T05:48:12.0958673Z msg="Installed APIs for app" app=advisor
+worker-1         | [2026-07-14 05:48:41,643: INFO/MainProcess] Connected to amqp://ntc_worker:**@rabbitmq:5672//
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:48:12.460621954Z level=info msg=starting module=plugins.store
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:48:12.460670482Z level=info msg=starting module=provisioning
+grafana-1        | t=2026-07-14T05:48:12.460684978Z level=info caller=logger.go:214 time=2026-07-14T05:48:12.46067357Z msg="App initialized" app=playlist
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:49:34 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=up%7bjob%3d%22dcgm-exporter%22%7d+%3d%3d+1 HTTP/1.1" 200 185 "-" "curl/8.5.0"
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:49:34 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=time%28%29+-+timestamp%28DCGM_FI_DEV_GPU_UTIL%29 HTTP/1.1" 200 693 "-" "curl/8.5.0"
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:49:36 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=DCGM_FI_DEV_GPU_UTIL HTTP/1.1" 200 730 "-" "curl/8.5.0"
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:49:36 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=up%7bjob%3d%22dcgm-exporter%22%7d+%3d%3d+1 HTTP/1.1" 200 185 "-" "curl/8.5.0"
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:49:36 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=time%28%29+-+timestamp%28DCGM_FI_DEV_GPU_UTIL%29 HTTP/1.1" 200 695 "-" "curl/8.5.0"
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:49:38 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=DCGM_FI_DEV_GPU_UTIL HTTP/1.1" 200 730 "-" "curl/8.5.0"
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:49:38 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=up%7bjob%3d%22dcgm-exporter%22%7d+%3d%3d+1 HTTP/1.1" 200 185 "-" "curl/8.5.0"
+rabbitmq-1       | 2026-07-14 05:48:34.347837+00:00 [info] <0.254.0> Running boot step networking defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:48:34.347859+00:00 [info] <0.254.0> Running boot step rabbit_quorum_queue_periodic_membership_reconciliation defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:48:34.347957+00:00 [info] <0.254.0> Running boot step definition_import_worker_pool defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:48:34.347995+00:00 [info] <0.342.0> Starting worker pool 'definition_import_pool' with 20 processes in it[0m
+rabbitmq-1       | 2026-07-14 05:48:34.348531+00:00 [info] <0.254.0> Running boot step cluster_name defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:48:34.348569+00:00 [info] <0.254.0> Running boot step virtual_host_reconciliation defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:48:34.348679+00:00 [info] <0.254.0> Running boot step direct_client defined by app rabbit[0m
+rabbitmq-1       | 2026-07-14 05:48:34.348719+00:00 [info] <0.254.0> Running boot step rabbit_federation_exchange defined by app rabbitmq_federation[0m
+reverse-proxy-1  | 172.25.0.1 - ntc_grafana_admin [14/Jul/2026:05:49:38 +0000] "GET /grafana/api/datasources/proxy/uid/prometheus/api/v1/query?query=time%28%29+-+timestamp%28DCGM_FI_DEV_GPU_UTIL%29 HTTP/1.1" 200 695 "-" "curl/8.5.0"
+rabbitmq-1       | 2026-07-14 05:48:34.348818+00:00 [info] <0.254.0> Running boot step rabbit_management_load_definitions defined by app rabbitmq_management[0m
+rabbitmq-1       | 2026-07-14 05:48:34.348893+00:00 [info] <0.582.0> Resetting node maintenance status[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:48:34.462635+00:00 [warning] <0.611.0> Deprecated features: `management_metrics_collection`: Feature `management_metrics_collection` is deprecated.[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:48:34.462635+00:00 [warning] <0.611.0> By default, this feature can still be used for now.[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:48:34.462635+00:00 [warning] <0.611.0> Its use will not be permitted by default in a future minor RabbitMQ version and the feature will be removed from a future major RabbitMQ version; actual versions to be determined.[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:48:34.462635+00:00 [warning] <0.611.0> To continue using this feature when it is not permitted by default, set the following parameter in your configuration:[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:48:34.462635+00:00 [warning] <0.611.0>     "deprecated_features.permit.management_metrics_collection = true"[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:48:34.462635+00:00 [warning] <0.611.0> To test RabbitMQ as if the feature was removed, set this in your configuration:[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:48:34.462635+00:00 [warning] <0.611.0>     "deprecated_features.permit.management_metrics_collection = false"[0m
+rabbitmq-1       | 2026-07-14 05:48:36.306403+00:00 [info] <0.648.0> Management plugin: HTTP (non-TLS) listener started on port 15672[0m
+rabbitmq-1       | 2026-07-14 05:48:36.306553+00:00 [info] <0.678.0> Statistics database started.[0m
+rabbitmq-1       | 2026-07-14 05:48:36.306605+00:00 [info] <0.677.0> Starting worker pool 'management_worker_pool' with 3 processes in it[0m
+rabbitmq-1       | 2026-07-14 05:48:36.327870+00:00 [info] <0.696.0> Prometheus metrics: HTTP (non-TLS) listener started on port 15692[0m
+rabbitmq-1       | 2026-07-14 05:48:36.328003+00:00 [info] <0.582.0> Ready to start client connection listeners[0m
+rabbitmq-1       | 2026-07-14 05:48:36.330463+00:00 [info] <0.740.0> started TCP listener on [::]:5672[0m
+rabbitmq-1       |  completed with 5 plugins.
+rabbitmq-1       | 2026-07-14 05:48:36.385018+00:00 [info] <0.582.0> Server startup complete; 5 plugins started.[0m
+rabbitmq-1       | 2026-07-14 05:48:36.385018+00:00 [info] <0.582.0>  * rabbitmq_prometheus[0m
+rabbitmq-1       | 2026-07-14 05:48:36.385018+00:00 [info] <0.582.0>  * rabbitmq_federation[0m
+rabbitmq-1       | 2026-07-14 05:48:36.385018+00:00 [info] <0.582.0>  * rabbitmq_management[0m
+rabbitmq-1       | 2026-07-14 05:48:36.385018+00:00 [info] <0.582.0>  * rabbitmq_management_agent[0m
+rabbitmq-1       | 2026-07-14 05:48:36.385018+00:00 [info] <0.582.0>  * rabbitmq_web_dispatch[0m
+rabbitmq-1       | 2026-07-14 05:48:36.563852+00:00 [info] <0.9.0> Time to start RabbitMQ: 5221 ms[0m
+grafana-1        | t=2026-07-14T05:48:12.460765506Z level=info caller=logger.go:214 time=2026-07-14T05:48:12.460761154Z msg="App initialized" app=alerting
+rabbitmq-1       | 2026-07-14 05:48:38.067486+00:00 [info] <0.749.0> accepting AMQP connection <0.749.0> (172.24.0.12:57690 -> 172.24.0.9:5672)[0m
+grafana-1        | t=2026-07-14T05:48:12.460802274Z level=info caller=logger.go:214 time=2026-07-14T05:48:12.46079869Z msg="App initialized" app=plugins
+grafana-1        | t=2026-07-14T05:48:12.460823858Z level=info caller=logger.go:214 time=2026-07-14T05:48:12.460820242Z msg="App initialized" app=example
+grafana-1        | t=2026-07-14T05:48:12.460900995Z level=info caller=logger.go:214 time=2026-07-14T05:48:12.460896499Z msg="App initialized" app=alerting-notifications
+grafana-1        | t=2026-07-14T05:48:12.460931379Z level=info caller=logger.go:214 time=2026-07-14T05:48:12.460927843Z msg="App initialized" app=advisor
+grafana-1        | t=2026-07-14T05:48:12.461786629Z level=info caller=logger.go:214 time=2026-07-14T05:48:12.461780117Z msg="start concurrent job driver" logger=concurrent-job-driver num_drivers=3 num_drivers=3
+grafana-1        | t=2026-07-14T05:48:12.461812997Z level=info caller=logger.go:214 time=2026-07-14T05:48:12.461808021Z msg="starting job cleanup controller" logger=job-cleanup-controller cleanup_interval=1m30s expiry=30s
+grafana-1        | t=2026-07-14T05:48:12.46240743Z level=info caller=logger.go:214 time=2026-07-14T05:48:12.462402086Z msg="Starting RepositoryController" logger=provisioning-repository-controller
+grafana-1        | t=2026-07-14T05:48:12.463279801Z level=info caller=logger.go:214 time=2026-07-14T05:48:12.463275193Z msg="start job driver" logger=concurrent-job-driver num_drivers=3 driver_id=0
+grafana-1        | t=2026-07-14T05:48:12.463684874Z level=info caller=logger.go:214 time=2026-07-14T05:48:12.463680602Z msg="start job driver" logger=concurrent-job-driver num_drivers=3 driver_id=1
+grafana-1        | t=2026-07-14T05:48:12.464052859Z level=info caller=logger.go:214 time=2026-07-14T05:48:12.464048715Z msg="start job driver" logger=concurrent-job-driver num_drivers=3 driver_id=2
+grafana-1        | logger=provisioning.datasources t=2026-07-14T05:48:12.485975107Z level=info msg="deleted datasource based on configuration" name=Prometheus
+grafana-1        | logger=provisioning.datasources t=2026-07-14T05:48:12.486203268Z level=info msg="inserting datasource from configuration" name=Prometheus uid=prometheus
+grafana-1        | logger=provisioning.plugins t=2026-07-14T05:48:12.502357966Z level=error msg="Failed to read plugin provisioning files from directory" path=/etc/grafana/provisioning/plugins error="open /etc/grafana/provisioning/plugins: no such file or directory"
+grafana-1        | logger=provisioning.alerting t=2026-07-14T05:48:12.502400526Z level=error msg="can't read alerting provisioning files from directory" path=/etc/grafana/provisioning/alerting error="open /etc/grafana/provisioning/alerting: no such file or directory"
+grafana-1        | logger=provisioning.alerting t=2026-07-14T05:48:12.502406014Z level=info msg="starting to provision alerting"
+grafana-1        | logger=provisioning.alerting t=2026-07-14T05:48:12.50241227Z level=info msg="finished to provision alerting"
+grafana-1        | logger=bleve-backend namespace=default group=dashboard.grafana.app resource=dashboards size=1 reason=search t=2026-07-14T05:48:12.525565754Z level=info msg="Building index using memory"
+grafana-1        | logger=bleve-backend namespace=default group=dashboard.grafana.app resource=dashboards size=1 reason=search t=2026-07-14T05:48:12.527792911Z level=info msg="Finished building index" elapsed=2.204677ms listRV=1784007725885006
+grafana-1        | logger=bleve-backend namespace=default group=dashboard.grafana.app resource=dashboards size=1 reason=search t=2026-07-14T05:48:12.527815231Z level=info msg="Storing index in cache" key="{Namespace:default Group:dashboard.grafana.app Resource:dashboards}" expiration=2026-07-14T05:58:12.527814271Z
+grafana-1        | logger=provisioning.dashboard t=2026-07-14T05:48:12.540193823Z level=info msg="starting to provision dashboards"
+grafana-1        | logger=provisioning.dashboard t=2026-07-14T05:48:12.542382277Z level=info msg="finished to provision dashboards"
+rabbitmq-1       | 2026-07-14 05:48:38.069759+00:00 [info] <0.749.0> connection <0.749.0> (172.24.0.12:57690 -> 172.24.0.9:5672): user 'ntc_worker' authenticated and granted access to vhost '/'[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:48:38.071908+00:00 [warning] <0.757.0> Deprecated features: `transient_nonexcl_queues`: Feature `transient_nonexcl_queues` is deprecated.[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:48:38.071908+00:00 [warning] <0.757.0> By default, this feature can still be used for now.[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:48:38.071908+00:00 [warning] <0.757.0> Its use will not be permitted by default in a future minor RabbitMQ version and the feature will be removed from a future major RabbitMQ version; actual versions to be determined.[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:48:38.071908+00:00 [warning] <0.757.0> To continue using this feature when it is not permitted by default, set the following parameter in your configuration:[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:48:38.071908+00:00 [warning] <0.757.0>     "deprecated_features.permit.transient_nonexcl_queues = true"[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:48:38.071908+00:00 [warning] <0.757.0> To test RabbitMQ as if the feature was removed, set this in your configuration:[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:48:38.071908+00:00 [warning] <0.757.0>     "deprecated_features.permit.transient_nonexcl_queues = false"[0m
+rabbitmq-1       | 2026-07-14 05:48:38.075614+00:00 [info] <0.768.0> accepting AMQP connection <0.768.0> (172.24.0.12:57704 -> 172.24.0.9:5672)[0m
+rabbitmq-1       | 2026-07-14 05:48:38.077974+00:00 [info] <0.768.0> connection <0.768.0> (172.24.0.12:57704 -> 172.24.0.9:5672): user 'ntc_worker' authenticated and granted access to vhost '/'[0m
+rabbitmq-1       | 2026-07-14 05:48:39.544719+00:00 [info] <0.781.0> accepting AMQP connection <0.781.0> (172.24.0.1:55792 -> 172.24.0.9:5672)[0m
+rabbitmq-1       | 2026-07-14 05:48:39.546752+00:00 [info] <0.781.0> connection <0.781.0> (172.24.0.1:55792 -> 172.24.0.9:5672): user 'ntc_worker' authenticated and granted access to vhost '/'[0m
+rabbitmq-1       | 2026-07-14 05:48:39.548021+00:00 [info] <0.781.0> closing AMQP connection <0.781.0> (172.24.0.1:55792 -> 172.24.0.9:5672, vhost: '/', user: 'ntc_worker')[0m
+rabbitmq-1       | 2026-07-14 05:48:39.591015+00:00 [info] <0.796.0> accepting AMQP connection <0.796.0> (172.24.0.1:55796 -> 172.24.0.9:5672)[0m
+rabbitmq-1       | 2026-07-14 05:48:39.592847+00:00 [info] <0.796.0> connection <0.796.0> (172.24.0.1:55796 -> 172.24.0.9:5672): user 'ntc_worker' authenticated and granted access to vhost '/'[0m
+rabbitmq-1       | 2026-07-14 05:48:39.603078+00:00 [info] <0.796.0> closing AMQP connection <0.796.0> (172.24.0.1:55796 -> 172.24.0.9:5672, vhost: '/', user: 'ntc_worker')[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:48:41.129643+00:00 [warning] <0.749.0> closing AMQP connection <0.749.0> (172.24.0.12:57690 -> 172.24.0.9:5672, vhost: '/', user: 'ntc_worker'):[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:48:41.129643+00:00 [warning] <0.749.0> client unexpectedly closed TCP connection[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:48:41.129922+00:00 [warning] <0.768.0> closing AMQP connection <0.768.0> (172.24.0.12:57704 -> 172.24.0.9:5672, vhost: '/', user: 'ntc_worker'):[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:48:41.129922+00:00 [warning] <0.768.0> client unexpectedly closed TCP connection[0m
+rabbitmq-1       | 2026-07-14 05:48:41.640919+00:00 [info] <0.822.0> accepting AMQP connection <0.822.0> (172.24.0.12:57706 -> 172.24.0.9:5672)[0m
+rabbitmq-1       | 2026-07-14 05:48:41.642996+00:00 [info] <0.822.0> connection <0.822.0> (172.24.0.12:57706 -> 172.24.0.9:5672): user 'ntc_worker' authenticated and granted access to vhost '/'[0m
+rabbitmq-1       | 2026-07-14 05:48:41.644497+00:00 [info] <0.830.0> accepting AMQP connection <0.830.0> (172.24.0.12:57710 -> 172.24.0.9:5672)[0m
+rabbitmq-1       | 2026-07-14 05:48:41.645750+00:00 [info] <0.830.0> connection <0.830.0> (172.24.0.12:57710 -> 172.24.0.9:5672): user 'ntc_worker' authenticated and granted access to vhost '/'[0m
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:48:12.553459746Z level=info msg=starting module=*metrics.InternalMetricsService
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:48:12.553492066Z level=info msg=starting module=*migrations.SecretMigrationProviderImpl
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:48:12.55360981Z level=info msg=starting module=*service.DashboardServiceImpl
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:48:12.553712722Z level=info msg=starting module=*live.GrafanaLive
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:48:12.553766322Z level=info msg=starting module=*supportbundlesimpl.Service
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:48:12.55682401Z level=info msg=starting module=*service.DashboardUpdater
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:48:12.556895866Z level=info msg=starting module=*store.standardStorageService
+grafana-1        | logger=grafanaStorageLogger t=2026-07-14T05:48:12.556912523Z level=info msg="Storage starting"
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:48:12.556939275Z level=info msg=starting module=*garbagecollectionworker.Worker
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:48:12.556961691Z level=info msg=starting module=*remotecache.RemoteCache
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:48:12.557186283Z level=info msg=starting module=*authz.EmbeddedZanzanaService
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:48:12.557209467Z level=info msg=starting module=*pluginexternal.Service
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:48:12.557226699Z level=info msg=starting module=*notifications.NotificationService
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:48:12.557259083Z level=info msg=starting module=*cleanup.CleanUpService
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:48:12.557356428Z level=info msg=starting module=*dualwrite.ZanzanaReconciler
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:48:12.55737886Z level=info msg=starting module=*pushhttp.Gateway
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:48:12.557393772Z level=info msg=starting module=*appregistry.Service
+grafana-1        | logger=app-registry t=2026-07-14T05:48:12.557410796Z level=info msg="app registry initialized"
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:48:12.557423308Z level=info msg=starting module=*ssosettingsimpl.Service
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:48:12.557445804Z level=info msg=starting module=*rendering.RenderingService
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:48:12.557470636Z level=info msg=starting module=*ngalert.AlertNG
+grafana-1        | logger=ngalert t=2026-07-14T05:48:12.55750302Z level=info msg="Primary node, alert rule evaluation enabled"
+grafana-1        | logger=ngalert.state.manager t=2026-07-14T05:48:12.55751902Z level=info msg="Warming state cache for startup"
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:48:12.557781005Z level=info msg=starting module=*metric.Service
+grafana-1        | logger=ngalert.multiorg.alertmanager t=2026-07-14T05:48:12.558110894Z level=info msg="Starting MultiOrg Alertmanager"
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:48:12.558532239Z level=info msg=starting module=*store.dummyEntityEventsService
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:48:12.558556799Z level=info msg=starting module=*service.UsageStats
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:48:12.558690319Z level=info msg=starting module=*manager.ServiceAccountsService
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:48:12.558761103Z level=info msg=starting module=*manager.SecretsService
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:48:12.558800991Z level=info msg=starting module=*loginattemptimpl.Service
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:48:12.558821359Z level=info msg=starting module=*api.HTTPServer
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:48:12.559929218Z level=info msg=starting module=*anonimpl.AnonDeviceService
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:48:12.559958962Z level=info msg=starting module=*statscollector.Service
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:48:12.559979234Z level=info msg=starting module=*authimpl.UserAuthTokenService
+grafana-1        | logger=http.server t=2026-07-14T05:48:12.560554804Z level=info msg="HTTP Server Listen" address=[::]:3000 protocol=http subUrl=/grafana socket=
+grafana-1        | logger=backgroundsvcs.managerAdapter t=2026-07-14T05:48:12.560676548Z level=info msg="All modules healthy"
+grafana-1        | t=2026-07-14T05:48:12.561531702Z level=info caller=logger.go:214 time=2026-07-14T05:48:12.561518422Z msg="Starting ConnectionController" logger=provisioning-connection-controller
+grafana-1        | t=2026-07-14T05:48:12.561549174Z level=info caller=logger.go:214 time=2026-07-14T05:48:12.561546358Z msg="Starting workers" logger=provisioning-connection-controller count=1
+grafana-1        | t=2026-07-14T05:48:12.561555126Z level=info caller=logger.go:214 time=2026-07-14T05:48:12.561553174Z msg="Started workers" logger=provisioning-connection-controller
+grafana-1        | t=2026-07-14T05:48:12.563378187Z level=info caller=logger.go:214 time=2026-07-14T05:48:12.563362843Z msg="Starting workers" logger=provisioning-repository-controller count=1
+grafana-1        | t=2026-07-14T05:48:12.563396635Z level=info caller=logger.go:214 time=2026-07-14T05:48:12.563394667Z msg="Started workers" logger=provisioning-repository-controller
+grafana-1        | logger=ngalert.state.manager t=2026-07-14T05:48:12.598600006Z level=info msg="State cache has been initialized" states=0 duration=41.081418ms
+grafana-1        | logger=ngalert.scheduler t=2026-07-14T05:48:12.598694262Z level=info msg="Starting scheduler" tickInterval=10s maxAttempts=3
+grafana-1        | logger=ngalert.scheduler t=2026-07-14T05:48:12.598740663Z level=info msg=starting component=ticker first_tick=2026-07-14T05:48:20Z
+grafana-1        | logger=bleve-backend namespace=default group=folder.grafana.app resource=folders size=1 reason=getStats t=2026-07-14T05:49:26.563725004Z level=info msg="Building index using memory"
+grafana-1        | logger=bleve-backend namespace=default group=folder.grafana.app resource=folders size=1 reason=getStats t=2026-07-14T05:49:26.565340495Z level=info msg="Finished building index" elapsed=1.584867ms listRV=1784007725855998
+grafana-1        | logger=bleve-backend namespace=default group=folder.grafana.app resource=folders size=1 reason=getStats t=2026-07-14T05:49:26.565364639Z level=info msg="Storing index in cache" key="{Namespace:default Group:folder.grafana.app Resource:folders}" expiration=2026-07-14T05:59:26.565363407Z
+grafana-1        | logger=bleve-backend namespace=default group=provisioning.grafana.app resource=repositories size=0 reason=getStats t=2026-07-14T05:49:26.566376929Z level=info msg="Building index using memory"
+grafana-1        | logger=bleve-backend namespace=default group=provisioning.grafana.app resource=repositories size=0 reason=getStats t=2026-07-14T05:49:26.56679397Z level=info msg="Finished building index" elapsed=397.185µs listRV=1
+grafana-1        | logger=bleve-backend namespace=default group=provisioning.grafana.app resource=repositories size=0 reason=getStats t=2026-07-14T05:49:26.566822834Z level=info msg="Storing index in cache" key="{Namespace:default Group:provisioning.grafana.app Resource:repositories}" expiration=2026-07-14T05:59:26.56682197Z
+grafana-1        | logger=bleve-backend namespace=default group=playlist.grafana.app resource=playlists size=0 reason=getStats t=2026-07-14T05:49:26.567634963Z level=info msg="Building index using memory"
+grafana-1        | logger=bleve-backend namespace=default group=playlist.grafana.app resource=playlists size=0 reason=getStats t=2026-07-14T05:49:26.568064324Z level=info msg="Finished building index" elapsed=409.921µs listRV=1
+grafana-1        | logger=bleve-backend namespace=default group=playlist.grafana.app resource=playlists size=0 reason=getStats t=2026-07-14T05:49:26.568082308Z level=info msg="Storing index in cache" key="{Namespace:default Group:playlist.grafana.app Resource:playlists}" expiration=2026-07-14T05:59:26.568081316Z
+grafana-1        | logger=infra.usagestats t=2026-07-14T05:49:26.568355428Z level=info msg="Usage stats are ready to report"
+rabbitmq-1       | [38;5;214m2026-07-14 05:48:41.647285+00:00 [warning] <0.842.0> Deprecated features: `global_qos`: Feature `global_qos` is deprecated.[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:48:41.647285+00:00 [warning] <0.842.0> By default, this feature can still be used for now.[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:48:41.647285+00:00 [warning] <0.842.0> Its use will not be permitted by default in a future minor RabbitMQ version and the feature will be removed from a future major RabbitMQ version; actual versions to be determined.[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:48:41.647285+00:00 [warning] <0.842.0> To continue using this feature when it is not permitted by default, set the following parameter in your configuration:[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:48:41.647285+00:00 [warning] <0.842.0>     "deprecated_features.permit.global_qos = true"[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:48:41.647285+00:00 [warning] <0.842.0> To test RabbitMQ as if the feature was removed, set this in your configuration:[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:48:41.647285+00:00 [warning] <0.842.0>     "deprecated_features.permit.global_qos = false"[0m
+rabbitmq-1       | 2026-07-14 05:48:51.567575+00:00 [info] <0.864.0> accepting AMQP connection <0.864.0> (172.24.0.12:50336 -> 172.24.0.9:5672)[0m
+rabbitmq-1       | 2026-07-14 05:48:51.569651+00:00 [info] <0.864.0> connection <0.864.0> (172.24.0.12:50336 -> 172.24.0.9:5672): user 'ntc_worker' authenticated and granted access to vhost '/'[0m
+rabbitmq-1       | 2026-07-14 05:48:51.574635+00:00 [info] <0.881.0> accepting AMQP connection <0.881.0> (172.24.0.12:50346 -> 172.24.0.9:5672)[0m
+rabbitmq-1       | 2026-07-14 05:48:51.576297+00:00 [info] <0.881.0> connection <0.881.0> (172.24.0.12:50346 -> 172.24.0.9:5672): user 'ntc_worker' authenticated and granted access to vhost '/'[0m
+rabbitmq-1       | 2026-07-14 05:48:51.578412+00:00 [info] <0.893.0> accepting AMQP connection <0.893.0> (172.24.0.12:50352 -> 172.24.0.9:5672)[0m
+rabbitmq-1       | 2026-07-14 05:48:51.579861+00:00 [info] <0.893.0> connection <0.893.0> (172.24.0.12:50352 -> 172.24.0.9:5672): user 'ntc_worker' authenticated and granted access to vhost '/'[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:48:51.623830+00:00 [warning] <0.864.0> closing AMQP connection <0.864.0> (172.24.0.12:50336 -> 172.24.0.9:5672, vhost: '/', user: 'ntc_worker'):[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:48:51.623830+00:00 [warning] <0.864.0> client unexpectedly closed TCP connection[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:48:51.624099+00:00 [warning] <0.881.0> closing AMQP connection <0.881.0> (172.24.0.12:50346 -> 172.24.0.9:5672, vhost: '/', user: 'ntc_worker'):[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:48:51.624099+00:00 [warning] <0.881.0> client unexpectedly closed TCP connection[0m
+rabbitmq-1       | 2026-07-14 05:49:02.083754+00:00 [info] <0.920.0> accepting AMQP connection <0.920.0> (172.24.0.12:34586 -> 172.24.0.9:5672)[0m
+rabbitmq-1       | 2026-07-14 05:49:02.086040+00:00 [info] <0.920.0> connection <0.920.0> (172.24.0.12:34586 -> 172.24.0.9:5672): user 'ntc_worker' authenticated and granted access to vhost '/'[0m
+rabbitmq-1       | 2026-07-14 05:49:02.090203+00:00 [info] <0.937.0> accepting AMQP connection <0.937.0> (172.24.0.12:34592 -> 172.24.0.9:5672)[0m
+rabbitmq-1       | 2026-07-14 05:49:02.091520+00:00 [info] <0.937.0> connection <0.937.0> (172.24.0.12:34592 -> 172.24.0.9:5672): user 'ntc_worker' authenticated and granted access to vhost '/'[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:49:02.126662+00:00 [warning] <0.920.0> closing AMQP connection <0.920.0> (172.24.0.12:34586 -> 172.24.0.9:5672, vhost: '/', user: 'ntc_worker'):[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:49:02.126662+00:00 [warning] <0.920.0> client unexpectedly closed TCP connection[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:49:02.126939+00:00 [warning] <0.937.0> closing AMQP connection <0.937.0> (172.24.0.12:34592 -> 172.24.0.9:5672, vhost: '/', user: 'ntc_worker'):[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:49:02.126939+00:00 [warning] <0.937.0> client unexpectedly closed TCP connection[0m
+rabbitmq-1       | 2026-07-14 05:49:12.579487+00:00 [info] <0.965.0> accepting AMQP connection <0.965.0> (172.24.0.12:59714 -> 172.24.0.9:5672)[0m
+rabbitmq-1       | 2026-07-14 05:49:12.581914+00:00 [info] <0.965.0> connection <0.965.0> (172.24.0.12:59714 -> 172.24.0.9:5672): user 'ntc_worker' authenticated and granted access to vhost '/'[0m
+rabbitmq-1       | 2026-07-14 05:49:12.586915+00:00 [info] <0.982.0> accepting AMQP connection <0.982.0> (172.24.0.12:59722 -> 172.24.0.9:5672)[0m
+rabbitmq-1       | 2026-07-14 05:49:12.588154+00:00 [info] <0.982.0> connection <0.982.0> (172.24.0.12:59722 -> 172.24.0.9:5672): user 'ntc_worker' authenticated and granted access to vhost '/'[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:49:12.624114+00:00 [warning] <0.965.0> closing AMQP connection <0.965.0> (172.24.0.12:59714 -> 172.24.0.9:5672, vhost: '/', user: 'ntc_worker'):[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:49:12.624114+00:00 [warning] <0.965.0> client unexpectedly closed TCP connection[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:49:12.624313+00:00 [warning] <0.982.0> closing AMQP connection <0.982.0> (172.24.0.12:59722 -> 172.24.0.9:5672, vhost: '/', user: 'ntc_worker'):[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:49:12.624313+00:00 [warning] <0.982.0> client unexpectedly closed TCP connection[0m
+rabbitmq-1       | 2026-07-14 05:49:23.065819+00:00 [info] <0.1009.0> accepting AMQP connection <0.1009.0> (172.24.0.12:46100 -> 172.24.0.9:5672)[0m
+rabbitmq-1       | 2026-07-14 05:49:23.068000+00:00 [info] <0.1009.0> connection <0.1009.0> (172.24.0.12:46100 -> 172.24.0.9:5672): user 'ntc_worker' authenticated and granted access to vhost '/'[0m
+rabbitmq-1       | 2026-07-14 05:49:23.072687+00:00 [info] <0.1026.0> accepting AMQP connection <0.1026.0> (172.24.0.12:46116 -> 172.24.0.9:5672)[0m
+rabbitmq-1       | 2026-07-14 05:49:23.073840+00:00 [info] <0.1026.0> connection <0.1026.0> (172.24.0.12:46116 -> 172.24.0.9:5672): user 'ntc_worker' authenticated and granted access to vhost '/'[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:49:23.119329+00:00 [warning] <0.1009.0> closing AMQP connection <0.1009.0> (172.24.0.12:46100 -> 172.24.0.9:5672, vhost: '/', user: 'ntc_worker'):[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:49:23.119329+00:00 [warning] <0.1009.0> client unexpectedly closed TCP connection[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:49:23.119605+00:00 [warning] <0.1026.0> closing AMQP connection <0.1026.0> (172.24.0.12:46116 -> 172.24.0.9:5672, vhost: '/', user: 'ntc_worker'):[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:49:23.119605+00:00 [warning] <0.1026.0> client unexpectedly closed TCP connection[0m
+rabbitmq-1       | 2026-07-14 05:49:33.587607+00:00 [info] <0.1053.0> accepting AMQP connection <0.1053.0> (172.24.0.12:36334 -> 172.24.0.9:5672)[0m
+rabbitmq-1       | 2026-07-14 05:49:33.589422+00:00 [info] <0.1053.0> connection <0.1053.0> (172.24.0.12:36334 -> 172.24.0.9:5672): user 'ntc_worker' authenticated and granted access to vhost '/'[0m
+rabbitmq-1       | 2026-07-14 05:49:33.593769+00:00 [info] <0.1070.0> accepting AMQP connection <0.1070.0> (172.24.0.12:36336 -> 172.24.0.9:5672)[0m
+rabbitmq-1       | 2026-07-14 05:49:33.595221+00:00 [info] <0.1070.0> connection <0.1070.0> (172.24.0.12:36336 -> 172.24.0.9:5672): user 'ntc_worker' authenticated and granted access to vhost '/'[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:49:33.639134+00:00 [warning] <0.1053.0> closing AMQP connection <0.1053.0> (172.24.0.12:36334 -> 172.24.0.9:5672, vhost: '/', user: 'ntc_worker'):[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:49:33.639134+00:00 [warning] <0.1053.0> client unexpectedly closed TCP connection[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:49:33.639370+00:00 [warning] <0.1070.0> closing AMQP connection <0.1070.0> (172.24.0.12:36336 -> 172.24.0.9:5672, vhost: '/', user: 'ntc_worker'):[0m
+rabbitmq-1       | [38;5;214m2026-07-14 05:49:33.639370+00:00 [warning] <0.1070.0> client unexpectedly closed TCP connection[0m

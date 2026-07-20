@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "captured_at": "2026-07-17T12:15:00+07:00",
+  "scope": "measured implementation snapshot after plan.md optimization",
+  "model": {
+    "id": "nvidia/nemotron-nano-9b-v2",
+    "runtime": "NVIDIA NIM",
+    "runtime_version": "1.0.0",
+    "engine": "NVIDIA vLLM 0.10.2",
+    "precision": "NVFP4",
+    "runtime_capability_tokens": 131072,
+    "application_context_window_tokens": 32768,
+    "prompt_version": "nemotron-grounded-v8",
+    "prompt_sha256": "de7e06df0c49e06170b9a39be06c7a3eb95c4cb04b5c331a6726bbeb2713ec84"
+  },
+  "tests": {
+    "pytest_passed": 375,
+    "pytest_skipped": 6,
+    "pytest_warnings": 3,
+    "web_tests_passed": 12,
+    "python_mypy_source_files": 65,
+    "chatbot_contract_tests_passed": 22
+  },
+  "live_prompt_only_fast": {
+    "measured": true,
+    "requests": 3,
+    "successful": 3,
+    "answered": 3,
+    "concurrency": 1,
+    "ttft_p50_ms": 3786.0124409780838,
+    "ttft_p95_ms": 3813.878402975388,
+    "total_latency_p50_ms": 3803.7300719879568,
+    "total_latency_p95_ms": 3835.657045483822,
+    "throughput_requests_per_second": 0.26228787547750176,
+    "note": "Visible output is buffered until validation, so TTFT is not raw decoder-token TTFT."
+  },
+  "live_rag_smoke": {
+    "upload_status": "completed",
+    "parse_quality_status": "ready",
+    "ingestion_seconds": 0.904,
+    "chunks": 52,
+    "first_answer_done": true,
+    "first_answer_citations": 3,
+    "first_answer_stable_ids": 3,
+    "first_answer_version_ids": 3,
+    "followup_without_reattach_done": true,
+    "followup_citations": 2,
+    "persisted_messages": 6
+  },
+  "vector_database": {
+    "backend": "Qdrant",
+    "active_alias": "ntc_chunks_active",
+    "physical_collection": "ntc_chunks_embed300m_v2_uploads_v1",
+    "status": "green",
+    "optimizer_status": "ok",
+    "distance": "Cosine",
+    "dimension": 2048,
+    "points": 879,
+    "indexed_vectors_count": 0,
+    "full_scan_threshold": 10000,
+    "note": "The active collection is below threshold, so Qdrant currently uses full scan; HNSW is not yet built."
+  },
+  "active_health": {
+    "api": "healthy",
+    "web": "healthy",
+    "worker": "healthy",
+    "postgres": "healthy",
+    "redis": "healthy",
+    "rabbitmq": "healthy",
+    "minio": "healthy",
+    "qdrant": "healthy",
+    "reverse_proxy": "healthy"
+  },
+  "quality_comparison": {
+    "fixed_dataset_run": false,
+    "improvement_claimed": false,
+    "reason": "No approved fixed 100+ production-like memory/citation/answer-key dataset was supplied."
+  },
+  "acceptance_gaps": [
+    "Reranker remains disabled because the available comparison reduced recall and increased p95 latency.",
+    "No like-for-like BF16 versus NVFP4 chatbot evaluation was run.",
+    "mamba_ssm_cache_dtype=float32 cannot be controlled or verified in the selected NIM profile.",
+    "Semantic citation claim-support verification is not implemented.",
+    "Hierarchical very-long-document summaries and map-reduce are not implemented.",
+    "Grounded output is buffered until validation and is not true token streaming.",
+    "Deleted-document Qdrant points are not yet vacuumed by an automated tombstone/rebuild workflow.",
+    "The full repository Prettier gate has 73 pre-existing out-of-scope warnings."
+  ]
+}

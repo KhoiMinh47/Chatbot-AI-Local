@@ -1,0 +1,11 @@
+{
+  "status": "pass",
+  "timestamp_observed": true,
+  "gpu_observation_observed": true,
+  "host_memory_observed": true,
+  "docker_stats_observed": true,
+  "docker_stats_observed_for_all_expected_containers": true,
+  "complete_sample_observed": true,
+  "expected_container_count": 1,
+  "unified_memory_na_allowed": true
+}

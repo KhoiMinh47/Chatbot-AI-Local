@@ -1,0 +1,14 @@
+.git/
+.next/
+.venv/
+artifacts/
+compatibility/
+coverage/
+docs/
+node_modules/
+pnpm-lock.yaml
+
+*.md
+*.py
+*.toml
+*.lock

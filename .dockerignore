@@ -1,0 +1,14 @@
+.git
+.venv
+.secrets
+**/__pycache__
+**/.pytest_cache
+**/.mypy_cache
+**/.ruff_cache
+**/.next
+**/node_modules
+artifacts
+compatibility
+models
+model-cache
+*.log

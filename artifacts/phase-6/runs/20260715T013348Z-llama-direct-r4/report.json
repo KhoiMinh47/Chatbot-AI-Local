@@ -1,0 +1,239 @@
+{
+  "candidate_pass": true,
+  "checks": {
+    "context_never_overflows": true,
+    "event_sequences_contiguous": true,
+    "fast_answered_with_valid_s1": true,
+    "mode_budget_differs": true,
+    "mode_retrieval_differs": true,
+    "nim_prompt_usage_matches_exact_counter": true,
+    "no_hidden_reasoning": true,
+    "reasoning_answered_with_valid_s1": true,
+    "unanswerable_refused_without_llm": true
+  },
+  "created_at": "2026-07-15T01:33:51.990637+00:00",
+  "exact_tokenizer": true,
+  "graph_version": "phase6-stategraph-v1",
+  "index_config": {
+    "chunk_size": 256,
+    "collection_name": "phase6_candidate_static",
+    "distance": "Cosine",
+    "embedding_model": "candidate-static-evidence",
+    "embedding_model_version": "phase6-v1",
+    "fingerprint": "4930341ee0b235dc69f7a609a3908d074a7cce888df0ab3e0555a6d902a42f68",
+    "index_version": "phase6-candidate-v1",
+    "overlap_percent": 10,
+    "vector_dimension": 1
+  },
+  "limitations": [
+    "Direct synthetic evidence bypasses Phase 4 ingestion and Phase 5 vector retrieval.",
+    "The LLM and index are candidates, not approved winners or active production aliases.",
+    "This three-case smoke is not the required full human-reviewed generation set."
+  ],
+  "llm_calls": {
+    "chat": 0,
+    "stream": 2
+  },
+  "model": "meta/llama-3.1-8b-instruct",
+  "model_version": "2.0.6-fp8-profile-c4789f7a",
+  "policies": {
+    "fast": {
+      "candidate_limit_per_query": 12,
+      "context_token_cap": 8192,
+      "context_window_tokens": 32768,
+      "final_context_limit": 6,
+      "max_dense_candidates": 12,
+      "max_output_tokens": 768,
+      "max_retrieval_rounds": 1,
+      "max_subqueries": 1,
+      "mode": "fast",
+      "rerank_limit": 10,
+      "safety_tokens": 1536,
+      "temperature": 0.0
+    },
+    "reasoning": {
+      "candidate_limit_per_query": 10,
+      "context_token_cap": 16384,
+      "context_window_tokens": 32768,
+      "final_context_limit": 12,
+      "max_dense_candidates": 30,
+      "max_output_tokens": 4096,
+      "max_retrieval_rounds": 2,
+      "max_subqueries": 3,
+      "mode": "reasoning",
+      "rerank_limit": 20,
+      "safety_tokens": 2048,
+      "temperature": 0.0
+    }
+  },
+  "prompt_sha256": "e3ca4ad1478559be2a9ecb48128e5a7a6e711e7f92b7adc806e7ca376a70f78d",
+  "prompt_version": "phase6-grounded-v3",
+  "questions": {
+    "answerable": "Nhân viên toàn thời gian có bao nhiêu ngày phép năm?",
+    "unanswerable": "Ai là CEO của công ty vào năm 2035?"
+  },
+  "results": {
+    "fast": {
+      "answer": "Nhân viên toàn thời gian có 15 ngày phép năm [S1].",
+      "answer_sha256": "260e6b80dd6aef1856f0b456a766156d84c011c81adba623aa8b36b461f85c9a",
+      "budget": {
+        "context_tokens": 72,
+        "context_window_tokens": 32768,
+        "exact": true,
+        "output_reserved_tokens": 768,
+        "prompt_tokens": 338,
+        "safety_reserved_tokens": 1536,
+        "tokenizer_id": "meta/llama-3.1-8b-instruct@fp8-tool-calling",
+        "tokenizer_sha256": "5d14a41f5b175a0b6d8f7d25896913fe9c2b0ca111c2180ffa2a1e805b2720f0"
+      },
+      "citations": [
+        "S1"
+      ],
+      "contains_hidden_reasoning_marker": false,
+      "elapsed_seconds": 0.7026529280119576,
+      "error_codes": [],
+      "event_types": [
+        "status",
+        "retrieval_summary",
+        "token",
+        "citation",
+        "usage",
+        "done"
+      ],
+      "input_tokens": 338,
+      "model": "meta/llama-3.1-8b-instruct",
+      "model_version": "2.0.6-fp8-profile-c4789f7a",
+      "node_path": [
+        "validate_request",
+        "load_conversation_memory",
+        "classify_query",
+        "rewrite_followup",
+        "build_retrieval_plan",
+        "retrieve",
+        "rerank",
+        "assemble_context",
+        "generate",
+        "validate_citations",
+        "persist_message_and_trace"
+      ],
+      "outcome": "answered",
+      "output_tokens": 17,
+      "retrieval_rounds": 1,
+      "retriever_calls": 1,
+      "sequence_contiguous": true,
+      "subquery_count": 1
+    },
+    "reasoning": {
+      "answer": "Nhân viên toàn thời gian có 15 ngày phép năm [S1].",
+      "answer_sha256": "260e6b80dd6aef1856f0b456a766156d84c011c81adba623aa8b36b461f85c9a",
+      "budget": {
+        "context_tokens": 72,
+        "context_window_tokens": 32768,
+        "exact": true,
+        "output_reserved_tokens": 4096,
+        "prompt_tokens": 338,
+        "safety_reserved_tokens": 2048,
+        "tokenizer_id": "meta/llama-3.1-8b-instruct@fp8-tool-calling",
+        "tokenizer_sha256": "5d14a41f5b175a0b6d8f7d25896913fe9c2b0ca111c2180ffa2a1e805b2720f0"
+      },
+      "citations": [
+        "S1"
+      ],
+      "contains_hidden_reasoning_marker": false,
+      "elapsed_seconds": 0.7045872320013586,
+      "error_codes": [],
+      "event_types": [
+        "status",
+        "retrieval_summary",
+        "token",
+        "citation",
+        "usage",
+        "done"
+      ],
+      "input_tokens": 338,
+      "model": "meta/llama-3.1-8b-instruct",
+      "model_version": "2.0.6-fp8-profile-c4789f7a",
+      "node_path": [
+        "validate_request",
+        "load_conversation_memory",
+        "classify_query",
+        "rewrite_followup",
+        "build_retrieval_plan",
+        "retrieve",
+        "rerank",
+        "assemble_context",
+        "generate",
+        "validate_citations",
+        "persist_message_and_trace"
+      ],
+      "outcome": "answered",
+      "output_tokens": 17,
+      "retrieval_rounds": 1,
+      "retriever_calls": 3,
+      "sequence_contiguous": true,
+      "subquery_count": 3
+    },
+    "unanswerable": {
+      "answer": "Tôi chưa tìm thấy đủ bằng chứng trong các tài liệu mà bạn được phép truy cập để trả lời câu hỏi này.",
+      "answer_sha256": "9070beac96d11d70749ee68d3e6235d4750d4bdbdb753e6090dfe663c8be0dd3",
+      "budget": {
+        "context_tokens": 0,
+        "context_window_tokens": 32768,
+        "exact": true,
+        "output_reserved_tokens": 768,
+        "prompt_tokens": 265,
+        "safety_reserved_tokens": 1536,
+        "tokenizer_id": "meta/llama-3.1-8b-instruct@fp8-tool-calling",
+        "tokenizer_sha256": "5d14a41f5b175a0b6d8f7d25896913fe9c2b0ca111c2180ffa2a1e805b2720f0"
+      },
+      "citations": [],
+      "contains_hidden_reasoning_marker": false,
+      "elapsed_seconds": 0.0058568730019032955,
+      "error_codes": [],
+      "event_types": [
+        "status",
+        "retrieval_summary",
+        "token",
+        "token",
+        "usage",
+        "done"
+      ],
+      "input_tokens": 265,
+      "model": null,
+      "model_version": null,
+      "node_path": [
+        "validate_request",
+        "load_conversation_memory",
+        "classify_query",
+        "rewrite_followup",
+        "build_retrieval_plan",
+        "retrieve",
+        "rerank",
+        "assemble_context",
+        "insufficient_evidence",
+        "validate_citations",
+        "persist_message_and_trace"
+      ],
+      "outcome": "insufficient_evidence",
+      "output_tokens": 24,
+      "retrieval_rounds": 1,
+      "sequence_contiguous": true,
+      "subquery_count": 1
+    }
+  },
+  "runtime_arm64_digest": "sha256:249dcac461f20bc29ddb0924bf0c30e0e3f646c26bd849d978996cbe30b4d06e",
+  "runtime_image": "nvcr.io/nim/meta/llama-3.1-8b-instruct:2.0.6@sha256:31e360dbb15f825d69e5d68c2032e334301523b4957091270385ed7ef3db5e81",
+  "schema_version": 1,
+  "scope": "phase6-live-direct-evidence-candidate-not-production-acceptance",
+  "source_sha256": {
+    "apps/api/app/application/rag.py": "936f0ea488934fef31b84d3553760c2c684ec6a7a623fbaee8586c0181b93791",
+    "apps/api/app/domain/rag.py": "ee9e7244c68efb68e1fb02a7ec9463cc37a8fc25c47207b8a90f7e070ce47b60",
+    "apps/api/app/infrastructure/exact_token_counter.py": "270b433eb4f8fe6517438f9a1c5328f726019b8763b7eb3007d7dad809db11d0",
+    "apps/api/app/infrastructure/nim_clients.py": "5f6ac4918fbf367a71aa0632528cdb1b89b077df2169fa2c9e4a2eccd1e59a9f",
+    "apps/api/app/rag/graph.py": "9fc2c40e3bbc9a7be9044db10fbcb2dfc87545c5f9fc489e76c7b0b654d16c90",
+    "scripts/phase6_candidate_eval.py": "be299fc3d1c11b70618f2f83a008514a53b920a0383d30addc984604cd13a27e",
+    "uv.lock": "4890db2c210d8adf73811d96fd6135139448511ed1d5cb6718ac3f50bdb1ad45"
+  },
+  "tokenizer_id": "meta/llama-3.1-8b-instruct@fp8-tool-calling",
+  "tokenizer_sha256": "5d14a41f5b175a0b6d8f7d25896913fe9c2b0ca111c2180ffa2a1e805b2720f0"
+}

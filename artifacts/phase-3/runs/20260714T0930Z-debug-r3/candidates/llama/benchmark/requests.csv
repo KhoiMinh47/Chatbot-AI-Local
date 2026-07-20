@@ -1,0 +1,4 @@
+kind,scenario,request_index,concurrency,status,error_code,target_context_tokens,target_input_tokens,max_output_tokens,prompt_tokens_actual,completion_tokens_actual,total_tokens_actual,ttft_seconds,decode_duration_seconds,decode_tokens_per_second,total_latency_seconds,batch_size,passage_count,vector_dimension_observed,response_model_observed
+llm,engine-short-c1,0,1,ok,,,512,256,475,256,731,0.05301450200204272,10.017611786999623,25.554993090491344,10.070735456989496,,,,meta/llama-3.1-8b-instruct
+llm,rag-8k-c1,0,1,ok,,,8192,512,8166,512,8678,0.0798593660001643,22.298736241995357,22.96094246972378,22.378748087998247,,,,meta/llama-3.1-8b-instruct
+llm,rag-8k-c4,0,4,ok,,,8192,512,8166,512,8678,0.08277252200059593,22.367509346004226,22.890344744237904,22.450390427999082,,,,meta/llama-3.1-8b-instruct

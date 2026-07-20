@@ -1,0 +1,456 @@
+
+=================================================
+== NVIDIA Inference Microservice LLM / VLM NIM ==
+=================================================
+
+NVIDIA Inference Microservice LLM / VLM NIM Version 2.0.6
+
+Container image Copyright (c) 2016-2026, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+The NIM container is governed by the NVIDIA Software and Model Evaluation License
+(https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-software-and-model-evaluation-license/)
+A copy of this license can be found under /opt/nim/LICENSE.
+
+NVIDIA Open Model License (https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-open-model-license/). ADDITIONAL INFORMATION: Llama 3.1 Community License Agreement (https://www.llama.com/llama3\_1/license/), Built with Llama.
+
+WARNING 2026-07-14 11:18:14.791 classification.py:736] UMA device detected: clamping gpu_memory_utilization 0.92 -> 0.50
+Starting vLLM v0.21.0
+  Model:     meta/llama-3.1-8b-instruct
+  Precision: fp8
+  TP/PP:     1/1
+  CPU:       3 cores
+  Port:      8000
+  OpenAPI:   http://localhost:8000/docs (interactive)
+
+(APIServer pid=33) WARNING 07-14 11:18:18 [envs.py:1866] Unknown vLLM environment variable detected: VLLM_BUILD_URL
+(APIServer pid=33) WARNING 07-14 11:18:18 [envs.py:1866] Unknown vLLM environment variable detected: VLLM_IMAGE_TAG
+(APIServer pid=33) WARNING 07-14 11:18:18 [envs.py:1866] Unknown vLLM environment variable detected: VLLM_BUILD_PIPELINE
+(APIServer pid=33) WARNING 07-14 11:18:18 [envs.py:1866] Unknown vLLM environment variable detected: VLLM_BUILD_COMMIT
+(APIServer pid=33) WARNING 07-14 11:18:18 [modelopt.py:382] Detected ModelOpt fp8 checkpoint (quant_algo=FP8). Please note that the format is experimental and could change.
+(EngineCore pid=90) /usr/local/lib/python3.12/dist-packages/vllm/v1/executor/uniproc_executor.py:70: UserWarning: Failed to get the IP address, using 0.0.0.0 by default. The value can be set by the environment variable VLLM_HOST_IP or HOST_IP.
+(EngineCore pid=90)   distributed_init_method = get_distributed_init_method(get_ip(), get_open_port())
+[W714 11:18:28.348455015 socket.cpp:207] [c10d] The hostname of the client socket cannot be retrieved. err=-3
+(EngineCore pid=90) Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00<?, ?it/s]
+(EngineCore pid=90) Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:35<00:35, 35.06s/it]
+(EngineCore pid=90) Loading safetensors checkpoint shards: 100% Completed | 2/2 [01:02<00:00, 30.62s/it]
+(EngineCore pid=90) Loading safetensors checkpoint shards: 100% Completed | 2/2 [01:02<00:00, 31.29s/it]
+(EngineCore pid=90) 
+(EngineCore pid=90) Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   0%|          | 0/51 [00:00<?, ?it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   4%|▍         | 2/51 [00:00<00:04, 12.14it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   8%|▊         | 4/51 [00:00<00:03, 12.40it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  12%|█▏        | 6/51 [00:00<00:03, 12.62it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  16%|█▌        | 8/51 [00:00<00:03, 12.81it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  20%|█▉        | 10/51 [00:00<00:03, 13.30it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  24%|██▎       | 12/51 [00:00<00:02, 13.73it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  27%|██▋       | 14/51 [00:01<00:02, 14.11it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  31%|███▏      | 16/51 [00:01<00:02, 14.40it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  35%|███▌      | 18/51 [00:01<00:02, 14.72it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  39%|███▉      | 20/51 [00:01<00:02, 15.02it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  43%|████▎     | 22/51 [00:01<00:01, 15.19it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  47%|████▋     | 24/51 [00:01<00:01, 15.40it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  51%|█████     | 26/51 [00:01<00:01, 15.68it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  55%|█████▍    | 28/51 [00:01<00:01, 15.96it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  59%|█████▉    | 30/51 [00:02<00:01, 16.17it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  63%|██████▎   | 32/51 [00:02<00:01, 16.41it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  67%|██████▋   | 34/51 [00:02<00:01, 16.76it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  71%|███████   | 36/51 [00:02<00:00, 17.03it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  75%|███████▍  | 38/51 [00:02<00:00, 17.31it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  78%|███████▊  | 40/51 [00:02<00:00, 17.53it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  82%|████████▏ | 42/51 [00:02<00:00, 17.81it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  86%|████████▋ | 44/51 [00:02<00:00, 17.95it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  90%|█████████ | 46/51 [00:02<00:00, 18.23it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  94%|█████████▍| 48/51 [00:03<00:00, 18.60it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  98%|█████████▊| 50/51 [00:03<00:00, 18.82it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE): 100%|██████████| 51/51 [00:03<00:00, 15.96it/s]
+(EngineCore pid=90) Capturing CUDA graphs (decode, FULL):   0%|          | 0/35 [00:00<?, ?it/s]Capturing CUDA graphs (decode, FULL):   6%|▌         | 2/35 [00:00<00:02, 14.44it/s]Capturing CUDA graphs (decode, FULL):  11%|█▏        | 4/35 [00:00<00:02, 14.63it/s]Capturing CUDA graphs (decode, FULL):  17%|█▋        | 6/35 [00:00<00:01, 14.72it/s]Capturing CUDA graphs (decode, FULL):  23%|██▎       | 8/35 [00:00<00:01, 14.85it/s]Capturing CUDA graphs (decode, FULL):  29%|██▊       | 10/35 [00:00<00:01, 15.15it/s]Capturing CUDA graphs (decode, FULL):  34%|███▍      | 12/35 [00:00<00:01, 15.39it/s]Capturing CUDA graphs (decode, FULL):  40%|████      | 14/35 [00:00<00:01, 15.66it/s]Capturing CUDA graphs (decode, FULL):  46%|████▌     | 16/35 [00:01<00:01, 15.90it/s]Capturing CUDA graphs (decode, FULL):  51%|█████▏    | 18/35 [00:01<00:01, 16.25it/s]Capturing CUDA graphs (decode, FULL):  57%|█████▋    | 20/35 [00:01<00:00, 16.61it/s]Capturing CUDA graphs (decode, FULL):  63%|██████▎   | 22/35 [00:01<00:00, 16.91it/s]Capturing CUDA graphs (decode, FULL):  69%|██████▊   | 24/35 [00:01<00:00, 17.22it/s]Capturing CUDA graphs (decode, FULL):  74%|███████▍  | 26/35 [00:01<00:00, 17.47it/s]Capturing CUDA graphs (decode, FULL):  80%|████████  | 28/35 [00:01<00:00, 17.73it/s]Capturing CUDA graphs (decode, FULL):  86%|████████▌ | 30/35 [00:01<00:00, 18.07it/s]Capturing CUDA graphs (decode, FULL):  94%|█████████▍| 33/35 [00:01<00:00, 18.86it/s]Capturing CUDA graphs (decode, FULL): 100%|██████████| 35/35 [00:02<00:00, 16.91it/s]
+(APIServer pid=33) WARNING 07-14 11:20:35 [model.py:1454] Default vLLM sampling parameters have been overridden by the model's `generation_config.json`: `{'temperature': 0.6, 'top_p': 0.9}`. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`.
+(APIServer pid=33) INFO:     Started server process [33]
+(APIServer pid=33) INFO:     Waiting for application startup.
+(APIServer pid=33) INFO:     Application startup complete.
+(APIServer pid=33) INFO:     127.0.0.1:53476 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "GET /v1/models HTTP/1.1" 200 OK
+172.24.0.1 - - [14/Jul/2026:11:20:43 +0000] "GET /v1/health/live HTTP/1.1" 200 61 "-" "curl/8.5.0"
+(APIServer pid=33) INFO:     127.0.0.1:53484 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "GET /v1/models HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "GET /v1/metadata HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "GET /v1/version HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "GET /v1/manifest HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "GET /v1/license HTTP/1.1" 200 OK
+172.24.0.1 - - [14/Jul/2026:11:20:44 +0000] "GET /v1/health/live HTTP/1.1" 200 61 "-" "curl/8.5.0"
+(APIServer pid=33) INFO:     127.0.0.1:53486 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "GET /v1/models HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "GET /metrics HTTP/1.1" 200 OK
+(EngineCore pid=90) WARNING 07-14 11:20:44 [jit_monitor.py:103] Triton kernel JIT compilation during inference: _compute_slot_mapping_kernel. This causes a latency spike; consider extending warmup to cover this shape/config.
+(APIServer pid=33) INFO:     127.0.0.1:60332 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+172.24.0.1 - - [14/Jul/2026:11:21:04 +0000] "GET /v1/health/live HTTP/1.1" 200 61 "-" "python-httpx2/2.5.0"
+(APIServer pid=33) INFO:     127.0.0.1:53486 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "GET /metrics HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "GET /v1/models HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:36430 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:57302 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:37988 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:55670 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:51368 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:58992 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:42058 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:37524 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:53808 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:52662 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:59098 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:41138 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:47508 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:50492 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:43930 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:60438 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:47150 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:57780 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:42714 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:42954 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:34254 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:56762 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:39232 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:41636 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:59594 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:46756 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:42762 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:38790 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:42846 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:38490 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:59616 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:44728 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:52320 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:44042 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:46390 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:44086 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:41354 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:50720 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:40826 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:36526 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:44900 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:57404 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:50654 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:45338 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:57318 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:45358 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:60282 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:52604 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:53416 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:56130 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:42294 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:47340 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:42756 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:49850 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:39750 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:40506 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:41870 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:48210 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:47702 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:48966 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:33924 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:50046 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:54650 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:48998 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:37986 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:42056 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:34856 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:49240 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:48428 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:55716 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:60766 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:47528 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:50064 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:55376 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:47868 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:33560 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:36638 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:47856 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:40122 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:53914 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:40600 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:60194 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:48554 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:56950 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:55178 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:50158 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:37922 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:47374 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:35592 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:54116 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:43874 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:58876 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:48500 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:39480 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:50652 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:57964 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:40710 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:39506 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:40378 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:42666 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:55176 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:55316 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:34978 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:57394 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:58938 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:55156 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:33344 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:56712 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:58506 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:57076 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:58102 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:50816 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:38456 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:53836 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:43488 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:46246 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:41854 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:37886 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:47910 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:52086 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:44586 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:47024 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:58250 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:36418 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:55922 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:33618 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:60636 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:57656 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:43022 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:52208 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:58830 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:49858 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:47000 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:54368 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:47992 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:37098 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:54856 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:58820 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:52846 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:46062 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:38064 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:36610 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:47302 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:59818 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:47784 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:36606 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:53736 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:32878 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:42874 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:35732 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:47646 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:40846 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:36696 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:60806 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:53330 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:51650 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:33382 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:33644 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:40838 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:42250 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:52372 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:35130 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:53236 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:34212 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:33196 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:49726 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:53344 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:44968 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:33746 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:37942 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:52368 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:58482 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:41150 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:43676 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:32876 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:35460 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:35134 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:50378 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:53304 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:45624 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:34606 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:59716 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:36304 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:39314 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:54566 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:51646 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:43662 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:55014 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:40224 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:39678 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:49018 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:53534 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:40980 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:33914 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:42600 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:43830 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:56956 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:47966 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:38998 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:43612 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:53932 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:36246 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:36354 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:60080 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:56926 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:47802 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:50420 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:57828 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:52306 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:53514 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:43912 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:35658 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:51456 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:38892 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:42942 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:33958 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:56392 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:44816 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:60438 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:35638 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:54710 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:37396 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:50064 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:40716 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:57492 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:47506 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:35478 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:52046 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:57946 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:50382 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:59180 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:43096 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:53698 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:52436 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:59304 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:51426 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:44884 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:39970 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:35510 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:35006 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:57312 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:34732 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:58700 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:38042 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:48200 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:46796 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:51640 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:47038 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:44522 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     127.0.0.1:50760 - "GET /health HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+(APIServer pid=33) INFO:     172.24.0.1:0 - "POST /v1/chat/completions HTTP/1.1" 200 OK

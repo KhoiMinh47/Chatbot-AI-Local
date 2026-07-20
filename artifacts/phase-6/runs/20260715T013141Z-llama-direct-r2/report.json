@@ -1,0 +1,212 @@
+{
+  "candidate_pass": false,
+  "checks": {
+    "context_never_overflows": true,
+    "event_sequences_contiguous": true,
+    "fast_answered_with_valid_s1": false,
+    "mode_budget_differs": true,
+    "mode_retrieval_differs": true,
+    "nim_prompt_usage_matches_exact_counter": true,
+    "no_hidden_reasoning": true,
+    "reasoning_answered_with_valid_s1": false,
+    "unanswerable_refused_without_llm": true
+  },
+  "created_at": "2026-07-15T01:31:45.137304+00:00",
+  "exact_tokenizer": true,
+  "limitations": [
+    "Direct synthetic evidence bypasses Phase 4 ingestion and Phase 5 vector retrieval.",
+    "The LLM and index are candidates, not approved winners or active production aliases.",
+    "This three-case smoke is not the required full human-reviewed generation set."
+  ],
+  "llm_calls": {
+    "chat": 0,
+    "stream": 2
+  },
+  "model": "meta/llama-3.1-8b-instruct",
+  "model_version": "2.0.6-fp8-profile-c4789f7a",
+  "policies": {
+    "fast": {
+      "candidate_limit_per_query": 12,
+      "context_token_cap": 8192,
+      "context_window_tokens": 32768,
+      "final_context_limit": 6,
+      "max_dense_candidates": 12,
+      "max_output_tokens": 768,
+      "max_retrieval_rounds": 1,
+      "max_subqueries": 1,
+      "mode": "fast",
+      "rerank_limit": 10,
+      "safety_tokens": 1536,
+      "temperature": 0.0
+    },
+    "reasoning": {
+      "candidate_limit_per_query": 10,
+      "context_token_cap": 16384,
+      "context_window_tokens": 32768,
+      "final_context_limit": 12,
+      "max_dense_candidates": 30,
+      "max_output_tokens": 4096,
+      "max_retrieval_rounds": 2,
+      "max_subqueries": 3,
+      "mode": "reasoning",
+      "rerank_limit": 20,
+      "safety_tokens": 2048,
+      "temperature": 0.0
+    }
+  },
+  "questions": {
+    "answerable": "Nhân viên toàn thời gian có bao nhiêu ngày phép năm?",
+    "unanswerable": "Ai là CEO của công ty vào năm 2035?"
+  },
+  "results": {
+    "fast": {
+      "answer": "Tôi chưa thể tạo câu trả lời có thể kiểm chứng an toàn từ các nguồn hiện có.",
+      "answer_sha256": "2a48b83f704ac09d826930b5cc14ac8051fd860f49fba581bf91069c24d0b92a",
+      "budget": {
+        "context_tokens": 72,
+        "context_window_tokens": 32768,
+        "exact": true,
+        "output_reserved_tokens": 768,
+        "prompt_tokens": 302,
+        "safety_reserved_tokens": 1536,
+        "tokenizer_id": "meta/llama-3.1-8b-instruct@fp8-tool-calling",
+        "tokenizer_sha256": "5d14a41f5b175a0b6d8f7d25896913fe9c2b0ca111c2180ffa2a1e805b2720f0"
+      },
+      "citations": [],
+      "contains_hidden_reasoning_marker": false,
+      "elapsed_seconds": 0.7814100719988346,
+      "error_codes": [
+        "uncited_claim"
+      ],
+      "event_types": [
+        "status",
+        "retrieval_summary",
+        "token",
+        "usage",
+        "done"
+      ],
+      "input_tokens": 302,
+      "model": "meta/llama-3.1-8b-instruct",
+      "model_version": "2.0.6-fp8-profile-c4789f7a",
+      "node_path": [
+        "validate_request",
+        "load_conversation_memory",
+        "classify_query",
+        "rewrite_followup",
+        "build_retrieval_plan",
+        "retrieve",
+        "rerank",
+        "assemble_context",
+        "generate",
+        "validate_citations",
+        "persist_message_and_trace"
+      ],
+      "outcome": "invalid_generation",
+      "output_tokens": 19,
+      "retrieval_rounds": 1,
+      "retriever_calls": 1,
+      "sequence_contiguous": true,
+      "subquery_count": 1
+    },
+    "reasoning": {
+      "answer": "Tôi chưa thể tạo câu trả lời có thể kiểm chứng an toàn từ các nguồn hiện có.",
+      "answer_sha256": "2a48b83f704ac09d826930b5cc14ac8051fd860f49fba581bf91069c24d0b92a",
+      "budget": {
+        "context_tokens": 72,
+        "context_window_tokens": 32768,
+        "exact": true,
+        "output_reserved_tokens": 4096,
+        "prompt_tokens": 302,
+        "safety_reserved_tokens": 2048,
+        "tokenizer_id": "meta/llama-3.1-8b-instruct@fp8-tool-calling",
+        "tokenizer_sha256": "5d14a41f5b175a0b6d8f7d25896913fe9c2b0ca111c2180ffa2a1e805b2720f0"
+      },
+      "citations": [],
+      "contains_hidden_reasoning_marker": false,
+      "elapsed_seconds": 0.6965329319937155,
+      "error_codes": [
+        "uncited_claim"
+      ],
+      "event_types": [
+        "status",
+        "retrieval_summary",
+        "token",
+        "usage",
+        "done"
+      ],
+      "input_tokens": 302,
+      "model": "meta/llama-3.1-8b-instruct",
+      "model_version": "2.0.6-fp8-profile-c4789f7a",
+      "node_path": [
+        "validate_request",
+        "load_conversation_memory",
+        "classify_query",
+        "rewrite_followup",
+        "build_retrieval_plan",
+        "retrieve",
+        "rerank",
+        "assemble_context",
+        "generate",
+        "validate_citations",
+        "persist_message_and_trace"
+      ],
+      "outcome": "invalid_generation",
+      "output_tokens": 19,
+      "retrieval_rounds": 1,
+      "retriever_calls": 3,
+      "sequence_contiguous": true,
+      "subquery_count": 3
+    },
+    "unanswerable": {
+      "answer": "Tôi chưa tìm thấy đủ bằng chứng trong các tài liệu mà bạn được phép truy cập để trả lời câu hỏi này.",
+      "answer_sha256": "9070beac96d11d70749ee68d3e6235d4750d4bdbdb753e6090dfe663c8be0dd3",
+      "budget": {
+        "context_tokens": 0,
+        "context_window_tokens": 32768,
+        "exact": true,
+        "output_reserved_tokens": 768,
+        "prompt_tokens": 229,
+        "safety_reserved_tokens": 1536,
+        "tokenizer_id": "meta/llama-3.1-8b-instruct@fp8-tool-calling",
+        "tokenizer_sha256": "5d14a41f5b175a0b6d8f7d25896913fe9c2b0ca111c2180ffa2a1e805b2720f0"
+      },
+      "citations": [],
+      "contains_hidden_reasoning_marker": false,
+      "elapsed_seconds": 0.007469086995115504,
+      "error_codes": [],
+      "event_types": [
+        "status",
+        "retrieval_summary",
+        "token",
+        "token",
+        "usage",
+        "done"
+      ],
+      "input_tokens": 229,
+      "model": null,
+      "model_version": null,
+      "node_path": [
+        "validate_request",
+        "load_conversation_memory",
+        "classify_query",
+        "rewrite_followup",
+        "build_retrieval_plan",
+        "retrieve",
+        "rerank",
+        "assemble_context",
+        "insufficient_evidence",
+        "validate_citations",
+        "persist_message_and_trace"
+      ],
+      "outcome": "insufficient_evidence",
+      "output_tokens": 24,
+      "retrieval_rounds": 1,
+      "sequence_contiguous": true,
+      "subquery_count": 1
+    }
+  },
+  "schema_version": 1,
+  "scope": "phase6-live-direct-evidence-candidate-not-production-acceptance",
+  "tokenizer_id": "meta/llama-3.1-8b-instruct@fp8-tool-calling",
+  "tokenizer_sha256": "5d14a41f5b175a0b6d8f7d25896913fe9c2b0ca111c2180ffa2a1e805b2720f0"
+}

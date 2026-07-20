@@ -1,0 +1,80 @@
+{
+  "candidate": "reranking-500m",
+  "checks": {
+    "arm64_image_container_identity": true,
+    "expectations_allowlisted": true,
+    "live_license_sha_content_consistent": true,
+    "nim_version_exact": true,
+    "operator_license_declaration_allowlisted": true,
+    "precision_from_closed_allowlist": true,
+    "required_http_statuses": true,
+    "selected_profile_exact": true,
+    "served_model_exact": true
+  },
+  "expected_identity": {
+    "image_digest": "sha256:3e39d44bdb3dd683d6a2ac8d7689b484aee6c18dc7e00c2064f19501742720f3",
+    "model": "nvidia/llama-nemotron-rerank-500m-v2",
+    "nim_version": "1.10.0",
+    "precision": "ONNX-FP16",
+    "profile_id": "f7391ddbcb95b2406853526b8e489fedf20083a2420563ca3e65358ff417b10f"
+  },
+  "failure_codes": [],
+  "live_nim_license": {
+    "content_persisted_in_output": false,
+    "content_sha": "784089b786990ddb7b7e7a99ff5318d285ee2735",
+    "content_sha_algorithm": "sha1",
+    "document_name": "LICENSE",
+    "metadata_and_license_endpoint_consistent": true,
+    "term_names": [
+      "NVIDIA Software License Agreement",
+      "Product-Specific Terms for AI Products",
+      "NVIDIA Community Model License",
+      "Llama 3.2 Community License Agreement"
+    ],
+    "term_urls": [
+      "https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-software-license-agreement",
+      "https://www.nvidia.com/en-us/agreements/enterprise-software/product-specific-terms-for-ai-products",
+      "https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-community-models-license",
+      "https://www.llama.com/llama3_2/license"
+    ]
+  },
+  "max_model_length": {
+    "claim_scope": "declared-profile-capability-only",
+    "evidence_kind": "closed-candidate-profile-capability-declaration",
+    "live_long_request_executed_by_this_validator": false,
+    "live_long_request_result": null,
+    "value": 4096
+  },
+  "operator_reviewed_model_terms": {
+    "additional_term_names": [
+      "Llama 3.2 Community License Agreement"
+    ],
+    "declaration_name": "nvidia-community-model-license",
+    "evidence_kind": "operator-reviewed-declaration",
+    "legal_approval": "pending",
+    "model_license_names": [
+      "NVIDIA Community Model License"
+    ],
+    "separate_from_live_nim_license": true
+  },
+  "phase": 3,
+  "runtime_identity": {
+    "architecture": "arm64",
+    "image_digest": "sha256:3e39d44bdb3dd683d6a2ac8d7689b484aee6c18dc7e00c2064f19501742720f3",
+    "image_repository": "nvcr.io/nim/nvidia/llama-nemotron-rerank-500m-v2",
+    "nim_version": "1.10.0",
+    "operating_system": "linux",
+    "precision": "ONNX-FP16",
+    "required_endpoint_http_statuses": {
+      "/v1/license": 200,
+      "/v1/metadata": 200,
+      "/v1/models": 200,
+      "/v1/version": 200
+    },
+    "selected_profile_field": "selectedModelProfileId",
+    "selected_profile_id": "f7391ddbcb95b2406853526b8e489fedf20083a2420563ca3e65358ff417b10f",
+    "served_model": "nvidia/llama-nemotron-rerank-500m-v2"
+  },
+  "schema_version": 1,
+  "status": "pass"
+}

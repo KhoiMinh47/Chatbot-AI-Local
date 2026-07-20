@@ -1,0 +1,3 @@
+{"candidate":"nemotron","service":"nim-llm-nemotron","RestartCount":0,"State":{"Status":"running","Running":true,"OOMKilled":false,"Health":"healthy"}}
+{"candidate":"embedding-300m","service":"nim-embedding-300m","RestartCount":0,"State":{"Status":"running","Running":true,"OOMKilled":false,"Health":"healthy"}}
+{"candidate":"reranking-500m","service":"nim-reranking-500m","RestartCount":0,"State":{"Status":"running","Running":true,"OOMKilled":false,"Health":"healthy"}}

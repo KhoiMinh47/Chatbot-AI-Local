@@ -1,0 +1,80 @@
+{
+  "candidate": "embedding-300m",
+  "checks": {
+    "arm64_image_container_identity": true,
+    "expectations_allowlisted": true,
+    "live_license_sha_content_consistent": true,
+    "nim_version_exact": true,
+    "operator_license_declaration_allowlisted": true,
+    "precision_from_closed_allowlist": true,
+    "required_http_statuses": true,
+    "selected_profile_exact": true,
+    "served_model_exact": true
+  },
+  "expected_identity": {
+    "image_digest": "sha256:1f0a7fc168919d7b84bb4edfb4a4da0c5828d11ee284f9fb8113242b3b35cbb4",
+    "model": "nvidia/llama-nemotron-embed-300m-v2",
+    "nim_version": "1.13.0",
+    "precision": "ONNX-FP16",
+    "profile_id": "e28f17c9c13a99055d065f88d725bf93c23b3aab14acd68f16323de1353fc528"
+  },
+  "failure_codes": [],
+  "live_nim_license": {
+    "content_persisted_in_output": false,
+    "content_sha": "45b414c24ac6a455d8d226cdb5a5e22a94820338",
+    "content_sha_algorithm": "sha1",
+    "document_name": "LICENSE",
+    "metadata_and_license_endpoint_consistent": true,
+    "term_names": [
+      "NVIDIA Software License Agreement",
+      "Product-Specific Terms for AI Products",
+      "NVIDIA Open Model License Agreement",
+      "Llama 3.2 Community License Agreement"
+    ],
+    "term_urls": [
+      "https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-software-license-agreement",
+      "https://www.nvidia.com/en-us/agreements/enterprise-software/product-specific-terms-for-ai-products",
+      "https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-open-model-license",
+      "https://www.llama.com/llama3_2/license"
+    ]
+  },
+  "max_model_length": {
+    "claim_scope": "declared-profile-capability-only",
+    "evidence_kind": "closed-candidate-profile-capability-declaration",
+    "live_long_request_executed_by_this_validator": false,
+    "live_long_request_result": null,
+    "value": 8192
+  },
+  "operator_reviewed_model_terms": {
+    "additional_term_names": [
+      "Llama 3.2 Community License Agreement"
+    ],
+    "declaration_name": "nvidia-open-model-license",
+    "evidence_kind": "operator-reviewed-declaration",
+    "legal_approval": "pending",
+    "model_license_names": [
+      "NVIDIA Open Model License Agreement"
+    ],
+    "separate_from_live_nim_license": true
+  },
+  "phase": 3,
+  "runtime_identity": {
+    "architecture": "arm64",
+    "image_digest": "sha256:1f0a7fc168919d7b84bb4edfb4a4da0c5828d11ee284f9fb8113242b3b35cbb4",
+    "image_repository": "nvcr.io/nim/nvidia/llama-nemotron-embed-300m-v2",
+    "nim_version": "1.13.0",
+    "operating_system": "linux",
+    "precision": "ONNX-FP16",
+    "required_endpoint_http_statuses": {
+      "/v1/license": 200,
+      "/v1/metadata": 200,
+      "/v1/models": 200,
+      "/v1/version": 200
+    },
+    "selected_profile_field": "selectedModelProfileId",
+    "selected_profile_id": "e28f17c9c13a99055d065f88d725bf93c23b3aab14acd68f16323de1353fc528",
+    "served_model": "nvidia/llama-nemotron-embed-300m-v2"
+  },
+  "schema_version": 1,
+  "status": "pass"
+}

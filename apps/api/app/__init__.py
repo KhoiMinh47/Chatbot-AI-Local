@@ -1,0 +1,1 @@
+"""NTC API service."""

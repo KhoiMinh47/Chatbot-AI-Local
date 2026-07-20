@@ -1,0 +1,20 @@
+[
+  {
+    "image_id": "sha256:31e360dbb15f825d69e5d68c2032e334301523b4957091270385ed7ef3db5e81",
+    "repo_tags": [
+      "nvcr.io/nim/meta/llama-3.1-8b-instruct:2.0.6"
+    ],
+    "repo_digests": [
+      "nvcr.io/nim/meta/llama-3.1-8b-instruct@sha256:31e360dbb15f825d69e5d68c2032e334301523b4957091270385ed7ef3db5e81"
+    ],
+    "architecture": "arm64",
+    "os": "linux",
+    "created": "2026-06-02T17:05:59.301091054Z",
+    "size_bytes": 11401609677,
+    "nim": {
+      "type": "llm",
+      "version": "2.0.6",
+      "model": "meta/llama-3.1-8b-instruct"
+    }
+  }
+]

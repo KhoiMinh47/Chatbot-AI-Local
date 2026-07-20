@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "decision_id": "20260715T0218Z-nemotron-local-winner",
+  "decided_at_utc": "2026-07-15T02:18:00Z",
+  "phase": 3,
+  "decision_gate": "DG-02",
+  "status": "accepted_with_deviation",
+  "scope": "local_engineering_default_for_phase6_and_later_local_validation",
+  "authority": {
+    "kind": "explicit_workspace_operator_directive",
+    "recorded_in_session_date": "2026-07-15",
+    "corporate_legal_approval": "pending",
+    "formal_case_level_human_review_in_canonical_run": "pending"
+  },
+  "selection": {
+    "candidate_id": "nemotron",
+    "role": "primary_llm",
+    "model_id": "nvidia/nemotron-nano-9b-v2",
+    "nim_version": "1.0.0",
+    "image_repository": "nvcr.io/nim/nvidia/nvidia-nemotron-nano-9b-v2-dgx-spark",
+    "image_ref": "nvcr.io/nim/nvidia/nvidia-nemotron-nano-9b-v2-dgx-spark:1.0.0-variant@sha256:82028e38ab950edd32f5053ca2030ee14d965e8fd4fe1c6e06468eb0be07a9a4",
+    "image_digest": "sha256:82028e38ab950edd32f5053ca2030ee14d965e8fd4fe1c6e06468eb0be07a9a4",
+    "architecture": "linux/arm64",
+    "profile_id": "f9db61d5a467d46be7733e90a26705798764b93d480c842143d525c1932b01e2",
+    "precision": "NVFP4",
+    "max_model_length": 131072,
+    "model_license_declaration": "nvidia-open-model-license"
+  },
+  "canonical_evidence": {
+    "run_id": "20260714T1120Z-full-r2",
+    "run_path": "artifacts/phase-3/runs/20260714T1120Z-full-r2",
+    "historical_run_mutated": false,
+    "source_files": [
+      {
+        "path": "artifacts/phase-3/runs/20260714T1120Z-full-r2/scorecard.json",
+        "sha256": "e572a9411b9928523b409f8aab310ae65e003e927aef6b987d84b8ae9548bd06"
+      },
+      {
+        "path": "artifacts/phase-3/runs/20260714T1120Z-full-r2/summary.json",
+        "sha256": "f23c7662fd3fa42a7b48e2e501d7a50e351eebe5f85296f8c3cf50e121d849c9"
+      },
+      {
+        "path": "artifacts/phase-3/runs/20260714T1120Z-full-r2/candidates/nemotron/quality/report.json",
+        "sha256": "79ff7b374a4d474be3dd6d70fc1ae26531419ae5ae6ced1b8c31e47d0b36afdd"
+      },
+      {
+        "path": "artifacts/phase-3/runs/20260714T1120Z-full-r2/candidates/nemotron/benchmark/report.json",
+        "sha256": "e100a1c62bf1b55b95105d5639b334dc4daab6f12844ba55a38f87abc677c45d"
+      },
+      {
+        "path": "artifacts/phase-3/runs/20260714T1120Z-full-r2/candidates/nemotron/runtime-verification.json",
+        "sha256": "7951bc65c4bc4f6131050cb56d098e4733d0e6b38fdc359ed58ca6de10462ab8"
+      },
+      {
+        "path": "artifacts/phase-3/runs/20260714T1120Z-full-r2/combinations/nemotron/result.json",
+        "sha256": "d8301177ee764f9c4c3531b3c125c5b787d4ff0c329a761da754f8800f87f0cd"
+      }
+    ]
+  },
+  "measured_basis": {
+    "automatic_provisional_weighted_score": 0.931828384971,
+    "llama_comparator_score": 0.907959259806,
+    "automatic_quality_hard_gates_passed": "10/10",
+    "full_six_scenario_readiness_gate": "pass",
+    "long_context_32k_64k_128k": "pass",
+    "target_combination_no_oom": "pass",
+    "engine_short_c1_decode_tokens_per_second_p50": 26.95411464971551,
+    "rag_8k_c1_decode_tokens_per_second_p50": 26.489898341566573
+  },
+  "deviation": {
+    "requirement": "40-50+ decode tokens/s under the defined benchmark workload",
+    "observed_status": "not_met",
+    "accepted_for_scope": "local_engineering_default_and_phase6_validation",
+    "not_accepted_as": "production_performance_gate_pass",
+    "follow_up_phase": 10,
+    "required_follow_up": "preserve measured values and perform bottleneck/profile/concurrency analysis"
+  },
+  "operational_policy": {
+    "fast_mode_control": "/no_think in trusted system instruction",
+    "reasoning_mode_control": "/think in trusted system instruction",
+    "raw_chain_of_thought_exposed": false
+  },
+  "out_of_scope": [
+    "embedding winner or Qdrant alias activation",
+    "reranker winner",
+    "corporate production license approval",
+    "Phase 6 acceptance result"
+  ],
+  "rationale": [
+    "The workspace operator explicitly selected Nemotron Nano 9B v2 as the primary LLM.",
+    "The canonical bake-off measured the higher provisional weighted score for Nemotron than for Llama.",
+    "Nemotron passed the automatic multilingual quality gate, the complete benchmark matrix, 128K capability, exact runtime identity checks, and the target no-OOM combination.",
+    "The measured throughput shortfall is recorded as an accepted local-engineering deviation, not rewritten as a pass."
+  ]
+}

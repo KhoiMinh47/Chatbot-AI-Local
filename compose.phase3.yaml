@@ -1,0 +1,284 @@
+name: ${COMPOSE_PROJECT_NAME:-ntc-rag-phase3}
+
+x-bge-m3-access-gate:
+  state: blocked
+  model_id: baai/bge-m3
+  observed_http_status: 402
+  reason: model-access-payment-or-entitlement-required-before-exact-image-selection
+  mutable_latest_forbidden: true
+
+x-nim-runtime: &nim-runtime
+  pull_policy: never
+  platform: linux/arm64
+  restart: unless-stopped
+  gpus: all
+  expose: ["8000"]
+  networks: [runtime]
+  entrypoint: ["/usr/local/bin/ntc-nim-entrypoint"]
+  volumes:
+    - ./infra/nim/entrypoint.sh:/usr/local/bin/ntc-nim-entrypoint:ro
+    - ./infra/nim/healthcheck.sh:/usr/local/bin/ntc-nim-healthcheck:ro
+  stop_grace_period: 2m
+  pids_limit: 4096
+  security_opt: ["no-new-privileges:true"]
+  ulimits:
+    memlock: -1
+    stack: 67108864
+
+x-nim-staging: &nim-staging
+  pull_policy: never
+  platform: linux/arm64
+  restart: "no"
+  gpus: all
+  networks: [staging]
+  entrypoint: ["/usr/local/bin/ntc-nim-entrypoint"]
+  volumes:
+    - ./infra/nim/entrypoint.sh:/usr/local/bin/ntc-nim-entrypoint:ro
+    - ./infra/nim/healthcheck.sh:/usr/local/bin/ntc-nim-healthcheck:ro
+  secrets:
+    - source: ngc_api_key
+      target: ngc_api_key
+      mode: 0440
+  group_add: ["${PHASE3_SECRET_GID:?set PHASE3_SECRET_GID}"]
+  stop_grace_period: 2m
+  pids_limit: 4096
+  security_opt: ["no-new-privileges:true"]
+  ulimits:
+    memlock: -1
+    stack: 67108864
+
+services:
+  nim-llm-llama:
+    <<: *nim-runtime
+    profiles: ["llama"]
+    image: ${NIM_LLM_LLAMA_IMAGE:?set NIM_LLM_LLAMA_IMAGE}
+    environment:
+      NTC_NIM_MODE: serve
+      NTC_NIM_KIND: llm
+      NTC_NIM_IMAGE_VERSION_EXPECTED: "2.0.6"
+      NTC_NIM_RUNTIME_VERSION_STATUS: unverified-until-live-endpoint
+      NTC_NIM_EXPECTED_MODEL_ID: ${NIM_LLM_LLAMA_MODEL:?set NIM_LLM_LLAMA_MODEL}
+      NTC_NIM_ARM64_MANIFEST_DIGEST: ${NIM_LLM_LLAMA_ARM64_DIGEST:?set NIM_LLM_LLAMA_ARM64_DIGEST}
+      NTC_NIM_CACHE_KEY: llama-3-1-8b-nim-2-0-6-profile-c4789f7af56c770c1c88b73da666886365534d6980b6b922b41fd97036c77d73
+      NTC_NIM_HEALTH_PATH: /v1/health/ready
+      NTC_NIM_START_ENTRYPOINT: /opt/nim/start_server.sh
+      NTC_NIM_CONTEXT_CAPABILITY_TEST_TARGET: "131072"
+      NIM_MODEL_PROFILE: ${NIM_LLM_LLAMA_PROFILE:?set NIM_LLM_LLAMA_PROFILE}
+    volumes:
+      - ./infra/nim/entrypoint.sh:/usr/local/bin/ntc-nim-entrypoint:ro
+      - ./infra/nim/healthcheck.sh:/usr/local/bin/ntc-nim-healthcheck:ro
+      - nim_llama_cache:/opt/nim/.cache
+    healthcheck:
+      test: ["CMD", "/usr/local/bin/ntc-nim-healthcheck"]
+      interval: 15s
+      timeout: 10s
+      retries: 20
+      start_period: 45m
+    cpus: "8.0"
+    mem_limit: 72g
+    shm_size: 16g
+
+  nim-llm-nemotron:
+    <<: *nim-runtime
+    profiles: ["nemotron"]
+    image: ${NIM_LLM_NEMOTRON_IMAGE:?set NIM_LLM_NEMOTRON_IMAGE}
+    environment:
+      HF_HUB_OFFLINE: "1"
+      NTC_NIM_MODE: serve
+      NTC_NIM_KIND: llm
+      NTC_NIM_IMAGE_VERSION_EXPECTED: "1.0.0"
+      NTC_NIM_RUNTIME_VERSION_STATUS: ${NIM_LLM_NEMOTRON_RUNTIME_STATE:?set NIM_LLM_NEMOTRON_RUNTIME_STATE}
+      NTC_NIM_EXPECTED_MODEL_ID: ${NIM_LLM_NEMOTRON_MODEL:?set NIM_LLM_NEMOTRON_MODEL}
+      NTC_NIM_ARM64_MANIFEST_DIGEST: ${NIM_LLM_NEMOTRON_ARM64_DIGEST:?set NIM_LLM_NEMOTRON_ARM64_DIGEST}
+      NTC_NIM_CACHE_KEY: nemotron-nano-9b-v2-dgx-spark-1-0-0
+      NTC_NIM_HEALTH_PATH: /v1/health/ready
+      NTC_NIM_START_ENTRYPOINT: ${NIM_LLM_NEMOTRON_START_ENTRYPOINT:?set NIM_LLM_NEMOTRON_START_ENTRYPOINT}
+      NTC_NIM_START_ARG: ${NIM_LLM_NEMOTRON_START_ARG:?set NIM_LLM_NEMOTRON_START_ARG}
+      NTC_NIM_CONTEXT_CAPABILITY_TEST_TARGET: "131072"
+    volumes:
+      - ./infra/nim/entrypoint.sh:/usr/local/bin/ntc-nim-entrypoint:ro
+      - ./infra/nim/healthcheck.sh:/usr/local/bin/ntc-nim-healthcheck:ro
+      - nim_nemotron_cache:/opt/nim/.cache
+    healthcheck:
+      test: ["CMD", "/usr/local/bin/ntc-nim-healthcheck"]
+      interval: 15s
+      timeout: 10s
+      retries: 20
+      start_period: 45m
+    cpus: "8.0"
+    mem_limit: 72g
+    shm_size: 16g
+
+  nim-embedding-300m:
+    <<: *nim-runtime
+    profiles: ["retriever"]
+    image: ${NIM_EMBED_300M_IMAGE:?set NIM_EMBED_300M_IMAGE}
+    environment:
+      NTC_NIM_MODE: serve
+      NTC_NIM_KIND: embedding
+      NTC_NIM_IMAGE_VERSION_EXPECTED: "1.13.0"
+      NTC_NIM_RUNTIME_VERSION_STATUS: unverified-until-live-endpoint
+      NTC_NIM_EXPECTED_MODEL_ID: ${NIM_EMBED_300M_MODEL:?set NIM_EMBED_300M_MODEL}
+      NTC_NIM_ARM64_MANIFEST_DIGEST: ${NIM_EMBED_300M_ARM64_DIGEST:?set NIM_EMBED_300M_ARM64_DIGEST}
+      NTC_NIM_CACHE_KEY: llama-nemotron-embed-300m-v2-nim-1-13-0
+      NTC_NIM_HEALTH_PATH: /v1/health/ready
+      NTC_NIM_START_ENTRYPOINT: /opt/nvidia/nvidia_entrypoint.sh
+      NTC_NIM_START_ARG: /opt/nim/start_server.sh
+    volumes:
+      - ./infra/nim/entrypoint.sh:/usr/local/bin/ntc-nim-entrypoint:ro
+      - ./infra/nim/healthcheck.sh:/usr/local/bin/ntc-nim-healthcheck:ro
+      - nim_embed_300m_cache:/opt/nim/.cache
+    healthcheck:
+      test: ["CMD", "/usr/local/bin/ntc-nim-healthcheck"]
+      interval: 15s
+      timeout: 10s
+      retries: 20
+      start_period: 20m
+    cpus: "4.0"
+    mem_limit: 16g
+    shm_size: 4g
+
+  nim-reranking-500m:
+    <<: *nim-runtime
+    profiles: ["retriever"]
+    image: ${NIM_RERANK_500M_IMAGE:?set NIM_RERANK_500M_IMAGE}
+    environment:
+      NTC_NIM_MODE: serve
+      NTC_NIM_KIND: reranking
+      NTC_NIM_IMAGE_VERSION_EXPECTED: "1.10.0"
+      NTC_NIM_DOCS_VERSION_LINE: "1.10.0"
+      NTC_NIM_RUNTIME_VERSION_STATUS: unverified-until-live-endpoint
+      NTC_NIM_EXPECTED_MODEL_ID: ${NIM_RERANK_500M_MODEL:?set NIM_RERANK_500M_MODEL}
+      NTC_NIM_ARM64_MANIFEST_DIGEST: ${NIM_RERANK_500M_ARM64_DIGEST:?set NIM_RERANK_500M_ARM64_DIGEST}
+      NTC_NIM_CACHE_KEY: llama-nemotron-rerank-500m-v2-nim-1-10-0
+      NTC_NIM_HEALTH_PATH: /v1/health/ready
+      NTC_NIM_START_ENTRYPOINT: /opt/nvidia/nvidia_entrypoint.sh
+      NTC_NIM_START_ARG: /opt/nim/start_server.sh
+    volumes:
+      - ./infra/nim/entrypoint.sh:/usr/local/bin/ntc-nim-entrypoint:ro
+      - ./infra/nim/healthcheck.sh:/usr/local/bin/ntc-nim-healthcheck:ro
+      - nim_rerank_500m_cache:/opt/nim/.cache
+    healthcheck:
+      test: ["CMD", "/usr/local/bin/ntc-nim-healthcheck"]
+      interval: 15s
+      timeout: 10s
+      retries: 20
+      start_period: 20m
+    cpus: "4.0"
+    mem_limit: 16g
+    shm_size: 4g
+
+  stage-nim-llm-llama:
+    <<: *nim-staging
+    profiles: ["stage-llama"]
+    image: ${NIM_LLM_LLAMA_IMAGE:?set NIM_LLM_LLAMA_IMAGE}
+    environment:
+      NTC_NIM_MODE: stage
+      NTC_NIM_KIND: llm
+      NTC_NIM_IMAGE_VERSION_EXPECTED: "2.0.6"
+      NTC_NIM_RUNTIME_VERSION_STATUS: unverified-until-live-endpoint
+      NTC_NIM_EXPECTED_MODEL_ID: ${NIM_LLM_LLAMA_MODEL:?set NIM_LLM_LLAMA_MODEL}
+      NTC_NIM_ARM64_MANIFEST_DIGEST: ${NIM_LLM_LLAMA_ARM64_DIGEST:?set NIM_LLM_LLAMA_ARM64_DIGEST}
+      NTC_NIM_CACHE_KEY: llama-3-1-8b-nim-2-0-6-profile-c4789f7af56c770c1c88b73da666886365534d6980b6b922b41fd97036c77d73
+      NTC_NIM_HEALTH_PATH: /v1/health/ready
+      NTC_NIM_START_ENTRYPOINT: /opt/nim/start_server.sh
+      NTC_NIM_CONTEXT_CAPABILITY_TEST_TARGET: "131072"
+      NIM_MODEL_PROFILE: ${NIM_LLM_LLAMA_PROFILE:?set NIM_LLM_LLAMA_PROFILE}
+      NTC_NIM_STAGE_TIMEOUT_SECONDS: ${NIM_STAGE_LLM_TIMEOUT_SECONDS:-7200}
+    volumes:
+      - ./infra/nim/entrypoint.sh:/usr/local/bin/ntc-nim-entrypoint:ro
+      - ./infra/nim/healthcheck.sh:/usr/local/bin/ntc-nim-healthcheck:ro
+      - nim_llama_cache:/opt/nim/.cache
+    cpus: "8.0"
+    mem_limit: 72g
+    shm_size: 16g
+
+  stage-nim-llm-nemotron:
+    <<: *nim-staging
+    profiles: ["stage-nemotron"]
+    image: ${NIM_LLM_NEMOTRON_IMAGE:?set NIM_LLM_NEMOTRON_IMAGE}
+    environment:
+      NTC_NIM_MODE: stage
+      NTC_NIM_KIND: llm
+      NTC_NIM_IMAGE_VERSION_EXPECTED: "1.0.0"
+      NTC_NIM_RUNTIME_VERSION_STATUS: ${NIM_LLM_NEMOTRON_RUNTIME_STATE:?set NIM_LLM_NEMOTRON_RUNTIME_STATE}
+      NTC_NIM_EXPECTED_MODEL_ID: ${NIM_LLM_NEMOTRON_MODEL:?set NIM_LLM_NEMOTRON_MODEL}
+      NTC_NIM_ARM64_MANIFEST_DIGEST: ${NIM_LLM_NEMOTRON_ARM64_DIGEST:?set NIM_LLM_NEMOTRON_ARM64_DIGEST}
+      NTC_NIM_CACHE_KEY: nemotron-nano-9b-v2-dgx-spark-1-0-0
+      NTC_NIM_HEALTH_PATH: /v1/health/ready
+      NTC_NIM_START_ENTRYPOINT: ${NIM_LLM_NEMOTRON_START_ENTRYPOINT:?set NIM_LLM_NEMOTRON_START_ENTRYPOINT}
+      NTC_NIM_START_ARG: ${NIM_LLM_NEMOTRON_START_ARG:?set NIM_LLM_NEMOTRON_START_ARG}
+      NTC_NIM_CONTEXT_CAPABILITY_TEST_TARGET: "131072"
+      NTC_NIM_STAGE_TIMEOUT_SECONDS: ${NIM_STAGE_LLM_TIMEOUT_SECONDS:-7200}
+    volumes:
+      - ./infra/nim/entrypoint.sh:/usr/local/bin/ntc-nim-entrypoint:ro
+      - ./infra/nim/healthcheck.sh:/usr/local/bin/ntc-nim-healthcheck:ro
+      - nim_nemotron_cache:/opt/nim/.cache
+    cpus: "8.0"
+    mem_limit: 72g
+    shm_size: 16g
+
+  stage-nim-embedding-300m:
+    <<: *nim-staging
+    profiles: ["stage-retriever"]
+    image: ${NIM_EMBED_300M_IMAGE:?set NIM_EMBED_300M_IMAGE}
+    environment:
+      NTC_NIM_MODE: stage
+      NTC_NIM_KIND: embedding
+      NTC_NIM_IMAGE_VERSION_EXPECTED: "1.13.0"
+      NTC_NIM_RUNTIME_VERSION_STATUS: unverified-until-live-endpoint
+      NTC_NIM_EXPECTED_MODEL_ID: ${NIM_EMBED_300M_MODEL:?set NIM_EMBED_300M_MODEL}
+      NTC_NIM_ARM64_MANIFEST_DIGEST: ${NIM_EMBED_300M_ARM64_DIGEST:?set NIM_EMBED_300M_ARM64_DIGEST}
+      NTC_NIM_CACHE_KEY: llama-nemotron-embed-300m-v2-nim-1-13-0
+      NTC_NIM_HEALTH_PATH: /v1/health/ready
+      NTC_NIM_START_ENTRYPOINT: /opt/nvidia/nvidia_entrypoint.sh
+      NTC_NIM_START_ARG: /opt/nim/start_server.sh
+      NTC_NIM_STAGE_TIMEOUT_SECONDS: ${NIM_STAGE_RETRIEVER_TIMEOUT_SECONDS:-3600}
+    volumes:
+      - ./infra/nim/entrypoint.sh:/usr/local/bin/ntc-nim-entrypoint:ro
+      - ./infra/nim/healthcheck.sh:/usr/local/bin/ntc-nim-healthcheck:ro
+      - nim_embed_300m_cache:/opt/nim/.cache
+    cpus: "4.0"
+    mem_limit: 16g
+    shm_size: 4g
+
+  stage-nim-reranking-500m:
+    <<: *nim-staging
+    profiles: ["stage-retriever"]
+    image: ${NIM_RERANK_500M_IMAGE:?set NIM_RERANK_500M_IMAGE}
+    environment:
+      NTC_NIM_MODE: stage
+      NTC_NIM_KIND: reranking
+      NTC_NIM_IMAGE_VERSION_EXPECTED: "1.10.0"
+      NTC_NIM_DOCS_VERSION_LINE: "1.10.0"
+      NTC_NIM_RUNTIME_VERSION_STATUS: unverified-until-live-endpoint
+      NTC_NIM_EXPECTED_MODEL_ID: ${NIM_RERANK_500M_MODEL:?set NIM_RERANK_500M_MODEL}
+      NTC_NIM_ARM64_MANIFEST_DIGEST: ${NIM_RERANK_500M_ARM64_DIGEST:?set NIM_RERANK_500M_ARM64_DIGEST}
+      NTC_NIM_CACHE_KEY: llama-nemotron-rerank-500m-v2-nim-1-10-0
+      NTC_NIM_HEALTH_PATH: /v1/health/ready
+      NTC_NIM_START_ENTRYPOINT: /opt/nvidia/nvidia_entrypoint.sh
+      NTC_NIM_START_ARG: /opt/nim/start_server.sh
+      NTC_NIM_STAGE_TIMEOUT_SECONDS: ${NIM_STAGE_RETRIEVER_TIMEOUT_SECONDS:-3600}
+    volumes:
+      - ./infra/nim/entrypoint.sh:/usr/local/bin/ntc-nim-entrypoint:ro
+      - ./infra/nim/healthcheck.sh:/usr/local/bin/ntc-nim-healthcheck:ro
+      - nim_rerank_500m_cache:/opt/nim/.cache
+    cpus: "4.0"
+    mem_limit: 16g
+    shm_size: 4g
+
+networks:
+  runtime:
+    internal: true
+  staging:
+    internal: false
+
+volumes:
+  nim_llama_cache:
+  nim_nemotron_cache:
+  nim_embed_300m_cache:
+  nim_rerank_500m_cache:
+
+secrets:
+  ngc_api_key:
+    file: ${PHASE3_NGC_API_KEY_FILE:-./.secrets/phase3/ngc_api_key}

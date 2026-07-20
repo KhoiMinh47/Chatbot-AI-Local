@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "dataset": {
+    "corpus": "benchmarks/phase5/corpus.jsonl",
+    "gold": "benchmarks/phase5/gold.jsonl",
+    "expected_corpus_sections": 50,
+    "expected_gold_samples": 100
+  },
+  "collection_alias": "ntc_chunks_active",
+  "chunk_grid": {
+    "sizes": [256, 512, 768, 1024],
+    "overlap_percent": [0, 10, 20]
+  },
+  "retrieval": {
+    "dense_candidate_limit": 20,
+    "metric_cutoffs": [5, 10],
+    "hnsw_ef": 128,
+    "distance": "Cosine"
+  },
+  "quality_gate": {
+    "recall_at_10": 0.9,
+    "mrr_at_10": 0.75,
+    "acl_leakage": 0
+  },
+  "embedding_candidates": [
+    {
+      "id": "embed300m-v2",
+      "model": "nvidia/llama-nemotron-embed-300m-v2",
+      "nim_version": "1.13.0",
+      "dimension": 2048,
+      "image": "nvcr.io/nim/nvidia/llama-nemotron-embed-300m-v2:1.13.0@sha256:1f0a7fc168919d7b84bb4edfb4a4da0c5828d11ee284f9fb8113242b3b35cbb4",
+      "status": "available_candidate_not_winner"
+    },
+    {
+      "id": "bge-m3",
+      "model": "baai/bge-m3",
+      "nim_version": null,
+      "dimension": null,
+      "image": null,
+      "status": "blocked_http_402_entitlement"
+    }
+  ],
+  "reranker_candidates": [
+    {
+      "id": "rerank500m-v2",
+      "model": "nvidia/llama-nemotron-rerank-500m-v2",
+      "nim_version": "1.10.0",
+      "image": "nvcr.io/nim/nvidia/llama-nemotron-rerank-500m-v2:1.1@sha256:3e39d44bdb3dd683d6a2ac8d7689b484aee6c18dc7e00c2064f19501742720f3",
+      "status": "available_baseline"
+    }
+  ],
+  "activation": {
+    "allowed": false,
+    "reason": "Embedding bake-off incomplete: exact BGE-M3 runtime remains blocked by HTTP 402. Do not switch ntc_chunks_active."
+  }
+}

@@ -1,0 +1,20 @@
+{"answerable": true, "expected_source_names": ["01_leave_policy.pdf"], "id": "p4-001", "query": "How many annual leave days does LEAVE-15 grant?", "split": "calibration"}
+{"answerable": true, "expected_source_names": ["02_security_scanned.pdf"], "id": "p4-002", "query": "When does a temporary badge under OCR-30 expire?", "split": "calibration"}
+{"answerable": true, "expected_source_names": ["03_benefits_table.pdf"], "id": "p4-003", "query": "What monthly meal allowance is listed for MEAL-45?", "split": "calibration"}
+{"answerable": true, "expected_source_names": ["04_finance_limits.csv"], "id": "p4-004", "query": "What is the domestic travel limit for TRAVEL-750?", "split": "calibration"}
+{"answerable": true, "expected_source_names": ["05_architecture.pptx"], "id": "p4-005", "query": "How many vector dimensions are defined by VECTOR-2048?", "split": "calibration"}
+{"answerable": true, "expected_source_names": ["06_onboarding.pptx"], "id": "p4-006", "query": "What time does START-09 onboarding begin?", "split": "calibration"}
+{"answerable": true, "expected_source_names": ["07_incident_runbook.docx"], "id": "p4-007", "query": "What is the acknowledgement time for P1-05?", "split": "calibration"}
+{"answerable": true, "expected_source_names": ["08_remote_handbook.txt"], "id": "p4-008", "query": "How many remote days does REMOTE-3 allow?", "split": "calibration"}
+{"answerable": false, "expected_source_names": [], "id": "p4-009", "query": "What is the company helicopter registration number?", "split": "calibration"}
+{"answerable": false, "expected_source_names": [], "id": "p4-010", "query": "Ai là giám đốc pháp lý của công ty?", "split": "calibration"}
+{"answerable": true, "expected_source_names": ["01_leave_policy.pdf"], "id": "p4-011", "query": "Nhân viên có chính xác bao nhiêu ngày phép năm?", "split": "evaluation"}
+{"answerable": true, "expected_source_names": ["02_security_scanned.pdf"], "id": "p4-012", "query": "Theo thông báo scan, thẻ tạm thời hết hạn sau bao lâu?", "split": "evaluation"}
+{"answerable": true, "expected_source_names": ["03_benefits_table.pdf"], "id": "p4-013", "query": "Mã WELL-12 cho biết bao nhiêu giờ wellness mỗi quý?", "split": "evaluation"}
+{"answerable": true, "expected_source_names": ["04_finance_limits.csv"], "id": "p4-014", "query": "Client meal code MEAL-40 has what limit?", "split": "evaluation"}
+{"answerable": true, "expected_source_names": ["05_architecture.pptx"], "id": "p4-015", "query": "Which queue carries ingestion jobs asynchronously?", "split": "evaluation"}
+{"answerable": true, "expected_source_names": ["06_onboarding.pptx"], "id": "p4-016", "query": "Where do new staff collect equipment?", "split": "evaluation"}
+{"answerable": true, "expected_source_names": ["09_retention_policy.md"], "id": "p4-017", "query": "LOG-90 stores audit logs for how long?", "split": "evaluation"}
+{"answerable": true, "expected_source_names": ["10_inventory.csv"], "id": "p4-018", "query": "What is the reorder level for DOCK-12?", "split": "evaluation"}
+{"answerable": false, "expected_source_names": [], "id": "p4-019", "query": "What is the cafeteria Wi-Fi password?", "split": "evaluation"}
+{"answerable": false, "expected_source_names": [], "id": "p4-020", "query": "Hãy cho biết giá cổ phiếu nội bộ ngày mai.", "split": "evaluation"}

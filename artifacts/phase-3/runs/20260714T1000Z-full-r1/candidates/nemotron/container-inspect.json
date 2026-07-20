@@ -1,0 +1,88 @@
+[
+  {
+    "Id": "7db0a37b690b43fb671ab35f522de91980500b24ad20c1d4a666b02f8847ba82",
+    "Image": "sha256:82028e38ab950edd32f5053ca2030ee14d965e8fd4fe1c6e06468eb0be07a9a4",
+    "Name": "/ntc-rag-phase3-nim-llm-nemotron-1",
+    "Config": {
+      "NIM_MODEL_PROFILE": null
+    },
+    "State": {
+      "Status": "running",
+      "Running": true,
+      "OOMKilled": false,
+      "Health": {
+        "Status": "healthy",
+        "FailingStreak": 0,
+        "Log": [
+          {
+            "Start": "2026-07-14T17:25:43.849051729+07:00",
+            "End": "2026-07-14T17:25:43.926849404+07:00",
+            "ExitCode": 1,
+            "Output": "/usr/local/bin/ntc-nim-healthcheck: connect: Connection refused\n/usr/local/bin/ntc-nim-healthcheck: line 17: /dev/tcp/127.0.0.1/8000: Connection refused\n"
+          },
+          {
+            "Start": "2026-07-14T17:25:48.927601639+07:00",
+            "End": "2026-07-14T17:25:48.988850582+07:00",
+            "ExitCode": 1,
+            "Output": "/usr/local/bin/ntc-nim-healthcheck: connect: Connection refused\n/usr/local/bin/ntc-nim-healthcheck: line 17: /dev/tcp/127.0.0.1/8000: Connection refused\n"
+          },
+          {
+            "Start": "2026-07-14T17:25:53.989782836+07:00",
+            "End": "2026-07-14T17:25:54.052703385+07:00",
+            "ExitCode": 1,
+            "Output": "/usr/local/bin/ntc-nim-healthcheck: connect: Connection refused\n/usr/local/bin/ntc-nim-healthcheck: line 17: /dev/tcp/127.0.0.1/8000: Connection refused\n"
+          },
+          {
+            "Start": "2026-07-14T17:25:59.054016668+07:00",
+            "End": "2026-07-14T17:25:59.11863948+07:00",
+            "ExitCode": 1,
+            "Output": "/usr/local/bin/ntc-nim-healthcheck: connect: Connection refused\n/usr/local/bin/ntc-nim-healthcheck: line 17: /dev/tcp/127.0.0.1/8000: Connection refused\n"
+          },
+          {
+            "Start": "2026-07-14T17:26:04.120123373+07:00",
+            "End": "2026-07-14T17:26:04.190784623+07:00",
+            "ExitCode": 0,
+            "Output": ""
+          }
+        ]
+      }
+    },
+    "HostConfig": {
+      "NetworkMode": "ntc-rag-phase3_runtime",
+      "PortBindings": {}
+    },
+    "NetworkSettings": {
+      "Ports": {
+        "6006/tcp": null,
+        "8000/tcp": null,
+        "8888/tcp": null
+      },
+      "Networks": {
+        "ntc-rag-phase3_runtime": {
+          "IPAMConfig": null,
+          "Links": null,
+          "Aliases": [
+            "ntc-rag-phase3-nim-llm-nemotron-1",
+            "nim-llm-nemotron"
+          ],
+          "DriverOpts": null,
+          "GwPriority": 0,
+          "NetworkID": "d5d15fd3a4e0329fbe22f8f2106d5748b292eefbaac9d1a0977c72ebc9985ff6",
+          "EndpointID": "368090658b0583f369841b7f6fac04ac3cbc7e17e33499717109bb03254f66d9",
+          "Gateway": "",
+          "IPAddress": "172.24.0.2",
+          "MacAddress": "de:47:b6:32:bd:07",
+          "IPPrefixLen": 16,
+          "IPv6Gateway": "",
+          "GlobalIPv6Address": "",
+          "GlobalIPv6PrefixLen": 0,
+          "DNSNames": [
+            "ntc-rag-phase3-nim-llm-nemotron-1",
+            "nim-llm-nemotron",
+            "7db0a37b690b"
+          ]
+        }
+      }
+    }
+  }
+]

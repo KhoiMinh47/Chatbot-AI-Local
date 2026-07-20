@@ -1,0 +1,9 @@
+kind,scenario,request_index,concurrency,status,error_code,target_context_tokens,target_input_tokens,max_output_tokens,prompt_tokens_actual,completion_tokens_actual,total_tokens_actual,ttft_seconds,decode_duration_seconds,decode_tokens_per_second,total_latency_seconds,batch_size,passage_count,vector_dimension_observed,response_model_observed
+reranking,reranking-passages-2,0,1,ok,,,,,58,,58,,,,0.031177932003629394,,2,,
+reranking,reranking-passages-2,1,1,ok,,,,,58,,58,,,,0.03885429500951432,,2,,
+reranking,reranking-passages-2,2,1,ok,,,,,58,,58,,,,0.03341881999222096,,2,,
+reranking,reranking-passages-2,3,1,ok,,,,,58,,58,,,,0.037814356008311734,,2,,
+reranking,reranking-passages-16,0,1,ok,,,,,464,,464,,,,0.11653759099135641,,16,,
+reranking,reranking-passages-16,1,1,ok,,,,,464,,464,,,,0.12554063099378254,,16,,
+reranking,reranking-passages-16,2,1,ok,,,,,464,,464,,,,0.11123526899609715,,16,,
+reranking,reranking-passages-16,3,1,ok,,,,,464,,464,,,,0.10525676699762698,,16,,

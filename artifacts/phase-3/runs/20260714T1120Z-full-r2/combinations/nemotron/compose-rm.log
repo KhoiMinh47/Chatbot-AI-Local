@@ -1,0 +1,13 @@
+ Container ntc-rag-phase3-nim-reranking-500m-1  Stopping
+ Container ntc-rag-phase3-nim-llm-nemotron-1  Stopping
+ Container ntc-rag-phase3-nim-embedding-300m-1  Stopping
+ Container ntc-rag-phase3-nim-reranking-500m-1  Stopped
+ Container ntc-rag-phase3-nim-llm-nemotron-1  Stopped
+ Container ntc-rag-phase3-nim-embedding-300m-1  Stopped
+Going to remove ntc-rag-phase3-nim-embedding-300m-1, ntc-rag-phase3-nim-reranking-500m-1, ntc-rag-phase3-nim-llm-nemotron-1
+ Container ntc-rag-phase3-nim-llm-nemotron-1  Removing
+ Container ntc-rag-phase3-nim-embedding-300m-1  Removing
+ Container ntc-rag-phase3-nim-reranking-500m-1  Removing
+ Container ntc-rag-phase3-nim-reranking-500m-1  Removed
+ Container ntc-rag-phase3-nim-embedding-300m-1  Removed
+ Container ntc-rag-phase3-nim-llm-nemotron-1  Removed

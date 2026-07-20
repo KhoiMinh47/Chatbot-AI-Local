@@ -1,0 +1,20 @@
+{
+  "activated_at": "2026-07-15T02:22:01.400432+00:00",
+  "activated_collection": "ntc_chunks_embed300m_v2_s256_o10_095bc081a101_recall95_v3",
+  "alias": "ntc_chunks_active",
+  "alias_readback": "ntc_chunks_embed300m_v2_s256_o10_095bc081a101_recall95_v3",
+  "alias_verified": true,
+  "approval": {
+    "approved_at": "2026-07-15T02:22:01.333285+00:00",
+    "approved_by": "workspace-operator-via-user-directive",
+    "config_fingerprint": "a3cc25bb8e65a03ac1146c227c4c2b8c5a86370f4852eb35eb4d66330dd20290",
+    "expected_point_count": 12,
+    "retrieval_policy_fingerprint": "37a6fb7d83d292ba67f7709ce5e8e77483a73b86cd470938486d37b2d38c65b8"
+  },
+  "database_url_recorded": false,
+  "decision_report": "decision-report.json",
+  "decision_report_sha256": "290d1b34f7c350658207dea14c8e1f045314fc2126c3522adeecf1eea12cb610",
+  "previous_alias_target": null,
+  "schema_version": 1,
+  "status": "ACTIVATED"
+}

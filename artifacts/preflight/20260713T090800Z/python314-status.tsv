@@ -1,0 +1,5 @@
+check	exit_code	status
+lock-check	0	pass
+locked-offline-sync	0	pass
+uv-pip-check	1	known-platform-tag-warning
+imports-and-cuda	0	pass

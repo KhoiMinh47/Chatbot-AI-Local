@@ -1,0 +1,24 @@
+[project]
+name = "ntc-rag-python-compatibility-spike"
+version = "0.0.0"
+description = "Phase 0 dependency compatibility spike; not an application package"
+requires-python = ">=3.14,<3.15"
+dependencies = [
+  "alembic>=1.16",
+  "celery>=5.5",
+  "docling>=2.50",
+  "fastapi>=0.116",
+  "langchain-openai>=0.3",
+  "langgraph>=0.6",
+  "minio>=7.2",
+  "psycopg[binary]>=3.2",
+  "pydantic-settings>=2.10",
+  "qdrant-client>=1.15",
+  "redis>=6.0",
+  "sqlalchemy[asyncio]>=2.0",
+  "uvicorn[standard]>=0.35",
+]
+
+[tool.uv]
+package = false
+

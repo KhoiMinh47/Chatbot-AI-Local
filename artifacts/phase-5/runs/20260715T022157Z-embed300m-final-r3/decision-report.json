@@ -1,0 +1,211 @@
+{
+  "activation": {
+    "alias": "ntc_chunks_active",
+    "authorized": true,
+    "performed_in_this_report": false,
+    "receipt_file": "activation-receipt.json"
+  },
+  "completed_at": "2026-07-15T02:22:01.333089+00:00",
+  "evidence_bindings": {
+    "inputs_sha256": "5a7111734078de2f07b4a9c5423abbf91acbd2506f573e3527a71479131b3823",
+    "runtime_identity_sha256": "0d616df2f562358f60e1467266df97eafac60c254487de1dc7a80a1d7bee369b",
+    "source_provenance_sha256": "f6a3494f9c030459bccd9729218fb208e09fdd7f003ce81d9df326906648ad69"
+  },
+  "held_out_evaluation": {
+    "approved_policy": {
+      "answerable_samples": 40,
+      "by_tag": {
+        "phase4-live-corpus": {
+          "context_precision_at_10": 0.9375,
+          "mrr_at_10": 1.0,
+          "ndcg_at_10": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_5": 1.0,
+          "samples": 40
+        },
+        "retrieval": {
+          "context_precision_at_10": 0.9375,
+          "mrr_at_10": 1.0,
+          "ndcg_at_10": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_5": 1.0,
+          "samples": 40
+        }
+      },
+      "config_fingerprint": "37a6fb7d83d292ba67f7709ce5e8e77483a73b86cd470938486d37b2d38c65b8",
+      "dataset_sha256": "31f83b428bc1d0432758068a93e44733c768966a33a067e33f97de1c810b3bfe",
+      "latency": {
+        "p50_ms": 16.09391550300643,
+        "p95_ms": 58.22510319267167
+      },
+      "observations_sha256": "a55753037ba276d7a00344269c8149abd0f9403a58fefc6dbce4aa40663357a1",
+      "overall": {
+        "context_precision_at_10": 0.9375,
+        "mrr_at_10": 1.0,
+        "ndcg_at_10": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_5": 1.0,
+        "samples": 40
+      },
+      "quality_gate_passed": true,
+      "schema_version": 1,
+      "total_samples": 50,
+      "unanswerable_nonempty_rate": 0.1,
+      "unanswerable_samples": 10
+    },
+    "raw": {
+      "answerable_samples": 40,
+      "by_tag": {
+        "phase4-live-corpus": {
+          "context_precision_at_10": 0.1,
+          "mrr_at_10": 1.0,
+          "ndcg_at_10": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_5": 1.0,
+          "samples": 40
+        },
+        "retrieval": {
+          "context_precision_at_10": 0.1,
+          "mrr_at_10": 1.0,
+          "ndcg_at_10": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_5": 1.0,
+          "samples": 40
+        }
+      },
+      "config_fingerprint": "a3cc25bb8e65a03ac1146c227c4c2b8c5a86370f4852eb35eb4d66330dd20290",
+      "dataset_sha256": "31f83b428bc1d0432758068a93e44733c768966a33a067e33f97de1c810b3bfe",
+      "latency": {
+        "p50_ms": 15.80605200433638,
+        "p95_ms": 19.869224053400103
+      },
+      "observations_sha256": "bcf02bca1de218d5ff8cde754b1839ac2cd0b7cdbbd1235bad0072b6e4a675db",
+      "overall": {
+        "context_precision_at_10": 0.1,
+        "mrr_at_10": 1.0,
+        "ndcg_at_10": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_5": 1.0,
+        "samples": 40
+      },
+      "quality_gate_passed": true,
+      "schema_version": 1,
+      "total_samples": 50,
+      "unanswerable_nonempty_rate": 1.0,
+      "unanswerable_samples": 10
+    }
+  },
+  "inputs": {
+    "calibration_cases": 50,
+    "evaluation_cases": 50,
+    "gold_cases": 100,
+    "gold_file": "gold-final-100-v2-stratified.jsonl",
+    "gold_sha256": "393c9147f6a59a41e1a038a7622dc7d4183571fb4a1aa3a1940514629c155ca3",
+    "ready_child_chunk_count": 12,
+    "ready_corpus_manifest_sha256": "095bc081a101f02197934cdc8849c20287fba99aeede3d6730ea94ffa55b5bac",
+    "ready_document_count": 10,
+    "ready_version_count": 10
+  },
+  "observation_evidence": {
+    "calibration-raw-observations.jsonl": "03c1741d8275b9db654bee701c6f99a54eaaa5f159ff6ca76ffde805ccd9ed23",
+    "evaluation-policy-observations.jsonl": "2551155d39d132b339d9bb1d1d50e2e82cf2e770037833d27e5b8327670fb226",
+    "evaluation-raw-observations.jsonl": "6fdf8684e11966d8d61824fe8aad1937e039b01a64e16be722d90853387a3ba6"
+  },
+  "operator_decision": {
+    "approved_by": "workspace-operator-via-user-directive",
+    "basis": "explicit_cli_operator_selection",
+    "bge_comparison_status": "waived_not_completed",
+    "bge_comparison_waiver_reason": "Workspace operator explicitly selected NVIDIA Llama Nemotron Embed 300M V2 after reviewing the exact NVIDIA candidate evidence; BGE-M3 remains unavailable from the required NGC source with HTTP 402, so the local engineering comparison is explicitly waived for this activation.",
+    "selected_embedding": "nvidia/llama-nemotron-embed-300m-v2"
+  },
+  "quality_gate": {
+    "mrr_at_10_minimum": 0.75,
+    "passed": true,
+    "recall_at_10_minimum": 0.9,
+    "unanswerable_nonempty_rate_observed": 0.1,
+    "unanswerable_refusal_gate_phase": 6
+  },
+  "retrieval_policy": {
+    "deduplication_policy": "content_hash_and_document_section_v1",
+    "dense_candidate_limit": 20,
+    "dense_threshold": 0.2300481,
+    "final_limit": 10,
+    "fingerprint": "37a6fb7d83d292ba67f7709ce5e8e77483a73b86cd470938486d37b2d38c65b8",
+    "hnsw_ef": 128,
+    "reranker_enabled": false
+  },
+  "run_id": "20260715T022157Z-embed300m-final-r3",
+  "runtime_identity": {
+    "embedding": {
+      "dimension": 2048,
+      "model": "nvidia/llama-nemotron-embed-300m-v2",
+      "model_version": "1.13.0"
+    },
+    "qdrant": {
+      "commit": "e01c207f40a2fe01ed23a191957a76e224fe5726",
+      "title": "qdrant - vector search engine",
+      "version": "1.18.1"
+    }
+  },
+  "schema_version": 1,
+  "security": {
+    "database_url_recorded": false,
+    "document_text_recorded": false,
+    "reranker_enabled": false
+  },
+  "source_provenance": {
+    "apps/api/app/application/retrieval.py": "60d52d9389a1b3b82c8612f2f63ba8f90ce2f9df811f5cefa584b61c78bab425",
+    "apps/api/app/domain/retrieval.py": "62d5e57e328974ed35ec3f7e2f5a034ec94a5be98b9db1d950e3511f44bd9027",
+    "apps/api/app/infrastructure/nim_clients.py": "4ab042ac20af0c8d203ffc4afd64cba18d75dce20efb2dfdc0444a8b40a3c0d4",
+    "apps/api/app/infrastructure/qdrant_store.py": "d5f414897c9448f5ae3e541c91c727806434af8e794b635a2983da04d998bb4e",
+    "migrations/versions/0004_phase4_ingestion_completion.py": "419af5b74d63e8fcc98262271ab701d6432c50e0f2bfc2ea7b4d83843567da9b",
+    "packages/rag-eval/src/ntc_rag_eval/calibration.py": "52dc02fbc2996583c494543cd3a34983b3e5ec3b29d830aecda8a2cabe2967bc",
+    "packages/rag-eval/src/ntc_rag_eval/metrics.py": "bfd78a51693a39f9c3b0a13af06c51e8b4230b6cb2846aef94a3e9d16cf575d9",
+    "pyproject.toml": "a3620331ca7da6b1cb93b8f62273338e99b480b72887e1bb8d9388f3e32e5642",
+    "scripts/phase5_finalize_winner.py": "91c474570256657132830c3a6fb752b3186e71cd260b8015572751f1dcdd63fa",
+    "uv.lock": "064d08d9e15224150f24193e263d200eb609b67242672c248288ba66dffccd29"
+  },
+  "started_at": "2026-07-15T02:21:57.744337+00:00",
+  "status": "APPROVED_FOR_ACTIVATION",
+  "threshold_calibration": {
+    "calibration_case_count": 50,
+    "f1": 0.9176470588235294,
+    "false_negative": 1,
+    "false_positive": 6,
+    "max_f1_diagnostic": {
+      "f1": 0.9210526315789473,
+      "false_negative": 5,
+      "false_positive": 1,
+      "negatives": 460,
+      "positives": 40,
+      "precision": 0.9722222222222222,
+      "recall": 0.875,
+      "threshold": 0.3152053,
+      "true_positive": 35
+    },
+    "method": "minimum_recall_0.95_then_max_precision_calibration_split_only",
+    "minimum_recall": 0.95,
+    "negatives": 460,
+    "positives": 40,
+    "precision": 0.8666666666666667,
+    "recall": 0.975,
+    "threshold": 0.2300481,
+    "true_positive": 39
+  },
+  "winner_index": {
+    "chunk_size": 256,
+    "collection_name": "ntc_chunks_embed300m_v2_s256_o10_095bc081a101_recall95_v3",
+    "collection_state": {
+      "points_count": 12,
+      "status": "green"
+    },
+    "dimension": 2048,
+    "distance": "Cosine",
+    "embedding_model": "nvidia/llama-nemotron-embed-300m-v2",
+    "embedding_model_version": "1.13.0",
+    "expected_point_count": 12,
+    "index_config_fingerprint": "a3cc25bb8e65a03ac1146c227c4c2b8c5a86370f4852eb35eb4d66330dd20290",
+    "index_version": "embed300m-v2-phase4",
+    "overlap_percent": 10
+  }
+}

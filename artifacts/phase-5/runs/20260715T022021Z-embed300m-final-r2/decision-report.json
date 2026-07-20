@@ -1,0 +1,199 @@
+{
+  "activation": {
+    "alias": "ntc_chunks_active",
+    "authorized": false,
+    "performed_in_this_report": false,
+    "receipt_file": "activation-receipt.json"
+  },
+  "completed_at": "2026-07-15T02:20:24.593228+00:00",
+  "evidence_bindings": {
+    "inputs_sha256": "5a7111734078de2f07b4a9c5423abbf91acbd2506f573e3527a71479131b3823",
+    "runtime_identity_sha256": "0d616df2f562358f60e1467266df97eafac60c254487de1dc7a80a1d7bee369b",
+    "source_provenance_sha256": "84811cd43633233c70aaded56747078998fe4e3211cd54c60a58973e4627a334"
+  },
+  "held_out_evaluation": {
+    "approved_policy": {
+      "answerable_samples": 40,
+      "by_tag": {
+        "phase4-live-corpus": {
+          "context_precision_at_10": 0.775,
+          "mrr_at_10": 0.775,
+          "ndcg_at_10": 0.775,
+          "recall_at_10": 0.775,
+          "recall_at_5": 0.775,
+          "samples": 40
+        },
+        "retrieval": {
+          "context_precision_at_10": 0.775,
+          "mrr_at_10": 0.775,
+          "ndcg_at_10": 0.775,
+          "recall_at_10": 0.775,
+          "recall_at_5": 0.775,
+          "samples": 40
+        }
+      },
+      "config_fingerprint": "c8654f795d28f1e9c7cb6ca4ab5f3a64c53d658f5fd739a6f50dded3f9a9a943",
+      "dataset_sha256": "31f83b428bc1d0432758068a93e44733c768966a33a067e33f97de1c810b3bfe",
+      "latency": {
+        "p50_ms": 16.168198504601605,
+        "p95_ms": 57.93358563678339
+      },
+      "observations_sha256": "167149734b2f1ba2220022c7fbcc6c1ea3f3876eb8f872d030162a81d8ade42f",
+      "overall": {
+        "context_precision_at_10": 0.775,
+        "mrr_at_10": 0.775,
+        "ndcg_at_10": 0.775,
+        "recall_at_10": 0.775,
+        "recall_at_5": 0.775,
+        "samples": 40
+      },
+      "quality_gate_passed": false,
+      "schema_version": 1,
+      "total_samples": 50,
+      "unanswerable_nonempty_rate": 0.0,
+      "unanswerable_samples": 10
+    },
+    "raw": {
+      "answerable_samples": 40,
+      "by_tag": {
+        "phase4-live-corpus": {
+          "context_precision_at_10": 0.1,
+          "mrr_at_10": 1.0,
+          "ndcg_at_10": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_5": 1.0,
+          "samples": 40
+        },
+        "retrieval": {
+          "context_precision_at_10": 0.1,
+          "mrr_at_10": 1.0,
+          "ndcg_at_10": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_5": 1.0,
+          "samples": 40
+        }
+      },
+      "config_fingerprint": "4db6ca099606ba52874153e072cb8945ef29cb867e76647d38d4cfb0db7d18bc",
+      "dataset_sha256": "31f83b428bc1d0432758068a93e44733c768966a33a067e33f97de1c810b3bfe",
+      "latency": {
+        "p50_ms": 14.751303009688854,
+        "p95_ms": 19.257393799489364
+      },
+      "observations_sha256": "0c93c66767bff675435efe5b4790760e188bd4ee07b669de508fd1083ce00794",
+      "overall": {
+        "context_precision_at_10": 0.1,
+        "mrr_at_10": 1.0,
+        "ndcg_at_10": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_5": 1.0,
+        "samples": 40
+      },
+      "quality_gate_passed": true,
+      "schema_version": 1,
+      "total_samples": 50,
+      "unanswerable_nonempty_rate": 1.0,
+      "unanswerable_samples": 10
+    }
+  },
+  "inputs": {
+    "calibration_cases": 50,
+    "evaluation_cases": 50,
+    "gold_cases": 100,
+    "gold_file": "gold-final-100-v2-stratified.jsonl",
+    "gold_sha256": "393c9147f6a59a41e1a038a7622dc7d4183571fb4a1aa3a1940514629c155ca3",
+    "ready_child_chunk_count": 12,
+    "ready_corpus_manifest_sha256": "095bc081a101f02197934cdc8849c20287fba99aeede3d6730ea94ffa55b5bac",
+    "ready_document_count": 10,
+    "ready_version_count": 10
+  },
+  "observation_evidence": {
+    "calibration-raw-observations.jsonl": "610b493db25f713b2b86f2cbfc9e31f09e03186fbb1f02af5976a193c2c40906",
+    "evaluation-policy-observations.jsonl": "13a25e389a4c69ec6ab467024775a1f1aeff8b8d02176d043be9fde9e7890424",
+    "evaluation-raw-observations.jsonl": "2ccc3d5671d2055a0d7cb2ced2753f207815212b9cef92737dfc53f0dfbd4293"
+  },
+  "operator_decision": {
+    "approved_by": "workspace-operator-via-user-directive",
+    "basis": "explicit_cli_operator_selection",
+    "bge_comparison_status": "waived_not_completed",
+    "bge_comparison_waiver_reason": "Workspace operator explicitly selected NVIDIA Llama Nemotron Embed 300M V2 after reviewing the exact NVIDIA candidate evidence; BGE-M3 remains unavailable from the required NGC source with HTTP 402, so the local engineering comparison is explicitly waived for this activation.",
+    "selected_embedding": "nvidia/llama-nemotron-embed-300m-v2"
+  },
+  "quality_gate": {
+    "mrr_at_10_minimum": 0.75,
+    "passed": false,
+    "recall_at_10_minimum": 0.9,
+    "unanswerable_nonempty_rate_observed": 0.0,
+    "unanswerable_refusal_gate_phase": 6
+  },
+  "retrieval_policy": {
+    "deduplication_policy": "content_hash_and_document_section_v1",
+    "dense_candidate_limit": 20,
+    "dense_threshold": 0.3152053,
+    "final_limit": 10,
+    "fingerprint": "c8654f795d28f1e9c7cb6ca4ab5f3a64c53d658f5fd739a6f50dded3f9a9a943",
+    "hnsw_ef": 128,
+    "reranker_enabled": false
+  },
+  "run_id": "20260715T022021Z-embed300m-final-r2",
+  "runtime_identity": {
+    "embedding": {
+      "dimension": 2048,
+      "model": "nvidia/llama-nemotron-embed-300m-v2",
+      "model_version": "1.13.0"
+    },
+    "qdrant": {
+      "commit": "e01c207f40a2fe01ed23a191957a76e224fe5726",
+      "title": "qdrant - vector search engine",
+      "version": "1.18.1"
+    }
+  },
+  "schema_version": 1,
+  "security": {
+    "database_url_recorded": false,
+    "document_text_recorded": false,
+    "reranker_enabled": false
+  },
+  "source_provenance": {
+    "apps/api/app/application/retrieval.py": "60d52d9389a1b3b82c8612f2f63ba8f90ce2f9df811f5cefa584b61c78bab425",
+    "apps/api/app/domain/retrieval.py": "62d5e57e328974ed35ec3f7e2f5a034ec94a5be98b9db1d950e3511f44bd9027",
+    "apps/api/app/infrastructure/nim_clients.py": "4ab042ac20af0c8d203ffc4afd64cba18d75dce20efb2dfdc0444a8b40a3c0d4",
+    "apps/api/app/infrastructure/qdrant_store.py": "d5f414897c9448f5ae3e541c91c727806434af8e794b635a2983da04d998bb4e",
+    "migrations/versions/0004_phase4_ingestion_completion.py": "419af5b74d63e8fcc98262271ab701d6432c50e0f2bfc2ea7b4d83843567da9b",
+    "packages/rag-eval/src/ntc_rag_eval/calibration.py": "52dc02fbc2996583c494543cd3a34983b3e5ec3b29d830aecda8a2cabe2967bc",
+    "packages/rag-eval/src/ntc_rag_eval/metrics.py": "bfd78a51693a39f9c3b0a13af06c51e8b4230b6cb2846aef94a3e9d16cf575d9",
+    "pyproject.toml": "a3620331ca7da6b1cb93b8f62273338e99b480b72887e1bb8d9388f3e32e5642",
+    "scripts/phase5_finalize_winner.py": "4ff1350635d6740efdd108c6930eba0ad010a803896b7f76767b550219b98e1e",
+    "uv.lock": "064d08d9e15224150f24193e263d200eb609b67242672c248288ba66dffccd29"
+  },
+  "started_at": "2026-07-15T02:20:21.457065+00:00",
+  "status": "REJECTED",
+  "threshold_calibration": {
+    "calibration_case_count": 50,
+    "f1": 0.9210526315789473,
+    "false_negative": 5,
+    "false_positive": 1,
+    "method": "max_f1_calibration_split_only",
+    "negatives": 460,
+    "positives": 40,
+    "precision": 0.9722222222222222,
+    "recall": 0.875,
+    "threshold": 0.3152053,
+    "true_positive": 35
+  },
+  "winner_index": {
+    "chunk_size": 256,
+    "collection_name": "ntc_chunks_embed300m_v2_s256_o10_095bc081a101_bilingual_v2",
+    "collection_state": {
+      "points_count": 12,
+      "status": "green"
+    },
+    "dimension": 2048,
+    "distance": "Cosine",
+    "embedding_model": "nvidia/llama-nemotron-embed-300m-v2",
+    "embedding_model_version": "1.13.0",
+    "expected_point_count": 12,
+    "index_config_fingerprint": "4db6ca099606ba52874153e072cb8945ef29cb867e76647d38d4cfb0db7d18bc",
+    "index_version": "embed300m-v2-phase4",
+    "overlap_percent": 10
+  }
+}

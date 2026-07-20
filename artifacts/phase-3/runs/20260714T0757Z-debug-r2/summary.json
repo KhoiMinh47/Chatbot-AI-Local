@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "phase": 3,
+  "run_id": "20260714T0757Z-debug-r2",
+  "result": "failed",
+  "exit_code": 1,
+  "reason": "one or more live Phase 3 gates failed; see candidate and execution evidence",
+  "current_step": "acceptance-mapping",
+  "current_service_at_finalize": "",
+  "current_container_id_at_finalize": "",
+  "completed_at_utc": "2026-07-14T08:12:37Z",
+  "workload": {
+    "measured_requests_per_scenario": 1,
+    "warmup_requests_per_scenario": 1,
+    "includes_32k_64k_128k": false,
+    "conforms_to_master_plan_minimum": false
+  },
+  "metric_scope": {
+    "ttft_seconds": "client-observed request start to first non-empty streamed generated-token delta (content or reasoning_content)",
+    "master_backend_receive_ttft_measured": false,
+    "decode_tokens_per_second": "server-reported completion tokens divided by first-to-last client-observed content-delta duration",
+    "total_latency_seconds": "client-observed direct NIM HTTP request duration; not application end-to-end"
+  },
+  "target_combination": {
+    "llm": "llama",
+    "selection_status": "provisional_operator_choice_not_final_winner",
+    "no_oom_live_proven": true
+  },
+  "decision_gates": {
+    "llm_winner": "not_selected_human_review_pending",
+    "embedding_winner": "blocked_exact_bge_m3_runtime_missing",
+    "any_llm_automatic_quality_gate_failed": true,
+    "phase3_complete": false
+  },
+  "execution": [
+    {
+      "item": "preexisting-container-gate",
+      "status": "pass",
+      "evidence": "docker project label query"
+    },
+    {
+      "item": "compose-static-gate",
+      "status": "pass",
+      "evidence": "compose-check.log"
+    },
+    {
+      "item": "secret-gate",
+      "status": "pass",
+      "evidence": "secret-check.log"
+    },
+    {
+      "item": "image-gate",
+      "status": "pass",
+      "evidence": "image-check.log"
+    },
+    {
+      "item": "bge-m3-access-gate",
+      "status": "blocked",
+      "evidence": "bge-m3-access.json"
+    },
+    {
+      "item": "cache-staging",
+      "status": "skipped",
+      "evidence": "existing staged-cache markers required by runtime wrapper"
+    },
+    {
+      "item": "scorecard",
+      "status": "pass",
+      "evidence": "scorecard.json"
+    },
+    {
+      "item": "target-service-combination",
+      "status": "pass",
+      "evidence": "combination"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate": "llama",
+      "status": "evaluated-quality-gate-failed",
+      "evidence": "candidates/llama"
+    },
+    {
+      "candidate": "nemotron",
+      "status": "pass",
+      "evidence": "candidates/nemotron"
+    },
+    {
+      "candidate": "embedding-300m",
+      "status": "pass",
+      "evidence": "candidates/embedding-300m"
+    },
+    {
+      "candidate": "reranking-500m",
+      "status": "pass",
+      "evidence": "candidates/reranking-500m"
+    }
+  ],
+  "acceptance": [
+    {
+      "criterion": "AC-01",
+      "status": "blocked",
+      "evidence": "four available candidates have health/sample/report; BGE-M3 live HTTP 402 has no exact reviewed runtime"
+    },
+    {
+      "criterion": "AC-02",
+      "status": "blocked",
+      "evidence": "validated 32K/64K/128K evidence and scorecard captured; human-reviewed LLM winner not selected"
+    },
+    {
+      "criterion": "AC-03",
+      "status": "fail",
+      "evidence": "debug workload does not meet master-plan minimum"
+    },
+    {
+      "criterion": "AC-04",
+      "status": "blocked",
+      "evidence": "Embed 300M is under 1B, but DG-03 BGE-M3 comparison is incomplete (live HTTP 402)"
+    },
+    {
+      "criterion": "AC-05",
+      "status": "pass",
+      "evidence": "explicitly configured provisional (not winner) LLM + Embed 300M + Rerank 500M was healthy with OOMKilled=false"
+    },
+    {
+      "criterion": "AC-06",
+      "status": "pass",
+      "evidence": "pinned image metadata and reviewed license declaration captured per candidate"
+    }
+  ],
+  "secrets_persisted": false,
+  "cache_volumes_preserved": true,
+  "phase4_started": false
+}

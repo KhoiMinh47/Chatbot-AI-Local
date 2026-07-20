@@ -1,0 +1,19 @@
+{
+  "model": "baai/bge-m3",
+  "reviewed_state": "blocked-payment-or-entitlement-required-before-image-selection",
+  "previously_observed_http_status": 402,
+  "live_authenticated_token_scope_probe": {
+    "endpoint": "nvcr.io/proxy_auth",
+    "scope": "repository:nim/baai/bge-m3:pull",
+    "result": "pass",
+    "http_status_raw": "402",
+    "http_status": 402,
+    "response_body_persisted": false,
+    "credential_persisted": false
+  },
+  "exact_pinned_image_selected": false,
+  "mutable_latest_used": false,
+  "substitute_used": false,
+  "acceptance_effect": "blocked",
+  "block_reason": "payment-or-entitlement-required"
+}

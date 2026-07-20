@@ -1,0 +1,37 @@
+{
+  "python": "3.14.5 (main, May 10 2026, 19:28:19) [Clang 22.1.3 ]",
+  "implementation": "CPython",
+  "machine": "aarch64",
+  "platform": "Linux-6.17.0-1014-nvidia-aarch64-with-glibc2.39",
+  "imports": {
+    "alembic": "1.18.5",
+    "celery": "5.6.3",
+    "docling": "2.112.0",
+    "fastapi": "0.139.0",
+    "langchain-openai": "1.3.5",
+    "langgraph": "1.2.9",
+    "minio": "7.2.20",
+    "psycopg": "3.3.4",
+    "pydantic-settings": "2.14.2",
+    "qdrant-client": "1.18.0",
+    "redis": "8.0.1",
+    "sqlalchemy": "2.0.51",
+    "uvicorn": "0.51.0"
+  },
+  "cusparselt": {
+    "library": "/tmp/ntc-rag-python314/lib/python3.14/site-packages/nvidia/cusparselt/lib/libcusparseLt.so.0",
+    "ctypes_load": "pass"
+  },
+  "torch_cuda": {
+    "torch_version": "2.13.0+cu130",
+    "available": true,
+    "device_count": 1,
+    "device_name": "NVIDIA GB10",
+    "capability": [
+      12,
+      1
+    ],
+    "matrix_multiply": 11.0
+  },
+  "status": "pass"
+}

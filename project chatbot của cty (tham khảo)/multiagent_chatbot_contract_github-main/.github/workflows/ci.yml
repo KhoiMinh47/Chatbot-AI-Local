@@ -1,0 +1,192 @@
+name: CI Strict
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+  merge_group:
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  security-events: write
+
+jobs:
+  workflow-lint:
+    name: Workflow lint
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup actionlint
+        run: |
+          set -euo pipefail
+          mkdir -p ./bin
+          curl -fsSL https://raw.githubusercontent.com/rhysd/actionlint/main/scripts/download-actionlint.bash | bash -s -- latest ./bin
+
+      - name: Run actionlint
+        run: ./bin/actionlint -color -shellcheck=
+
+  markdown-lint:
+    name: Markdown lint
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install markdownlint-cli
+        run: npm install -g markdownlint-cli@0.41.0
+
+      - name: Run markdownlint
+        run: |
+          markdownlint \
+            README.md \
+            docs/README.md \
+            docs/overview/**/*.md \
+            docs/architecture/**/*.md \
+            docs/backend/**/*.md \
+            docs/frontend/**/*.md \
+            docs/pipeline/**/*.md \
+            docs/deployment/**/*.md \
+            docs/operations/**/*.md \
+            docs/api/**/*.md \
+            docs/history/**/*.md \
+            docs/standards/**/*.md \
+            docs/cicd/**/*.md \
+            docs/reports/**/*.md \
+            plans/plan-*.md \
+            logs/**/*.md
+
+  secret-scan:
+    name: Secret scan (gitleaks)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Run gitleaks
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  backend-quality:
+    name: Backend quality and security
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: |
+            backend/requirements.txt
+            parse-data/requirements.txt
+            embedding/requirements.txt
+            prometheus-collector/requirements.txt
+
+      - name: Install dependencies and scanners
+        run: |
+          set -euo pipefail
+          python -m pip install --upgrade pip setuptools wheel
+          python -m pip install -r backend/requirements.txt
+          python -m pip install -r parse-data/requirements.txt
+          python -m pip install -r embedding/requirements.txt
+          python -m pip install -r prometheus-collector/requirements.txt
+          python -m pip install bandit pip-audit
+
+      - name: Python syntax compile check
+        run: |
+          set -euo pipefail
+          python -m compileall backend parse-data embedding prometheus-collector
+
+      - name: Dependency consistency check
+        run: python -m pip check
+
+      - name: Bandit high severity scan
+        run: bandit -r backend -lll -iii
+
+      - name: Python dependency audit
+        run: pip-audit -r backend/requirements.txt
+
+  frontend-quality:
+    name: Frontend quality and security
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Lint (report only)
+        run: npm run lint || true
+
+      - name: Audit production dependencies
+        run: npm audit --omit=dev --audit-level=critical
+
+  compose-validate:
+    name: Docker Compose validate
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate compose files with CI fallback env
+        run: |
+          set -euo pipefail
+          export HF_CACHE_MOUNT=/tmp/hf-cache
+          export VLLM_MODEL_NAME=dummy-model
+          mkdir -p "$HF_CACHE_MOUNT"
+
+          # Some compose mounts may refer to files not committed in every branch.
+          # Create minimal placeholders to keep config validation deterministic.
+          if [[ ! -f config/nginx/default.conf.template ]]; then
+            mkdir -p config/nginx
+            : > config/nginx/default.conf.template
+          fi
+          if [[ ! -f config/searxng/settings.runtime.yml ]]; then
+            mkdir -p config/searxng
+            : > config/searxng/settings.runtime.yml
+          fi
+
+          docker compose --env-file /dev/null -f docker-compose.yml config > /tmp/compose-main.out
+          if [[ -f docker-compose.all.yml ]]; then
+            docker compose --env-file /dev/null -f docker-compose.all.yml config > /tmp/compose-all.out
+          else
+            echo "docker-compose.all.yml not found in this branch, skip optional validation"
+          fi

@@ -1,0 +1,29 @@
+{
+  "name": "chatbot_nextjs_contract",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "NODE_OPTIONS='--max-old-space-size=4096' next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "axios": "^1.13.5",
+    "next": "16.1.6",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "react-markdown": "^10.1.0",
+    "react-syntax-highlighter": "^16.1.0",
+    "react-toastify": "^11.0.5",
+    "remark-gfm": "^4.0.1",
+    "socket.io-client": "^4.8.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.29.0",
+    "@babel/preset-react": "^7.28.5",
+    "babel-plugin-react-compiler": "^1.0.0",
+    "eslint": "^9.39.3",
+    "eslint-config-next": "^16.1.6"
+  }
+}

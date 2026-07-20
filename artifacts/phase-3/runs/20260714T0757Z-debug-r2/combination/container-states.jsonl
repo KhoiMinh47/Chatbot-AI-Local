@@ -1,0 +1,3 @@
+{"service":"nim-llm-llama","State":{"Status":"running","Running":true,"OOMKilled":false,"Health":"healthy"}}
+{"service":"nim-embedding-300m","State":{"Status":"running","Running":true,"OOMKilled":false,"Health":"healthy"}}
+{"service":"nim-reranking-500m","State":{"Status":"running","Running":true,"OOMKilled":false,"Health":"healthy"}}

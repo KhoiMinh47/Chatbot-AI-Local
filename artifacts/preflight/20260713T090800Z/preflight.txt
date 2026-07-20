@@ -1,0 +1,172 @@
+
+## uname-a
+$ uname -a
+Linux gx10-e56d 6.17.0-1014-nvidia #14-Ubuntu SMP PREEMPT_DYNAMIC Tue Mar 17 19:01:40 UTC 2026 aarch64 aarch64 aarch64 GNU/Linux
+
+## uname-m
+$ uname -m
+aarch64
+
+## nvidia-smi
+$ nvidia-smi
+Mon Jul 13 17:26:17 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.142                Driver Version: 580.142        CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA GB10                    On  |   0000000F:01:00.0 Off |                  N/A |
+| N/A   43C    P8              3W /  N/A  | Not Supported          |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    0   N/A  N/A            2435      G   /usr/lib/xorg/Xorg                       43MiB |
+|    0   N/A  N/A            2578      G   /usr/bin/gnome-shell                     16MiB |
++-----------------------------------------------------------------------------------------+
+
+## docker-version
+$ docker version
+Client:
+ Version:           29.1.3
+ API version:       1.52
+ Go version:        go1.24.4
+ Git commit:        29.1.3-0ubuntu3~24.04.2
+ Built:             Wed Apr 29 16:41:06 2026
+ OS/Arch:           linux/arm64
+ Context:           default
+
+Server:
+ Engine:
+  Version:          29.1.3
+  API version:      1.52 (minimum version 1.44)
+  Go version:       go1.24.4
+  Git commit:       29.1.3-0ubuntu3~24.04.2
+  Built:            Wed Apr 29 16:41:06 2026
+  OS/Arch:          linux/arm64
+  Experimental:     false
+ containerd:
+  Version:          2.2.1
+  GitCommit:        
+ runc:
+  Version:          1.3.4-0ubuntu1~24.04.1
+  GitCommit:        
+ docker-init:
+  Version:          0.19.0
+  GitCommit:        
+
+## docker-compose-version
+$ docker compose version
+Docker Compose version 2.40.3+ds1-0ubuntu1~24.04.1
+
+## docker-info
+$ docker info
+[output projected to selected non-secret fields]
+{
+  "id": "4c601cd8-b52c-4d08-adca-7848c42204a6",
+  "name": "gx10-e56d",
+  "server_version": "29.1.3",
+  "operating_system": "Ubuntu 24.04.4 LTS",
+  "os_version": "24.04",
+  "os_type": "linux",
+  "architecture": "aarch64",
+  "kernel_version": "6.17.0-1014-nvidia",
+  "cpus": 20,
+  "memory_bytes": 130663628800,
+  "storage_driver": "overlayfs",
+  "cgroup_driver": "systemd",
+  "cgroup_version": "2",
+  "containers": 8,
+  "containers_running": 0,
+  "containers_paused": 0,
+  "containers_stopped": 8,
+  "images": 200,
+  "runtime_names": [
+    "io.containerd.runc.v2",
+    "runc"
+  ],
+  "default_runtime": "runc",
+  "live_restore_enabled": false,
+  "security_options": [
+    "name=apparmor",
+    "name=seccomp,profile=builtin",
+    "name=cgroupns"
+  ],
+  "swarm_local_node_state": "inactive"
+}
+
+## docker-images-digests
+$ docker images --digests
+REPOSITORY                                    TAG                            DIGEST                                                                    IMAGE ID       CREATED         SIZE
+km-task4-api                                  latest                         <none>                                                                    67114d441a70   5 days ago      8.54GB
+km-task45-api                                 latest                         sha256:67114d441a70d5b57742f1bd5e87bc8c43bd5fbe1303a3c1d2ea6f88b0d51798   67114d441a70   5 days ago      8.54GB
+km-task35-runtime-nodeps                      latest                         sha256:ecee0a5e44b46730806efdc9b23cd2b139e9720c8d9c66f5f78ec7aec4d823c8   ecee0a5e44b4   5 days ago      8.53GB
+km-task35-runtime-infer                       latest                         sha256:717539e07617b54f069e255c9623a6f1dc17b9b741008bcd0b8b0ca6c91510c3   717539e07617   6 days ago      12.5GB
+km-task35-infer                               latest                         sha256:1bed68c66942a846b54c9af009c058a1af33716b8cb1b7a9ea7d779908c1ca2b   1bed68c66942   6 days ago      8.47GB
+km-task3-infer                                latest                         sha256:764aec1ce24a1685d3d52386ff3fd95b6d552dd9de3393bc3ef528fdabb61b11   764aec1ce24a   6 days ago      35.9GB
+bluenviron/mediamtx                           latest                         sha256:f37aaaf1a707c42b0aff49a3ab5d4fa57a3504ebc3f27657434a820e3b16d730   f37aaaf1a707   2 weeks ago     91.3MB
+python                                        3.12-slim                      sha256:423ed6ab25b1921a477529254bfeeabf5855151dc2c3141699a1bfc852199fbf   423ed6ab25b1   2 weeks ago     205MB
+postgres                                      16                             sha256:fe03a7605299a34ddf5e4f285dff78c3d7190a576b3c6b46f2fcff69f4bffd54   fe03a7605299   2 weeks ago     663MB
+vllm-node                                     latest                         sha256:2323da448113b09ebd3d609f5c4bc945482c0e21c9176d67da072e61d48f3fca   2323da448113   2 weeks ago     38.3GB
+openshell/sandbox-from                        1781256961                     sha256:4f05a4c173932292de7ff6df71b6f05f8b0f14e56062c35f49fd303716647d46   4f05a4c17393   4 weeks ago     4.33GB
+openshell/sandbox-from                        1781256572                     sha256:6dc02f23ec9e88b257bfb929c400073e4899444d28fe1e85fc756c41c6a5465b   6dc02f23ec9e   4 weeks ago     4.33GB
+openshell/sandbox-from                        1781254718                     sha256:c3fed440aa15249ec65fd7e999ed236967ae06c1fecff4467eeb6755b10bb1e1   c3fed440aa15   4 weeks ago     4.33GB
+nvcr.io/nvidia/pytorch                        26.06-py3                      sha256:43c018d6a12963f1a1bad85ef8574b5c2a978eec2be0ebcacfb87f69e0d210e1   43c018d6a129   4 weeks ago     35.6GB
+nvcr.io/nim/meta/llama-3.1-8b-instruct        2.0.6                          sha256:31e360dbb15f825d69e5d68c2032e334301523b4957091270385ed7ef3db5e81   31e360dbb15f   5 weeks ago     40.9GB
+ghcr.io/nvidia/nemoclaw/hermes-sandbox-base   v0.0.55                        sha256:7595d38c321a0b44eebd071ad49a62a344383c62ceb403e30b7898fccf2be421   7595d38c321a   6 weeks ago     4.33GB
+local/vllm-openai-gemma4                      latest                         sha256:c0b6618f5f1fbce37cb7f30ac0e0347176827ab4e15eb1e781aadbede66d6f41   c0b6618f5f1f   6 weeks ago     35GB
+searxng/searxng                               latest                         sha256:1a9d21346437a41ddfc2286968026dddece1d4d0721625cffa2c3b00bb2f9cf3   1a9d21346437   6 weeks ago     369MB
+qdrant/qdrant                                 latest                         sha256:45f8e3ddc2570a4d029877e1b5ec1045c19b3852b4e22a55c7f43b05aea0ca89   45f8e3ddc257   7 weeks ago     285MB
+oliver006/redis_exporter                      latest                         sha256:7ef8e9c26638158fa4e7ad60df8c7e53d1919986753d6c1d2d1876b6ec38d87b   7ef8e9c26638   7 weeks ago     15.6MB
+postgres                                      15                             sha256:1b92e7a80c021647bf70f5d3eb66066a998e4f5cf43c07bb9dc9f729782cf88e   1b92e7a80c02   7 weeks ago     654MB
+vllm/vllm-openai                              latest                         sha256:a230095847e93bd4df9888b33dab956fa9504537b828a23657d2b26fed57b5c9   a230095847e9   8 weeks ago     34.9GB
+redis                                         7-alpine                       sha256:6ab0b6e7381779332f97b8ca76193e45b0756f38d4c0dcda72dbb3c32061ab99   6ab0b6e73817   2 months ago    58.7MB
+adminer                                       latest                         sha256:cc64d253db4f016cbcff2ff2f01e60ed07e74f38b4398f84d3c4fae4b5ce0e07   cc64d253db4f   2 months ago    165MB
+prom/prometheus                               latest                         sha256:e4254400b85610324913f0dc4acf92603d9984e7519414c5a12811aa6146acc3   e4254400b856   2 months ago    531MB
+vllm/vllm-openai                              cu130-nightly                  sha256:3dbe092ec5b2cef63b6104d33fa75d6ce53a7870962529ada69f78bbbc38e776   3dbe092ec5b2   2 months ago    32.7GB
+redis/redisinsight                            latest                         sha256:85562d67a9128ac7f764bb3d1ac909fcf77708c7c8f55bd1605a85b3c4becc83   85562d67a912   2 months ago    560MB
+node                                          22-trixie-slim                 sha256:2d9f5c76c8f4dd36e8f253bee5d828a83a6c09f36188f0b0414325232e0b175d   2d9f5c76c8f4   2 months ago    352MB
+quay.io/prometheus/node-exporter              latest                         sha256:0f422f62c15f154af8d8572b23d623aebfb10cec73a5c654d18f911f3f9df241   0f422f62c15f   3 months ago    38.4MB
+prometheuscommunity/postgres-exporter         latest                         sha256:e96064f876226d94bb6ce48a4c4b3dd76edba91168ec1ab024e5c4b959310b0f   e96064f87622   4 months ago    33.6MB
+tonistiigi/binfmt                             latest                         sha256:d3b963f787999e6c0219a48dba02978769286ff61a5f4d26245cb6a6e5567ea3   d3b963f78799   4 months ago    112MB
+edoburu/pgbouncer                             latest                         sha256:85d1e38593617af1b5f7f285e97d407e56c29939683cc7cfe4c8f6dc19f1268b   85d1e3859361   6 months ago    23.6MB
+nvcr.io/nvidia/riva/riva-speech               2.24.0-l4t-aarch64             sha256:261e4cdc8cc0bf2c83abdd41923cd1e1a0580c5b3712a67457e01eb53dfac104   261e4cdc8cc0   7 months ago    32.4GB
+rabbitmq                                      3.13-management-alpine         sha256:606d8c0d6b3c18d1da9afc53bc7cdb2a8d5486df91b5a9830e9e07626c9ae281   606d8c0d6b3c   7 months ago    277MB
+nvidia/cuda                                   13.0.2-runtime-ubuntu22.04     sha256:f6e92fc2e0db221671325ff1a0e8725422de63b85d777f8aa8efc1858309ab53   f6e92fc2e0db   9 months ago    4.27GB
+nginx                                         1.27-alpine                    sha256:65645c7bb6a0661892a8b03b89d0743208a18dd2f3f17a54ef4b76fb8e2f2a10   65645c7bb6a0   15 months ago   76.8MB
+nvcr.io/nvidia/riva/riva-speech               2.19.0                         sha256:294b57bb22fc1c9eb7a180ac4e548fe963b452dec747df825af343806bdee8b5   294b57bb22fc   16 months ago   34.6GB
+nvcr.io/nvidia/riva/riva-speech               2.19.0-l4t-aarch64             sha256:c2a6298a64347e235beba9a7c2c8077f2d291f2fb4701cdd1b61b83208042198   c2a6298a6434   16 months ago   34.4GB
+oliver006/redis_exporter                      v1.67.0                        sha256:120f7ec77293459ccfdad66bb1db75ab72e8bfeab99f58b1cc2564cadcd7a9e7   120f7ec77293   19 months ago   13MB
+prometheuscommunity/postgres-exporter         v0.16.0                        sha256:6999a7657e2f2fb0ca6ebf417213eebf6dc7d21b30708c622f6fcb11183a2bb0   6999a7657e2f   20 months ago   34.3MB
+prom/prometheus                               v2.55.1                        sha256:2659f4c2ebb718e7695cb9b25ffa7d6be64db013daba13e05c875451cf51b0d3   2659f4c2ebb7   20 months ago   396MB
+minio/minio                                   RELEASE.2024-05-10T01-41-38Z   sha256:420663b8685c5396f06405ad516d611db4465939a141cc7d40266342d0f2632d   420663b8685c   2 years ago     204MB
+qdrant/qdrant                                 v1.9.1                         sha256:1a53a4f9c174c1b031a219b0a1987d328bb8a6fe6a0a6b0316ed4a5035f77bad   1a53a4f9c174   2 years ago     244MB
+nvidia/cuda                                   12.4.1-base-ubuntu22.04        sha256:0f6bfcbf267e65123bcc2287e2153dedfc0f24772fb5ce84afe16ac4b2fada95   0f6bfcbf267e   2 years ago     125MB
+prom/alertmanager                             v0.27.0                        sha256:e13b6ed5cb929eeaee733479dce55e10eb3bc2e9c4586c705a4e8da41e5eacf5   e13b6ed5cb92   2 years ago     102MB
+nvcr.io/nvidia/k8s/dcgm-exporter              3.3.5-3.4.0-ubuntu22.04        sha256:ab1e183c2ccd5820db379027f58cb928af29c2e8a87dd6decc39afac9f15d677   ab1e183c2ccd   2 years ago     1.59GB
+postgres                                      16.2                           sha256:4aea012537edfad80f98d870a36e6b90b4c09b27be7f4b4759d72db863baeebb   4aea012537ed   2 years ago     636MB
+busybox                                       <none>                         sha256:73aaf090f3d85aa34ee199857f03fa3a95c8ede2ffd4cc2cdb5b94e566b11662   73aaf090f3d8   3 years ago     6.14MB
+
+## disk
+$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+tmpfs            13G   19M   13G   1% /run
+efivarfs        256K   37K  220K  15% /sys/firmware/efi/efivars
+/dev/nvme0n1p2  3.7T  1.1T  2.5T  29% /
+tmpfs            61G  172K   61G   1% /dev/shm
+tmpfs           5.0M  8.0K  5.0M   1% /run/lock
+/dev/nvme0n1p1  511M  6.4M  505M   2% /boot/efi
+tmpfs            13G   88K   13G   1% /run/user/1000
+tmpfs            13G  108K   13G   1% /run/user/126
+
+## memory
+$ free -h
+               total        used        free      shared  buff/cache   available
+Mem:           121Gi       5.9Gi       104Gi        22Mi        12Gi       115Gi
+Swap:           15Gi          0B        15Gi

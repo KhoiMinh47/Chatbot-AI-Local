@@ -1,0 +1,155 @@
+
+==========
+== CUDA ==
+==========
+
+NVIDIA Release 
+CUDA Version 13.0.1.012
+Model: nvidia/llama-nemotron-embed-300m-v2
+
+Container image Copyright (c) 2016-2026, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+Various files include modifications (c) NVIDIA CORPORATION & AFFILIATES.  All rights reserved.
+
+GOVERNING TERMS: The software and materials are governed by the NVIDIA Software License Agreement
+(found at https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-software-license-agreement/)
+and the Product-Specific Terms for NVIDIA AI Products
+(found at https://www.nvidia.com/en-us/agreements/enterprise-software/product-specific-terms-for-ai-products/).
+Third Party Software Attributions and Licenses can be found under /opt/nim/acknowledgements.txt.
+
+Overriding NIM_LOG_LEVEL: replacing NIM_LOG_LEVEL=unset with NIM_LOG_LEVEL=INFO
+HF_HOME is set to /opt/nim/.cache/huggingface
+INFO 2026-07-14 08:08:32.117 __init__.py:1205] Appending: /opt/nim to PYTHONPATH: ['/opt/nim/start_server.d', '/usr/lib/python312.zip', '/usr/lib/python3.12', '/usr/lib/python3.12/lib-dynload', '/opt/venv/lib/python3.12/site-packages', '/usr/local/lib/python3.12/dist-packages', '/usr/lib/python3/dist-packages']
+NIM_MODEL_PROFILE is set to e28f17c9c13a99055d065f88d725bf93c23b3aab14acd68f16323de1353fc528
+INFO 2026-07-14 08:08:33.327 __init__.py:1205] Appending: /opt/nim to PYTHONPATH: ['/opt/venv/bin', '/usr/lib/python312.zip', '/usr/lib/python3.12', '/usr/lib/python3.12/lib-dynload', '/opt/venv/lib/python3.12/site-packages', '/usr/local/lib/python3.12/dist-packages', '/usr/lib/python3/dist-packages']
+INFO 2026-07-14 08:08:33.518 __init__.py:1205] Appending: /opt/nim to PYTHONPATH: ['/opt/venv/bin', '/usr/lib/python312.zip', '/usr/lib/python3.12', '/usr/lib/python3.12/lib-dynload', '/opt/venv/lib/python3.12/site-packages', '/usr/local/lib/python3.12/dist-packages', '/usr/lib/python3/dist-packages']
+INFO 2026-07-14 08:08:34.498 profiles.py:188] Matched profile_id in manifest from env NIM_MODEL_PROFILE to: e28f17c9c13a99055d065f88d725bf93c23b3aab14acd68f16323de1353fc528
+INFO 2026-07-14 08:08:34.498 nim_sdk.py:358] Using the profile specified by the user: e28f17c9c13a99055d065f88d725bf93c23b3aab14acd68f16323de1353fc528
+INFO 2026-07-14 08:08:34.498 nim_sdk.py:376] Downloading manifest profile: e28f17c9c13a99055d065f88d725bf93c23b3aab14acd68f16323de1353fc528
+INFO 2026-07-14 08:08:34.531 lib.rs:203] File: tokenizer.json found in cache: "/opt/nim/.cache/ngc/hub/models--nim--nvidia--llama-nemotron-embed-300m-v2/snapshots/tokenizer-b876310e/tokenizer.json"
+INFO 2026-07-14 08:08:34.531 public.rs:52] Skipping download, using cached copy of file: tokenizer.json at path: "/opt/nim/.cache/ngc/hub/models--nim--nvidia--llama-nemotron-embed-300m-v2/snapshots/tokenizer-b876310e/tokenizer.json"
+INFO 2026-07-14 08:08:34.545 lib.rs:203] File: checksums.blake3 found in cache: "/opt/nim/.cache/ngc/hub/models--nim--nvidia--llama-nemotron-embed-300m-v2/snapshots/tokenizer-b876310e/checksums.blake3"
+INFO 2026-07-14 08:08:34.545 public.rs:52] Skipping download, using cached copy of file: checksums.blake3 at path: "/opt/nim/.cache/ngc/hub/models--nim--nvidia--llama-nemotron-embed-300m-v2/snapshots/tokenizer-b876310e/checksums.blake3"
+INFO 2026-07-14 08:08:34.557 lib.rs:203] File: checksums.blake3 found in cache: "/opt/nim/.cache/ngc/hub/models--nim--nvidia--llama-nemotron-embed-300m-v2/snapshots/a100x1-onnx-fp16-u-6dtrvzgw/checksums.blake3"
+INFO 2026-07-14 08:08:34.557 public.rs:52] Skipping download, using cached copy of file: checksums.blake3 at path: "/opt/nim/.cache/ngc/hub/models--nim--nvidia--llama-nemotron-embed-300m-v2/snapshots/a100x1-onnx-fp16-u-6dtrvzgw/checksums.blake3"
+INFO 2026-07-14 08:08:34.569 lib.rs:203] File: metadata.json found in cache: "/opt/nim/.cache/ngc/hub/models--nim--nvidia--llama-nemotron-embed-300m-v2/snapshots/a100x1-onnx-fp16-u-6dtrvzgw/metadata.json"
+INFO 2026-07-14 08:08:34.569 public.rs:52] Skipping download, using cached copy of file: metadata.json at path: "/opt/nim/.cache/ngc/hub/models--nim--nvidia--llama-nemotron-embed-300m-v2/snapshots/a100x1-onnx-fp16-u-6dtrvzgw/metadata.json"
+INFO 2026-07-14 08:08:34.583 lib.rs:203] File: VERSION found in cache: "/opt/nim/.cache/ngc/hub/models--nim--nvidia--llama-nemotron-embed-300m-v2/snapshots/extra-1/VERSION"
+INFO 2026-07-14 08:08:34.583 public.rs:52] Skipping download, using cached copy of file: VERSION at path: "/opt/nim/.cache/ngc/hub/models--nim--nvidia--llama-nemotron-embed-300m-v2/snapshots/extra-1/VERSION"
+INFO 2026-07-14 08:08:34.595 lib.rs:203] File: embedding_ranges.npy found in cache: "/opt/nim/.cache/ngc/hub/models--nim--nvidia--llama-nemotron-embed-300m-v2/snapshots/extra-1/embedding_ranges.npy"
+INFO 2026-07-14 08:08:34.595 public.rs:52] Skipping download, using cached copy of file: embedding_ranges.npy at path: "/opt/nim/.cache/ngc/hub/models--nim--nvidia--llama-nemotron-embed-300m-v2/snapshots/extra-1/embedding_ranges.npy"
+INFO 2026-07-14 08:08:34.602 lib.rs:203] File: model.onnx found in cache: "/opt/nim/.cache/ngc/hub/models--nim--nvidia--llama-nemotron-embed-300m-v2/snapshots/a100x1-onnx-fp16-u-6dtrvzgw/model.onnx"
+INFO 2026-07-14 08:08:34.602 public.rs:52] Skipping download, using cached copy of file: model.onnx at path: "/opt/nim/.cache/ngc/hub/models--nim--nvidia--llama-nemotron-embed-300m-v2/snapshots/a100x1-onnx-fp16-u-6dtrvzgw/model.onnx"
+INFO 2026-07-14 08:08:34.608 lib.rs:203] File: special_tokens_map.json found in cache: "/opt/nim/.cache/ngc/hub/models--nim--nvidia--llama-nemotron-embed-300m-v2/snapshots/tokenizer-b876310e/special_tokens_map.json"
+INFO 2026-07-14 08:08:34.608 public.rs:52] Skipping download, using cached copy of file: special_tokens_map.json at path: "/opt/nim/.cache/ngc/hub/models--nim--nvidia--llama-nemotron-embed-300m-v2/snapshots/tokenizer-b876310e/special_tokens_map.json"
+INFO 2026-07-14 08:08:34.613 lib.rs:203] File: tokenizer_config.json found in cache: "/opt/nim/.cache/ngc/hub/models--nim--nvidia--llama-nemotron-embed-300m-v2/snapshots/tokenizer-b876310e/tokenizer_config.json"
+INFO 2026-07-14 08:08:34.613 public.rs:52] Skipping download, using cached copy of file: tokenizer_config.json at path: "/opt/nim/.cache/ngc/hub/models--nim--nvidia--llama-nemotron-embed-300m-v2/snapshots/tokenizer-b876310e/tokenizer_config.json"
+INFO 2026-07-14 08:08:34.619 lib.rs:203] File: triton.yaml found in cache: "/opt/nim/.cache/ngc/hub/models--nim--nvidia--llama-nemotron-embed-300m-v2/snapshots/extra-1/triton.yaml"
+INFO 2026-07-14 08:08:34.619 public.rs:52] Skipping download, using cached copy of file: triton.yaml at path: "/opt/nim/.cache/ngc/hub/models--nim--nvidia--llama-nemotron-embed-300m-v2/snapshots/extra-1/triton.yaml"
+INFO 2026-07-14 08:08:34.620 nim_sdk.py:394] Using the workspace specified during init: /opt/nim/workspace
+INFO 2026-07-14 08:08:34.620 nim_sdk.py:407] Materializing workspace to: /opt/nim/workspace
+INFO 2026-07-14 08:08:35.018 __init__.py:1205] Appending: /opt/nim to PYTHONPATH: ['/opt/venv/bin', '/usr/lib/python312.zip', '/usr/lib/python3.12', '/usr/lib/python3.12/lib-dynload', '/opt/venv/lib/python3.12/site-packages', '/usr/local/lib/python3.12/dist-packages', '/usr/lib/python3/dist-packages']
+INFO 2026-07-14 08:08:36.454 profiles.py:188] Matched profile_id in manifest from env NIM_MODEL_PROFILE to: e28f17c9c13a99055d065f88d725bf93c23b3aab14acd68f16323de1353fc528
+INFO 2026-07-14 08:08:46.704 __init__.py:1205] Appending: /opt/nim to PYTHONPATH: ['/opt/venv/bin', '/usr/lib/python312.zip', '/usr/lib/python3.12', '/usr/lib/python3.12/lib-dynload', '/opt/venv/lib/python3.12/site-packages', '/usr/local/lib/python3.12/dist-packages', '/usr/lib/python3/dist-packages']
+I0714 08:08:47.083914 283 pinned_memory_manager.cc:277] "Pinned memory pool is created at '0x32ee00000' with size 268435456"
+I0714 08:08:47.083967 283 cuda_memory_manager.cc:107] "CUDA memory pool is created on device 0 with size 67108864"
+I0714 08:08:47.100858 283 model_lifecycle.cc:473] "loading: nvidia_llama_nemotron_embed_300m_v2:1"
+I0714 08:08:47.100889 283 model_lifecycle.cc:473] "loading: embedding_model:1"
+I0714 08:08:47.110864 283 python_be.cc:2289] "TRITONBACKEND_ModelInstanceInitialize: nvidia_llama_nemotron_embed_300m_v2_0_1 (CPU device 0)"
+I0714 08:08:47.110936 283 python_be.cc:2289] "TRITONBACKEND_ModelInstanceInitialize: nvidia_llama_nemotron_embed_300m_v2_0_0 (CPU device 0)"
+I0714 08:08:47.110965 283 python_be.cc:2289] "TRITONBACKEND_ModelInstanceInitialize: nvidia_llama_nemotron_embed_300m_v2_0_2 (CPU device 0)"
+I0714 08:08:47.111026 283 python_be.cc:2289] "TRITONBACKEND_ModelInstanceInitialize: nvidia_llama_nemotron_embed_300m_v2_0_3 (CPU device 0)"
+I0714 08:08:47.111109 283 python_be.cc:2289] "TRITONBACKEND_ModelInstanceInitialize: nvidia_llama_nemotron_embed_300m_v2_0_4 (CPU device 0)"
+I0714 08:08:47.111126 283 python_be.cc:2289] "TRITONBACKEND_ModelInstanceInitialize: nvidia_llama_nemotron_embed_300m_v2_0_6 (CPU device 0)"
+I0714 08:08:47.111201 283 python_be.cc:2289] "TRITONBACKEND_ModelInstanceInitialize: nvidia_llama_nemotron_embed_300m_v2_0_5 (CPU device 0)"
+I0714 08:08:47.111257 283 python_be.cc:2289] "TRITONBACKEND_ModelInstanceInitialize: nvidia_llama_nemotron_embed_300m_v2_0_8 (CPU device 0)"
+I0714 08:08:47.111364 283 python_be.cc:2289] "TRITONBACKEND_ModelInstanceInitialize: nvidia_llama_nemotron_embed_300m_v2_0_9 (CPU device 0)"
+I0714 08:08:47.111472 283 python_be.cc:2289] "TRITONBACKEND_ModelInstanceInitialize: nvidia_llama_nemotron_embed_300m_v2_0_7 (CPU device 0)"
+I0714 08:08:47.140334 283 onnxruntime.cc:2914] "TRITONBACKEND_Initialize: onnxruntime"
+I0714 08:08:47.140362 283 onnxruntime.cc:2924] "Triton TRITONBACKEND API version: 1.19"
+I0714 08:08:47.140364 283 onnxruntime.cc:2930] "'onnxruntime' TRITONBACKEND API version: 1.19"
+I0714 08:08:47.140366 283 onnxruntime.cc:2960] "backend configuration:\n{\"cmdline\":{\"auto-complete-config\":\"false\",\"backend-directory\":\"/opt/tritonserver/backends\",\"min-compute-capability\":\"6.000000\",\"default-max-batch-size\":\"4\"}}"
+[0;93m2026-07-14 08:08:47.248345924 [W:onnxruntime:log, device_discovery.cc:164 DiscoverDevicesForPlatform] GPU device discovery failed: device_discovery.cc:89 ReadFileContents Failed to open file: "/sys/class/drm/card0/device/vendor"[m
+I0714 08:08:47.249786 283 onnxruntime.cc:3025] "TRITONBACKEND_ModelInitialize: embedding_model (version 1)"
+I0714 08:08:47.254973 283 onnxruntime.cc:3090] "TRITONBACKEND_ModelInstanceInitialize: embedding_model_0_0 (GPU device 0)"
+INFO 2026-07-14 08:08:48.455 __init__.py:1205] Appending: /opt/nim to PYTHONPATH: ['', '/usr/lib/python312.zip', '/usr/lib/python3.12', '/usr/lib/python3.12/lib-dynload', '/opt/venv/lib/python3.12/site-packages', '/usr/local/lib/python3.12/dist-packages', '/usr/lib/python3/dist-packages', '/opt/nim/tmp/run/triton-model-repository/nvidia_llama_nemotron_embed_300m_v2/1', '/opt/nim/tmp/run/triton-model-repository/nvidia_llama_nemotron_embed_300m_v2', '/opt/tritonserver/backends/python']
+INFO 2026-07-14 08:08:48.465 __init__.py:1205] Appending: /opt/nim to PYTHONPATH: ['', '/usr/lib/python312.zip', '/usr/lib/python3.12', '/usr/lib/python3.12/lib-dynload', '/opt/venv/lib/python3.12/site-packages', '/usr/local/lib/python3.12/dist-packages', '/usr/lib/python3/dist-packages', '/opt/nim/tmp/run/triton-model-repository/nvidia_llama_nemotron_embed_300m_v2/1', '/opt/nim/tmp/run/triton-model-repository/nvidia_llama_nemotron_embed_300m_v2', '/opt/tritonserver/backends/python']
+INFO 2026-07-14 08:08:48.472 __init__.py:1205] Appending: /opt/nim to PYTHONPATH: ['', '/usr/lib/python312.zip', '/usr/lib/python3.12', '/usr/lib/python3.12/lib-dynload', '/opt/venv/lib/python3.12/site-packages', '/usr/local/lib/python3.12/dist-packages', '/usr/lib/python3/dist-packages', '/opt/nim/tmp/run/triton-model-repository/nvidia_llama_nemotron_embed_300m_v2/1', '/opt/nim/tmp/run/triton-model-repository/nvidia_llama_nemotron_embed_300m_v2', '/opt/tritonserver/backends/python']
+INFO 2026-07-14 08:08:48.542 __init__.py:1205] Appending: /opt/nim to PYTHONPATH: ['', '/usr/lib/python312.zip', '/usr/lib/python3.12', '/usr/lib/python3.12/lib-dynload', '/opt/venv/lib/python3.12/site-packages', '/usr/local/lib/python3.12/dist-packages', '/usr/lib/python3/dist-packages', '/opt/nim/tmp/run/triton-model-repository/nvidia_llama_nemotron_embed_300m_v2/1', '/opt/nim/tmp/run/triton-model-repository/nvidia_llama_nemotron_embed_300m_v2', '/opt/tritonserver/backends/python']
+INFO 2026-07-14 08:08:48.545 __init__.py:1205] Appending: /opt/nim to PYTHONPATH: ['', '/usr/lib/python312.zip', '/usr/lib/python3.12', '/usr/lib/python3.12/lib-dynload', '/opt/venv/lib/python3.12/site-packages', '/usr/local/lib/python3.12/dist-packages', '/usr/lib/python3/dist-packages', '/opt/nim/tmp/run/triton-model-repository/nvidia_llama_nemotron_embed_300m_v2/1', '/opt/nim/tmp/run/triton-model-repository/nvidia_llama_nemotron_embed_300m_v2', '/opt/tritonserver/backends/python']
+INFO 2026-07-14 08:08:48.549 __init__.py:1205] Appending: /opt/nim to PYTHONPATH: ['', '/usr/lib/python312.zip', '/usr/lib/python3.12', '/usr/lib/python3.12/lib-dynload', '/opt/venv/lib/python3.12/site-packages', '/usr/local/lib/python3.12/dist-packages', '/usr/lib/python3/dist-packages', '/opt/nim/tmp/run/triton-model-repository/nvidia_llama_nemotron_embed_300m_v2/1', '/opt/nim/tmp/run/triton-model-repository/nvidia_llama_nemotron_embed_300m_v2', '/opt/tritonserver/backends/python']
+INFO 2026-07-14 08:08:48.558 __init__.py:1205] Appending: /opt/nim to PYTHONPATH: ['', '/usr/lib/python312.zip', '/usr/lib/python3.12', '/usr/lib/python3.12/lib-dynload', '/opt/venv/lib/python3.12/site-packages', '/usr/local/lib/python3.12/dist-packages', '/usr/lib/python3/dist-packages', '/opt/nim/tmp/run/triton-model-repository/nvidia_llama_nemotron_embed_300m_v2/1', '/opt/nim/tmp/run/triton-model-repository/nvidia_llama_nemotron_embed_300m_v2', '/opt/tritonserver/backends/python']
+INFO 2026-07-14 08:08:48.643 __init__.py:1205] Appending: /opt/nim to PYTHONPATH: ['', '/usr/lib/python312.zip', '/usr/lib/python3.12', '/usr/lib/python3.12/lib-dynload', '/opt/venv/lib/python3.12/site-packages', '/usr/local/lib/python3.12/dist-packages', '/usr/lib/python3/dist-packages', '/opt/nim/tmp/run/triton-model-repository/nvidia_llama_nemotron_embed_300m_v2/1', '/opt/nim/tmp/run/triton-model-repository/nvidia_llama_nemotron_embed_300m_v2', '/opt/tritonserver/backends/python']
+INFO 2026-07-14 08:08:48.758 __init__.py:1205] Appending: /opt/nim to PYTHONPATH: ['', '/usr/lib/python312.zip', '/usr/lib/python3.12', '/usr/lib/python3.12/lib-dynload', '/opt/venv/lib/python3.12/site-packages', '/usr/local/lib/python3.12/dist-packages', '/usr/lib/python3/dist-packages', '/opt/nim/tmp/run/triton-model-repository/nvidia_llama_nemotron_embed_300m_v2/1', '/opt/nim/tmp/run/triton-model-repository/nvidia_llama_nemotron_embed_300m_v2', '/opt/tritonserver/backends/python']
+INFO 2026-07-14 08:08:48.958 __init__.py:1205] Appending: /opt/nim to PYTHONPATH: ['', '/usr/lib/python312.zip', '/usr/lib/python3.12', '/usr/lib/python3.12/lib-dynload', '/opt/venv/lib/python3.12/site-packages', '/usr/local/lib/python3.12/dist-packages', '/usr/lib/python3/dist-packages', '/opt/nim/tmp/run/triton-model-repository/nvidia_llama_nemotron_embed_300m_v2/1', '/opt/nim/tmp/run/triton-model-repository/nvidia_llama_nemotron_embed_300m_v2', '/opt/tritonserver/backends/python']
+INFO 2026-07-14 08:08:50.960 nimutils.py:118] Creating new model manifest (first time)
+INFO 2026-07-14 08:08:50.969 profiles.py:103] No custom profile selectors found.
+INFO 2026-07-14 08:08:50.969 profiles.py:188] Matched profile_id in manifest from env NIM_MODEL_PROFILE to: e28f17c9c13a99055d065f88d725bf93c23b3aab14acd68f16323de1353fc528
+INFO 2026-07-14 08:08:50.969 nimutils.py:135] Model manifest cached successfully
+WARN 2026-07-14 08:08:51.048 system.rs:190] Not supported error accessing attributes of Device with index: 0 error: the requested operation is not available on the target device
+INFO 2026-07-14 08:08:51.054 telemetry_handler.py:77] Telemetry mode TelemetryMode.OFF
+INFO 2026-07-14 08:08:51.058 http_api.py:341] Starting HTTP Inference server, port: 8000, workers_count: 10, host: 0.0.0.0, log_level: info, SSL: disabled
+INFO 2026-07-14 08:08:51.163 profiles.py:103] No custom profile selectors found.
+INFO 2026-07-14 08:08:51.163 profiles.py:188] Matched profile_id in manifest from env NIM_MODEL_PROFILE to: e28f17c9c13a99055d065f88d725bf93c23b3aab14acd68f16323de1353fc528
+INFO 2026-07-14 08:08:51.241 profiles.py:103] No custom profile selectors found.
+INFO 2026-07-14 08:08:51.241 profiles.py:188] Matched profile_id in manifest from env NIM_MODEL_PROFILE to: e28f17c9c13a99055d065f88d725bf93c23b3aab14acd68f16323de1353fc528
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+[0;93m2026-07-14 08:08:52.642997395 [W:onnxruntime:, transformer_memcpy.cc:85 ApplyImpl] 3 Memcpy nodes are added to the graph main_graph for CUDAExecutionProvider. It might have negative impact on performance (including unable to run CUDA graph). Set session_options.log_severity_level=1 to see the detail logs before this message.[m
+[0;93m2026-07-14 08:08:52.646711149 [W:onnxruntime:, session_state.cc:1307 VerifyEachNodeIsAssignedToAnEp] Some nodes were not assigned to the preferred execution providers which may or may not have an negative impact on performance. e.g. ORT explicitly assigns shape related ops to CPU to improve perf.[m
+[0;93m2026-07-14 08:08:52.646720573 [W:onnxruntime:, session_state.cc:1309 VerifyEachNodeIsAssignedToAnEp] Rerunning with verbose output on a non-minimal build will show node assignments.[m
+I0714 08:08:53.067734 283 model_lifecycle.cc:849] "successfully loaded 'embedding_model'"
+I0714 08:08:53.468459 283 model_lifecycle.cc:849] "successfully loaded 'nvidia_llama_nemotron_embed_300m_v2'"
+I0714 08:08:53.468687 283 server.cc:611] 
++------------------+------+
+| Repository Agent | Path |
++------------------+------+
++------------------+------+
+
+I0714 08:08:53.478476 283 server.cc:638] 
++-------------+-----------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Backend     | Path                                                            | Config                                                                                                                                                         |
++-------------+-----------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| python      | /opt/tritonserver/backends/python/libtriton_python.so           | {"cmdline":{"auto-complete-config":"false","backend-directory":"/opt/tritonserver/backends","min-compute-capability":"6.000000","default-max-batch-size":"4"}} |
+| onnxruntime | /opt/tritonserver/backends/onnxruntime/libtriton_onnxruntime.so | {"cmdline":{"auto-complete-config":"false","backend-directory":"/opt/tritonserver/backends","min-compute-capability":"6.000000","default-max-batch-size":"4"}} |
++-------------+-----------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+I0714 08:08:53.478511 283 server.cc:681] 
++-------------------------------------+---------+--------+
+| Model                               | Version | Status |
++-------------------------------------+---------+--------+
+| embedding_model                     | 1       | READY  |
+| nvidia_llama_nemotron_embed_300m_v2 | 1       | READY  |
++-------------------------------------+---------+--------+
+
+I0714 08:08:53.517440 283 metrics.cc:889] "Collecting metrics for GPU 0: NVIDIA GB10"
+I0714 08:08:53.522540 283 metrics.cc:782] "Collecting CPU metrics"
+I0714 08:08:53.522961 283 tritonserver.cc:2598] 
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Option                           | Value                                                                                                                                                                                                           |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| server_id                        | triton                                                                                                                                                                                                          |
+| server_version                   | 2.61.0                                                                                                                                                                                                          |
+| server_extensions                | classification sequence model_repository model_repository(unload_dependents) schedule_policy model_configuration system_shared_memory cuda_shared_memory binary_tensor_data parameters statistics trace logging |
+| model_repository_path[0]         | /opt/nim/tmp/run/triton-model-repository                                                                                                                                                                        |
+| model_control_mode               | MODE_NONE                                                                                                                                                                                                       |
+| strict_model_config              | 1                                                                                                                                                                                                               |
+| model_config_name                |                                                                                                                                                                                                                 |
+| rate_limit                       | OFF                                                                                                                                                                                                             |
+| pinned_memory_pool_byte_size     | 268435456                                                                                                                                                                                                       |
+| cuda_memory_pool_byte_size{0}    | 67108864                                                                                                                                                                                                        |
+| min_supported_compute_capability | 6.0                                                                                                                                                                                                             |
+| strict_readiness                 | 1                                                                                                                                                                                                               |
+| exit_timeout                     | 30                                                                                                                                                                                                              |
+| cache_enabled                    | 0                                                                                                                                                                                                               |
++----------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+I0714 08:08:53.539117 283 grpc_server.cc:2562] "Started GRPCInferenceService at 0.0.0.0:8001"
+I0714 08:08:53.539554 283 http_server.cc:4789] "Started HTTPService at 0.0.0.0:8080"
+I0714 08:08:53.580951 283 http_server.cc:358] "Started Metrics Service at 0.0.0.0:8002"
+W0714 08:08:54.525316 283 metrics.cc:643] "Unable to get power limit for GPU 0. Status:Success, value:0.000000"
+W0714 08:08:54.525356 283 metrics.cc:724] "Unable to get memory usage for GPU 0. Memory usage status:Success, value:0. Memory total status:Success, value:0"
+W0714 08:08:55.530737 283 metrics.cc:643] "Unable to get power limit for GPU 0. Status:Success, value:0.000000"
+W0714 08:08:55.530768 283 metrics.cc:724] "Unable to get memory usage for GPU 0. Memory usage status:Success, value:0. Memory total status:Success, value:0"
+W0714 08:08:56.531773 283 metrics.cc:643] "Unable to get power limit for GPU 0. Status:Success, value:0.000000"
+W0714 08:08:56.531808 283 metrics.cc:724] "Unable to get memory usage for GPU 0. Memory usage status:Success, value:0. Memory total status:Success, value:0"

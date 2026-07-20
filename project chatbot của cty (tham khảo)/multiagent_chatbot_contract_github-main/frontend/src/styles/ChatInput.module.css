@@ -1,0 +1,489 @@
+.inputContainer {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: var(--color-box-input);
+    border-radius: 28px;
+    padding: 12px 16px;
+    position: relative;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.2s, background-color 0.2s;
+    display: flex;
+    flex-direction: column;
+}
+
+.inputContainer:focus-within {
+    background-color: var(--card-bg);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.textarea {
+    width: 100%;
+    border: none;
+    background: transparent;
+    outline: none;
+    resize: none;
+    padding: 8px 12px;
+    font-size: 1rem;
+    color: var(--text-main);
+    min-height: 44px;
+    max-height: 200px;
+    font-family: inherit;
+    line-height: 1.5;
+}
+
+.bottomBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 8px;
+    padding-top: 4px;
+}
+
+.leftActions,
+.rightActions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.iconBtn {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    padding: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.iconBtn:hover {
+    background-color: var(--color-hover);
+}
+
+.toolBtn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    border-radius: 16px;
+    background: transparent;
+    border: 1px solid transparent;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.toolBtn:hover {
+    background-color: var(--color-hover);
+}
+
+/* Dropdown Menu Styles */
+.modelSelector {
+    position: relative;
+}
+
+.selectorBtn {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 12px;
+    border-radius: 12px;
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.selectorBtn:hover {
+    background-color: var(--color-hover);
+}
+
+.dropdownMenu {
+    position: absolute;
+    bottom: calc(100% + 12px);
+    right: 0;
+    width: 320px;
+    background: var(--card-bg);
+    border-radius: 16px;
+    box-shadow: var(--card-shadow);
+    padding: 16px 0;
+    z-index: 1000;
+    border: 1px solid var(--card-border);
+    display: flex;
+    flex-direction: column;
+}
+
+.menuHeader {
+    padding: 0 20px 12px 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-main);
+    border-bottom: 1px solid var(--card-border);
+    margin-bottom: 8px;
+}
+
+.menuSectionLabel {
+    padding: 12px 20px 4px 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #70757a;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.menuItem {
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.menuItem:hover {
+    background-color: var(--color-hover);
+}
+
+.itemContent {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.itemTitle {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-main);
+}
+
+.itemDesc {
+    font-size: 0.8rem;
+    color: #70757a;
+}
+
+.checkIcon {
+    color: #0b57d0;
+}
+
+.navItem {
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+.navItem:hover {
+    background-color: var(--color-hover);
+    color: var(--text-main);
+}
+
+.navItemDisabled {
+    opacity: 0.6;
+    cursor: not-allowed !important;
+    background-color: transparent !important;
+}
+
+.navItem.navItemDisabled:hover {
+    background-color: transparent !important;
+    color: var(--text-secondary) !important;
+}
+
+.navIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+}
+
+.toolsMenu {
+    position: relative;
+}
+
+.toolsDropdown {
+    position: absolute;
+    bottom: calc(100% + 12px);
+    left: 0;
+    width: 280px;
+    background: var(--card-bg);
+    border-radius: 16px;
+    box-shadow: var(--card-shadow);
+    padding: 16px 0;
+    z-index: 1000;
+    border: 1px solid var(--card-border);
+    display: flex;
+    flex-direction: column;
+}
+
+.loadingSpinner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 4px;
+}
+
+.loadingSpinner img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Tool Pills Styling (Gemini Style) */
+.toolPillsContainer {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-left: 4px;
+}
+
+.toolPill {
+    display: flex;
+    align-items: center;
+    background-color: var(--color-box-input);
+    border: 1px solid var(--border-color);
+    padding: 4px 6px 4px 10px;
+    border-radius: 16px;
+    color: var(--text-main);
+    font-size: 0.85rem;
+    font-weight: 500;
+    animation: pillFadeIn 0.2s ease-out;
+}
+
+@keyframes pillFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.toolPillIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 6px;
+}
+
+.toolPillIcon svg {
+    width: 14px;
+    height: 14px;
+    stroke: var(--text-primary);
+}
+
+.toolPillLabel {
+    margin-right: 4px;
+}
+
+.toolPillClose {
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+    margin-left: 2px;
+}
+
+.toolPillClose:hover {
+    background-color: rgba(11, 87, 208, 0.1);
+}
+
+/* Attachment Chips Styling (Gemini Style) */
+.attachmentContainer {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 8px;
+    padding: 12px 12px 4px 12px;
+    margin-bottom: 4px;
+    overflow-x: auto;
+    overflow-y: visible;
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: #b8c4d6 transparent;
+}
+
+.attachmentContainer::-webkit-scrollbar {
+    height: 6px;
+}
+
+.attachmentContainer::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.attachmentContainer::-webkit-scrollbar-thumb {
+    background: #b8c4d6;
+    border-radius: 999px;
+}
+
+.fileChip {
+    display: flex;
+    align-items: center;
+    background-color: var(--bg-sidebar);
+    border: 1px solid var(--border-color);
+    padding: 8px 12px;
+    border-radius: 12px;
+    gap: 10px;
+    max-width: 240px;
+    min-width: 200px;
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    animation: slideUp 0.2s ease-out;
+    position: relative;
+    transition: background-color 0.2s;
+}
+
+.fileChip:hover {
+    background-color: var(--color-hover);
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fileIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: var(--card-bg);
+    border-radius: 8px;
+    color: var(--text-primary);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.fileInfo {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    min-width: 0;
+}
+
+.fileName {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-main);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.fileType {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+}
+
+.removeBtn {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #444746;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 5;
+}
+
+.removeTooltip {
+    position: absolute;
+    bottom: calc(100% + 8px);
+    right: 50%;
+    transform: translateX(50%) translateY(4px);
+    background: var(--card-bg);
+    color: var(--text-main);
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease;
+    border: 1px solid var(--card-border);
+    pointer-events: none;
+}
+
+.removeBtn:hover .removeTooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(50%) translateY(0);
+}
+
+.fileChip:hover .removeBtn {
+    opacity: 1;
+}
+
+.removeBtn:hover {
+    background: #1d1b20;
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .attachmentContainer {
+        padding: 4px 8px;
+        gap: 6px;
+    }
+
+    .fileChip {
+        min-width: 170px;
+        max-width: 200px;
+        padding: 7px 10px;
+    }
+
+    .fileIcon {
+        width: 28px;
+        height: 28px;
+    }
+
+    .fileName {
+        font-size: 0.8rem;
+    }
+
+    .removeBtn {
+        opacity: 1;
+    }
+}
+
+@media (hover: none) {
+    .removeBtn {
+        opacity: 1;
+    }
+}

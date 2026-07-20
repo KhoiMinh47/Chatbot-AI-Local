@@ -1,0 +1,163 @@
+{
+  "schema_version": 1,
+  "phase": 3,
+  "run_id": "20260714T0930Z-debug-r3",
+  "result": "failed",
+  "exit_code": 1,
+  "reason": "reduced debug workload is required-nonconformant (measured requests=1, warmup requests=1, long-context enabled=0); Phase 3 acceptance evidence is incomplete",
+  "current_step": "acceptance-mapping",
+  "current_service_at_finalize": "",
+  "current_container_id_at_finalize": "",
+  "completed_at_utc": "2026-07-14T09:57:30Z",
+  "workload": {
+    "measured_requests_per_scenario": 1,
+    "warmup_requests_per_scenario": 1,
+    "includes_32k_64k_128k": false,
+    "conforms_to_master_plan_minimum": false
+  },
+  "metric_scope": {
+    "ttft_seconds": "client-observed request start to first non-empty streamed generated-token delta (content or reasoning_content)",
+    "master_backend_receive_ttft_measured": false,
+    "decode_tokens_per_second": "server-reported completion tokens divided by first-to-last client-observed generated-token delta duration (content or reasoning_content)",
+    "total_latency_seconds": "client-observed direct NIM HTTP request duration; not application end-to-end"
+  },
+  "target_combination": {
+    "llms_tested": [
+      "llama",
+      "nemotron"
+    ],
+    "operator_preference_not_used_as_acceptance_shortcut": "llama",
+    "selection_status": "both_llm_candidates_tested_before_final_winner",
+    "no_oom_live_proven": true
+  },
+  "decision_gates": {
+    "llm_winner": "not_selected_human_review_pending",
+    "embedding_winner": "blocked_exact_bge_m3_runtime_missing",
+    "any_llm_automatic_quality_gate_failed": false,
+    "phase3_complete": false
+  },
+  "execution": [
+    {
+      "item": "preexisting-container-gate",
+      "status": "pass",
+      "evidence": "docker project label query"
+    },
+    {
+      "item": "compose-static-gate",
+      "status": "pass",
+      "evidence": "compose-check.log"
+    },
+    {
+      "item": "secret-gate",
+      "status": "pass",
+      "evidence": "secret-check.log"
+    },
+    {
+      "item": "image-gate",
+      "status": "pass",
+      "evidence": "image-check.log"
+    },
+    {
+      "item": "bge-m3-access-gate",
+      "status": "blocked",
+      "evidence": "bge-m3-access.json"
+    },
+    {
+      "item": "cache-staging",
+      "status": "skipped",
+      "evidence": "existing staged-cache markers required by runtime wrapper"
+    },
+    {
+      "item": "target-service-combination-llama",
+      "status": "pass",
+      "evidence": "combinations/llama/result.json"
+    },
+    {
+      "item": "target-service-combination-nemotron",
+      "status": "pass",
+      "evidence": "combinations/nemotron/result.json"
+    },
+    {
+      "item": "scorecard",
+      "status": "pass",
+      "evidence": "scorecard.json"
+    },
+    {
+      "item": "final-cleanup",
+      "status": "pass",
+      "evidence": "cleanup.json"
+    },
+    {
+      "item": "exact-secret-artifact-scan",
+      "status": "pass",
+      "evidence": "secret-artifact-scan.json"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate": "llama",
+      "status": "pass",
+      "evidence": "candidates/llama"
+    },
+    {
+      "candidate": "nemotron",
+      "status": "pass",
+      "evidence": "candidates/nemotron"
+    },
+    {
+      "candidate": "embedding-300m",
+      "status": "pass",
+      "evidence": "candidates/embedding-300m"
+    },
+    {
+      "candidate": "reranking-500m",
+      "status": "pass",
+      "evidence": "candidates/reranking-500m"
+    }
+  ],
+  "acceptance": [
+    {
+      "criterion": "AC-01",
+      "status": "blocked",
+      "evidence": "four available candidates have health/sample/report; BGE-M3 live HTTP 402 has no exact reviewed runtime"
+    },
+    {
+      "criterion": "AC-02",
+      "status": "fail",
+      "evidence": "required 32K/64K/128K long-context evidence was not run in reduced debug; context acceptance and LLM winner are not evaluated"
+    },
+    {
+      "criterion": "AC-03",
+      "status": "fail",
+      "evidence": "debug workload does not meet master-plan minimum"
+    },
+    {
+      "criterion": "AC-04",
+      "status": "blocked",
+      "evidence": "Embed 300M is under 1B, but DG-03 BGE-M3 comparison is incomplete (live HTTP 402)"
+    },
+    {
+      "criterion": "AC-05",
+      "status": "pass",
+      "evidence": "both Llama and Nemotron provisional combinations completed concurrent smoke and bounded concurrent load with Embed 300M + Rerank 500M; all containers stayed healthy with RestartCount=0, OOMKilled=false, clean logs, and valid telemetry"
+    },
+    {
+      "criterion": "AC-06",
+      "status": "blocked",
+      "evidence": "available candidates have pinned image/license evidence, but BGE-M3 exact image/runtime/license evidence is unavailable"
+    }
+  ],
+  "exact_secret_scan": {
+    "performed": true,
+    "status": "pass",
+    "evidence": "secret-artifact-scan.json"
+  },
+  "secrets_persisted": false,
+  "cleanup": {
+    "performed": true,
+    "status": "pass",
+    "evidence": "cleanup.json"
+  },
+  "cache_volumes_preserved": true,
+  "phase4_started": false
+}

@@ -1,0 +1,411 @@
+# ===============================================================================
+# Docker Compose All Services — Production Example
+# ===============================================================================
+# Dùng cho production: tất cả service custom đều dùng image build sẵn trên Docker Hub
+#
+# Chỉ cần file này + .env, không cần source code trên production
+# ===============================================================================
+
+x-default-logging: &default-logging
+  driver: "json-file"
+  options:
+    max-size: "50m"
+    max-file: "7"
+
+services:
+  # --- Backend ---
+  backend:
+    image: ${DOCKERHUB_USERNAME:-anlamntc}/rag-chatbot-server-backend:latest
+    container_name: backend
+    restart: unless-stopped
+    logging: *default-logging
+    expose:
+      - "9000"
+    env_file:
+      - path: .env.all
+        required: false
+    environment:
+      SERVER_HOST: ${SERVER_HOST:-0.0.0.0}
+      SERVER_PORT: ${SERVER_PORT:-9000}
+      TRUSTED_PROXY_IPS: ${TRUSTED_PROXY_IPS:-127.0.0.1,::1,172.16.0.0/12}
+      BACKEND_URL: ${BACKEND_URL:-http://localhost:3000/api/v1}
+      FRONTEND_URL: ${FRONTEND_URL:-http://localhost:3000}
+      MARKER_URL: ${MARKER_URL:-http://marker:8005/api/v1/parse}
+      BGE_BASE_URL: ${BGE_BASE_URL:-http://bge:8006}
+      BGE_EMBED_PATH: ${BGE_EMBED_PATH:-/api/v1/embed}
+      BGE_RERANK_PATH: ${BGE_RERANK_PATH:-/api/v1/rerank}
+      SEARXNG_BASE_URL: ${SEARXNG_BASE_URL:-http://searxng:8080}
+      SEARXNG_ENGINES: ${SEARXNG_ENGINES:-bing,duckduckgo,startpage}
+      WEB_SEARXNG_TOPK: ${WEB_SEARXNG_TOPK:-30}
+      WEB_SEARCH_TIMEOUT_SEC: ${WEB_SEARCH_TIMEOUT_SEC:-8}
+      WEB_FETCH_TIMEOUT_SEC: ${WEB_FETCH_TIMEOUT_SEC:-8}
+      SQLALCHEMY_DATABASE_URL: ${SQLALCHEMY_DATABASE_URL:-postgresql+asyncpg://bao:change_me@postgres:5432/multiangent_db}
+      QDRANT_URL: ${QDRANT_URL:-http://qdrant:6333}
+      QDRANT_COLLECTION_NAME: ${QDRANT_COLLECTION_NAME:-rag_data}
+      QDRANT_VECTOR_SIZE: ${QDRANT_VECTOR_SIZE:-2048}
+      MINIO_ENDPOINT: ${MINIO_ENDPOINT:-minio:9000}
+      MINIO_ACCESS_KEY: ${MINIO_ACCESS_KEY:-minioadmin}
+      MINIO_SECRET_KEY: ${MINIO_SECRET_KEY:-change_me}
+      MINIO_SECURE: ${MINIO_SECURE:-false}
+      MINIO_BUCKET: ${MINIO_BUCKET:-contract-templates}
+      MINIO_CONTRACT_BUCKET: ${MINIO_CONTRACT_BUCKET:-contracts}
+      MINIO_RAW_BUCKET: ${MINIO_RAW_BUCKET:-raw-files}
+      VLLM_BASE_URL: ${VLLM_BASE_URL:-http://vllm:8000/v1}
+      VLLM_MODEL_NAME: ${VLLM_MODEL_NAME:-google/gemma-4-E4B-it}
+      VLLM_MODELS_LIST: ${VLLM_MODELS_LIST:-google/gemma-4-E4B-it}
+      VLLM_API_KEY: ${VLLM_API_KEY:-}
+      NVIDIA_API_KEY: ${NVIDIA_API_KEY:-}
+      OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:-}
+      GROQ_API_KEY: ${GROQ_API_KEY:-}
+      LLM_MAX_TOKENS: ${LLM_MAX_TOKENS:-10000}
+      LLM_TIMEOUT: ${LLM_TIMEOUT:-3600}
+      LLM_CONTEXT_WINDOW: ${LLM_CONTEXT_WINDOW:-65536}
+      RAG_INPUT_TOKEN_BUDGET: ${RAG_INPUT_TOKEN_BUDGET:-50000}
+      RAG_OUTPUT_TOKEN_BUDGET: ${RAG_OUTPUT_TOKEN_BUDGET:-10000}
+      RAG_FILE_CONTEXT_TOKEN_BUDGET: ${RAG_FILE_CONTEXT_TOKEN_BUDGET:-40000}
+      RAG_HISTORY_TOKEN_BUDGET: ${RAG_HISTORY_TOKEN_BUDGET:-10000}
+      RAG_SELECTED_PATH_TOKEN_BUDGET: ${RAG_SELECTED_PATH_TOKEN_BUDGET:-50000}
+      RAG_AVG_TOKENS_PER_CHUNK: ${RAG_AVG_TOKENS_PER_CHUNK:-600}
+      RAG_CHARS_PER_TOKEN: ${RAG_CHARS_PER_TOKEN:-2.5}
+      REDIS_URL: ${REDIS_URL:-redis://:change_me@redis:6379/0}
+      REDIS_PASSWORD: ${REDIS_PASSWORD:-change_me}
+      JWT_SECRET_KEY: ${JWT_SECRET_KEY:-change_me}
+      JWT_ALGORITHM: ${JWT_ALGORITHM:-HS256}
+      JWT_EXPIRE_DAYS: ${JWT_EXPIRE_DAYS:-30}
+      COOKIE_SECURE: ${COOKIE_SECURE:-false}
+      COOKIE_SAMESITE: ${COOKIE_SAMESITE:-lax}
+      VERIFY_TOKEN_EXPIRE_MINUTES: ${VERIFY_TOKEN_EXPIRE_MINUTES:-60}
+      VERIFY_TOKEN_PEPPER: ${VERIFY_TOKEN_PEPPER:-}
+      RAG_UPLOAD_MAX_SIZE_MB: ${RAG_UPLOAD_MAX_SIZE_MB:-10}
+      ROOT_EMAIL: ${ROOT_EMAIL:-admin@bachviet.com}
+      ROOT_PASSWORD: ${ROOT_PASSWORD:-change_me}
+      FOLDER_PATH_CONTRACT: ${FOLDER_PATH_CONTRACT:-database/storage/contract}
+      FOLDER_PATH_TEMPLATE: ${FOLDER_PATH_TEMPLATE:-database/storage/template}
+      PROMETHEUS_COLLECTOR_URL: ${PROMETHEUS_COLLECTOR_URL:-http://prometheus_collector:9005/api/v1/metrics}
+      GEOIP_DIR: ${GEOIP_DIR:-database/geoip}
+    depends_on:
+      - postgres
+      - redis
+      - qdrant
+      - minio
+      - searxng
+
+  # --- Frontend ---
+  frontend:
+    image: ${DOCKERHUB_USERNAME:-anlamntc}/rag-chatbot-server-frontend:latest
+    container_name: frontend
+    restart: unless-stopped
+    logging: *default-logging
+    expose:
+      - "3000"
+    env_file:
+      - path: .env.all
+        required: false
+    environment:
+      NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-/}
+      NEXT_PUBLIC_APP_URL: ${NEXT_PUBLIC_APP_URL:-http://localhost:3000}
+    depends_on:
+      - backend
+
+  # --- Nginx Reverse Proxy (single public entrypoint) ---
+  nginx:
+    image: nginx:1.27-alpine
+    container_name: nginx
+    restart: unless-stopped
+    logging: *default-logging
+    ports:
+      - "3000:80"
+    environment:
+      NGINX_FRONTEND_UPSTREAM: ${NGINX_FRONTEND_UPSTREAM:-frontend:3000}
+      NGINX_BACKEND_UPSTREAM: ${NGINX_BACKEND_UPSTREAM:-backend:9000}
+      NGINX_CLIENT_MAX_BODY_SIZE: ${NGINX_CLIENT_MAX_BODY_SIZE:-50m}
+      NGINX_PROXY_READ_TIMEOUT: ${NGINX_PROXY_READ_TIMEOUT:-3600s}
+      NGINX_PROXY_SEND_TIMEOUT: ${NGINX_PROXY_SEND_TIMEOUT:-3600s}
+    volumes:
+      - ./config/nginx/default.conf.template:/etc/nginx/templates/default.conf.template:ro
+    depends_on:
+      - frontend
+      - backend
+
+  # --- PDF Parser (Marker) ---
+  marker:
+    image: ${DOCKERHUB_USERNAME:-anlamntc}/rag-chatbot-server-marker:latest
+    container_name: marker
+    restart: unless-stopped
+    logging: *default-logging
+    ports:
+      - "8005:8005"
+    env_file:
+      - path: .env.all
+        required: false
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+
+  # --- BGE Embed/Rerank ---
+  bge:
+    image: ${DOCKERHUB_USERNAME:-anlamntc}/rag-chatbot-server-bge:latest
+    container_name: bge
+    restart: unless-stopped
+    logging: *default-logging
+    ports:
+      - "8006:8006"
+    env_file:
+      - path: .env.all
+        required: false
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+
+  # --- SearxNG (Open Web Search Engine) ---
+  searxng:
+    image: searxng/searxng:latest
+    container_name: searxng
+    restart: unless-stopped
+    logging: *default-logging
+    ports:
+      - "${SEARXNG_BIND_ADDR:-127.0.0.1}:8080:8080"
+    volumes:
+      - ./config/searxng/settings.yml:/etc/searxng/settings.yml:ro
+    environment:
+      BASE_URL: ${SEARXNG_BASE_URL:-http://searxng:8080}
+      SEARXNG_SECRET: ${SEARXNG_SECRET:-change_me}
+      INSTANCE_NAME: RAG Web Search
+      REDIS_URL: ${SEARXNG_REDIS_URL:-redis://:change_me@redis:6379/1}
+
+  # --- vLLM (Inference Server) ---
+  vllm:
+    image: ${DOCKERHUB_USERNAME:-anlamntc}/rag-chatbot-server-vllm:latest
+    container_name: vllm
+    restart: unless-stopped
+    logging: *default-logging
+    ports:
+      - "8007:8000"
+    env_file:
+      - path: .env.all
+        required: false
+    environment:
+      VLLM_MODEL_NAME: ${VLLM_MODEL_NAME:-google/gemma-4-E4B-it}
+      GPU_MEMORY_UTIL: ${GPU_MEMORY_UTIL:-0.37}
+      LLM_CONTEXT_WINDOW: ${LLM_CONTEXT_WINDOW:-65536}
+      HF_CACHE_MOUNT: ${HF_CACHE_MOUNT:-./cache/huggingface}
+    volumes:
+      - ${HF_CACHE_MOUNT:-./cache/huggingface}:/root/.cache/huggingface
+      - ./config/vllm/tool_chat_template_gemma4_no_reasoning.jinja:/config/vllm/tool_chat_template_gemma4_no_reasoning.jinja:ro
+    shm_size: '16gb'
+    command: >
+      --model ${VLLM_MODEL_NAME:-google/gemma-4-E4B-it}
+      --gpu-memory-utilization ${GPU_MEMORY_UTIL:-0.37}
+      --max-model-len ${LLM_CONTEXT_WINDOW:-65536}
+      --dtype bfloat16
+      --trust-remote-code
+      --kv-cache-dtype fp8
+      --enable-auto-tool-choice
+      --tool-call-parser gemma4
+      --chat-template /config/vllm/tool_chat_template_gemma4_no_reasoning.jinja
+      --limit-mm-per-prompt '{"image":0,"audio":0}'
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+
+  # --- Prometheus Collector ---
+  prometheus_collector:
+    image: ${DOCKERHUB_USERNAME:-anlamntc}/rag-chatbot-server-prometheus-collector:latest
+    container_name: prometheus_collector
+    restart: unless-stopped
+    logging: *default-logging
+    ports:
+      - "9005:9005"
+    env_file:
+      - path: .env.all
+        required: false
+    environment:
+      PROMETHEUS_URL: ${PROMETHEUS_URL:-http://prometheus:9090}
+    depends_on:
+      - prometheus
+
+  # --- PostgreSQL ---
+  postgres:
+    image: postgres:15
+    container_name: postgres
+    restart: unless-stopped
+    logging: *default-logging
+    ports:
+      - "7000:5432"
+    env_file:
+      - path: .env.all
+        required: false
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-bao}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-change_me}
+      POSTGRES_DB: ${POSTGRES_DB:-multiangent_db}
+    volumes:
+      - ./cache/pgdata:/var/lib/postgresql/data
+
+  # --- Adminer (Database UI) ---
+  db_ui:
+    image: adminer
+    container_name: chatbot_db_ui
+    restart: always
+    logging: *default-logging
+    ports:
+      - "7001:8080"
+    environment:
+      - ADMINER_DEFAULT_SERVER=postgres
+    depends_on:
+      - postgres
+
+  # --- Qdrant Vector Database ---
+  qdrant:
+    image: qdrant/qdrant:latest
+    container_name: qdrant
+    restart: unless-stopped
+    logging: *default-logging
+    ports:
+      - "7002:6333"
+    volumes:
+      - ./cache/qdrant_storage:/qdrant/storage
+    environment:
+      - QDRANT__WEB_ENABLE=true
+
+  # --- MinIO Object Storage ---
+  minio:
+    image: minio/minio:RELEASE.2024-05-10T01-41-38Z
+    container_name: minio
+    restart: unless-stopped
+    logging: *default-logging
+    env_file:
+      - path: .env.all
+        required: false
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ACCESS_KEY:-minioadmin}
+      MINIO_ROOT_PASSWORD: ${MINIO_SECRET_KEY:-change_me}
+      MINIO_PROMETHEUS_AUTH_TYPE: public
+    command: minio server /data --console-address ":9001"
+    ports:
+      - "7003:9000"
+      - "7004:9001"
+    volumes:
+      - ./cache/minio:/data
+
+  # --- Redis ---
+  redis:
+    image: redis:7-alpine
+    container_name: redis
+    restart: unless-stopped
+    logging: *default-logging
+    ports:
+      - "7005:6379"
+    env_file:
+      - path: .env.all
+        required: false
+    environment:
+      REDIS_PASSWORD: ${REDIS_PASSWORD:-change_me}
+    volumes:
+      - ./cache/redis_data:/data
+      - ./config/redis.conf:/usr/local/etc/redis/redis.conf:ro
+    command: sh -c 'redis-server /usr/local/etc/redis/redis.conf --requirepass "$${REDIS_PASSWORD}"'
+    deploy:
+      resources:
+        limits:
+          memory: 40g
+    healthcheck:
+      test: ["CMD-SHELL", "redis-cli -a \"$${REDIS_PASSWORD}\" ping | grep PONG"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  # --- Redis Insight ---
+  redis_insight:
+    image: redis/redisinsight:latest
+    container_name: redis_insight
+    restart: unless-stopped
+    logging: *default-logging
+    ports:
+      - "7006:5540"
+    depends_on:
+      redis:
+        condition: service_healthy
+
+  # --- Prometheus ---
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    user: root
+    restart: unless-stopped
+    logging: *default-logging
+    ports:
+      - "7007:9090"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - ./config/prometheus:/etc/prometheus
+      - ./cache/prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--storage.tsdb.retention.time=3d'
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 512M
+
+  # --- Node Exporter ---
+  node_exporter:
+    image: quay.io/prometheus/node-exporter:latest
+    container_name: node_exporter
+    restart: unless-stopped
+    logging: *default-logging
+    ports:
+      - "9100:9100"
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro
+    command:
+      - '--path.procfs=/host/proc'
+      - '--path.rootfs=/rootfs'
+      - '--path.sysfs=/host/sys'
+      - '--collector.filesystem.mount-points-exclude=^/(sys|proc|dev|host|etc)($$|/)'
+    deploy:
+      resources:
+        limits:
+          cpus: '0.2'
+          memory: 128M
+
+  # --- DCGM Exporter (NVIDIA GPU Monitor) ---
+  dcgm_exporter:
+    image: nvcr.io/nvidia/k8s/dcgm-exporter:3.3.5-3.4.0-ubuntu22.04
+    container_name: dcgm_exporter
+    restart: unless-stopped
+    logging: *default-logging
+    deploy:
+      resources:
+        limits:
+          cpus: '0.2'
+          memory: 128M
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    ports:
+      - "9400:9400"
+
+networks:
+  default:
+    driver: bridge

@@ -1,0 +1,850 @@
+[
+  {
+    "image_id": "sha256:0f422f62c15f154af8d8572b23d623aebfb10cec73a5c654d18f911f3f9df241",
+    "repo_tags": [
+      "quay.io/prometheus/node-exporter:latest"
+    ],
+    "repo_digests": [
+      "quay.io/prometheus/node-exporter@sha256:0f422f62c15f154af8d8572b23d623aebfb10cec73a5c654d18f911f3f9df241"
+    ],
+    "architecture": "arm64",
+    "os": "linux",
+    "created": "2026-04-07T15:51:28.902603868Z",
+    "size_bytes": 12372123,
+    "nim": {
+      "type": null,
+      "version": null,
+      "model": null
+    }
+  },
+  {
+    "image_id": "sha256:0f6bfcbf267e65123bcc2287e2153dedfc0f24772fb5ce84afe16ac4b2fada95",
+    "repo_tags": [
+      "nvidia/cuda:12.4.1-base-ubuntu22.04"
+    ],
+    "repo_digests": [
+      "nvidia/cuda@sha256:0f6bfcbf267e65123bcc2287e2153dedfc0f24772fb5ce84afe16ac4b2fada95"
+    ],
+    "architecture": "arm64",
+    "os": "linux",
+    "created": "2024-04-22T23:45:01.308322313Z",
+    "size_bytes": 32334146,
+    "nim": {
+      "type": null,
+      "version": null,
+      "model": null
+    }
+  },
+  {
+    "image_id": "sha256:120f7ec77293459ccfdad66bb1db75ab72e8bfeab99f58b1cc2564cadcd7a9e7",
+    "repo_tags": [
+      "oliver006/redis_exporter:v1.67.0"
+    ],
+    "repo_digests": [
+      "oliver006/redis_exporter@sha256:120f7ec77293459ccfdad66bb1db75ab72e8bfeab99f58b1cc2564cadcd7a9e7"
+    ],
+    "architecture": "arm64",
+    "os": "linux",
+    "created": "2024-12-15T20:30:19.530781406Z",
+    "size_bytes": 3499818,
+    "nim": {
+      "type": null,
+      "version": null,
+      "model": null
+    }
+  },
+  {
+    "image_id": "sha256:1a53a4f9c174c1b031a219b0a1987d328bb8a6fe6a0a6b0316ed4a5035f77bad",
+    "repo_tags": [
+      "qdrant/qdrant:v1.9.1"
+    ],
+    "repo_digests": [
+      "qdrant/qdrant@sha256:1a53a4f9c174c1b031a219b0a1987d328bb8a6fe6a0a6b0316ed4a5035f77bad"
+    ],
+    "architecture": "arm64",
+    "os": "linux",
+    "created": "2024-05-02T19:08:31.418102281Z",
+    "size_bytes": 58214155,
+    "nim": {
+      "type": null,
+      "version": null,
+      "model": null
+    }
+  },
+  {
+    "image_id": "sha256:1a9d21346437a41ddfc2286968026dddece1d4d0721625cffa2c3b00bb2f9cf3",
+    "repo_tags": [
+      "searxng/searxng:latest"
+    ],
+    "repo_digests": [
+      "searxng/searxng@sha256:1a9d21346437a41ddfc2286968026dddece1d4d0721625cffa2c3b00bb2f9cf3"
+    ],
+    "architecture": "arm64",
+    "os": "linux",
+    "created": "2026-05-26T10:19:51.450808373Z",
+    "size_bytes": 94177581,
+    "nim": {
+      "type": null,
+      "version": null,
+      "model": null
+    }
+  },
+  {
+    "image_id": "sha256:1b92e7a80c021647bf70f5d3eb66066a998e4f5cf43c07bb9dc9f729782cf88e",
+    "repo_tags": [
+      "postgres:15"
+    ],
+    "repo_digests": [
+      "postgres@sha256:1b92e7a80c021647bf70f5d3eb66066a998e4f5cf43c07bb9dc9f729782cf88e"
+    ],
+    "architecture": "arm64",
+    "os": "linux",
+    "created": "2026-05-19T23:19:48.683911765Z",
+    "size_bytes": 156733241,
+    "nim": {
+      "type": null,
+      "version": null,
+      "model": null
+    }
+  },
+  {
+    "image_id": "sha256:1bed68c66942a846b54c9af009c058a1af33716b8cb1b7a9ea7d779908c1ca2b",
+    "repo_tags": [
+      "km-task35-infer:latest"
+    ],
+    "repo_digests": [
+      "km-task35-infer@sha256:1bed68c66942a846b54c9af009c058a1af33716b8cb1b7a9ea7d779908c1ca2b"
+    ],
+    "architecture": "arm64",
+    "os": "linux",
+    "created": "2026-07-07T16:20:11.456961443+07:00",
+    "size_bytes": 3085692196,
+    "nim": {
+      "type": null,
+      "version": null,
+      "model": null
+    }
+  },
+  {
+    "image_id": "sha256:2323da448113b09ebd3d609f5c4bc945482c0e21c9176d67da072e61d48f3fca",
+    "repo_tags": [
+      "vllm-node:latest"
+    ],
+    "repo_digests": [
+      "vllm-node@sha256:2323da448113b09ebd3d609f5c4bc945482c0e21c9176d67da072e61d48f3fca"
+    ],
+    "architecture": "arm64",
+    "os": "linux",
+    "created": "2026-06-23T12:17:43.366101243+07:00",
+    "size_bytes": 19089865308,
+    "nim": {
+      "type": null,
+      "version": null,
+      "model": null
+    }
+  },
+  {
+    "image_id": "sha256:261e4cdc8cc0bf2c83abdd41923cd1e1a0580c5b3712a67457e01eb53dfac104",
+    "repo_tags": [
+      "nvcr.io/nvidia/riva/riva-speech:2.24.0-l4t-aarch64"
+    ],
+    "repo_digests": [
+      "nvcr.io/nvidia/riva/riva-speech@sha256:261e4cdc8cc0bf2c83abdd41923cd1e1a0580c5b3712a67457e01eb53dfac104"
+    ],
+    "architecture": "arm64",
+    "os": "linux",
+    "created": "2025-12-08T18:43:50.105371656Z",
+    "size_bytes": 11428058714,
+    "nim": {
+      "type": null,
+      "version": null,
+      "model": null
+    }
+  },
+  {
+    "image_id": "sha256:2659f4c2ebb718e7695cb9b25ffa7d6be64db013daba13e05c875451cf51b0d3",
+    "repo_tags": [
+      "prom/prometheus:v2.55.1"
+    ],
+    "repo_digests": [
+      "prom/prometheus@sha256:2659f4c2ebb718e7695cb9b25ffa7d6be64db013daba13e05c875451cf51b0d3"
+    ],
+    "architecture": "arm64",
+    "os": "linux",
+    "created": "2024-11-06T10:35:35.813472744Z",
+    "size_bytes": 108470440,
+    "nim": {
+      "type": null,
+      "version": null,
+      "model": null
+    }
+  },
+  {
+    "image_id": "sha256:294b57bb22fc1c9eb7a180ac4e548fe963b452dec747df825af343806bdee8b5",
+    "repo_tags": [
+      "nvcr.io/nvidia/riva/riva-speech:2.19.0"
+    ],
+    "repo_digests": [
+      "nvcr.io/nvidia/riva/riva-speech@sha256:294b57bb22fc1c9eb7a180ac4e548fe963b452dec747df825af343806bdee8b5"
+    ],
+    "architecture": "arm64",
+    "os": "linux",
+    "created": "2025-03-19T08:11:13.944995264Z",
+    "size_bytes": 11411115398,
+    "nim": {
+      "type": null,
+      "version": null,
+      "model": null
+    }
+  },
+  {
+    "image_id": "sha256:2d9f5c76c8f4dd36e8f253bee5d828a83a6c09f36188f0b0414325232e0b175d",
+    "repo_tags": [
+      "node:22-trixie-slim@sha256:2d9f5c76c8f4dd36e8f253bee5d828a83a6c09f36188f0b0414325232e0b175d"
+    ],
+    "repo_digests": [
+      "node:22-trixie-slim@sha256:2d9f5c76c8f4dd36e8f253bee5d828a83a6c09f36188f0b0414325232e0b175d"
+    ],
+    "architecture": "arm64",
+    "os": "linux",
+    "created": "2026-04-22T01:48:25.693843846Z",
+    "size_bytes": 81905065,
+    "nim": {
+      "type": null,
+      "version": null,
+      "model": null
+    }
+  },
+  {
+    "image_id": "sha256:31e360dbb15f825d69e5d68c2032e334301523b4957091270385ed7ef3db5e81",
+    "repo_tags": [
+      "nvcr.io/nim/meta/llama-3.1-8b-instruct:2.0.6"
+    ],
+    "repo_digests": [
+      "nvcr.io/nim/meta/llama-3.1-8b-instruct@sha256:31e360dbb15f825d69e5d68c2032e334301523b4957091270385ed7ef3db5e81"
+    ],
+    "architecture": "arm64",
+    "os": "linux",
+    "created": "2026-06-02T17:05:59.301091054Z",
+    "size_bytes": 11401609677,
+    "nim": {
+      "type": "llm",
+      "version": "2.0.6",
+      "model": "meta/llama-3.1-8b-instruct"
+    }
+  },
+  {
+    "image_id": "sha256:3dbe092ec5b2cef63b6104d33fa75d6ce53a7870962529ada69f78bbbc38e776",
+    "repo_tags": [
+      "vllm/vllm-openai:cu130-nightly"
+    ],
+    "repo_digests": [
+      "vllm/vllm-openai@sha256:3dbe092ec5b2cef63b6104d33fa75d6ce53a7870962529ada69f78bbbc38e776"
+    ],
+    "architecture": "arm64",
+    "os": "linux",
+    "created": "2026-04-23T05:23:07.199020192Z",
+    "size_bytes": 9126354647,
+    "nim": {
+      "type": null,
+      "version": null,
+      "model": null
+    }
+  },
+  {
+    "image_id": "sha256:420663b8685c5396f06405ad516d611db4465939a141cc7d40266342d0f2632d",
+    "repo_tags": [
+      "minio/minio:RELEASE.2024-05-10T01-41-38Z"
+    ],
+    "repo_digests": [
+      "minio/minio@sha256:420663b8685c5396f06405ad516d611db4465939a141cc7d40266342d0f2632d"
+    ],
+    "architecture": "arm64",
+    "os": "linux",
+    "created": "2024-05-10T02:03:36.009931146Z",
+    "size_bytes": 50802651,
+    "nim": {
+      "type": null,
+      "version": null,
+      "model": null
+    }
+  },
+  {
+    "image_id": "sha256:423ed6ab25b1921a477529254bfeeabf5855151dc2c3141699a1bfc852199fbf",
+    "repo_tags": [
+      "python:3.12-slim"
+    ],
+    "repo_digests": [
+      "python@sha256:423ed6ab25b1921a477529254bfeeabf5855151dc2c3141699a1bfc852199fbf"
+    ],
+    "architecture": "arm64",
+    "os": "linux",
+    "created": "2026-06-24T02:17:10.085712605Z",
+    "size_bytes": 43487789,
+    "nim": {
+      "type": null,
+      "version": null,
+      "model": null
+    }
+  },
+  {
+    "image_id": "sha256:43c018d6a12963f1a1bad85ef8574b5c2a978eec2be0ebcacfb87f69e0d210e1",
+    "repo_tags": [
+      "nvcr.io/nvidia/pytorch:26.06-py3"
+    ],
+    "repo_digests": [
+      "nvcr.io/nvidia/pytorch@sha256:43c018d6a12963f1a1bad85ef8574b5c2a978eec2be0ebcacfb87f69e0d210e1"
+    ],
+    "architecture": "arm64",
+    "os": "linux",
+    "created": "2026-06-10T00:34:10.686154746Z",
+    "size_bytes": 10945026417,
+    "nim": {
+      "type": null,
+      "version": null,
+      "model": null
+    }
+  },
+  {
+    "image_id": "sha256:45f8e3ddc2570a4d029877e1b5ec1045c19b3852b4e22a55c7f43b05aea0ca89",
+    "repo_tags": [
+      "qdrant/qdrant:latest"
+    ],
+    "repo_digests": [
+      "qdrant/qdrant@sha256:45f8e3ddc2570a4d029877e1b5ec1045c19b3852b4e22a55c7f43b05aea0ca89"
+    ],
+    "architecture": "arm64",
+    "os": "linux",
+    "created": "2026-05-22T10:54:12.67708861Z",
+    "size_bytes": 70087189,
+    "nim": {
+      "type": null,
+      "version": null,
+      "model": null
+    }
+  },
+  {
+    "image_id": "sha256:4aea012537edfad80f98d870a36e6b90b4c09b27be7f4b4759d72db863baeebb",
+    "repo_tags": [
+      "postgres:16.2"
+    ],
+    "repo_digests": [
+      "postgres@sha256:4aea012537edfad80f98d870a36e6b90b4c09b27be7f4b4759d72db863baeebb"
+    ],
+    "architecture": "arm64",
+    "os": "linux",
+    "created": "2024-02-21T00:46:13Z",
+    "size_bytes": 151606088,
+    "nim": {
+      "type": null,
+      "version": null,
+      "model": null
+    }
+  },
+  {
+    "image_id": "sha256:4f05a4c173932292de7ff6df71b6f05f8b0f14e56062c35f49fd303716647d46",
+    "repo_tags": [
+      "openshell/sandbox-from:1781256961"
+    ],
+    "repo_digests": [
+      "openshell/sandbox-from@sha256:4f05a4c173932292de7ff6df71b6f05f8b0f14e56062c35f49fd303716647d46"
+    ],
+    "architecture": "arm64",
+    "os": "linux",
+    "created": "2026-06-12T16:37:11.468811186+07:00",
+    "size_bytes": 1337365170,
+    "nim": {
+      "type": null,
+      "version": null,
+      "model": null
+    }
+  },
+  {
+    "image_id": "sha256:606d8c0d6b3c18d1da9afc53bc7cdb2a8d5486df91b5a9830e9e07626c9ae281",
+    "repo_tags": [
+      "rabbitmq:3.13-management-alpine"
+    ],
+    "repo_digests": [
+      "rabbitmq@sha256:606d8c0d6b3c18d1da9afc53bc7cdb2a8d5486df91b5a9830e9e07626c9ae281"
+    ],
+    "architecture": "arm64",
+    "os": "linux",
+    "created": "2025-12-02T03:27:12.758168125Z",
+    "size_bytes": 84255367,
+    "nim": {
+      "type": null,
+      "version": null,
+      "model": null
+    }
+  },
+  {
+    "image_id": "sha256:65645c7bb6a0661892a8b03b89d0743208a18dd2f3f17a54ef4b76fb8e2f2a10",
+    "repo_tags": [
+      "nginx:1.27-alpine"
+    ],
+    "repo_digests": [
+      "nginx@sha256:65645c7bb6a0661892a8b03b89d0743208a18dd2f3f17a54ef4b76fb8e2f2a10"
+    ],
+    "architecture": "arm64",
+    "os": "linux",
+    "created": "2025-04-16T14:50:31Z",
+    "size_bytes": 21832241,
+    "nim": {
+      "type": null,
+      "version": null,
+      "model": null
+    }
+  },
+  {
+    "image_id": "sha256:67114d441a70d5b57742f1bd5e87bc8c43bd5fbe1303a3c1d2ea6f88b0d51798",
+    "repo_tags": [
+      "km-task4-api:latest",
+      "km-task45-api:latest"
+    ],
+    "repo_digests": [
+      "km-task4-api@sha256:67114d441a70d5b57742f1bd5e87bc8c43bd5fbe1303a3c1d2ea6f88b0d51798",
+      "km-task45-api@sha256:67114d441a70d5b57742f1bd5e87bc8c43bd5fbe1303a3c1d2ea6f88b0d51798"
+    ],
+    "architecture": "arm64",
+    "os": "linux",
+    "created": "2026-07-08T13:40:11.803450917+07:00",
+    "size_bytes": 3298776835,
+    "nim": {
+      "type": null,
+      "version": null,
+      "model": null
+    }
+  },
+  {
+    "image_id": "sha256:6999a7657e2f2fb0ca6ebf417213eebf6dc7d21b30708c622f6fcb11183a2bb0",
+    "repo_tags": [
+      "prometheuscommunity/postgres-exporter:v0.16.0"
+    ],
+    "repo_digests": [
+      "prometheuscommunity/postgres-exporter@sha256:6999a7657e2f2fb0ca6ebf417213eebf6dc7d21b30708c622f6fcb11183a2bb0"
+    ],
+    "architecture": "arm64",
+    "os": "linux",
+    "created": "2024-11-10T21:11:59.038055311Z",
+    "size_bytes": 10538038,
+    "nim": {
+      "type": null,
+      "version": null,
+      "model": null
+    }
+  },
+  {
+    "image_id": "sha256:6ab0b6e7381779332f97b8ca76193e45b0756f38d4c0dcda72dbb3c32061ab99",
+    "repo_tags": [
+      "redis:7-alpine"
+    ],
+    "repo_digests": [
+      "redis@sha256:6ab0b6e7381779332f97b8ca76193e45b0756f38d4c0dcda72dbb3c32061ab99"
+    ],
+    "architecture": "arm64",
+    "os": "linux",
+    "created": "2026-05-07T17:39:54.062865523Z",
+    "size_bytes": 16790804,
+    "nim": {
+      "type": null,
+      "version": null,
+      "model": null
+    }
+  },
+  {
+    "image_id": "sha256:6dc02f23ec9e88b257bfb929c400073e4899444d28fe1e85fc756c41c6a5465b",
+    "repo_tags": [
+      "openshell/sandbox-from:1781256572"
+    ],
+    "repo_digests": [
+      "openshell/sandbox-from@sha256:6dc02f23ec9e88b257bfb929c400073e4899444d28fe1e85fc756c41c6a5465b"
+    ],
+    "architecture": "arm64",
+    "os": "linux",
+    "created": "2026-06-12T16:31:17.298825074+07:00",
+    "size_bytes": 1337365171,
+    "nim": {
+      "type": null,
+      "version": null,
+      "model": null
+    }
+  },
+  {
+    "image_id": "sha256:717539e07617b54f069e255c9623a6f1dc17b9b741008bcd0b8b0ca6c91510c3",
+    "repo_tags": [
+      "km-task35-runtime-infer:latest"
+    ],
+    "repo_digests": [
+      "km-task35-runtime-infer@sha256:717539e07617b54f069e255c9623a6f1dc17b9b741008bcd0b8b0ca6c91510c3"
+    ],
+    "architecture": "arm64",
+    "os": "linux",
+    "created": "2026-07-07T16:51:27.997276343+07:00",
+    "size_bytes": 4795840273,
+    "nim": {
+      "type": null,
+      "version": null,
+      "model": null
+    }
+  },
+  {
+    "image_id": "sha256:73aaf090f3d85aa34ee199857f03fa3a95c8ede2ffd4cc2cdb5b94e566b11662",
+    "repo_tags": [
+      "busybox@sha256:73aaf090f3d85aa34ee199857f03fa3a95c8ede2ffd4cc2cdb5b94e566b11662"
+    ],
+    "repo_digests": [
+      "busybox@sha256:73aaf090f3d85aa34ee199857f03fa3a95c8ede2ffd4cc2cdb5b94e566b11662"
+    ],
+    "architecture": "arm64",
+    "os": "linux",
+    "created": "2023-05-18T22:34:17Z",
+    "size_bytes": 1906887,
+    "nim": {
+      "type": null,
+      "version": null,
+      "model": null
+    }
+  },
+  {
+    "image_id": "sha256:7595d38c321a0b44eebd071ad49a62a344383c62ceb403e30b7898fccf2be421",
+    "repo_tags": [
+      "ghcr.io/nvidia/nemoclaw/hermes-sandbox-base:v0.0.55"
+    ],
+    "repo_digests": [
+      "ghcr.io/nvidia/nemoclaw/hermes-sandbox-base@sha256:7595d38c321a0b44eebd071ad49a62a344383c62ceb403e30b7898fccf2be421"
+    ],
+    "architecture": "arm64",
+    "os": "linux",
+    "created": "2026-05-29T02:41:32.87039034Z",
+    "size_bytes": 1337198672,
+    "nim": {
+      "type": null,
+      "version": null,
+      "model": null
+    }
+  },
+  {
+    "image_id": "sha256:764aec1ce24a1685d3d52386ff3fd95b6d552dd9de3393bc3ef528fdabb61b11",
+    "repo_tags": [
+      "km-task3-infer:latest"
+    ],
+    "repo_digests": [
+      "km-task3-infer@sha256:764aec1ce24a1685d3d52386ff3fd95b6d552dd9de3393bc3ef528fdabb61b11"
+    ],
+    "architecture": "arm64",
+    "os": "linux",
+    "created": "2026-07-07T15:30:36.931245773+07:00",
+    "size_bytes": 11019583565,
+    "nim": {
+      "type": null,
+      "version": null,
+      "model": null
+    }
+  },
+  {
+    "image_id": "sha256:7ef8e9c26638158fa4e7ad60df8c7e53d1919986753d6c1d2d1876b6ec38d87b",
+    "repo_tags": [
+      "oliver006/redis_exporter:latest"
+    ],
+    "repo_digests": [
+      "oliver006/redis_exporter@sha256:7ef8e9c26638158fa4e7ad60df8c7e53d1919986753d6c1d2d1876b6ec38d87b"
+    ],
+    "architecture": "arm64",
+    "os": "linux",
+    "created": "2026-05-21T01:31:47.615084877Z",
+    "size_bytes": 4238632,
+    "nim": {
+      "type": null,
+      "version": null,
+      "model": null
+    }
+  },
+  {
+    "image_id": "sha256:85562d67a9128ac7f764bb3d1ac909fcf77708c7c8f55bd1605a85b3c4becc83",
+    "repo_tags": [
+      "redis/redisinsight:latest"
+    ],
+    "repo_digests": [
+      "redis/redisinsight@sha256:85562d67a9128ac7f764bb3d1ac909fcf77708c7c8f55bd1605a85b3c4becc83"
+    ],
+    "architecture": "arm64",
+    "os": "linux",
+    "created": "2026-04-22T11:04:02.49225335Z",
+    "size_bytes": 106486466,
+    "nim": {
+      "type": null,
+      "version": null,
+      "model": null
+    }
+  },
+  {
+    "image_id": "sha256:85d1e38593617af1b5f7f285e97d407e56c29939683cc7cfe4c8f6dc19f1268b",
+    "repo_tags": [
+      "edoburu/pgbouncer:latest"
+    ],
+    "repo_digests": [
+      "edoburu/pgbouncer@sha256:85d1e38593617af1b5f7f285e97d407e56c29939683cc7cfe4c8f6dc19f1268b"
+    ],
+    "architecture": "arm64",
+    "os": "linux",
+    "created": "2025-12-20T23:49:34.885622531Z",
+    "size_bytes": 6972012,
+    "nim": {
+      "type": null,
+      "version": null,
+      "model": null
+    }
+  },
+  {
+    "image_id": "sha256:a230095847e93bd4df9888b33dab956fa9504537b828a23657d2b26fed57b5c9",
+    "repo_tags": [
+      "vllm/vllm-openai:latest"
+    ],
+    "repo_digests": [
+      "vllm/vllm-openai@sha256:a230095847e93bd4df9888b33dab956fa9504537b828a23657d2b26fed57b5c9"
+    ],
+    "architecture": "arm64",
+    "os": "linux",
+    "created": "2026-05-15T05:05:16.416222167Z",
+    "size_bytes": 9871811982,
+    "nim": {
+      "type": null,
+      "version": null,
+      "model": null
+    }
+  },
+  {
+    "image_id": "sha256:ab1e183c2ccd5820db379027f58cb928af29c2e8a87dd6decc39afac9f15d677",
+    "repo_tags": [
+      "nvcr.io/nvidia/k8s/dcgm-exporter:3.3.5-3.4.0-ubuntu22.04"
+    ],
+    "repo_digests": [
+      "nvcr.io/nvidia/k8s/dcgm-exporter@sha256:ab1e183c2ccd5820db379027f58cb928af29c2e8a87dd6decc39afac9f15d677"
+    ],
+    "architecture": "arm64",
+    "os": "linux",
+    "created": "2024-02-26T22:27:46.072086775Z",
+    "size_bytes": 600235905,
+    "nim": {
+      "type": null,
+      "version": null,
+      "model": null
+    }
+  },
+  {
+    "image_id": "sha256:c0b6618f5f1fbce37cb7f30ac0e0347176827ab4e15eb1e781aadbede66d6f41",
+    "repo_tags": [
+      "local/vllm-openai-gemma4:latest"
+    ],
+    "repo_digests": [
+      "local/vllm-openai-gemma4@sha256:c0b6618f5f1fbce37cb7f30ac0e0347176827ab4e15eb1e781aadbede66d6f41"
+    ],
+    "architecture": "arm64",
+    "os": "linux",
+    "created": "2026-05-27T09:23:13.64170391+07:00",
+    "size_bytes": 9902995477,
+    "nim": {
+      "type": null,
+      "version": null,
+      "model": null
+    }
+  },
+  {
+    "image_id": "sha256:c2a6298a64347e235beba9a7c2c8077f2d291f2fb4701cdd1b61b83208042198",
+    "repo_tags": [
+      "nvcr.io/nvidia/riva/riva-speech:2.19.0-l4t-aarch64"
+    ],
+    "repo_digests": [
+      "nvcr.io/nvidia/riva/riva-speech@sha256:c2a6298a64347e235beba9a7c2c8077f2d291f2fb4701cdd1b61b83208042198"
+    ],
+    "architecture": "arm64",
+    "os": "linux",
+    "created": "2025-03-19T08:08:10.102985317Z",
+    "size_bytes": 11226264653,
+    "nim": {
+      "type": null,
+      "version": null,
+      "model": null
+    }
+  },
+  {
+    "image_id": "sha256:c3fed440aa15249ec65fd7e999ed236967ae06c1fecff4467eeb6755b10bb1e1",
+    "repo_tags": [
+      "openshell/sandbox-from:1781254718"
+    ],
+    "repo_digests": [
+      "openshell/sandbox-from@sha256:c3fed440aa15249ec65fd7e999ed236967ae06c1fecff4467eeb6755b10bb1e1"
+    ],
+    "architecture": "arm64",
+    "os": "linux",
+    "created": "2026-06-12T16:01:40.227983042+07:00",
+    "size_bytes": 1337365563,
+    "nim": {
+      "type": null,
+      "version": null,
+      "model": null
+    }
+  },
+  {
+    "image_id": "sha256:cc64d253db4f016cbcff2ff2f01e60ed07e74f38b4398f84d3c4fae4b5ce0e07",
+    "repo_tags": [
+      "adminer:latest"
+    ],
+    "repo_digests": [
+      "adminer@sha256:cc64d253db4f016cbcff2ff2f01e60ed07e74f38b4398f84d3c4fae4b5ce0e07"
+    ],
+    "architecture": "arm64",
+    "os": "linux",
+    "created": "2026-05-07T17:18:14.370074478Z",
+    "size_bytes": 46355526,
+    "nim": {
+      "type": null,
+      "version": null,
+      "model": null
+    }
+  },
+  {
+    "image_id": "sha256:d3b963f787999e6c0219a48dba02978769286ff61a5f4d26245cb6a6e5567ea3",
+    "repo_tags": [
+      "tonistiigi/binfmt:latest"
+    ],
+    "repo_digests": [
+      "tonistiigi/binfmt@sha256:d3b963f787999e6c0219a48dba02978769286ff61a5f4d26245cb6a6e5567ea3"
+    ],
+    "architecture": "arm64",
+    "os": "linux",
+    "created": "2026-02-18T18:06:48.533393246Z",
+    "size_bytes": 30952298,
+    "nim": {
+      "type": null,
+      "version": null,
+      "model": null
+    }
+  },
+  {
+    "image_id": "sha256:e13b6ed5cb929eeaee733479dce55e10eb3bc2e9c4586c705a4e8da41e5eacf5",
+    "repo_tags": [
+      "prom/alertmanager:v0.27.0"
+    ],
+    "repo_digests": [
+      "prom/alertmanager@sha256:e13b6ed5cb929eeaee733479dce55e10eb3bc2e9c4586c705a4e8da41e5eacf5"
+    ],
+    "architecture": "arm64",
+    "os": "linux",
+    "created": "2024-02-28T11:58:30.94318781Z",
+    "size_bytes": 30584415,
+    "nim": {
+      "type": null,
+      "version": null,
+      "model": null
+    }
+  },
+  {
+    "image_id": "sha256:e4254400b85610324913f0dc4acf92603d9984e7519414c5a12811aa6146acc3",
+    "repo_tags": [
+      "prom/prometheus:latest"
+    ],
+    "repo_digests": [
+      "prom/prometheus@sha256:e4254400b85610324913f0dc4acf92603d9984e7519414c5a12811aa6146acc3"
+    ],
+    "architecture": "arm64",
+    "os": "linux",
+    "created": "2026-04-27T15:31:04.619674233Z",
+    "size_bytes": 141381476,
+    "nim": {
+      "type": null,
+      "version": null,
+      "model": null
+    }
+  },
+  {
+    "image_id": "sha256:e96064f876226d94bb6ce48a4c4b3dd76edba91168ec1ab024e5c4b959310b0f",
+    "repo_tags": [
+      "prometheuscommunity/postgres-exporter:latest"
+    ],
+    "repo_digests": [
+      "prometheuscommunity/postgres-exporter@sha256:e96064f876226d94bb6ce48a4c4b3dd76edba91168ec1ab024e5c4b959310b0f"
+    ],
+    "architecture": "arm64",
+    "os": "linux",
+    "created": "2026-02-25T13:13:44.829788514Z",
+    "size_bytes": 10745890,
+    "nim": {
+      "type": null,
+      "version": null,
+      "model": null
+    }
+  },
+  {
+    "image_id": "sha256:ecee0a5e44b46730806efdc9b23cd2b139e9720c8d9c66f5f78ec7aec4d823c8",
+    "repo_tags": [
+      "km-task35-runtime-nodeps:latest"
+    ],
+    "repo_digests": [
+      "km-task35-runtime-nodeps@sha256:ecee0a5e44b46730806efdc9b23cd2b139e9720c8d9c66f5f78ec7aec4d823c8"
+    ],
+    "architecture": "arm64",
+    "os": "linux",
+    "created": "2026-07-08T13:34:08.717618202+07:00",
+    "size_bytes": 3297593528,
+    "nim": {
+      "type": null,
+      "version": null,
+      "model": null
+    }
+  },
+  {
+    "image_id": "sha256:f37aaaf1a707c42b0aff49a3ab5d4fa57a3504ebc3f27657434a820e3b16d730",
+    "repo_tags": [
+      "bluenviron/mediamtx:latest"
+    ],
+    "repo_digests": [
+      "bluenviron/mediamtx@sha256:f37aaaf1a707c42b0aff49a3ab5d4fa57a3504ebc3f27657434a820e3b16d730"
+    ],
+    "architecture": "arm64",
+    "os": "linux",
+    "created": "2026-06-28T10:59:47.105763339Z",
+    "size_bytes": 29121335,
+    "nim": {
+      "type": null,
+      "version": null,
+      "model": null
+    }
+  },
+  {
+    "image_id": "sha256:f6e92fc2e0db221671325ff1a0e8725422de63b85d777f8aa8efc1858309ab53",
+    "repo_tags": [
+      "nvidia/cuda:13.0.2-runtime-ubuntu22.04"
+    ],
+    "repo_digests": [
+      "nvidia/cuda@sha256:f6e92fc2e0db221671325ff1a0e8725422de63b85d777f8aa8efc1858309ab53"
+    ],
+    "architecture": "arm64",
+    "os": "linux",
+    "created": "2025-10-10T16:57:55.223661803Z",
+    "size_bytes": 1766399024,
+    "nim": {
+      "type": null,
+      "version": null,
+      "model": null
+    }
+  },
+  {
+    "image_id": "sha256:fe03a7605299a34ddf5e4f285dff78c3d7190a576b3c6b46f2fcff69f4bffd54",
+    "repo_tags": [
+      "postgres:16"
+    ],
+    "repo_digests": [
+      "postgres@sha256:fe03a7605299a34ddf5e4f285dff78c3d7190a576b3c6b46f2fcff69f4bffd54"
+    ],
+    "architecture": "arm64",
+    "os": "linux",
+    "created": "2026-06-24T01:36:31.752672519Z",
+    "size_bytes": 158821363,
+    "nim": {
+      "type": null,
+      "version": null,
+      "model": null
+    }
+  }
+]

@@ -1,0 +1,14 @@
+service	bindings
+api	{"8000/tcp":null}
+dcgm-exporter	{"9400/tcp":null}
+grafana	{"3000/tcp":null}
+mailpit	{"1025/tcp":null,"1110/tcp":null,"8025/tcp":null}
+minio	{"9000/tcp":null,"9001/tcp":null}
+postgres	{"5432/tcp":null}
+prometheus	{"9090/tcp":null}
+qdrant	{"6333/tcp":null,"6334/tcp":null}
+rabbitmq	{"15671/tcp":null,"15672/tcp":null,"15691/tcp":null,"15692/tcp":null,"25672/tcp":null,"4369/tcp":null,"5671/tcp":null,"5672/tcp":null}
+redis	{"6379/tcp":null}
+reverse-proxy	{"80/tcp":null,"8080/tcp":[{"HostIp":"127.0.0.1","HostPort":"8080"}]}
+web	{"3000/tcp":null}
+worker	{}

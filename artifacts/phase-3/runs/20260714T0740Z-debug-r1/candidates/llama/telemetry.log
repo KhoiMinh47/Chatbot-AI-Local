@@ -1,0 +1,161 @@
+sample_at_utc=2026-07-14T07:41:30Z
+NVIDIA GB10, 580.142, [N/A], [N/A], 0, 47, 9.96
+               total        used        free      shared  buff/cache   available
+Mem:     130663628800 73915748352 16291434496   125190144 41754136576 56747880448
+Swap:    17179865088        8192 17179856896
+{"BlockIO":"2.67MB / 167MB","CPUPerc":"99.98%","Container":"f4b2707f8ef6c175270dc4098c4db2a25fcfad0c40bf0740e103630463c5b27a","ID":"f4b2707f8ef6","MemPerc":"5.08%","MemUsage":"3.655GiB / 72GiB","Name":"ntc-rag-phase3-nim-llm-llama-1","NetIO":"19kB / 149kB","PIDs":"135"}
+
+sample_at_utc=2026-07-14T07:41:36Z
+NVIDIA GB10, 580.142, [N/A], [N/A], 0, 47, 10.10
+               total        used        free      shared  buff/cache   available
+Mem:     130663628800 74212577280 15992066048   125190144 41756696576 56451051520
+Swap:    17179865088        8192 17179856896
+{"BlockIO":"2.67MB / 167MB","CPUPerc":"102.21%","Container":"f4b2707f8ef6c175270dc4098c4db2a25fcfad0c40bf0740e103630463c5b27a","ID":"f4b2707f8ef6","MemPerc":"5.18%","MemUsage":"3.727GiB / 72GiB","Name":"ntc-rag-phase3-nim-llm-llama-1","NetIO":"19kB / 149kB","PIDs":"135"}
+
+sample_at_utc=2026-07-14T07:41:42Z
+NVIDIA GB10, 580.142, [N/A], [N/A], 0, 47, 10.10
+               total        used        free      shared  buff/cache   available
+Mem:     130663628800 74223583232 15981010944   125190144 41756733440 56440045568
+Swap:    17179865088        8192 17179856896
+{"BlockIO":"2.67MB / 200MB","CPUPerc":"102.37%","Container":"f4b2707f8ef6c175270dc4098c4db2a25fcfad0c40bf0740e103630463c5b27a","ID":"f4b2707f8ef6","MemPerc":"5.18%","MemUsage":"3.727GiB / 72GiB","Name":"ntc-rag-phase3-nim-llm-llama-1","NetIO":"19kB / 149kB","PIDs":"135"}
+
+sample_at_utc=2026-07-14T07:41:48Z
+NVIDIA GB10, 580.142, [N/A], [N/A], 0, 47, 10.03
+               total        used        free      shared  buff/cache   available
+Mem:     130663628800 74201624576 16002969600   125190144 41756741632 56462004224
+Swap:    17179865088        8192 17179856896
+{"BlockIO":"5.53MB / 200MB","CPUPerc":"100.05%","Container":"f4b2707f8ef6c175270dc4098c4db2a25fcfad0c40bf0740e103630463c5b27a","ID":"f4b2707f8ef6","MemPerc":"5.26%","MemUsage":"3.787GiB / 72GiB","Name":"ntc-rag-phase3-nim-llm-llama-1","NetIO":"19kB / 149kB","PIDs":"135"}
+
+sample_at_utc=2026-07-14T07:41:54Z
+NVIDIA GB10, 580.142, [N/A], [N/A], 96, 52, 35.16
+               total        used        free      shared  buff/cache   available
+Mem:     130663628800 74203209728 15979630592   125190144 41778495488 56460419072
+Swap:    17179865088        8192 17179856896
+{"BlockIO":"5.53MB / 200MB","CPUPerc":"107.39%","Container":"f4b2707f8ef6c175270dc4098c4db2a25fcfad0c40bf0740e103630463c5b27a","ID":"f4b2707f8ef6","MemPerc":"5.26%","MemUsage":"3.788GiB / 72GiB","Name":"ntc-rag-phase3-nim-llm-llama-1","NetIO":"34kB / 259kB","PIDs":"135"}
+
+sample_at_utc=2026-07-14T07:42:01Z
+NVIDIA GB10, 580.142, [N/A], [N/A], 96, 52, 35.45
+               total        used        free      shared  buff/cache   available
+Mem:     130663628800 74169196544 16013619200   125190144 41778511872 56494432256
+Swap:    17179865088        8192 17179856896
+{"BlockIO":"5.53MB / 200MB","CPUPerc":"105.73%","Container":"f4b2707f8ef6c175270dc4098c4db2a25fcfad0c40bf0740e103630463c5b27a","ID":"f4b2707f8ef6","MemPerc":"5.26%","MemUsage":"3.788GiB / 72GiB","Name":"ntc-rag-phase3-nim-llm-llama-1","NetIO":"47.9kB / 309kB","PIDs":"135"}
+
+sample_at_utc=2026-07-14T07:42:07Z
+NVIDIA GB10, 580.142, [N/A], [N/A], 96, 54, 35.84
+               total        used        free      shared  buff/cache   available
+Mem:     130663628800 74175725568 16007061504   125190144 41778544640 56487903232
+Swap:    17179865088        8192 17179856896
+{"BlockIO":"5.53MB / 200MB","CPUPerc":"104.80%","Container":"f4b2707f8ef6c175270dc4098c4db2a25fcfad0c40bf0740e103630463c5b27a","ID":"f4b2707f8ef6","MemPerc":"5.26%","MemUsage":"3.788GiB / 72GiB","Name":"ntc-rag-phase3-nim-llm-llama-1","NetIO":"58.3kB / 358kB","PIDs":"135"}
+
+sample_at_utc=2026-07-14T07:42:13Z
+NVIDIA GB10, 580.142, [N/A], [N/A], 96, 56, 35.47
+               total        used        free      shared  buff/cache   available
+Mem:     130663628800 74154000384 16028655616   125190144 41778679808 56509628416
+Swap:    17179865088        8192 17179856896
+{"BlockIO":"5.53MB / 200MB","CPUPerc":"104.76%","Container":"f4b2707f8ef6c175270dc4098c4db2a25fcfad0c40bf0740e103630463c5b27a","ID":"f4b2707f8ef6","MemPerc":"5.27%","MemUsage":"3.795GiB / 72GiB","Name":"ntc-rag-phase3-nim-llm-llama-1","NetIO":"116kB / 396kB","PIDs":"135"}
+
+sample_at_utc=2026-07-14T07:42:19Z
+NVIDIA GB10, 580.142, [N/A], [N/A], 96, 55, 35.45
+               total        used        free      shared  buff/cache   available
+Mem:     130663628800 74161455104 16021180416   125190144 41778696192 56502173696
+Swap:    17179865088        8192 17179856896
+{"BlockIO":"5.53MB / 200MB","CPUPerc":"104.21%","Container":"f4b2707f8ef6c175270dc4098c4db2a25fcfad0c40bf0740e103630463c5b27a","ID":"f4b2707f8ef6","MemPerc":"5.27%","MemUsage":"3.795GiB / 72GiB","Name":"ntc-rag-phase3-nim-llm-llama-1","NetIO":"125kB / 439kB","PIDs":"135"}
+
+sample_at_utc=2026-07-14T07:42:25Z
+NVIDIA GB10, 580.142, [N/A], [N/A], 96, 57, 35.52
+               total        used        free      shared  buff/cache   available
+Mem:     130663628800 74146926592 16035692544   125190144 41778704384 56516702208
+Swap:    17179865088        8192 17179856896
+{"BlockIO":"5.53MB / 219MB","CPUPerc":"105.52%","Container":"f4b2707f8ef6c175270dc4098c4db2a25fcfad0c40bf0740e103630463c5b27a","ID":"f4b2707f8ef6","MemPerc":"5.27%","MemUsage":"3.795GiB / 72GiB","Name":"ntc-rag-phase3-nim-llm-llama-1","NetIO":"135kB / 483kB","PIDs":"135"}
+
+sample_at_utc=2026-07-14T07:42:31Z
+NVIDIA GB10, 580.142, [N/A], [N/A], 96, 57, 35.60
+               total        used        free      shared  buff/cache   available
+Mem:     130663628800 74148352000 16034258944   125190144 41778716672 56515276800
+Swap:    17179865088        8192 17179856896
+{"BlockIO":"5.53MB / 219MB","CPUPerc":"104.02%","Container":"f4b2707f8ef6c175270dc4098c4db2a25fcfad0c40bf0740e103630463c5b27a","ID":"f4b2707f8ef6","MemPerc":"5.27%","MemUsage":"3.794GiB / 72GiB","Name":"ntc-rag-phase3-nim-llm-llama-1","NetIO":"144kB / 527kB","PIDs":"135"}
+
+sample_at_utc=2026-07-14T07:42:37Z
+NVIDIA GB10, 580.142, [N/A], [N/A], 96, 58, 35.79
+               total        used        free      shared  buff/cache   available
+Mem:     130663628800 74147540992 16035057664   125190144 41778728960 56516087808
+Swap:    17179865088        8192 17179856896
+{"BlockIO":"5.53MB / 219MB","CPUPerc":"104.57%","Container":"f4b2707f8ef6c175270dc4098c4db2a25fcfad0c40bf0740e103630463c5b27a","ID":"f4b2707f8ef6","MemPerc":"5.27%","MemUsage":"3.795GiB / 72GiB","Name":"ntc-rag-phase3-nim-llm-llama-1","NetIO":"203kB / 572kB","PIDs":"135"}
+
+sample_at_utc=2026-07-14T07:42:43Z
+NVIDIA GB10, 580.142, [N/A], [N/A], 96, 59, 35.90
+               total        used        free      shared  buff/cache   available
+Mem:     130663628800 74150875136 16031694848   125190144 41778769920 56512753664
+Swap:    17179865088        8192 17179856896
+{"BlockIO":"5.53MB / 219MB","CPUPerc":"104.50%","Container":"f4b2707f8ef6c175270dc4098c4db2a25fcfad0c40bf0740e103630463c5b27a","ID":"f4b2707f8ef6","MemPerc":"5.27%","MemUsage":"3.795GiB / 72GiB","Name":"ntc-rag-phase3-nim-llm-llama-1","NetIO":"213kB / 615kB","PIDs":"135"}
+
+sample_at_utc=2026-07-14T07:42:49Z
+NVIDIA GB10, 580.142, [N/A], [N/A], 96, 59, 35.80
+               total        used        free      shared  buff/cache   available
+Mem:     130663628800 74165411840 16017108992   125190144 41778810880 56498216960
+Swap:    17179865088        8192 17179856896
+{"BlockIO":"5.53MB / 219MB","CPUPerc":"104.54%","Container":"f4b2707f8ef6c175270dc4098c4db2a25fcfad0c40bf0740e103630463c5b27a","ID":"f4b2707f8ef6","MemPerc":"5.27%","MemUsage":"3.795GiB / 72GiB","Name":"ntc-rag-phase3-nim-llm-llama-1","NetIO":"222kB / 659kB","PIDs":"135"}
+
+sample_at_utc=2026-07-14T07:42:55Z
+NVIDIA GB10, 580.142, [N/A], [N/A], 96, 60, 35.69
+               total        used        free      shared  buff/cache   available
+Mem:     130663628800 74152812544 16029700096   125190144 41778823168 56510816256
+Swap:    17179865088        8192 17179856896
+{"BlockIO":"5.53MB / 219MB","CPUPerc":"107.47%","Container":"f4b2707f8ef6c175270dc4098c4db2a25fcfad0c40bf0740e103630463c5b27a","ID":"f4b2707f8ef6","MemPerc":"5.27%","MemUsage":"3.795GiB / 72GiB","Name":"ntc-rag-phase3-nim-llm-llama-1","NetIO":"281kB / 704kB","PIDs":"135"}
+
+sample_at_utc=2026-07-14T07:43:02Z
+NVIDIA GB10, 580.142, [N/A], [N/A], 96, 60, 36.02
+               total        used        free      shared  buff/cache   available
+Mem:     130663628800 74142629888 16039858176   125190144 41778835456 56520998912
+Swap:    17179865088        8192 17179856896
+{"BlockIO":"5.53MB / 219MB","CPUPerc":"106.18%","Container":"f4b2707f8ef6c175270dc4098c4db2a25fcfad0c40bf0740e103630463c5b27a","ID":"f4b2707f8ef6","MemPerc":"5.27%","MemUsage":"3.795GiB / 72GiB","Name":"ntc-rag-phase3-nim-llm-llama-1","NetIO":"291kB / 748kB","PIDs":"135"}
+
+sample_at_utc=2026-07-14T07:43:08Z
+NVIDIA GB10, 580.142, [N/A], [N/A], 96, 60, 36.02
+               total        used        free      shared  buff/cache   available
+Mem:     130663628800 74160193536 16022294528   125190144 41778847744 56503435264
+Swap:    17179865088        8192 17179856896
+{"BlockIO":"5.53MB / 219MB","CPUPerc":"104.06%","Container":"f4b2707f8ef6c175270dc4098c4db2a25fcfad0c40bf0740e103630463c5b27a","ID":"f4b2707f8ef6","MemPerc":"5.27%","MemUsage":"3.795GiB / 72GiB","Name":"ntc-rag-phase3-nim-llm-llama-1","NetIO":"300kB / 791kB","PIDs":"135"}
+
+sample_at_utc=2026-07-14T07:43:14Z
+NVIDIA GB10, 580.142, [N/A], [N/A], 96, 61, 36.12
+               total        used        free      shared  buff/cache   available
+Mem:     130663628800 74141327360 16041140224   125190144 41778855936 56522301440
+Swap:    17179865088        8192 17179856896
+{"BlockIO":"5.53MB / 219MB","CPUPerc":"104.64%","Container":"f4b2707f8ef6c175270dc4098c4db2a25fcfad0c40bf0740e103630463c5b27a","ID":"f4b2707f8ef6","MemPerc":"5.27%","MemUsage":"3.796GiB / 72GiB","Name":"ntc-rag-phase3-nim-llm-llama-1","NetIO":"310kB / 835kB","PIDs":"135"}
+
+sample_at_utc=2026-07-14T07:43:20Z
+NVIDIA GB10, 580.142, [N/A], [N/A], 96, 61, 36.68
+               total        used        free      shared  buff/cache   available
+Mem:     130663628800 74137767936 16044695552   125190144 41778876416 56525860864
+Swap:    17179865088        8192 17179856896
+{"BlockIO":"5.53MB / 219MB","CPUPerc":"104.03%","Container":"f4b2707f8ef6c175270dc4098c4db2a25fcfad0c40bf0740e103630463c5b27a","ID":"f4b2707f8ef6","MemPerc":"5.27%","MemUsage":"3.796GiB / 72GiB","Name":"ntc-rag-phase3-nim-llm-llama-1","NetIO":"369kB / 880kB","PIDs":"135"}
+
+sample_at_utc=2026-07-14T07:43:26Z
+NVIDIA GB10, 580.142, [N/A], [N/A], 96, 62, 36.69
+               total        used        free      shared  buff/cache   available
+Mem:     130663628800 74129698816 16052736000   125190144 41778896896 56533929984
+Swap:    17179865088        8192 17179856896
+{"BlockIO":"5.53MB / 219MB","CPUPerc":"103.84%","Container":"f4b2707f8ef6c175270dc4098c4db2a25fcfad0c40bf0740e103630463c5b27a","ID":"f4b2707f8ef6","MemPerc":"5.27%","MemUsage":"3.796GiB / 72GiB","Name":"ntc-rag-phase3-nim-llm-llama-1","NetIO":"378kB / 923kB","PIDs":"135"}
+
+sample_at_utc=2026-07-14T07:43:32Z
+NVIDIA GB10, 580.142, [N/A], [N/A], 96, 62, 36.73
+               total        used        free      shared  buff/cache   available
+Mem:     130663628800 74155253760 16027160576   125190144 41778909184 56508375040
+Swap:    17179865088        8192 17179856896
+{"BlockIO":"5.53MB / 219MB","CPUPerc":"103.76%","Container":"f4b2707f8ef6c175270dc4098c4db2a25fcfad0c40bf0740e103630463c5b27a","ID":"f4b2707f8ef6","MemPerc":"5.27%","MemUsage":"3.796GiB / 72GiB","Name":"ntc-rag-phase3-nim-llm-llama-1","NetIO":"388kB / 967kB","PIDs":"135"}
+
+sample_at_utc=2026-07-14T07:43:38Z
+NVIDIA GB10, 580.142, [N/A], [N/A], 96, 62, 36.78
+               total        used        free      shared  buff/cache   available
+Mem:     130663628800 74144935936 16037466112   125190144 41778921472 56518692864
+Swap:    17179865088        8192 17179856896
+{"BlockIO":"5.53MB / 219MB","CPUPerc":"90.39%","Container":"f4b2707f8ef6c175270dc4098c4db2a25fcfad0c40bf0740e103630463c5b27a","ID":"f4b2707f8ef6","MemPerc":"5.27%","MemUsage":"3.795GiB / 72GiB","Name":"ntc-rag-phase3-nim-llm-llama-1","NetIO":"398kB / 1.01MB","PIDs":"135"}
+
+sample_at_utc=2026-07-14T07:43:44Z
+NVIDIA GB10, 580.142, [N/A], [N/A], 96, 63, 37.67
+               total        used        free      shared  buff/cache   available
+Mem:     130663628800 74141548544 16040800256   125190144 41778974720 56522080256
+Swap:    17179865088        8192 17179856896
+{"BlockIO":"5.53MB / 219MB","CPUPerc":"106.30%","Container":"f4b2707f8ef6c175270dc4098c4db2a25fcfad0c40bf0740e103630463c5b27a","ID":"f4b2707f8ef6","MemPerc":"5.27%","MemUsage":"3.795GiB / 72GiB","Name":"ntc-rag-phase3-nim-llm-llama-1","NetIO":"411kB / 1.02MB","PIDs":"135"}
+

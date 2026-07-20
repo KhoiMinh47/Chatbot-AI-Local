@@ -1,0 +1,4 @@
+Using CPython 3.14.5
+Creating virtual environment at: /tmp/ntc-rag-python314
+Resolved 183 packages in 0.63ms
+error: Distribution `pylatexenc==2.10 @ registry+https://pypi.org/simple` can't be installed because it is marked as `--no-build` but has no binary distribution

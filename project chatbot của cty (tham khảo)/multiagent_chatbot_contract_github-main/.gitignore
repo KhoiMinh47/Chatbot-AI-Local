@@ -1,0 +1,33 @@
+# Python / venv
+**/venv/
+**/__pycache__/
+*.py[cod]
+*$py.class
+
+# Node / Next.js
+**/node_modules/
+**/.next/
+frontend/out/
+frontend/build/
+
+# Environment
+.env*
+**/.env*
+!backend/alembic.ini
+
+# Caches / Temp
+/cache/
+/backups/
+/runtime/
+/.runtime/
+/**/.DS_Store
+.vscode/
+
+# Project specific
+backend/static/
+backend/database/storage/contract/*.docx
+config/searxng/settings.local.yml
+config/searxng/settings.runtime.yml
+prometheus-collector/venv/
+parse-data/venv/
+embedding/venv/
