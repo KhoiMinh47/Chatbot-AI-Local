@@ -1,6 +1,6 @@
 <div align="center">
 
-# NTC Local Knowledge
+# NTC Local Knowledge (Coppy Version)
 
 **Nền tảng chatbot RAG nội bộ — hỏi đáp tài liệu với bằng chứng có kiểm chứng, chạy hoàn toàn trên hạ tầng NVIDIA local.**
 
